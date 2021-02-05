@@ -7,8 +7,13 @@ import path from 'path'
 import fs from 'fs'
 
 import Pages from 'vite-plugin-pages'
+import Icons, { ViteIconsResolver } from 'vite-plugin-icons'
+import ViteComponents from 'vite-plugin-components'
+import Markdown from 'vite-plugin-md'
+import Prism from 'markdown-it-prism'
+import anchor from 'markdown-it-anchor'
 import matter from 'gray-matter'
-// import anchor from 'markdown-it-anchor'
+import { slugify } from './scripts/slugify'
 
 const resolve = (dir: string): string => path.resolve(__dirname, dir);
 const IS_DEV: boolean = process.env.NODE_ENV === 'development' ? true : false;
@@ -114,5 +119,31 @@ export default defineConfig({
         return route
       },
     }),
+
+    Markdown({
+      wrapperComponent: 'post',
+      wrapperClasses: 'prose m-auto',
+      headEnabled: true,
+      markdownItSetup(md) {
+        md.use(Prism)
+        md.use(anchor, {
+          slugify,
+          permalink: true,
+          permalinkBefore: true,
+          permalinkSymbol: '#',
+          permalinkAttrs: () => ({ 'aria-hidden': true }),
+        })
+      },
+    }),
+
+    ViteComponents({
+      extensions: ['vue', 'md'],
+      customLoaderMatcher: path => path.endsWith('.md'),
+      customComponentResolvers: ViteIconsResolver({
+        componentPrefix: '',
+      }),
+    }),
+    
+    Icons(),
   ]
 })
