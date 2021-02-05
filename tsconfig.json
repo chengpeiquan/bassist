@@ -6,9 +6,12 @@
     "jsx": "preserve",
     "importHelpers": true,
     "moduleResolution": "node",
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
+    "incremental": true,
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": "./",
@@ -68,6 +71,7 @@
     "src/**/*.vue"
   ],
   "exclude": [
+    "dist",
     "node_modules"
   ]
 }

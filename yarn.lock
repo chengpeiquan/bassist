@@ -694,6 +694,11 @@ aws4@^1.8.0:
   resolved "https://registry.yarnpkg.com/aws4/-/aws4-1.11.0.tgz#d61f46d83b2519250e2784daf5b09479a8b41c59"
   integrity sha512-xh1Rl34h6Fi1DC2WWKfxUTVqRsNnr6LsKz2+hfwDxQJWmrx8+c7ylaqBMcHfl1U1r2dsifOvKX3LQuLNZ+XSvA==
 
+balanced-match@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
+  integrity sha1-ibTRmasr7kneFk6gK4nORi1xt2c=
+
 bcrypt-pbkdf@^1.0.0:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.2.tgz#a4301d389b6a43f9b67ff3ca11a3f6637e360e9e"
@@ -722,6 +727,14 @@ bluebird@^3.7.2:
   version "3.7.2"
   resolved "https://registry.yarnpkg.com/bluebird/-/bluebird-3.7.2.tgz#9f229c15be272454ffa973ace0dbee79a1b0c36f"
   integrity sha512-XpNj6GDQzdfW+r2Wnn7xiSAd7TM3jzkxGXBGTtWKuSXv1xUV+azxAm8jdWZN06QTQk+2N2XB9jRDkvbmQmcRtg==
+
+brace-expansion@^1.1.7:
+  version "1.1.11"
+  resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.11.tgz#3c7fcbf529d87226f3d2f52b966ff5271eb441dd"
+  integrity sha512-iCuPHDFgrHX7H2vEI/5xpz07zSHB00TpugqhmYtVmMO6518mCuRMoOYFldEBl0g187ufozdaHgWKcYFb61qGiA==
+  dependencies:
+    balanced-match "^1.0.0"
+    concat-map "0.0.1"
 
 braces@^3.0.1:
   version "3.0.2"
@@ -852,6 +865,11 @@ commander@^6.1.0:
   version "6.2.1"
   resolved "https://registry.yarnpkg.com/commander/-/commander-6.2.1.tgz#0792eb682dfbc325999bb2b84fddddba110ac73c"
   integrity sha512-U7VdrJFnJgo4xjrHpTzu0yrHPGImdsmD95ZlgYSEajAn2JKzDhDTPG9kBTefmObL2w/ngeZnilk+OV9CG3d7UA==
+
+concat-map@0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
+  integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
 
 consolidate@^0.16.0:
   version "0.16.0"
@@ -1032,9 +1050,9 @@ esbuild-register@^2.0.0:
     strip-json-comments "^3.1.1"
 
 esbuild@^0.8.34:
-  version "0.8.40"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.40.tgz#2ca457d950b27c77f28010f4482bdb820560290f"
-  integrity sha512-IP0GcO3K9yO9rM69AMtx9tmjUYFO7oCcRfURCV4KveL3HQnQA1SJ8YLM71EyFe67+7At6HJIyjkOjGO3xnUQ/g==
+  version "0.8.42"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.42.tgz#26101cf17fe4c4602c7c767e3177cf0c538073ac"
+  integrity sha512-zUtj5RMqROCCCH0vV/a7cd8YQg8I0GWBhV3A3PklWRT+oM/YwVbnrtFnITzE1otGdnXplWHWdZ4OcYiV0PN+JQ==
 
 esbuild@^0.8.37:
   version "0.8.41"
@@ -1685,6 +1703,13 @@ mime-types@^2.1.12, mime-types@~2.1.19:
   dependencies:
     mime-db "1.45.0"
 
+minimatch@^3.0.4:
+  version "3.0.4"
+  resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-3.0.4.tgz#5166e286457f03306064be5497e8dbb0c3d32083"
+  integrity sha512-yJHVQEhyqPLUTgt9B83PXu6W3rx4MvvHvSUvToogpwoGDOUQ+yDrR0HRot+yOCdCO7u4hX3pWft6kWBBcqh0UA==
+  dependencies:
+    brace-expansion "^1.1.7"
+
 minimist@^1.2.0, minimist@^1.2.5:
   version "1.2.5"
   resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
@@ -2332,6 +2357,23 @@ verror@1.10.0:
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
 
+vite-plugin-components@^0.6.6:
+  version "0.6.6"
+  resolved "https://registry.yarnpkg.com/vite-plugin-components/-/vite-plugin-components-0.6.6.tgz#7b097c5c0d964eb8f2bd281dcfffb91cf2356ec7"
+  integrity sha512-tOcWm/2T+XUImJ8yFZb/i8dUWXNoraqDdKrBBpfbHGg3MES0T6AN1315iuKYHTG71fwKI0OGElw3S9B04ZUwPA==
+  dependencies:
+    debug "^4.3.2"
+    fast-glob "^3.2.4"
+    minimatch "^3.0.4"
+
+vite-plugin-md@^0.4.2:
+  version "0.4.2"
+  resolved "https://registry.yarnpkg.com/vite-plugin-md/-/vite-plugin-md-0.4.2.tgz#e8ca2cf8dbc85c30719dc5f6a244635d57fba08d"
+  integrity sha512-gAmtGCiPj0ESdWJikKTg4h0ADqybezRVOh1a51KtWqYk4WgwrvFRpTeVq9fVqLXLFhuU0iUIKJ04V3KeXAeWdQ==
+  dependencies:
+    gray-matter "^4.0.2"
+    markdown-it "^12.0.4"
+
 vite-plugin-pages@^0.1.9:
   version "0.1.9"
   resolved "https://registry.yarnpkg.com/vite-plugin-pages/-/vite-plugin-pages-0.1.9.tgz#58c022b5403e12b8b4a64131f91aa8a6cbf54b69"
@@ -2356,10 +2398,10 @@ vite-ssg@^0.8.0:
     prettier "^2.2.1"
     yargs "^16.2.0"
 
-vite@^2.0.0-beta.64:
-  version "2.0.0-beta.64"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.0.0-beta.64.tgz#245cabc72335911d4cb704545f713d47e880d84f"
-  integrity sha512-/dR5rOXohhdXfkAIBAjmwX7JmoMWhQc7+VI6/EjyqXQCQzREmfBztLgTk/rPkmsNY87Cd71u9b+nlbcYK4TDCA==
+vite@2.0.0-beta.61:
+  version "2.0.0-beta.61"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.0.0-beta.61.tgz#da605152999cf8943672202ab6b38b68f4c7b9e4"
+  integrity sha512-NyRZ7vCwtfw/z18HmFr5ZIesum26Dg9x4ykuit1YmYsZlPxx/oF3il1U6MqkXZD2wy8HaR5fQi9d9B/6vEJMbw==
   dependencies:
     esbuild "^0.8.34"
     postcss "^8.2.1"

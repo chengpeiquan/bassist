@@ -5,13 +5,8 @@ import { ViteSSG } from 'vite-ssg'
 import { RouterScrollBehavior } from 'vue-router'
 import dayjs from 'dayjs'
 import LocalizedFormat from 'dayjs/plugin/localizedFormat'
-
-// TypeScript error? Run VSCode command
-// TypeScript: Select TypeScript version - > Use Workspace Version
 import App from './App.vue'
 
-// createApp(App)
-//   .mount('#app')
 
 const routes = autoRoutes.map((i) => {
   return {
