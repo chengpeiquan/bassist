@@ -1,5 +1,6 @@
 // import { createApp } from 'vue'
-import autoRoutes from 'vite-plugin-pages/client'
+// import autoRoutes from 'vite-plugin-pages/client'
+import autoRoutes from 'pages-generated'
 import NProgress from 'nprogress'
 import { ViteSSG } from 'vite-ssg'
 import { RouterScrollBehavior } from 'vue-router'

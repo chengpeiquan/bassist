@@ -99,6 +99,16 @@ export default defineConfig({
     '/@views': resolve('src/views'),
     '/@plugins': resolve('src/plugins')
   },
+  optimizeDeps: {
+    include: [
+      'vue',
+      'vue-router',
+      '@vueuse/core',
+      // '@iconify/iconify',
+      'dayjs',
+      'dayjs/plugin/localizedFormat',
+    ],
+  },
   plugins: [
     vue({
       include: [/\.vue$/, /\.md$/],

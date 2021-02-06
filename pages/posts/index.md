@@ -3,8 +3,8 @@ title: Blog - Anthony Fu
 display: Blog
 ---
 
-<!-- <ClientOnly>
+<ClientOnly>
   <Plum/>
 </ClientOnly>
 
-<ListPosts /> -->
+<ListPosts />

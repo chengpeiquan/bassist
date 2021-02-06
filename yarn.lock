@@ -601,10 +601,25 @@
     vscode-languageserver-textdocument "^1.0.1"
     vscode-uri "^2.1.2"
 
+"@vueuse/core@^4.0.12":
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-4.0.12.tgz#e6273feee1373c16d408b94be9382fa945c494a8"
+  integrity sha512-0pAEWyUP6HAqJ6Qzbybfpa8fNVdERMizrgjQI8vRe8+Fu5Ge5a8M2aLYCrdrLNxV6DsEZJ0bUFeTWb3aUnbxUA==
+  dependencies:
+    "@vueuse/shared" "4.0.12"
+    vue-demi latest
+
 "@vueuse/head@^0.2.3":
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/@vueuse/head/-/head-0.2.3.tgz#55d38648a26c3132f2320f71236cd03148a6187d"
   integrity sha512-bAFZyUlT6+CVIwMcUw3TrtuhG/BfjS+UV5T8oH30tGPnVvqIsNuRCnNt9EbVd1GxHRDZD0K41515B5NiXPt84A==
+
+"@vueuse/shared@4.0.12":
+  version "4.0.12"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-4.0.12.tgz#fe42215a0cc60afcda2dcbfbdd73a4dd780647ec"
+  integrity sha512-t5Amxc3BIwi+M2mI0iy9yHKe5plYJUMbxpIBuMDR953J5s12ewRe3s8MLvQdlhAiNN8FTh9CBKU+mfdNgbWauw==
+  dependencies:
+    vue-demi latest
 
 abab@^2.0.3:
   version "2.0.5"
@@ -2614,10 +2629,10 @@ vite-plugin-md@^0.4.2:
     gray-matter "^4.0.2"
     markdown-it "^12.0.4"
 
-vite-plugin-pages@^0.1.9:
-  version "0.1.9"
-  resolved "https://registry.yarnpkg.com/vite-plugin-pages/-/vite-plugin-pages-0.1.9.tgz#58c022b5403e12b8b4a64131f91aa8a6cbf54b69"
-  integrity sha512-N1xYT14PORPLJaUCCgDKlC8S1SYKKztsWeA7ChPeD23FS76Cs6ST6Hr/sGN4qaesRVdEfwQwUFsYU8Vv2O5t1A==
+vite-plugin-pages@^0.2.2:
+  version "0.2.2"
+  resolved "https://registry.yarnpkg.com/vite-plugin-pages/-/vite-plugin-pages-0.2.2.tgz#38467bda6f05a553c59ffca0e89aa9332bf29517"
+  integrity sha512-vSM7EuComnDSOUfs1DElRW0NKm1lGNI+UAzsDjKbUTm6Pi3/4sGgZDqTv/CDHbd9Hw+kJI1SaBA+6dDfQmx6Ew==
   dependencies:
     debug "^4.3.2"
     directory-tree "^2.2.6"
@@ -2638,10 +2653,10 @@ vite-ssg@^0.8.0:
     prettier "^2.2.1"
     yargs "^16.2.0"
 
-vite@2.0.0-beta.61:
-  version "2.0.0-beta.61"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.0.0-beta.61.tgz#da605152999cf8943672202ab6b38b68f4c7b9e4"
-  integrity sha512-NyRZ7vCwtfw/z18HmFr5ZIesum26Dg9x4ykuit1YmYsZlPxx/oF3il1U6MqkXZD2wy8HaR5fQi9d9B/6vEJMbw==
+vite@2.0.0-beta.65:
+  version "2.0.0-beta.65"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.0.0-beta.65.tgz#e4e4576c01b9906d5fb3568e4068c80354107a70"
+  integrity sha512-mdHNTP6fGeb8m8lWAM3UbSPw1+un1lUv0i4MQJcNiK2/P01RHIY02VjQeXBv3NemkExkgLji88LN9ySFMUQpIw==
   dependencies:
     esbuild "^0.8.34"
     postcss "^8.2.1"
@@ -2674,6 +2689,11 @@ vscode-web-custom-data@^0.3.2:
   version "0.3.3"
   resolved "https://registry.yarnpkg.com/vscode-web-custom-data/-/vscode-web-custom-data-0.3.3.tgz#9e1f2388c718d6f190038a19d144834a436b876f"
   integrity sha512-orMjjj1r4efP5ocODYZm3orpANakRBsxPZPDoD5UIrFOPKDFtMJQLp6PIH1rb3AYVRD1iYXMhDQoC6tZ+DrigA==
+
+vue-demi@latest:
+  version "0.6.0"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.6.0.tgz#e314282f704cb449119b9fd002cbbc0e39f591fe"
+  integrity sha512-8GEJa0mHJpYJeGeq5fD1pJct2kfdl30PHfmL1NaJ97mgKPyKojlIRt/3inGBK4Y0ylCI6T5vOo3chwpqDOq/Hw==
 
 vue-router@^4.0.3:
   version "4.0.3"
