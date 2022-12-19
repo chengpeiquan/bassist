@@ -1,0 +1,32 @@
+{
+  "name": "@bassist/utils",
+  "version": "0.1.0",
+  "description": "Opinionated collection of common JavaScript / TypeScript utils by @chengpeiquan .",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/utils",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "main": "./lib/index.min.js",
+  "module": "./lib/index.mjs",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.cjs",
+      "types": "./types/index.d.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengpeiquan/bassist.git"
+  },
+  "keywords": [
+    "utils"
+  ],
+  "dependencies": {
+    "md5": "^2.3.0"
+  }
+}

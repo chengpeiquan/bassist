@@ -1,0 +1,25 @@
+{
+  "name": "@bassist/monorepo",
+  "version": "0.0.0",
+  "description": "No need to install the @types package anymore.",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "tsx scripts/build",
+    "build:all": "tsx scripts/build/all",
+    "release": "tsx scripts/release",
+    "test": "vitest",
+    "coverage": "vitest run --coverage",
+    "mirror:get": "npm config get registry",
+    "mirror:set": "npm config set registry https://registry.npmmirror.com",
+    "mirror:rm": "npm config rm registry"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.17",
+    "@withtypes/fs-extra": "^0.1.1",
+    "tsx": "^3.12.1",
+    "vite": "^4.0.2",
+    "vite-plugin-banner": "^0.7.0"
+  }
+}
