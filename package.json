@@ -18,8 +18,10 @@
   "devDependencies": {
     "@types/node": "^18.11.17",
     "@withtypes/fs-extra": "^0.1.1",
+    "dts-bundle-generator": "^7.1.0",
     "tsx": "^3.12.1",
     "vite": "^4.0.2",
-    "vite-plugin-banner": "^0.7.0"
+    "vite-plugin-banner": "^0.7.0",
+    "vitest": "^0.25.8"
   }
 }

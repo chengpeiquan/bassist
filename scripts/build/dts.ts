@@ -1,20 +1,29 @@
+import { writeFileSync } from '@withtypes/fs-extra'
 import { resolve } from 'path'
-import { copyDir, remove } from '../utils'
+import { generateDtsBundle } from 'dts-bundle-generator'
 import type { BuildOptions } from './types'
 
 /**
- * Output declaration file of library
+ * Generate declaration file of library
  */
 export async function buildTypes({ name, rootPath }: BuildOptions) {
-  // Use existing declaration files from `@types/${name}` as package declaration
-  const typesPackage = resolve(rootPath, `./node_modules/@types/${name}`)
-  const typesDir = resolve(rootPath, `./packages/${name}/types`)
-  copyDir(typesPackage, typesDir)
+  const filePath = resolve(rootPath, `./packages/${name}/src/index.ts`)
+  console.log('filePath', filePath);
+  const options = [
+    {
+      filePath,
+      output: {
+        noBanner: true,
+      },
+    },
+  ]
 
-  // Remove unnecessary files
-  const files = ['package.json', 'README.md']
-  files.forEach((name) => {
-    const file = resolve(typesDir, name)
-    remove('file', file)
+  const dtses = generateDtsBundle(options, {
+    preferredConfigPath: resolve(rootPath, `./tsconfig.json`),
   })
+  if (!Array.isArray(dtses) || !dtses.length) return
+
+  const dts = dtses[0]
+  const output = resolve(rootPath, `./packages/${name}/types/index.d.ts`)
+  writeFileSync(output, dts)
 }

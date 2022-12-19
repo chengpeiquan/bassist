@@ -17,7 +17,7 @@ function viteConfig({ name, rootPath }: BuildOptions): UserConfig {
     build: {
       outDir,
       lib: {
-        entry: resolve(basePath, './index.ts'),
+        entry: resolve(basePath, './src/index.ts'),
         name: capitalize(name),
         formats: ['umd', 'cjs', 'es'],
         fileName: (format) => {
@@ -36,18 +36,26 @@ function viteConfig({ name, rootPath }: BuildOptions): UserConfig {
       minify: true,
       sourcemap: false,
       rollupOptions: {
-        external: Object.keys(pkg.dependencies),
+        external: Object.keys(pkg.dependencies || {}),
         output: {
           globals: (name) => capitalize(name),
         },
       },
     },
     resolve: {
-      dedupe: Object.keys(pkg.dependencies),
+      dedupe: Object.keys(pkg.dependencies || {}),
     },
     plugins: [
       banner({
-        content: `/**\n * name: ${pkg.name}\n * version: v${pkg.version}\n * description: ${pkg.description}\n * author: ${pkg.author}\n * homepage: ${pkg.homepage}\n */`,
+        content: [
+          `/**`,
+          ` * name: ${pkg.name}`,
+          ` * version: v${pkg.version}`,
+          ` * description: ${pkg.description}`,
+          ` * author: ${pkg.author}`,
+          ` * homepage: ${pkg.homepage}`,
+          ` */`,
+        ].join('\n'),
         outDir,
         debug: true,
       }),

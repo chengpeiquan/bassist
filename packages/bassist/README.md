@@ -1,6 +1,6 @@
-# Bassist
+# bassist
 
-I play bass, hence the name.
+I play bass, so enjoy the name.
 
 ## License
 
