@@ -1,4 +1,4 @@
-import { writeFileSync } from '@withtypes/fs-extra'
+import { existsSync, mkdirpSync, writeFileSync } from '@withtypes/fs-extra'
 import { resolve } from 'path'
 import { generateDtsBundle } from 'dts-bundle-generator'
 import type { BuildOptions } from './types'
@@ -22,7 +22,10 @@ export async function buildTypes({ name, rootPath }: BuildOptions) {
   })
   if (!Array.isArray(dtses) || !dtses.length) return
 
+  const outDir = resolve(rootPath, `./packages/${name}/types`)
+  !existsSync(outDir) && mkdirpSync(outDir)
+
   const dts = dtses[0]
-  const output = resolve(rootPath, `./packages/${name}/types/index.d.ts`)
+  const output = resolve(outDir, `./index.d.ts`)
   writeFileSync(output, dts)
 }
