@@ -13,15 +13,29 @@
     "coverage": "vitest run --coverage",
     "mirror:get": "npm config get registry",
     "mirror:set": "npm config set registry https://registry.npmmirror.com",
-    "mirror:rm": "npm config rm registry"
+    "mirror:rm": "npm config rm registry",
+    "backup": "git add . && git commit -m \"chore: backup\" && git push",
+    "prepare": "simple-git-hooks"
   },
   "devDependencies": {
     "@types/node": "^18.11.17",
     "@withtypes/fs-extra": "^0.1.1",
     "dts-bundle-generator": "^7.1.0",
+    "lint-staged": "^13.1.0",
+    "simple-git-hooks": "^2.8.1",
     "tsx": "^3.12.1",
     "vite": "^4.0.2",
     "vite-plugin-banner": "^0.7.0",
     "vitest": "^0.25.8"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm exec lint-staged --concurrent false",
+    "commit-msg": "pnpm exec tsx scripts/verifyCommit $1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,vue,ts,tsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ]
   }
 }

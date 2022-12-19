@@ -1,0 +1,87 @@
+import { describe, expect, it } from 'vitest'
+import { isMob, isEmail, isUrl, isIdCard, isBankCard } from '..'
+
+describe('isMob', () => {
+  it('Valid data', () => {
+    expect(isMob(13800138000)).toBeTruthy()
+    expect(isMob('13800138000')).toBeTruthy()
+    expect(isMob('13100000000')).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(isMob('13800138000 ')).toBeFalsy()
+    expect(isMob('1380013800')).toBeFalsy()
+    expect(isMob(123456)).toBeFalsy()
+    expect(isMob('hello')).toBeFalsy()
+  })
+})
+
+describe('isEmail', () => {
+  it('Valid data', () => {
+    expect(isEmail('abc@qq.com')).toBeTruthy()
+    expect(isEmail('123456@qq.com')).toBeTruthy()
+    expect(isEmail('test@163.com')).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(isEmail('abc@qq.com ')).toBeFalsy()
+    expect(isEmail('abc@q q.com ')).toBeFalsy()
+    expect(isEmail('abc@qq')).toBeFalsy()
+    expect(isEmail('@qq.com')).toBeFalsy()
+    expect(isEmail('hello')).toBeFalsy()
+  })
+})
+
+describe('isUrl', () => {
+  it('Valid data', () => {
+    expect(isUrl('http://example.com')).toBeTruthy()
+    expect(isUrl('https://example.com')).toBeTruthy()
+    expect(isUrl('https://example.com ')).toBeTruthy()
+    expect(isUrl('https://example.com/')).toBeTruthy()
+    expect(isUrl('https://foo.example.com')).toBeTruthy()
+    expect(isUrl('https://foo.bar.example.com')).toBeTruthy()
+    expect(isUrl('https://example.com/foo')).toBeTruthy()
+    expect(isUrl('https://example.com/foo/bar')).toBeTruthy()
+    expect(isUrl('https://example.com/foo/bar/baz')).toBeTruthy()
+    expect(isUrl('https://example.com/foo?a=1')).toBeTruthy()
+    expect(isUrl('https://example.com/foo?a=1&b=2')).toBeTruthy()
+    expect(isUrl('https://example.com/foo?a=1#b=2')).toBeTruthy()
+    expect(isUrl('https://example.com/foo#a=1?b=2')).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(isUrl('http:example.com')).toBeFalsy()
+    expect(isUrl('http:/example.com')).toBeFalsy()
+    expect(isUrl('https://example..com')).toBeFalsy()
+    expect(isUrl('https://foo..example.com')).toBeFalsy()
+    expect(isUrl('hello')).toBeFalsy()
+  })
+})
+
+describe('isIdCard', () => {
+  // https://www.bjcourt.gov.cn/zxxx/indexOld.htm?jbfyId=17&zxxxlx=100013002
+  // http://legal.people.com.cn/n1/2020/0424/c42510-31687296.html
+  it('Valid data', () => {
+    expect(isIdCard('110223790813697')).toBeTruthy()
+    expect(isIdCard('110225196403026127')).toBeTruthy()
+    expect(isIdCard('152221198906101419')).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(isIdCard('1102237908136971')).toBeFalsy()
+    expect(isIdCard('1102221974****4827')).toBeFalsy()
+    expect(isIdCard('123456')).toBeFalsy()
+    expect(isIdCard('hello')).toBeFalsy()
+  })
+})
+
+describe('isBankCard', () => {
+  // https://ddu1222.github.io/bankcard-validator/bcBuilder.html
+  it('Valid data', () => {
+    expect(isBankCard('5124255722414430')).toBeTruthy()
+    expect(isBankCard('5149570635749446')).toBeTruthy()
+    expect(isBankCard('4357458903454875')).toBeTruthy()
+    expect(isBankCard('6223508057942120')).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(isBankCard('151242557224144301')).toBeFalsy()
+    expect(isBankCard('123456')).toBeFalsy()
+    expect(isBankCard('hello')).toBeFalsy()
+  })
+})
