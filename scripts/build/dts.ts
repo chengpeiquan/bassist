@@ -8,7 +8,6 @@ import type { BuildOptions } from './types'
  */
 export async function buildTypes({ name, rootPath }: BuildOptions) {
   const filePath = resolve(rootPath, `./packages/${name}/src/index.ts`)
-  console.log('filePath', filePath);
   const options = [
     {
       filePath,
