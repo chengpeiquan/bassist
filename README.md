@@ -2,7 +2,9 @@
 
 I play bass, hence the name.
 
-![Bassist](./assets/bassist.svg)
+<p align='center'>
+  <img width="500" src="./assets/bassist.svg" alt="Bassist" />
+</p>
 
 ## License
 
