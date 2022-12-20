@@ -1,0 +1,53 @@
+/**
+ * Generate random number
+ * @param min - The minimum value in the range
+ * @param max - The maximum value in the range
+ * @param roundingType - Round the result
+ */
+export function randomNumber(
+  min = 0,
+  max = 100,
+  roundingType: 'round' | 'ceil' | 'floor' = 'round'
+) {
+  return Math[roundingType](Math.random() * (max - min) + min)
+}
+
+/**
+ * Generate random string
+ * @param length - The length of the string to be returned
+ */
+export function randomString(length = 10) {
+  // https://github.com/ai/nanoid/blob/main/url-alphabet/index.js
+  const dict =
+    'useandom-26T198340PX75pxJACKVERYMINDBUSHWOLF_GQZbfghjklqvwyzrict'
+
+  let str = ''
+  let i = length
+  const len = dict.length
+  while (i--) str += dict[(Math.random() * len) | 0]
+  return str
+}
+
+/**
+ * Generate random boolean
+ */
+export function randomBoolean() {
+  const index = randomNumber(0, 1)
+  return [true, false][index]
+}
+
+/**
+ * Shuffle the array and sort it randomly
+ */
+export function shuffle(arr: any[]): any[] {
+  if (!Array.isArray(arr)) return arr
+
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j: number = Math.floor(Math.random() * (i + 1))
+    const item: any = arr[i]
+    arr[i] = arr[j]
+    arr[j] = item
+  }
+
+  return arr
+}
