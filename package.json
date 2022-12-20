@@ -14,6 +14,7 @@
     "mirror:get": "npm config get registry",
     "mirror:set": "npm config set registry https://registry.npmmirror.com",
     "mirror:rm": "npm config rm registry",
+    "up": "npx npm-check-updates -u",
     "backup": "git add . && git commit -m \"chore: backup\" && git push",
     "prepare": "simple-git-hooks"
   },
@@ -27,7 +28,7 @@
     "tsx": "^3.12.1",
     "vite": "^4.0.2",
     "vite-plugin-banner": "^0.7.0",
-    "vitest": "^0.25.8"
+    "vitest": "^0.26.1"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged --concurrent false",
