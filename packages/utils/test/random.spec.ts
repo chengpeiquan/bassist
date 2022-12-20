@@ -10,10 +10,4 @@ describe('randomNumber', () => {
     expect(inRange(randomNumber(), 0, 100)).toBeTruthy()
     expect(inRange(randomNumber(-100, -50), -100, -50)).toBeTruthy()
   })
-  // it('Invalid data', () => {
-  //   expect(randomNumber('13800138000 ')).toBeFalsy()
-  //   expect(randomNumber('1380013800')).toBeFalsy()
-  //   expect(randomNumber(123456)).toBeFalsy()
-  //   expect(randomNumber('hello')).toBeFalsy()
-  // })
 })

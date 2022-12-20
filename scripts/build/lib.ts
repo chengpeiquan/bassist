@@ -54,6 +54,7 @@ function viteConfig({ name, rootPath }: BuildOptions): UserConfig {
           ` * description: ${pkg.description}`,
           ` * author: ${pkg.author}`,
           ` * homepage: ${pkg.homepage}`,
+          ` * license: ${pkg.license}`,
           ` */`,
         ].join('\n'),
         outDir,
