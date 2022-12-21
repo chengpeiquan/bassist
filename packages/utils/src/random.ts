@@ -4,7 +4,7 @@
  * @param max - The maximum value in the range
  * @param roundingType - Round the result
  *
- * @category Random
+ * @category random
  */
 export function randomNumber(
   min = 0,
@@ -18,7 +18,7 @@ export function randomNumber(
  * Generate random string
  * @param length - The length of the string to be returned
  *
- * @category Random
+ * @category random
  */
 export function randomString(length = 10) {
   // https://github.com/ai/nanoid/blob/main/url-alphabet/index.js
@@ -35,7 +35,7 @@ export function randomString(length = 10) {
 /**
  * Generate random boolean
  *
- * @category Random
+ * @category random
  */
 export function randomBoolean() {
   const index = randomNumber(0, 1)
@@ -45,7 +45,7 @@ export function randomBoolean() {
 /**
  * Shuffle the array and sort it randomly
  *
- * @category Random
+ * @category random
  */
 export function shuffle(arr: any[]): any[] {
   if (!Array.isArray(arr)) return arr

@@ -1,5 +1,7 @@
 /**
  * The actual type of the data
+ *
+ * @category data
  */
 export type DataType =
   | 'boolean'
@@ -26,7 +28,7 @@ export type DataType =
 /**
  * Get the real data type
  *
- * @category Data
+ * @category data
  */
 export function getDataType(target: any) {
   return Object.prototype.toString
@@ -38,7 +40,7 @@ export function getDataType(target: any) {
 /**
  * Determine whether the data is an object
  *
- * @category Data
+ * @category data
  */
 export function isObject(target: any) {
   return getDataType(target) === 'object'
@@ -47,7 +49,7 @@ export function isObject(target: any) {
 /**
  * Determine whether the specified key exists on the object
  *
- * @category Data
+ * @category data
  */
 export function hasKey(obj: Record<string, any>, key: string) {
   if (!isObject(obj)) return false
