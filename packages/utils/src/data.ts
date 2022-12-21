@@ -25,6 +25,8 @@ export type DataType =
 
 /**
  * Get the real data type
+ *
+ * @category Data
  */
 export function getDataType(target: any) {
   return Object.prototype.toString
@@ -35,6 +37,8 @@ export function getDataType(target: any) {
 
 /**
  * Determine whether the data is an object
+ *
+ * @category Data
  */
 export function isObject(target: any) {
   return getDataType(target) === 'object'
@@ -42,6 +46,8 @@ export function isObject(target: any) {
 
 /**
  * Determine whether the specified key exists on the object
+ *
+ * @category Data
  */
 export function hasKey(obj: Record<string, any>, key: string) {
   if (!isObject(obj)) return false

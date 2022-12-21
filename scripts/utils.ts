@@ -16,7 +16,7 @@ export function getArgv() {
   const argv = process.argv
   if (argv.length < 3) {
     throw new Error(
-      `Missing package name to generate declaration files.\ne.g. pnpm build:types md5\n\n`
+      `Missing package name to generate declaration files.\ne.g. pnpm build utils\n\n`
     )
   }
   const [, , name, code] = argv

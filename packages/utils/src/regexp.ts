@@ -1,5 +1,7 @@
 /**
  * Verify the mobile phone number format in mainland China
+ *
+ * @category Regexp
  */
 export function isMob(phoneNumber: number | string) {
   return /^1[3456789]\d{9}$/.test(String(phoneNumber))
@@ -7,6 +9,8 @@ export function isMob(phoneNumber: number | string) {
 
 /**
  * Verify email format
+ *
+ * @category Regexp
  */
 export function isEmail(email: string) {
   return /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/.test(
@@ -16,6 +20,8 @@ export function isEmail(email: string) {
 
 /**
  * Verify url format
+ *
+ * @category Regexp
  */
 export function isUrl(url: string) {
   return /https?:\/\/[\w-]+(\.[\w-]+){1,2}(\/[\w-]{3,6}){0,2}(\?[\w_]{4,6}=[\w_]{4,6}(&[\w_]{4,6}=[\w_]{4,6}){0,2})?/.test(
@@ -25,6 +31,8 @@ export function isUrl(url: string) {
 
 /**
  * Verify the ID card number format in mainland China
+ *
+ * @category Regexp
  */
 export function isIdCard(idCardNumber: string) {
   // 18-digit ID number
@@ -40,6 +48,8 @@ export function isIdCard(idCardNumber: string) {
 
 /**
  * Verify the bank card number format in mainland China
+ *
+ * @category Regexp
  */
 export function isBankCard(bankCard: string) {
   return /^([1-9]{1})(\d{15}|\d{16}|\d{18})$/.test(bankCard)
