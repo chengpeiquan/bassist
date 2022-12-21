@@ -2,38 +2,41 @@
  * The actual type of the data
  */
 export type DataType =
-  | 'Boolean'
-  | 'String'
-  | 'Number'
-  | 'BigInt'
-  | 'Symbol'
-  | 'Null'
-  | 'Undefined'
-  | 'Function'
-  | 'Object'
-  | 'Array'
-  | 'Date'
-  | 'Error'
-  | 'Set'
-  | 'Map'
-  | 'WeakSet'
-  | 'WeakMap'
-  | 'File'
-  | 'Blob'
-  | 'ArrayBuffer'
+  | 'boolean'
+  | 'string'
+  | 'number'
+  | 'bigint'
+  | 'symbol'
+  | 'null'
+  | 'undefined'
+  | 'function'
+  | 'object'
+  | 'array'
+  | 'date'
+  | 'error'
+  | 'set'
+  | 'map'
+  | 'weakSet'
+  | 'weakMap'
+  | 'file'
+  | 'blob'
+  | 'arraybuffer'
 
 /**
  * Get the real data type
  */
 export function getDataType(target: any) {
-  return Object.prototype.toString.call(target).slice(8, -1) as DataType
+  return Object.prototype.toString
+    .call(target)
+    .slice(8, -1)
+    .toLowerCase() as DataType
 }
 
 /**
  * Determine whether the data is an object
  */
 export function isObject(target: any) {
-  return getDataType(target) === 'Object'
+  return getDataType(target) === 'object'
 }
 
 /**
