@@ -21,6 +21,7 @@ export type DataType =
   | 'file'
   | 'blob'
   | 'arraybuffer'
+  | 'regexp'
 
 /**
  * Get the real data type

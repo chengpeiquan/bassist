@@ -3,12 +3,13 @@ import { getDataType, isObject } from '..'
 
 describe('getDataType', () => {
   it('Valid data', () => {
-    expect(getDataType('')).toBe('String')
-    expect(getDataType(String(1))).toBe('String')
-    expect(getDataType(new String(1))).toBe('String')
-    expect(getDataType(null)).toBe('Null')
-    expect(getDataType(undefined)).toBe('Undefined')
-    expect(getDataType(new Date())).toBe('Date')
+    expect(getDataType('')).toBe('string')
+    expect(getDataType(String(1))).toBe('string')
+    expect(getDataType(new String(1))).toBe('string')
+    expect(getDataType(null)).toBe('null')
+    expect(getDataType(undefined)).toBe('undefined')
+    expect(getDataType(new Date())).toBe('date')
+    expect(getDataType(/foo/)).toBe('regexp')
   })
 })
 
