@@ -9,20 +9,10 @@ export const clipboard: ClipboardInstance = {
   isSupported:
     typeof navigator === 'undefined' ? false : Boolean(navigator.clipboard),
 
-  text: '',
-
-  async copy(target) {
+  async copy(el) {
     try {
-      if (typeof target === 'string') {
-        await navigator!.clipboard.writeText(target)
-        this.text = target
-        return true
-      }
-
-      const clipText = target.innerText || (target as WritableElement).value
-      await navigator!.clipboard.writeText(clipText)
-      this.text = clipText
-      return true
+      const clipText = el.innerText || (el as WritableElement).value
+      return await this.write(clipText)
     } catch (e) {
       console.log(e)
       return false
@@ -55,7 +45,6 @@ export const clipboard: ClipboardInstance = {
   async write(text: string) {
     try {
       await navigator!.clipboard.writeText(text)
-      this.text = text
       return true
     } catch (e) {
       return false

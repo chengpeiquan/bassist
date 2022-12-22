@@ -18,22 +18,16 @@ export interface ClipboardInstance {
   isSupported: boolean
 
   /**
-   * Copied text
-   */
-  text: string
-
-  /**
    * Copy the text passed in or the text of the specified DOM element
    *
    * @example
    *
    * ```
-   * clipboard.copy('Hello World')
    * clipboard.copy(document.querySelector('.foo'))
    * ```
    */
   // eslint-disable-next-line no-unused-vars
-  copy: (target: CopyableElement | string) => Promise<boolean>
+  copy: (el: CopyableElement) => Promise<boolean>
 
   /**
    * Cut the text passed in or the text of the specified DOM element
