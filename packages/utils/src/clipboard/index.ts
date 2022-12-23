@@ -10,44 +10,27 @@ export const clipboard: ClipboardInstance = {
     typeof navigator === 'undefined' ? false : Boolean(navigator.clipboard),
 
   async copy(el) {
-    try {
-      const clipText = el.innerText || (el as WritableElement).value
-      return await this.write(clipText)
-    } catch (e) {
-      console.log(e)
-      return false
-    }
+    if (!this.isSupported) return false
+    const clipText = el.innerText || (el as WritableElement).value
+    return await this.write(clipText)
   },
 
-  async cut(el): Promise<boolean> {
-    try {
-      // Copy first
-      const isOk = await this.copy(el)
-      if (!isOk) return false
-
-      // Then clear existing content
-      el.value = ''
-      return true
-    } catch (e) {
-      console.log(e)
-      return false
-    }
+  async cut(el) {
+    if (!this.isSupported) return false
+    const isOk = await this.copy(el)
+    if (!isOk) return false
+    el.value = ''
+    return true
   },
 
   async read() {
-    try {
-      return await navigator!.clipboard.readText()
-    } catch (e) {
-      return ''
-    }
+    if (!this.isSupported) return ''
+    return await navigator!.clipboard.readText()
   },
 
   async write(text: string) {
-    try {
-      await navigator!.clipboard.writeText(text)
-      return true
-    } catch (e) {
-      return false
-    }
+    if (!this.isSupported) return false
+    await navigator!.clipboard.writeText(text)
+    return true
   },
 }
