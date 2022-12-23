@@ -10,7 +10,7 @@ export class BaseStorage {
 
   constructor(prefix: string, storageType: StorageType) {
     this.prefix = prefix
-    this.storage = isBrowser ? window[storageType] : new FallbackStorage()
+    this.storage = isBrowser ? window[storageType] : new FallbackStorage(prefix)
   }
 
   /**
@@ -19,8 +19,6 @@ export class BaseStorage {
    * @returns The data in the format before storage
    */
   get(key: string) {
-    if (!isBrowser) return
-
     const localData = this.storage.getItem(`${this.prefix}-${key}`)
     if (!localData) return localData
 
@@ -39,7 +37,6 @@ export class BaseStorage {
    * Set storage data
    */
   set(key: string, value: any) {
-    if (!isBrowser) return
     try {
       const isString = getDataType(value) === 'string'
       const data = isString ? value : JSON.stringify(value)
@@ -53,7 +50,6 @@ export class BaseStorage {
    * Remove the specified storage data under the current prefix
    */
   remove(key: string) {
-    if (!isBrowser) return
     this.storage.removeItem(`${this.prefix}-${key}`)
   }
 
@@ -61,10 +57,9 @@ export class BaseStorage {
    * Clear all stored data under the current prefix
    */
   clear() {
-    if (!isBrowser) return
     const keys = this.list()
     keys.forEach((key) => {
-      this.storage.removeItem(key)
+      this.remove(key)
     })
   }
 
@@ -76,17 +71,17 @@ export class BaseStorage {
   }
 
   /**
-   * List storage keys associated with the current prefix
+   * List storage keys associated under the current prefix
+   * @tips All keys without prefix
    */
   list() {
-    if (!isBrowser || !this.prefix) return []
-
+    if (!this.prefix) return []
     const result: string[] = []
     const count = this.storage.length
     for (let i = 0; i < count; i++) {
       const key = this.storage.key(i)
       if (key?.startsWith(this.prefix)) {
-        result.push(key)
+        result.push(key.replace(`${this.prefix}-`, ''))
       }
     }
     return result

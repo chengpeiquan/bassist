@@ -1,10 +1,19 @@
 import { hasKey } from '../data'
 
+const fallbackStorageRecord: Record<string, FallbackStorage> = {}
+
 export class FallbackStorage {
   private data: Record<string, string>
 
-  constructor() {
+  constructor(prefix: string) {
     this.data = {}
+
+    const hasRecord = hasKey(fallbackStorageRecord, prefix)
+    this.data = hasRecord ? fallbackStorageRecord[prefix].data : {}
+
+    if (!hasRecord) {
+      fallbackStorageRecord[prefix] = this
+    }
   }
 
   get length() {
