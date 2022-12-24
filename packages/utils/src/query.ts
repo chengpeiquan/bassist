@@ -14,7 +14,7 @@ type QueryInfoObject = Record<
  * @returns Query parameter object,
  * will convert `key1=value1&key2=value2` into an object
  *
- * @category network
+ * @category query
  */
 export function parseQuery(url?: string): QueryInfo {
   let queryStringify = ''
@@ -52,6 +52,8 @@ export function parseQuery(url?: string): QueryInfo {
  * @returns An object containing the request path and parameters object
  *  `path`: Jump path, the same as the routing name in the Web App
  *  `params`: Parameters other than path
+ *
+ * @category query
  */
 export function extractQueryInfo(url?: string): {
   path: string
@@ -73,6 +75,8 @@ export function extractQueryInfo(url?: string): {
  * @param key - The parameter key name to get
  * @param url - By default, it is extracted from the browser URL,
  * and this parameter can be parsed from the specified URL
+ *
+ * @category query
  */
 export function getQuery(key: string, url?: string) {
   const query = parseQuery(url)
@@ -82,6 +86,8 @@ export function getQuery(key: string, url?: string) {
 /**
  * Serialize Query parameters information
  * @param queryInfoObject - The object of the Query parameter to use for serialization
+ *
+ * @category query
  */
 export function stringifyQuery(queryInfoObject: QueryInfoObject) {
   if (!isObject(queryInfoObject)) return ''
