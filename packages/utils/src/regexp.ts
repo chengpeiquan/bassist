@@ -51,6 +51,6 @@ export function isIdCard(idCardNumber: string) {
  *
  * @category regexp
  */
-export function isBankCard(bankCard: string) {
-  return /^([1-9]{1})(\d{15}|\d{16}|\d{18})$/.test(bankCard)
+export function isBankCard(bankCardNumber: string) {
+  return /^([1-9]{1})(\d{15}|\d{16}|\d{18})$/.test(bankCardNumber)
 }
