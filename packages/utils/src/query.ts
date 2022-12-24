@@ -29,6 +29,11 @@ export function parseQuery(url?: string): QueryInfo {
     queryStringify = index === -1 ? '' : url.slice(index)
   }
 
+  if (queryStringify.includes('#')) {
+    const index = queryStringify.indexOf('#')
+    queryStringify = queryStringify.slice(0, index)
+  }
+
   if (!queryStringify.length) return {}
 
   const temp = {}
@@ -48,11 +53,11 @@ export function parseQuery(url?: string): QueryInfo {
  *  `path`: Jump path, the same as the routing name in the Web App
  *  `params`: Parameters other than path
  */
-export function extractQueryInfo(): {
+export function extractQueryInfo(url?: string): {
   path: string
   params: QueryInfo
 } {
-  const query = parseQuery()
+  const query = parseQuery(url)
   const params: QueryInfo = {}
   Object.keys(query).forEach((k) => {
     if (k === 'path') return
@@ -79,8 +84,8 @@ export function getQuery(key: string, url?: string) {
  * @param queryInfoObject - The object of the Query parameter to use for serialization
  */
 export function stringifyQuery(queryInfoObject: QueryInfoObject) {
-  if (isObject(queryInfoObject)) return ''
+  if (!isObject(queryInfoObject)) return ''
   return Object.keys(queryInfoObject)
-    .map((key) => `${key}=${queryInfoObject[key]}`)
+    .map((key) => `${key}=${encodeURIComponent(String(queryInfoObject[key]))}`)
     .join('&')
 }
