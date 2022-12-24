@@ -1,6 +1,7 @@
 export * from './clipboard'
 export * from './data'
 export * from './env'
+export * from './load'
 export * from './random'
 export * from './regexp'
 export * from './runtime'
