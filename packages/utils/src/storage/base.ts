@@ -2,6 +2,9 @@ import { isBrowser } from '../env'
 import { getDataType } from '../data'
 import { FallbackStorage } from './fallback'
 
+/**
+ * @category storage
+ */
 export type StorageType = 'localStorage' | 'sessionStorage'
 
 export class BaseStorage {
