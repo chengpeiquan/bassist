@@ -1,6 +1,7 @@
 export * from './clipboard'
 export * from './data'
 export * from './env'
+export * from './format'
 export * from './load'
 export * from './query'
 export * from './random'
