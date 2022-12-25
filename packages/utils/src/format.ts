@@ -64,5 +64,6 @@ export function ellipsis(word: string, limit: number): string {
  * @category format
  */
 export function capitalize([first, ...rest]: string) {
+  if (!first) return ''
   return first?.toUpperCase() + rest.join('').toLowerCase()
 }

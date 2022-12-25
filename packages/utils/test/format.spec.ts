@@ -17,5 +17,8 @@ describe('query', () => {
     expect(capitalize('4')).toBe('4')
     expect(capitalize('a')).toBe('A')
     expect(capitalize('abc')).toBe('Abc')
+    expect(capitalize('abc')).toBe('Abc')
+    expect(capitalize('!abc')).toBe('!abc')
+    expect(capitalize('')).toBe('')
   })
 })
