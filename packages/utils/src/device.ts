@@ -80,9 +80,22 @@ export const isBaidu = /(baiduboxapp)\/([\d.]+)/i.test(ua)
 /**
  * @category device
  */
-export function watchResize(callback: () => void) {
+interface DeviceResizeWatcherOptions {
+  // Executed when the page load done
+  immediate: boolean
+}
+
+/**
+ * @category device
+ */
+export function watchResize(
+  callback: () => void,
+  { immediate }: DeviceResizeWatcherOptions = { immediate: true }
+) {
   if (!isBrowser) return
-  window.addEventListener('load', callback, false)
+  if (immediate) {
+    window.addEventListener('load', callback, false)
+  }
   window.addEventListener(
     'orientationchange' in window ? 'orientationchange' : 'resize',
     callback,
