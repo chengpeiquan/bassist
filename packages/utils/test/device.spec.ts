@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import { isBrowser, isServer } from '..'
 
-describe('env', () => {
+describe('device', () => {
   it('Valid data', () => {
     expect(isServer).toBeTruthy()
   })

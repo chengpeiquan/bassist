@@ -1,4 +1,4 @@
-import { isBrowser } from '../env'
+import { isBrowser } from '../device'
 import { getDataType } from '../data'
 import { FallbackStorage } from './fallback'
 
