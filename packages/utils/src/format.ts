@@ -43,3 +43,26 @@ export function formatAmount(amount: string | number) {
   // Uniform returns two decimal places
   return Number(amount).toFixed(2)
 }
+
+/**
+ * Add ellipses to words that are out of length
+ * @param word - The sentence to be processed
+ * @param limit - The upper limit
+ * @returns The processed word
+ *
+ * @category format
+ */
+export function ellipsis(word: string, limit: number): string {
+  return String(word).length > limit
+    ? String(word).slice(0, limit) + '…'
+    : String(word)
+}
+
+/**
+ * Capitalize the first letter
+ *
+ * @category format
+ */
+export function capitalize([first, ...rest]: string) {
+  return first?.toUpperCase() + rest.join('').toLowerCase()
+}
