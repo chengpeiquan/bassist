@@ -1,5 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { randomNumber } from '..'
+import { randomNumber, randomUA } from '..'
+
+console.log(randomUA())
+console.log(randomUA())
+console.log(randomUA())
 
 describe('randomNumber', () => {
   function inRange(value: number, min: number, max: number) {

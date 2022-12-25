@@ -1,3 +1,5 @@
+import { ua } from './ua'
+
 /**
  * @category env
  */
@@ -7,13 +9,6 @@ export const isBrowser = typeof window !== 'undefined'
  * @category env
  */
 export const isServer = !isBrowser
-
-/**
- * Current user agent
- *
- * @category env
- */
-export const ua = isBrowser ? navigator.userAgent.toLowerCase() : ''
 
 /**
  * @category env

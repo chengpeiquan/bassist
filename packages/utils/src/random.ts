@@ -1,3 +1,5 @@
+import { uas } from './ua'
+
 /**
  * Generate random number
  * @param min - The minimum value in the range
@@ -58,4 +60,14 @@ export function shuffle(arr: any[]): any[] {
   }
 
   return arr
+}
+
+/**
+ * Randomly returns a mocked UA
+ *
+ * @category random
+ */
+export function randomUA() {
+  const index = randomNumber(0, uas.length - 1)
+  return uas[index]
 }
