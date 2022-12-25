@@ -30,7 +30,7 @@ export const isMobile = checkIsMobile()
 /**
  * @category device
  */
-export const isDesktop = !mobileDevicesRegExp.test(getUserAgent())
+export const isDesktop = !checkIsMobile()
 
 /**
  * @category device
