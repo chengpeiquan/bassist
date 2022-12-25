@@ -1,4 +1,4 @@
-import { uas } from './ua'
+import { userAgents } from './ua'
 
 /**
  * Generate random number
@@ -67,7 +67,7 @@ export function shuffle(arr: any[]): any[] {
  *
  * @category random
  */
-export function randomUA() {
-  const index = randomNumber(0, uas.length - 1)
-  return uas[index]
+export function randomUserAgent() {
+  const index = randomNumber(0, userAgents.length - 1)
+  return userAgents[index]
 }

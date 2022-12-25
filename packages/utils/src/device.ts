@@ -1,4 +1,4 @@
-import { ua } from './ua'
+import { getUserAgent } from './ua'
 
 /**
  * @category device
@@ -19,7 +19,7 @@ export const mobileDevicesRegExp = /iPhone|phone|android|iPod|pad|iPad/i
  * @category device
  */
 export function checkIsMobile() {
-  return mobileDevicesRegExp.test(ua)
+  return mobileDevicesRegExp.test(getUserAgent())
 }
 
 /**
@@ -30,52 +30,52 @@ export const isMobile = checkIsMobile()
 /**
  * @category device
  */
-export const isDesktop = !mobileDevicesRegExp.test(ua)
+export const isDesktop = !mobileDevicesRegExp.test(getUserAgent())
 
 /**
  * @category device
  */
-export const isAndroid = /Android/i.test(ua)
+export const isAndroid = /Android/i.test(getUserAgent())
 
 /**
  * @category device
  */
-export const isIOS = /iPhone|iPod|iPad|iOS/i.test(ua)
+export const isIOS = /iPhone|iPod|iPad|iOS/i.test(getUserAgent())
 
 /**
  * @category device
  */
-export const isUniApp = /uni-app|html5plus/.test(ua)
+export const isUniApp = /uni-app|html5plus/.test(getUserAgent())
 
 /**
  * @category device
  */
-export const isWeixin = /MicroMessenger/i.test(ua)
+export const isWeixin = /MicroMessenger/i.test(getUserAgent())
 
 /**
  * @category device
  */
-export const isQQ = /\sQQ|mqqbrowser|qzone|qqbrowser/i.test(ua)
+export const isQQ = /\sQQ|mqqbrowser|qzone|qqbrowser/i.test(getUserAgent())
 
 /**
  * @category device
  */
-export const isQQBrowser = /mqqbrowser|qqbrowser/i.test(ua)
+export const isQQBrowser = /mqqbrowser|qqbrowser/i.test(getUserAgent())
 
 /**
  * @category device
  */
-export const isQzone = /qzone\/.*_qz_([\d.]+)/i.test(ua)
+export const isQzone = /qzone\/.*_qz_([\d.]+)/i.test(getUserAgent())
 
 /**
  * @category device
  */
-export const isWeibo = /(weibo).*weibo__([\d.]+)/i.test(ua)
+export const isWeibo = /(weibo).*weibo__([\d.]+)/i.test(getUserAgent())
 
 /**
  * @category device
  */
-export const isBaidu = /(baiduboxapp)\/([\d.]+)/i.test(ua)
+export const isBaidu = /(baiduboxapp)\/([\d.]+)/i.test(getUserAgent())
 
 /**
  * @category device

@@ -3,15 +3,16 @@
  *
  * @category network
  */
-export const ua =
-  typeof window !== 'undefined' ? navigator.userAgent.toLowerCase() : ''
+export function getUserAgent() {
+  return typeof window !== 'undefined' ? navigator.userAgent.toLowerCase() : ''
+}
 
 /**
  * User agents by mock
  *
  * @category network
  */
-export const uas = [
+export const userAgents = [
   'Mozilla/5.0 (Linux; Android 5.0; SM-G900P Build/LRX21T) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36',
   'Mozilla/5.0 (Linux; Android 8.0; Pixel 2 Build/OPD3.170816.012) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36',
   'Mozilla/5.0 (Linux; Android 8.0.0; Pixel 2 XL Build/OPD1.170816.004) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Mobile Safari/537.36',
