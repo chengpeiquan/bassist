@@ -1,7 +1,8 @@
 import { resolve } from 'path'
 import { build, UserConfig } from 'vite'
 import banner from 'vite-plugin-banner'
-import { capitalize, parsePackage } from '../utils'
+import { parsePackage } from '../utils'
+import { capitalize } from '../../packages/utils/src/format'
 import type { BuildOptions } from './types'
 
 /**

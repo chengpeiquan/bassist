@@ -24,13 +24,6 @@ export function getArgv() {
 }
 
 /**
- * Capitalize the first letter
- */
-export function capitalize([first, ...rest]: string) {
-  return first?.toUpperCase() + rest.join('')
-}
-
-/**
  * Parse package.json
  * @param path - The path where the `package.json` file is located
  */
