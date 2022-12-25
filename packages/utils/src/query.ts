@@ -1,7 +1,14 @@
 import { isBrowser } from './env'
 import { isObject } from './data'
 
+/**
+ * @category query
+ */
 type QueryInfo = Record<string, string>
+
+/**
+ * @category query
+ */
 type QueryInfoObject = Record<
   string,
   string | number | boolean | undefined | null
