@@ -12,6 +12,10 @@ function viteConfig({ name, rootPath }: BuildOptions): UserConfig {
   const basePath = resolve(rootPath, `./packages/${name}`)
   const outDir = resolve(basePath, `./lib`)
   const pkg = parsePackage(basePath)
+  const deps = [
+    ...Object.keys(pkg.dependencies || {}),
+    ...Object.keys(pkg.peerDependencies || {}),
+  ]
 
   return {
     build: {
@@ -36,14 +40,14 @@ function viteConfig({ name, rootPath }: BuildOptions): UserConfig {
       minify: true,
       sourcemap: false,
       rollupOptions: {
-        external: Object.keys(pkg.dependencies || {}),
+        external: deps,
         output: {
           globals: (name) => capitalize(name),
         },
       },
     },
     resolve: {
-      dedupe: Object.keys(pkg.dependencies || {}),
+      dedupe: deps,
     },
     plugins: [
       banner({

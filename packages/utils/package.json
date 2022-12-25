@@ -25,5 +25,8 @@
   },
   "keywords": [
     "utils"
-  ]
+  ],
+  "dependencies": {
+    "@withtypes/mime": "^0.1.2"
+  }
 }

@@ -9,6 +9,7 @@ importers:
       '@typescript-eslint/parser': ^5.47.0
       '@vitest/coverage-c8': ^0.26.0
       '@withtypes/fs-extra': ^0.1.1
+      '@withtypes/mime': ^0.1.2
       dts-bundle-generator: ^7.1.0
       eslint: ^8.30.0
       eslint-config-prettier: ^8.5.0
@@ -20,6 +21,8 @@ importers:
       vite: ^4.0.2
       vite-plugin-banner: ^0.7.0
       vitest: ^0.26.1
+    dependencies:
+      '@withtypes/mime': 0.1.2
     devDependencies:
       '@types/node': 18.11.17
       '@typescript-eslint/eslint-plugin': 5.47.0_ncmi6noazr3nzas7jxykisekym
@@ -42,7 +45,10 @@ importers:
     specifiers: {}
 
   packages/utils:
-    specifiers: {}
+    specifiers:
+      '@withtypes/mime': ^0.1.2
+    dependencies:
+      '@withtypes/mime': 0.1.2
 
 packages:
 
@@ -545,6 +551,12 @@ packages:
     dependencies:
       fs-extra: 10.1.0
     dev: true
+
+  /@withtypes/mime/0.1.2:
+    resolution: {integrity: sha512-PB9BfZGzwblUONJY0LiOwsHCA6uV3DIPj/w9ReekdHxPOl0VdUFgI5s4avKycuuq9Gf5Nz2ZPA2O36GAUzlMPA==}
+    dependencies:
+      mime: 3.0.0
+    dev: false
 
   /acorn-jsx/5.3.2_acorn@8.8.1:
     resolution: {integrity: sha512-rq9s+JNhf0IChjtDXxllJ7g41oZk5SlXtp0LHwyA5cejwn7vKmKp4pPri6YEePv2PU65sAsegbXtIinmDFDXgQ==}
@@ -1695,6 +1707,12 @@ packages:
       braces: 3.0.2
       picomatch: 2.3.1
     dev: true
+
+  /mime/3.0.0:
+    resolution: {integrity: sha512-jSCU7/VB1loIWBZe14aEYHU/+1UMEHoaO7qxCOVJOw9GgH72VAWppxNcjU+x9a2k3GSIBXNKxXQFqRvvZ7vr3A==}
+    engines: {node: '>=10.0.0'}
+    hasBin: true
+    dev: false
 
   /mimic-fn/2.1.0:
     resolution: {integrity: sha512-OqbOk5oEQeAZ8WXWydlu9HJjz9WVdEIvamMCcXmuqUYjTknH/sqsWvhQ3vgwKFRR1HpjvNBKQ37nbJgYzGqGcg==}
