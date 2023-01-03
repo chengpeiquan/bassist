@@ -1,5 +1,6 @@
 export * from './clipboard'
 export * from './storage'
+export * from './appearance'
 export * from './data'
 export * from './delay'
 export * from './device'
