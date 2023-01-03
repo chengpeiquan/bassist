@@ -3,7 +3,7 @@ import { isBrowser } from './device'
 /**
  * @category appearance
  */
-export type ColorScheme = 'light' | 'dark'
+export type PrefersColorScheme = 'light' | 'dark'
 
 /**
  * @category appearance
@@ -26,6 +26,6 @@ export const isLight = !checkIsDark()
 /**
  * @category appearance
  */
-export function getColorScheme() {
+export function getPrefersColorScheme(): PrefersColorScheme {
   return checkIsDark() ? 'dark' : 'light'
 }
