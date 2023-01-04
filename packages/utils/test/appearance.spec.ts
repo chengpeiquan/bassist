@@ -1,9 +1,9 @@
 import { describe, expect, it } from 'vitest'
-import { checkIsDark, isDark } from '..'
+import { isDark, isLight } from '..'
 
 describe('appearance', () => {
   it('Invalid data', () => {
-    expect(isDark).toBeFalsy()
-    expect(checkIsDark()).toBeFalsy()
+    expect(isDark()).toBeFalsy()
+    expect(isLight()).toBeFalsy()
   })
 })

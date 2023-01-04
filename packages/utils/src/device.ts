@@ -18,19 +18,18 @@ export const mobileDevicesRegExp = /iPhone|phone|android|iPod|pad|iPad/i
 /**
  * @category device
  */
-export function checkIsMobile() {
+export function isMobile() {
+  if (!isBrowser) return false
   return mobileDevicesRegExp.test(getUserAgent())
 }
 
 /**
  * @category device
  */
-export const isMobile = checkIsMobile()
-
-/**
- * @category device
- */
-export const isDesktop = !checkIsMobile()
+export function isDesktop() {
+  if (!isBrowser) return false
+  return !isMobile()
+}
 
 /**
  * @category device

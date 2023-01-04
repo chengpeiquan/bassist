@@ -8,7 +8,7 @@ export type PrefersColorScheme = 'light' | 'dark'
 /**
  * @category appearance
  */
-export function checkIsDark() {
+export function isDark() {
   if (!isBrowser) return false
   return window.matchMedia('(prefers-color-scheme: dark)').matches
 }
@@ -16,16 +16,16 @@ export function checkIsDark() {
 /**
  * @category appearance
  */
-export const isDark = checkIsDark()
+export function isLight() {
+  if (!isBrowser) return false
+  return window.matchMedia('(prefers-color-scheme: light)').matches
+}
 
 /**
  * @category appearance
  */
-export const isLight = !checkIsDark()
-
-/**
- * @category appearance
- */
-export function getPrefersColorScheme(): PrefersColorScheme {
-  return checkIsDark() ? 'dark' : 'light'
+export function getPrefersColorScheme(): PrefersColorScheme | undefined {
+  if (isDark()) return 'dark'
+  if (isLight()) return 'light'
+  return undefined
 }
