@@ -22,6 +22,38 @@ Opinionated collection of common JavaScript / TypeScript utils by [@chengpeiquan
 - 💡 No bundler required
 - 🦄 SSR Friendly
 
+## Usage
+
+With npm(or yarn, or pnpm):
+
+```bash
+npm install @bassist/utils
+```
+
+In `.js` / `.ts` or other files:
+
+```ts
+import { isMobile } from '@bassist/utils'
+
+if (isMobile()) {
+  // do something...
+}
+```
+
+With CDN:
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/@bassist/utils"></script>
+<script>
+  // All methods are on the `Utils` variable
+  console.log(Utils)
+
+  if (Utils.isMobile()) {
+    // do something...
+  }
+</script>
+```
+
 ## Documentation
 
 See: [Documentation of utils](https://paka.dev/npm/@bassist/utils)

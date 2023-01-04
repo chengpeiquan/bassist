@@ -12,7 +12,11 @@ export type RuntimeEnv = 'development' | 'test' | 'production' | undefined
  * @category runtime
  */
 export function getRuntimeEnv() {
-  return process.env.NODE_ENV as RuntimeEnv
+  try {
+    return process.env.NODE_ENV as RuntimeEnv
+  } catch (e) {
+    return undefined
+  }
 }
 
 /**
@@ -29,7 +33,11 @@ export const runtimeEnv = getRuntimeEnv()
  * @category runtime
  */
 export function checkRuntimeEnv(runtimeEnv: string) {
-  return process.env.NODE_ENV === runtimeEnv
+  try {
+    return process.env.NODE_ENV === runtimeEnv
+  } catch (e) {
+    return false
+  }
 }
 
 /**

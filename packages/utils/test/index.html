@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Browser Test</title>
+  </head>
+  <body>
+    <script src="../lib/index.min.js"></script>
+    <script>
+      console.log(Utils)
+      console.log('getRuntimeEnv', Utils.getRuntimeEnv())
+      console.log('isDark', Utils.isDark())
+      console.log('isDesktop', Utils.isDesktop())
+      console.log('isMob', Utils.isMob('13800138000'))
+      console.log('isEmail', Utils.isEmail('12345@qq.com'))
+      console.log('getMimeType', Utils.getMimeType('1.jpg'))
+      console.log('getPrefersColorScheme', Utils.getPrefersColorScheme())
+
+      Utils.loadRes({
+        type: 'style',
+        id: 'test-style',
+        resource: 'body { background-color: #222 };',
+      }).catch((e) => {
+        console.log(e)
+      })
+    </script>
+  </body>
+</html>
