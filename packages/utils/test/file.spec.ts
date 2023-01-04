@@ -1,28 +1,31 @@
+import mime from '@withtypes/mime'
 import { describe, expect, it } from 'vitest'
-import { getMimeType, getExtensionFromMimeType, getExtension } from '..'
+import { FileInfo } from '..'
 
-describe('query', () => {
+const file = new FileInfo(mime)
+
+describe('file', () => {
   it('getMimeType', () => {
-    expect(getMimeType('example.txt')).toBe('text/plain')
-    expect(getMimeType('example.png')).toBe('image/png')
-    expect(getMimeType('example')).toBe('')
+    expect(file.getMimeType('example.txt')).toBe('text/plain')
+    expect(file.getMimeType('example.png')).toBe('image/png')
+    expect(file.getMimeType('example')).toBe('')
     expect(
-      getMimeType(
+      file.getMimeType(
         'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR4'
       )
     ).toBe('image/png')
   })
 
   it('getExtensionFromMimeType', () => {
-    expect(getExtensionFromMimeType('text/plain')).toBe('txt')
+    expect(file.getExtensionFromMimeType('text/plain')).toBe('txt')
   })
 
   it('getExtension', () => {
-    expect(getExtension('example.txt')).toBe('txt')
-    expect(getExtension('example.png')).toBe('png')
-    expect(getExtension('example')).toBe('')
+    expect(file.getExtension('example.txt')).toBe('txt')
+    expect(file.getExtension('example.png')).toBe('png')
+    expect(file.getExtension('example')).toBe('')
     expect(
-      getExtension(
+      file.getExtension(
         'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR4'
       )
     ).toBe('png')
