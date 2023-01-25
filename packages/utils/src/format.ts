@@ -1,3 +1,5 @@
+import { isObject } from './data'
+
 /**
  * Extract numbers from text
  * @param text - Text to be processed
@@ -80,4 +82,26 @@ export function escapeRegExp(name: string) {
   return name && reHasRegExpChar.test(name)
     ? name.replace(reRegExpChar, '\\$&')
     : name
+}
+
+/**
+ * Sort the keys of an object
+ *
+ * @category format
+ */
+export function sortKeys(target: any): any {
+  if (!Array.isArray(target) && !isObject(target)) {
+    return target
+  }
+
+  if (Array.isArray(target)) {
+    return target.map((i) => sortKeys(i))
+  }
+
+  const keys = Object.keys(target).sort()
+  const newObj: Record<string, any> = {}
+  keys.forEach((k) => {
+    newObj[k] = sortKeys(target[k])
+  })
+  return newObj
 }

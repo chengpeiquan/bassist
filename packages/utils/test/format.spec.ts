@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest'
-import { extractNumber, formatAmount, capitalize, escapeRegExp } from '..'
+import {
+  extractNumber,
+  formatAmount,
+  capitalize,
+  escapeRegExp,
+  sortKeys,
+} from '..'
 
 describe('format', () => {
   it('extractNumber', () => {
@@ -27,5 +33,43 @@ describe('format', () => {
     expect(escapeRegExp('https://example.com/foo')).toBe(
       'https://example\\.com/foo'
     )
+  })
+
+  it('sortKeys', () => {
+    expect(
+      sortKeys({
+        c: 3,
+        d: { c: 3, a: 1, b: 2 },
+        a: 1,
+        e: [
+          { c: 3, a: 1, b: 2 },
+          { c: 3, a: 1, b: 2 },
+        ],
+        b: 2,
+      })
+    ).toEqual({
+      a: 1,
+      b: 2,
+      c: 3,
+      d: { a: 1, b: 2, c: 3 },
+      e: [
+        { a: 1, b: 2, c: 3 },
+        { a: 1, b: 2, c: 3 },
+      ],
+    })
+
+    expect(
+      sortKeys([
+        { c: 3, a: 1, b: 2 },
+        { c: 3, a: 1, b: 2 },
+      ])
+    ).toEqual([
+      { a: 1, b: 2, c: 3 },
+      { a: 1, b: 2, c: 3 },
+    ])
+
+    expect(null).toBeNull()
+    expect(undefined).toBeUndefined()
+    expect('foo').toBe('foo')
   })
 })
