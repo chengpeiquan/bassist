@@ -67,3 +67,17 @@ export function capitalize([first, ...rest]: string) {
   if (!first) return ''
   return first?.toUpperCase() + rest.join('').toLowerCase()
 }
+
+/**
+ * Escaping special characters for regular expressions
+ * @copyright lodash.escaperegexp
+ *
+ * @category format
+ */
+export function escapeRegExp(name: string) {
+  const reRegExpChar = /[\\^$.*+?()[\]{}|]/g
+  const reHasRegExpChar = RegExp(reRegExpChar.source)
+  return name && reHasRegExpChar.test(name)
+    ? name.replace(reRegExpChar, '\\$&')
+    : name
+}

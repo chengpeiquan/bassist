@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest'
-import { extractNumber, formatAmount, capitalize } from '..'
+import { extractNumber, formatAmount, capitalize, escapeRegExp } from '..'
 
-describe('query', () => {
+describe('format', () => {
   it('extractNumber', () => {
     expect(extractNumber('akdhaskd2')).toBe('2')
     expect(extractNumber('阿斯0达克哈1234克qqwer5')).toBe('12345')
@@ -20,5 +20,12 @@ describe('query', () => {
     expect(capitalize('abc')).toBe('Abc')
     expect(capitalize('!abc')).toBe('!abc')
     expect(capitalize('')).toBe('')
+  })
+
+  it('escapeRegExp', () => {
+    expect(escapeRegExp('@bassist/utils')).toBe('@bassist/utils')
+    expect(escapeRegExp('https://example.com/foo')).toBe(
+      'https://example\\.com/foo'
+    )
   })
 })
