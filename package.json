@@ -21,23 +21,23 @@
     "prepare": "simple-git-hooks"
   },
   "devDependencies": {
-    "@types/node": "^18.11.17",
-    "@typescript-eslint/eslint-plugin": "^5.47.0",
-    "@typescript-eslint/parser": "^5.47.0",
-    "@vitest/coverage-c8": "^0.26.0",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "@vitest/coverage-c8": "^0.28.2",
     "@withtypes/fs-extra": "^0.1.1",
     "@withtypes/mime": "^0.1.2",
     "dts-bundle-generator": "^7.1.0",
-    "eslint": "^8.30.0",
-    "eslint-config-prettier": "^8.5.0",
+    "eslint": "^8.32.0",
+    "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.8.1",
+    "prettier": "^2.8.3",
     "simple-git-hooks": "^2.8.1",
-    "tsx": "^3.12.1",
-    "vite": "^4.0.2",
+    "tsx": "^3.12.2",
+    "vite": "^4.0.4",
     "vite-plugin-banner": "^0.7.0",
-    "vitest": "^0.26.1"
+    "vitest": "^0.28.2"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm exec lint-staged --concurrent false",
