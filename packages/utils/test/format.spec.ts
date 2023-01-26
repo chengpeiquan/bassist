@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest'
 import {
   extractNumber,
   formatAmount,
+  ellipsis,
   capitalize,
   escapeRegExp,
   sortKeys,
@@ -17,6 +18,11 @@ describe('format', () => {
     expect(formatAmount('4')).toBe('4.00')
     expect(formatAmount('1.5')).toBe('1.50')
     expect(formatAmount('0.44565')).toBe('0.45')
+  })
+
+  it('ellipsis', () => {
+    expect(ellipsis('Hello World', 5)).toBe('Hello ...')
+    expect(ellipsis('Hello World', 8)).toBe('Hello Wo ...')
   })
 
   it('capitalize', () => {

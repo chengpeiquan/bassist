@@ -56,7 +56,7 @@ export function formatAmount(amount: string | number) {
  */
 export function ellipsis(word: string, limit: number): string {
   return String(word).length > limit
-    ? String(word).slice(0, limit) + '…'
+    ? String(word).slice(0, limit) + ' ...'
     : String(word)
 }
 
