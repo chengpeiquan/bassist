@@ -60,7 +60,7 @@ See: [Documentation of utils](https://paka.dev/npm/@bassist/utils)
 
 ## Release Notes
 
-Please refer to [CHANGELOG](./CHANGELOG.md) for details.
+Please refer to [CHANGELOG](https://github.com/chengpeiquan/bassist/blob/main/packages/utils/CHANGELOG.md) for details.
 
 ## License
 
