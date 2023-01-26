@@ -58,6 +58,10 @@ With CDN:
 
 See: [Documentation of utils](https://paka.dev/npm/@bassist/utils)
 
+## Release Notes
+
+Please refer to [CHANGELOG](./CHANGELOG.md) for details.
+
 ## License
 
 MIT License © 2022 [chengpeiquan](https://github.com/chengpeiquan)
