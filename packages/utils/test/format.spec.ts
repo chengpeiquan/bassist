@@ -6,6 +6,7 @@ import {
   capitalize,
   escapeRegExp,
   sortKeys,
+  unique,
 } from '..'
 
 describe('format', () => {
@@ -77,5 +78,51 @@ describe('format', () => {
     expect(null).toBeNull()
     expect(undefined).toBeUndefined()
     expect('foo').toBe('foo')
+  })
+
+  it('unique', () => {
+    expect(
+      unique({
+        target: 'foo',
+        list: [
+          { foo: 1, bar: 1 },
+          { foo: 1, bar: 2 },
+          { foo: 2, bar: 1 },
+        ],
+      })
+    ).toEqual([
+      { foo: 1, bar: 1 },
+      { foo: 2, bar: 1 },
+    ])
+
+    expect(
+      unique({
+        target: 'bar',
+        list: [
+          { foo: 1, bar: 1 },
+          { foo: 1, bar: 2 },
+          { foo: 2, bar: 1 },
+        ],
+      })
+    ).toEqual([
+      { foo: 1, bar: 1 },
+      { foo: 1, bar: 2 },
+    ])
+
+    expect(
+      unique({
+        target: 'foo',
+        list: [
+          { foo: 1, bar: 1 },
+          { foo: 2, bar: null },
+          { foo: 3, bar: [1, 2, 3] },
+          { foo: 3, bar: [] },
+        ],
+      })
+    ).toEqual([
+      { foo: 1, bar: 1 },
+      { foo: 2, bar: null },
+      { foo: 3, bar: [1, 2, 3] },
+    ])
   })
 })

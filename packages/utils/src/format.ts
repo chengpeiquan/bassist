@@ -105,3 +105,41 @@ export function sortKeys(target: any): any {
   })
   return newObj
 }
+
+/**
+ * @category format
+ */
+interface UniqueOptions<T> {
+  /**
+   * The key used to determine if there are duplicate values
+   */
+  primaryKey: string
+
+  /**
+   * he original data list
+   */
+  list: T[]
+}
+
+/**
+ * Deduplicate an array containing objects
+ *
+ * @category format
+ */
+export function unique<T>({ primaryKey, list }: UniqueOptions<T>): T[] {
+  // Use the value as the key and store it in the dictionary
+  const dict: Map<any, T> = new Map()
+  list.forEach((obj) => {
+    const value = String(obj[primaryKey])
+    if (dict.has(value)) return
+    dict.set(value, obj)
+  })
+
+  // Return from dictionary to array
+  const uniqueList: T[] = []
+  dict.forEach((value) => {
+    uniqueList.push(value)
+  })
+
+  return uniqueList
+}
