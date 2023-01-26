@@ -83,7 +83,7 @@ describe('format', () => {
   it('unique', () => {
     expect(
       unique({
-        target: 'foo',
+        primaryKey: 'foo',
         list: [
           { foo: 1, bar: 1 },
           { foo: 1, bar: 2 },
@@ -97,7 +97,7 @@ describe('format', () => {
 
     expect(
       unique({
-        target: 'bar',
+        primaryKey: 'bar',
         list: [
           { foo: 1, bar: 1 },
           { foo: 1, bar: 2 },
@@ -111,7 +111,7 @@ describe('format', () => {
 
     expect(
       unique({
-        target: 'foo',
+        primaryKey: 'foo',
         list: [
           { foo: 1, bar: 1 },
           { foo: 2, bar: null },
