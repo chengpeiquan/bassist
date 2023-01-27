@@ -1,0 +1,33 @@
+{
+  "name": "@bassist/node-utils",
+  "version": "0.1.0",
+  "description": "Opinionated collection of common Node.js utils by @chengpeiquan .",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "homepage": "https://paka.dev/npm/@bassist/node-utils",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "main": "./lib/index.min.js",
+  "module": "./lib/index.mjs",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.cjs",
+      "types": "./types/index.d.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengpeiquan/bassist.git"
+  },
+  "keywords": [
+    "utils",
+    "node utils"
+  ],
+  "dependencies": {
+    "@withtypes/fs-extra": "^0.1.1"
+  }
+}

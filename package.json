@@ -39,6 +39,7 @@
     "tsx": "^3.12.2",
     "vite": "^4.0.4",
     "vite-plugin-banner": "^0.7.0",
+    "vite-plugin-commonjs-externals": "^0.1.1",
     "vitest": "^0.28.2"
   },
   "simple-git-hooks": {

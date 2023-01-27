@@ -1,15 +1,17 @@
 import { resolve } from 'path'
-import { build, UserConfig } from 'vite'
+import { build } from 'vite'
 import banner from 'vite-plugin-banner'
+import commonjsExternals from 'vite-plugin-commonjs-externals'
 import { parsePackage } from '../utils'
-import { capitalize } from '../../packages/utils/src/format'
+import { capitalize } from '../../packages/utils'
+import type { UserConfig } from 'vite'
 import type { BuildOptions } from './types'
 
 /**
  * Build options provided to `vite.config.ts`
  * @see https://vitejs.dev/config/
  */
-function viteConfig({ name, rootPath }: BuildOptions): UserConfig {
+function viteConfig({ name, rootPath, externals }: BuildOptions): UserConfig {
   const basePath = resolve(rootPath, `./packages/${name}`)
   const outDir = resolve(basePath, `./lib`)
   const pkg = parsePackage(basePath)
@@ -18,7 +20,7 @@ function viteConfig({ name, rootPath }: BuildOptions): UserConfig {
     ...Object.keys(pkg.peerDependencies || {}),
   ]
 
-  return {
+  const config: UserConfig = {
     build: {
       outDir,
       lib: {
@@ -67,6 +69,16 @@ function viteConfig({ name, rootPath }: BuildOptions): UserConfig {
       }),
     ],
   }
+
+  if (Array.isArray(externals) && externals.length) {
+    config.plugins?.push(
+      commonjsExternals({
+        externals,
+      })
+    )
+  }
+
+  return config
 }
 
 /**
