@@ -19,8 +19,7 @@ Opinionated collection of common JavaScript / TypeScript utils by [@chengpeiquan
 
 - 🌳 Fully tree shakeable
 - 💪 Type Strong
-- 💡 No bundler required
-- 🦄 SSR Friendly
+- ⚡ Simplify complex operations
 
 > Note: This package is only for use in Node.js, don't use it in the browser.
 
@@ -35,11 +34,10 @@ npm install @bassist/node-utils
 In `.js` / `.ts` or other files:
 
 ```ts
-import { isMobile } from '@bassist/node-utils'
+import { getPackageManagerByUserAgent } from '@bassist/node-utils'
 
-if (isMobile()) {
-  // do something...
-}
+console.log(getPackageManagerByUserAgent())
+// { name: 'pnpm', version: '7.26.0' }
 ```
 
 ## Documentation

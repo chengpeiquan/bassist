@@ -7,7 +7,7 @@ async function run() {
   const pkgPath = resolve(__dirname, `../packages/${name}`)
   const cmds = [
     `cd ${pkgPath}`,
-    `conventional-changelog -p angular -i CHANGELOG.md -s`,
+    `conventional-changelog ${name} -p angular -i CHANGELOG.md -s --commit-path=.`,
   ]
   const cmd = cmds.join(' && ')
   execSync(cmd)
