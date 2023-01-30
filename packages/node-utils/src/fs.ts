@@ -33,12 +33,13 @@ export function remove(fullPath: string) {
   try {
     const stat = statSync(fullPath)
     if (stat.isDirectory()) {
+      emptyDir(fullPath)
       rmdirSync(fullPath)
     } else {
       unlinkSync(fullPath)
     }
   } catch (e) {
-    // console.log(e)
+    console.log(e)
   }
 }
 
