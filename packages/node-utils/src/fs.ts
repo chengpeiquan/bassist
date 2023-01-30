@@ -39,7 +39,7 @@ export function remove(fullPath: string) {
       unlinkSync(fullPath)
     }
   } catch (e) {
-    console.log(e)
+    // console.log(e)
   }
 }
 

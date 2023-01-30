@@ -1,6 +1,6 @@
 {
   "name": "@bassist/node-utils",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Opinionated collection of common Node.js utils by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
