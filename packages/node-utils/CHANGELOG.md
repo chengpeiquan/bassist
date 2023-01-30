@@ -1,3 +1,12 @@
+## [0.1.2](https://github.com/chengpeiquan/bassist/compare/node-utils@0.1.1...node-utils@0.1.2) (2023-01-30)
+
+
+### Bug Fixes
+
+* **node-utils:** hide catch log ([f3c52d2](https://github.com/chengpeiquan/bassist/commit/f3c52d2c8c762403254225856da6028dec126598))
+
+
+
 ## [0.1.1](https://github.com/chengpeiquan/bassist/compare/node-utils@0.1.0...node-utils@0.1.1) (2023-01-30)
 
 
