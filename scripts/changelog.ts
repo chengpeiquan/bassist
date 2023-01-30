@@ -13,7 +13,6 @@ async function run() {
     `-i CHANGELOG.md`,
     `-s`,
     `--commit-path=.`,
-    `-r 0`,
   ]
 
   const cmds = [`cd ${pkgPath}`, changelogArgs.join(' ')]
