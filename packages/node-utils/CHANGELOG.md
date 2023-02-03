@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/chengpeiquan/bassist/compare/node-utils@0.1.2...node-utils@0.2.0) (2023-02-03)
+
+
+### Features
+
+* **node-utils:** add a function to get __dirname in esm ([5abcf61](https://github.com/chengpeiquan/bassist/commit/5abcf611f4c73942b7a7b140d41dd0062b0ed848))
+
+
+
 ## [0.1.2](https://github.com/chengpeiquan/bassist/compare/node-utils@0.1.1...node-utils@0.1.2) (2023-01-30)
 
 
