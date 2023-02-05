@@ -71,6 +71,21 @@ export function capitalize([first, ...rest]: string) {
 }
 
 /**
+ * Formatted in `kebab-case` style
+ *
+ * @category format
+ */
+export function kebabCase(word: string) {
+  return word
+    .replace(/([A-Z])/g, ' $1')
+    .trim()
+    .split(' ')
+    .join('-')
+    .replace(/_/g, '-')
+    .toLowerCase()
+}
+
+/**
  * Escaping special characters for regular expressions
  * @copyright lodash.escaperegexp
  *
