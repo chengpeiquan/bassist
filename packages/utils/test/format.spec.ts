@@ -34,6 +34,7 @@ describe('format', () => {
     expect(capitalize('a')).toBe('A')
     expect(capitalize('abc')).toBe('Abc')
     expect(capitalize('abc')).toBe('Abc')
+    expect(capitalize('abcDef')).toBe('AbcDef')
     expect(capitalize('!abc')).toBe('!abc')
     expect(capitalize('')).toBe('')
   })

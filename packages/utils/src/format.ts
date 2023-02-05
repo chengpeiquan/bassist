@@ -67,7 +67,7 @@ export function ellipsis(word: string, limit: number): string {
  */
 export function capitalize([first, ...rest]: string) {
   if (!first) return ''
-  return first.toUpperCase() + rest.join('').toLowerCase()
+  return first.toUpperCase() + rest.join('')
 }
 
 /**
@@ -104,8 +104,7 @@ export function camelCase([first, ...rest]: string) {
  */
 export function pascalCase(word: string) {
   if (!word) return ''
-  word = camelCase(word)
-  return word.charAt(0).toUpperCase() + word.slice(1)
+  return capitalize(camelCase(word))
 }
 
 /**
