@@ -6,6 +6,7 @@ import {
   capitalize,
   kebabCase,
   camelCase,
+  pascalCase,
   escapeRegExp,
   sortKeys,
   unique,
@@ -55,6 +56,16 @@ describe('format', () => {
     expect(camelCase('abc_efg_hijklmn')).toBe('abcEfgHijklmn')
     expect(camelCase('!abc')).toBe('!abc')
     expect(camelCase('')).toBe('')
+  })
+
+  it('pascalCase', () => {
+    expect(pascalCase('4')).toBe('4')
+    expect(pascalCase('a')).toBe('A')
+    expect(pascalCase('AbcDef')).toBe('AbcDef')
+    expect(pascalCase('Abc-Def')).toBe('AbcDef')
+    expect(pascalCase('abc_efg_hijklmn')).toBe('AbcEfgHijklmn')
+    expect(pascalCase('!abc')).toBe('!abc')
+    expect(pascalCase('')).toBe('')
   })
 
   it('escapeRegExp', () => {

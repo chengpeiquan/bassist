@@ -98,6 +98,17 @@ export function camelCase([first, ...rest]: string) {
 }
 
 /**
+ * Formatted in `PascalCase` style
+ *
+ * @category format
+ */
+export function pascalCase(word: string) {
+  if (!word) return ''
+  word = camelCase(word)
+  return word.charAt(0).toUpperCase() + word.slice(1)
+}
+
+/**
  * Escaping special characters for regular expressions
  * @copyright lodash.escaperegexp
  *
