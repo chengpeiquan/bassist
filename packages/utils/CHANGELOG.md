@@ -1,3 +1,19 @@
+# [0.10.0](https://github.com/chengpeiquan/bassist/compare/utils@0.9.0...utils@0.10.0) (2023-02-05)
+
+
+### Bug Fixes
+
+* **utils:** cancel  the capitalize method to convert letters to lowercase ([de2ae4d](https://github.com/chengpeiquan/bassist/commit/de2ae4d7c50877604933ee1123b8962801718679))
+
+
+### Features
+
+* **utils:** add camelCase format ([8c49b61](https://github.com/chengpeiquan/bassist/commit/8c49b61e36d207687977f295fa241b0508ea4d51))
+* **utils:** add kebabCase format ([54a1da5](https://github.com/chengpeiquan/bassist/commit/54a1da57b84e1195e3b44e9cb0e0218dc064adfd))
+* **utils:** add pascalCase format ([51d2b30](https://github.com/chengpeiquan/bassist/commit/51d2b300ea913003f4e9fc9f318ec281db75d779))
+
+
+
 ## 0.9.0 (2023-01-26)
 
 
