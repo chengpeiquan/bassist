@@ -5,6 +5,7 @@ import {
   ellipsis,
   capitalize,
   kebabCase,
+  camelCase,
   escapeRegExp,
   sortKeys,
   unique,
@@ -44,6 +45,16 @@ describe('format', () => {
     expect(kebabCase('abc_efg_hijklmn')).toBe('abc-efg-hijklmn')
     expect(kebabCase('!abc')).toBe('!abc')
     expect(kebabCase('')).toBe('')
+  })
+
+  it('camelCase', () => {
+    expect(camelCase('4')).toBe('4')
+    expect(camelCase('a')).toBe('a')
+    expect(camelCase('AbcDef')).toBe('abcDef')
+    expect(camelCase('Abc-Def')).toBe('abcDef')
+    expect(camelCase('abc_efg_hijklmn')).toBe('abcEfgHijklmn')
+    expect(camelCase('!abc')).toBe('!abc')
+    expect(camelCase('')).toBe('')
   })
 
   it('escapeRegExp', () => {
