@@ -1,3 +1,12 @@
+# 0.2.0 (2023-02-08)
+
+
+### Features
+
+* **progress:** optimize the type of package ([6b59427](https://github.com/chengpeiquan/bassist/commit/6b594271a69403292d91f04bfeff01d145935582))
+
+
+
 # 0.1.0 (2023-02-08)
 
 
