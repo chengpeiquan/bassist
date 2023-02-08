@@ -68,7 +68,6 @@ export interface Progress extends NProgress {
    * @example use CSS Variable
    *  progress.setColor('var(--color-primary)')
    */
-  // eslint-disable-next-line no-unused-vars
   setColor: (color: string) => void
 }
 ```

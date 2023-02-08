@@ -1,6 +1,6 @@
 {
   "name": "@bassist/progress",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple slim progress bars base on NProgress.",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
@@ -30,6 +30,6 @@
   ],
   "dependencies": {
     "@bassist/utils": "workspace:^",
-    "nprogress": "^0.2.0"
+    "nprogress": "0.2.0"
   }
 }

@@ -14,8 +14,8 @@ async function run() {
   ]
 
   const cmds = [
-    `pnpm build ${name}`,
     `pnpm mirror:rm`,
+    `pnpm build ${name}`,
     publishArgs.join(' '),
     `pnpm mirror:set`,
   ]
