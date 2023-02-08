@@ -22,8 +22,12 @@
     "backup": "git add . && git commit -m \"chore: backup\" && git push",
     "prepare": "simple-git-hooks"
   },
+  "dependencies": {
+    "nprogress": "^0.2.0"
+  },
   "devDependencies": {
     "@types/node": "^18.11.18",
+    "@types/nprogress": "^0.2.0",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "@vitest/coverage-c8": "^0.28.2",

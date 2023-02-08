@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       '@types/node': ^18.11.18
+      '@types/nprogress': ^0.2.0
       '@typescript-eslint/eslint-plugin': ^5.49.0
       '@typescript-eslint/parser': ^5.49.0
       '@vitest/coverage-c8': ^0.28.2
@@ -16,6 +17,7 @@ importers:
       eslint-config-prettier: ^8.6.0
       eslint-plugin-prettier: ^4.2.1
       lint-staged: ^13.1.0
+      nprogress: ^0.2.0
       prettier: ^2.8.3
       simple-git-hooks: ^2.8.1
       tsx: ^3.12.2
@@ -23,8 +25,11 @@ importers:
       vite-plugin-banner: ^0.7.0
       vite-plugin-commonjs-externals: ^0.1.1
       vitest: ^0.28.2
+    dependencies:
+      nprogress: 0.2.0
     devDependencies:
       '@types/node': 18.11.18
+      '@types/nprogress': 0.2.0
       '@typescript-eslint/eslint-plugin': 5.49.0_iu322prlnwsygkcra5kbpy22si
       '@typescript-eslint/parser': 5.49.0_7uibuqfxkfaozanbtbziikiqje
       '@vitest/coverage-c8': 0.28.2
@@ -432,6 +437,10 @@ packages:
 
   /@types/normalize-package-data/2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+    dev: true
+
+  /@types/nprogress/0.2.0:
+    resolution: {integrity: sha512-1cYJrqq9GezNFPsWTZpFut/d4CjpZqA0vhqDUPFWYKF1oIyBz5qnoYMzR+0C/T96t3ebLAC1SSnwrVOm5/j74A==}
     dev: true
 
   /@types/semver/7.3.13:
@@ -2393,6 +2402,10 @@ packages:
     dependencies:
       path-key: 4.0.0
     dev: true
+
+  /nprogress/0.2.0:
+    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
+    dev: false
 
   /object-inspect/1.12.2:
     resolution: {integrity: sha512-z+cPxW0QGUp0mcqcsgQyLVRDoXFQbXOwBaqyF7VIgI4TWNQsDHrBpUQslRmIfAoYWdYzs6UlKJtB2XJpTaNSpQ==}

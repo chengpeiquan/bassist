@@ -1,0 +1,35 @@
+{
+  "name": "@bassist/progress",
+  "version": "0.1.0-alpha.1",
+  "description": "Simple slim progress bars base on NProgress.",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/progress",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "main": "./lib/index.min.js",
+  "module": "./lib/index.mjs",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.cjs",
+      "types": "./types/index.d.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengpeiquan/bassist.git"
+  },
+  "keywords": [
+    "nprogress",
+    "progress",
+    "progress bar"
+  ],
+  "dependencies": {
+    "@bassist/utils": "workspace:^",
+    "nprogress": "^0.2.0"
+  }
+}

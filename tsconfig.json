@@ -19,6 +19,9 @@
     "isolatedModules": false,
     "baseUrl": ".",
     "rootDir": ".",
+    "paths": {
+      "@bassist/utils": ["packages/utils/src/index.ts"]
+    },
     "types": ["vite/client", "node"],
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "declaration": true
