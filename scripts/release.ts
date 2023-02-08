@@ -1,15 +1,23 @@
 import { execSync } from 'child_process'
-import { resolve } from 'path'
 import { getArgv } from './utils'
 
 async function run() {
-  const { name, opt, tag } = getArgv()
-  const pkgPath = resolve(__dirname, `../packages/${name}`)
+  const { name, otp, tag } = getArgv()
+
+  const publishArgs = [
+    `pnpm publish`,
+    `-r ${name}`,
+    `--no-git-checks`,
+    `--access public`,
+    `${tag ? `--tag ${tag}` : ''}`,
+    `--otp ${otp}`,
+  ]
 
   const cmds = [
-    `npm run build ${name}`,
-    `cd ${pkgPath}`,
-    `npm publish --access public --otp ${opt} ${tag ? `--tag ${tag}` : ''}`,
+    `pnpm build ${name}`,
+    `pnpm mirror:rm`,
+    publishArgs.join(' '),
+    `pnpm mirror:set`,
   ]
   const cmd = cmds.join(' && ')
   execSync(cmd)

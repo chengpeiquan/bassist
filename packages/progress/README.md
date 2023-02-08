@@ -15,7 +15,7 @@
   </a>
 </p>
 
-Simple slim progress bars base on NProgress.
+Simple slim progress bars base on [NProgress](https://www.npmjs.com/package/nprogress).
 
 ## Usage
 
@@ -30,8 +30,67 @@ In `.js` / `.ts` or other files:
 ```ts
 import progress from '@bassist/progress'
 
-progress.start();
-progress.done();
+// Used in the framework's router hooks.
+// Or in other scenarios (e.g. AJAX requests).
+
+router.beforeEach(() => {
+  progress.start()
+})
+
+router.afterEach(() => {
+  progress.done()
+})
+```
+
+All configurations and options of [NProgress](https://www.npmjs.com/package/nprogress) are supported.
+
+## Set Color
+
+This plugin extends XX's API and adds a `setColor` method.
+
+- Type Declarations:
+
+```ts
+export interface Progress extends NProgress {
+  /**
+   *
+   * @param color - A valid CSS color value or CSS variable
+   *
+   * @example use HEX
+   *  progress.setColor('#ff0000')
+   *
+   * @example use RGB
+   *  progress.setColor('rgb(255, 0, 0)')
+   *
+   * @example use RGBA
+   *  progress.setColor('rgba(255, 0, 0, 1)')
+   *
+   * @example use CSS Variable
+   *  progress.setColor('var(--color-primary)')
+   */
+  // eslint-disable-next-line no-unused-vars
+  setColor: (color: string) => void
+}
+```
+
+- Example:
+
+```ts
+import progress from '@bassist/progress'
+
+// Set the color before start
+progress.setColor('#ff0000')
+
+// Then, used in the framework's router hooks.
+// Or in other scenarios (e.g. AJAX requests).
+
+router.beforeEach(() => {
+  progress.start()
+})
+
+router.afterEach(() => {
+  progress.done()
+})
 ```
 
 ## Release Notes

@@ -60,6 +60,14 @@ importers:
     dependencies:
       '@withtypes/fs-extra': 0.1.1
 
+  packages/progress:
+    specifiers:
+      '@bassist/utils': workspace:^
+      nprogress: ^0.2.0
+    dependencies:
+      '@bassist/utils': link:../utils
+      nprogress: 0.2.0
+
   packages/utils:
     specifiers: {}
 

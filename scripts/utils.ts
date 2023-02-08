@@ -15,7 +15,7 @@ import { resolve } from 'path'
  */
 export function getArgv() {
   const argv = minimist(process.argv.slice(2), { string: ['_'] })
-  const { _, opt, tag } = argv
+  const { _, otp, tag } = argv
   const [name] = _
 
   if (!name) {
@@ -25,7 +25,7 @@ export function getArgv() {
       '',
       '💡 Related command arguments and options:',
       '   pnpm build <package-name>',
-      '   pnpm release <package-name> [--opt] [--tag]',
+      '   pnpm release <package-name> [--otp] [--tag]',
       '',
       '',
     ]
@@ -33,7 +33,7 @@ export function getArgv() {
     throw new Error(errMsg)
   }
 
-  return { name, opt, tag }
+  return { name, otp, tag }
 }
 
 /**
