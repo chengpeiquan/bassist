@@ -11,6 +11,7 @@ importers:
       '@vitest/coverage-c8': ^0.28.2
       '@withtypes/fs-extra': ^0.1.1
       '@withtypes/mime': ^0.1.2
+      '@withtypes/minimist': ^0.1.1
       conventional-changelog-cli: ^2.2.2
       dts-bundle-generator: ^7.1.0
       eslint: ^8.32.0
@@ -35,6 +36,7 @@ importers:
       '@vitest/coverage-c8': 0.28.2
       '@withtypes/fs-extra': 0.1.1
       '@withtypes/mime': 0.1.2
+      '@withtypes/minimist': 0.1.1
       conventional-changelog-cli: 2.2.2
       dts-bundle-generator: 7.1.0
       eslint: 8.32.0
@@ -638,6 +640,12 @@ packages:
     resolution: {integrity: sha512-PB9BfZGzwblUONJY0LiOwsHCA6uV3DIPj/w9ReekdHxPOl0VdUFgI5s4avKycuuq9Gf5Nz2ZPA2O36GAUzlMPA==}
     dependencies:
       mime: 3.0.0
+    dev: true
+
+  /@withtypes/minimist/0.1.1:
+    resolution: {integrity: sha512-u61BJ0WgvTBvMpt2H1O4mRIMxvT4hvBILndCyvm7nZpGov7rgWfUW5qU4KA3XZ7L5as8cgIk9p6o2NA0u/QgCg==}
+    dependencies:
+      minimist: 1.2.7
     dev: true
 
   /JSONStream/1.3.5:

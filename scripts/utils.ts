@@ -7,20 +7,33 @@ import {
   statSync,
   unlinkSync,
 } from '@withtypes/fs-extra'
+import minimist from '@withtypes/minimist'
 import { resolve } from 'path'
 
 /**
  * Get argv from Command Line
  */
 export function getArgv() {
-  const argv = process.argv
-  if (argv.length < 3) {
-    throw new Error(
-      `Missing package name to generate declaration files.\ne.g. pnpm build utils\n\n`
-    )
+  const argv = minimist(process.argv.slice(2), { string: ['_'] })
+  const { _, opt, tag } = argv
+  const [name] = _
+
+  if (!name) {
+    const errArgs = [
+      '',
+      '🚧 Missing package name to generate declaration files.',
+      '',
+      '💡 Related command arguments and options:',
+      '   pnpm build <package-name>',
+      '   pnpm release <package-name> [--opt] [--tag]',
+      '',
+      '',
+    ]
+    const errMsg = errArgs.join('\n')
+    throw new Error(errMsg)
   }
-  const [, , name, code] = argv
-  return { name, code }
+
+  return { name, opt, tag }
 }
 
 /**
