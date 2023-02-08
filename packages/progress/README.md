@@ -46,7 +46,7 @@ All configurations and options of [NProgress](https://www.npmjs.com/package/npro
 
 ## Set Color
 
-This plugin extends XX's API and adds a `setColor` method.
+This plugin extends NProgress's API and adds a `setColor` method.
 
 - Type Declarations:
 
