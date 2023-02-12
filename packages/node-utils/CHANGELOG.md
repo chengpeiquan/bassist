@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/chengpeiquan/bassist/compare/node-utils@0.2.0...node-utils@0.2.1) (2023-02-12)
+
+
+### Bug Fixes
+
+* **node-utils:** deprecate getDirnameInEsModule ([1c3ae39](https://github.com/chengpeiquan/bassist/commit/1c3ae39fba0d7218a53868bcf156b6b71b2f3d14))
+
+
+
 # [0.2.0](https://github.com/chengpeiquan/bassist/compare/node-utils@0.1.2...node-utils@0.2.0) (2023-02-03)
 
 
