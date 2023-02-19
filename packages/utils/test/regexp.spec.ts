@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isMob, isEmail, isUrl, isIdCard, isBankCard, isIPv4 } from '..'
+import { isMob, isEmail, isUrl, isIdCard, isBankCard, isIPv4, isIPv6 } from '..'
 
 describe('isMob', () => {
   it('Valid data', () => {
@@ -101,5 +101,33 @@ describe('isIPv4', () => {
     expect(isIPv4('localhost')).toBeFalsy()
     expect(isIPv4('999.999.999.999')).toBeFalsy()
     expect(isIPv4('192.168.1')).toBeFalsy()
+  })
+})
+
+describe('isIPv6', () => {
+  it('Valid data', () => {
+    expect(isIPv6('2001:0DB8:0000:0023:0008:0800:200C:417A')).toBeTruthy()
+    expect(isIPv6('2001:DB8:0:23:8:800:200C:417A')).toBeTruthy()
+    expect(isIPv6('FF01:0:0:0:0:0:0:1101')).toBeTruthy()
+    expect(isIPv6('FF01::1101')).toBeTruthy()
+    expect(isIPv6('0:0:0:0:0:0:0:1')).toBeTruthy()
+    expect(isIPv6('::1')).toBeTruthy()
+    expect(isIPv6('0:0:0:0:0:0:0:0')).toBeTruthy()
+    expect(isIPv6('::')).toBeTruthy()
+    expect(isIPv6('::192.168.0.1')).toBeTruthy()
+    expect(isIPv6('::FFFF:192.168.0.1')).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(isIPv6('123')).toBeFalsy()
+    expect(isIPv6('localhost')).toBeFalsy()
+    expect(isIPv6('999.999.999.999')).toBeFalsy()
+    expect(isIPv6('192.168.1')).toBeFalsy()
+    expect(isIPv6('0.0.0.0')).toBeFalsy()
+    expect(isIPv6('1.2.3.4')).toBeFalsy()
+    expect(isIPv6('127.0.0.1')).toBeFalsy()
+    expect(isIPv6('192.168.0.1')).toBeFalsy()
+    expect(isIPv6('10.24.3.68')).toBeFalsy()
+    expect(isIPv6('45.150.220.38')).toBeFalsy()
+    expect(isIPv6('255.255.255.0')).toBeFalsy()
   })
 })
