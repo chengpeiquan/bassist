@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { isMob, isEmail, isUrl, isIdCard, isBankCard } from '..'
+import { isMob, isEmail, isUrl, isIdCard, isBankCard, isIPv4 } from '..'
 
 describe('isMob', () => {
   it('Valid data', () => {
@@ -83,5 +83,23 @@ describe('isBankCard', () => {
     expect(isBankCard('151242557224144301')).toBeFalsy()
     expect(isBankCard('123456')).toBeFalsy()
     expect(isBankCard('hello')).toBeFalsy()
+  })
+})
+
+describe('isIPv4', () => {
+  it('Valid data', () => {
+    expect(isIPv4('0.0.0.0')).toBeTruthy()
+    expect(isIPv4('1.2.3.4')).toBeTruthy()
+    expect(isIPv4('127.0.0.1')).toBeTruthy()
+    expect(isIPv4('192.168.0.1')).toBeTruthy()
+    expect(isIPv4('10.24.3.68')).toBeTruthy()
+    expect(isIPv4('45.150.220.38')).toBeTruthy()
+    expect(isIPv4('255.255.255.0')).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(isIPv4('123')).toBeFalsy()
+    expect(isIPv4('localhost')).toBeFalsy()
+    expect(isIPv4('999.999.999.999')).toBeFalsy()
+    expect(isIPv4('192.168.1')).toBeFalsy()
   })
 })
