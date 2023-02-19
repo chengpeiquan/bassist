@@ -1,3 +1,14 @@
+# [0.11.0](https://github.com/chengpeiquan/bassist/compare/utils@0.10.0...utils@0.11.0) (2023-02-19)
+
+
+### Features
+
+* **utils:** add excludeFields ([557557f](https://github.com/chengpeiquan/bassist/commit/557557f9d2625a9b9c8860decb6690290dfaa79d))
+* **utils:** add isIPv4 ([92a4ce5](https://github.com/chengpeiquan/bassist/commit/92a4ce5f1a366b53717d1df6c66b197e0eb5a6a2))
+* **utils:** add isIPv6 ([02e1645](https://github.com/chengpeiquan/bassist/commit/02e16454676d1401a95a6487ec7e587f6c930f45))
+
+
+
 # [0.10.0](https://github.com/chengpeiquan/bassist/compare/utils@0.9.0...utils@0.10.0) (2023-02-05)
 
 
