@@ -1,4 +1,4 @@
-import { isObject } from './data'
+import { hasKey, isObject } from './data'
 
 /**
  * Extract numbers from text
@@ -179,4 +179,25 @@ export function unique<T>({ primaryKey, list }: UniqueOptions<T>): T[] {
   })
 
   return uniqueList
+}
+
+/**
+ * Exclude specified fields from the object
+ * @tips Only handle first-level fields
+ * @param object - An object as data source
+ * @param fields - Field names to exclude
+ * @returns A processed new object
+ *
+ * @category format
+ */
+export function excludeFields(object: Record<string, any>, fields: string[]) {
+  if (!isObject) return object
+
+  const newObject: Record<string, any> = {}
+  for (const key in object) {
+    if (hasKey(object, key) && !fields.includes(key)) {
+      newObject[key] = object[key]
+    }
+  }
+  return newObject
 }

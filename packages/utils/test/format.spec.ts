@@ -10,6 +10,7 @@ import {
   escapeRegExp,
   sortKeys,
   unique,
+  excludeFields,
 } from '..'
 
 describe('format', () => {
@@ -158,5 +159,36 @@ describe('format', () => {
       { foo: 2, bar: null },
       { foo: 3, bar: [1, 2, 3] },
     ])
+  })
+
+  it('excludeFields', () => {
+    const obj = {
+      foo: 'foo',
+      bar: 'bar',
+      baz: {
+        foo: 'foo',
+        bar: 'bar',
+      },
+      num: 1,
+      bool: true,
+    }
+
+    expect(excludeFields(obj, ['foo', 'bar'])).toEqual({
+      baz: {
+        foo: 'foo',
+        bar: 'bar',
+      },
+      num: 1,
+      bool: true,
+    })
+
+    expect(excludeFields(obj, ['baz', 'num'])).toEqual({
+      foo: 'foo',
+      bar: 'bar',
+      bool: true,
+    })
+
+    expect(excludeFields(obj, [])).toEqual(obj)
+    expect(excludeFields(obj, ['test'])).toEqual(obj)
   })
 })
