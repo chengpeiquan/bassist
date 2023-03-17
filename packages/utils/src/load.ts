@@ -35,6 +35,7 @@ export function loadRes({ type, id, resource }: LoadResOptions) {
     switch (type) {
       case 'js': {
         const script = document.createElement('script')
+        script.id = id
         script.async = true
         script.src = resource
         bindStatus(script)
