@@ -1,3 +1,12 @@
+## [0.11.1](https://github.com/chengpeiquan/bassist/compare/utils@0.11.0...utils@0.11.1) (2023-03-17)
+
+
+### Bug Fixes
+
+* **utils:** loadRes missing ID binding when loading script ([e2869c5](https://github.com/chengpeiquan/bassist/commit/e2869c50466e597d0cb3b36f4738b7ce39eb92a3))
+
+
+
 # [0.11.0](https://github.com/chengpeiquan/bassist/compare/utils@0.10.0...utils@0.11.0) (2023-02-19)
 
 
