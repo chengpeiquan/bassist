@@ -1,3 +1,12 @@
+## [0.2.1](https://github.com/chengpeiquan/bassist/compare/progress@0.2.0...progress@0.2.1) (2023-03-19)
+
+
+### Bug Fixes
+
+* **progress:** update the utils dep to fix a loadRes bug ([b5e1de0](https://github.com/chengpeiquan/bassist/commit/b5e1de0641210ff87e7405481903cfd00a54eee5))
+
+
+
 # 0.2.0 (2023-02-08)
 
 
