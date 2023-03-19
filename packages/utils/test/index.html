@@ -17,6 +17,7 @@
       console.log('isEmail', Utils.isEmail('12345@qq.com'))
       console.log('getPrefersColorScheme', Utils.getPrefersColorScheme())
 
+      // Only loaded once
       Utils.loadRes({
         type: 'style',
         id: 'test-style',
@@ -24,6 +25,27 @@
       }).catch((e) => {
         console.log(e)
       })
+
+      Utils.loadRes({
+        type: 'style',
+        id: 'test-style',
+        resource: 'body { background-color: #222 };',
+      }).catch((e) => {
+        console.log(e)
+      })
+
+      // Only loaded once
+      Utils.loadRes({
+        type: 'js',
+        id: 'test-script',
+        resource: 'https://cdn.jsdelivr.net/npm/jquery',
+      })
+        .then(() => {
+          console.log($('html').attr('lang'))
+        })
+        .catch((e) => {
+          console.log(e)
+        })
 
       Utils.loadRes({
         type: 'js',

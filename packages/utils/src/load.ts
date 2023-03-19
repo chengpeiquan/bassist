@@ -19,7 +19,7 @@ export interface LoadResOptions {
  */
 export function loadRes({ type, id, resource }: LoadResOptions) {
   return new Promise((resolve, reject) => {
-    if (!isBrowser || document.querySelector(id)) {
+    if (!isBrowser || document.querySelector(`#${id}`)) {
       reject()
       return
     }
