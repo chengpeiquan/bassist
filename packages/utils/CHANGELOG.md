@@ -1,3 +1,12 @@
+## [0.11.2](https://github.com/chengpeiquan/bassist/compare/utils@0.11.1...utils@0.11.2) (2023-03-19)
+
+
+### Bug Fixes
+
+* **utils:** the loadRes method should only load resources with the same ID once ([ad1d6ed](https://github.com/chengpeiquan/bassist/commit/ad1d6ed4bd5f698eebae775350feb580a5072308))
+
+
+
 ## [0.11.1](https://github.com/chengpeiquan/bassist/compare/utils@0.11.0...utils@0.11.1) (2023-03-17)
 
 
