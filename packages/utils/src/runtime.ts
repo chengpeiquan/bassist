@@ -7,6 +7,7 @@ export type RuntimeEnv = 'development' | 'test' | 'production' | undefined
 
 /**
  * Get current runtime environment
+ *
  * @precondition The `cross-env` package is installed
  *
  * @category runtime
@@ -28,6 +29,7 @@ export const runtimeEnv = getRuntimeEnv()
 
 /**
  * Determine whether the specified runtime environment is currently
+ *
  * @precondition The `cross-env` package is installed
  *
  * @category runtime
