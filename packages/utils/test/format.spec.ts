@@ -12,6 +12,7 @@ import {
   unique,
   excludeFields,
   formatTime,
+  formatDuration,
 } from '..'
 
 describe('format', () => {
@@ -210,5 +211,41 @@ describe('format', () => {
       '2023-01-01 00:05:59',
     )
     expect(formatTime(new Date('2023-01-01 14:05:59'), true)).toBe('2023-01-01')
+  })
+
+  it('formatDuration', () => {
+    expect(
+      formatDuration(+new Date('2023-01-02') - +new Date('2023-01-01')),
+    ).toBe('1 天')
+
+    expect(
+      formatDuration(
+        +new Date('2023-01-02 04:00:00') - +new Date('2023-01-01 00:00:00'),
+      ),
+    ).toBe('1 天 4 小时')
+
+    expect(
+      formatDuration(
+        +new Date('2023-01-02 04:15:00') - +new Date('2023-01-01 00:00:00'),
+      ),
+    ).toBe('1 天 4 小时 15 分钟')
+
+    expect(
+      formatDuration(
+        +new Date('2023-01-12 04:15:36') - +new Date('2023-01-01 00:00:00'),
+      ),
+    ).toBe('11 天 4 小时 15 分钟 36 秒')
+
+    expect(
+      formatDuration(
+        +new Date('2023-01-12 04:15:36') - +new Date('2023-01-01 00:00:00'),
+        {
+          days: 'Days',
+          hours: 'Hours',
+          minutes: 'Minutes',
+          seconds: 'Seconds',
+        },
+      ),
+    ).toBe('11 Days 4 Hours 15 Minutes 36 Seconds')
   })
 })
