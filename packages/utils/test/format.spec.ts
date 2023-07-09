@@ -194,9 +194,20 @@ describe('format', () => {
   })
 
   it('formatTime', () => {
+    // A date string in standard ISO 8601 format
     expect(formatTime(new Date('2023-01-01'))).toBe('2023-01-01 08:00:00')
+
+    // Non-standard date string format
+    expect(formatTime(new Date('2023/01/01'))).toBe('2023-01-01 00:00:00')
+
     expect(formatTime(new Date('2023-01-01 14:05:59'))).toBe(
       '2023-01-01 14:05:59',
+    )
+    expect(formatTime(new Date('2023-01-01 00:05:59'))).toBe(
+      '2023-01-01 00:05:59',
+    )
+    expect(formatTime(new Date('2023/01/01 00:05:59'))).toBe(
+      '2023-01-01 00:05:59',
     )
     expect(formatTime(new Date('2023-01-01 14:05:59'), true)).toBe('2023-01-01')
   })
