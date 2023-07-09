@@ -34,3 +34,34 @@ export function debounce<T extends (...args: any[]) => void>(
     }, wait)
   }
 }
+
+/**
+ * Can control how often a function is called within a specified time interval
+ *
+ * @category performance
+ */
+// eslint-disable-next-line no-unused-vars
+export function throttle<T extends (...args: any[]) => void>(
+  func: T,
+  wait: number,
+) {
+  let timeout: ReturnType<typeof setTimeout> | number | undefined
+  let previous = 0
+
+  return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
+    const now = Date.now()
+    const remaining = wait - (now - previous)
+
+    if (remaining <= 0) {
+      clearTimeout(timeout)
+      previous = now
+      func.apply(this, args)
+    } else if (!timeout) {
+      timeout = setTimeout(() => {
+        previous = Date.now()
+        timeout = undefined
+        func.apply(this, args)
+      }, remaining)
+    }
+  }
+}

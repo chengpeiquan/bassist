@@ -1,5 +1,5 @@
-import { describe, expect, it, vi } from 'vitest'
-import { sleep, debounce } from '..'
+import { Mock, afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { sleep, debounce, throttle } from '..'
 
 const mockFn = vi.fn()
 
@@ -47,6 +47,40 @@ describe('performance', () => {
       delayedFn(1, 2, 3)
       await advanceTimersByTime(100)
       expect(mockFn).toBeCalledWith(1, 2, 3)
+    })
+  })
+
+  it('throttle', async () => {
+    let testFunction: Mock<any, any>
+    let throttledFunction: (this: unknown, ...args: any) => void
+
+    beforeEach(() => {
+      testFunction = vi.fn()
+      throttledFunction = throttle(testFunction, 1000)
+      vi.useFakeTimers()
+    })
+
+    afterEach(() => {
+      vi.clearAllTimers()
+    })
+
+    it('should call the function immediately when called for the first time', () => {
+      throttledFunction()
+      expect(testFunction).toHaveBeenCalledTimes(1)
+    })
+
+    it('should not call the function again within the time limit', () => {
+      throttledFunction()
+      vi.advanceTimersByTime(500)
+      throttledFunction()
+      expect(testFunction).toHaveBeenCalledTimes(1)
+    })
+
+    it('should call the function again after the time limit', () => {
+      throttledFunction()
+      vi.advanceTimersByTime(1000)
+      throttledFunction()
+      expect(testFunction).toHaveBeenCalledTimes(2)
     })
   })
 })
