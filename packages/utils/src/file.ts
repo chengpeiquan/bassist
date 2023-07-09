@@ -1,5 +1,6 @@
 /**
  * Get file info via `mime` package
+ *
  * @category file
  */
 export class FileInfo {

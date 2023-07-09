@@ -2,8 +2,11 @@ import { userAgents } from './ua'
 
 /**
  * Generate random number
+ *
  * @param min - The minimum value in the range
+ *
  * @param max - The maximum value in the range
+ *
  * @param roundingType - Round the result
  *
  * @category random
@@ -11,13 +14,14 @@ import { userAgents } from './ua'
 export function randomNumber(
   min = 0,
   max = 100,
-  roundingType: 'round' | 'ceil' | 'floor' = 'round'
+  roundingType: 'round' | 'ceil' | 'floor' = 'round',
 ) {
   return Math[roundingType](Math.random() * (max - min) + min)
 }
 
 /**
  * Generate random string
+ *
  * @param length - The length of the string to be returned
  *
  * @category random
