@@ -248,3 +248,60 @@ export function formatTime(time: number | Date, dateOnly?: boolean) {
 
   return formattedDate
 }
+
+/**
+ * @category format
+ */
+interface FormatDurationUnit {
+  days: string
+  hours: string
+  minutes: string
+  seconds: string
+}
+
+/**
+ * Generally used to format the display of two time gaps, such as countdown
+ *
+ * @param timestamp - Timestamp with two time gaps
+ *
+ * @param units - Time units,
+ *                different languages can be passed in when i18n is needed,
+ *                the default is Simplified Chinese
+ *
+ * @category format
+ */
+export function formatDuration(
+  timestamp: number,
+  units: FormatDurationUnit = {
+    days: '天',
+    hours: '小时',
+    minutes: '分钟',
+    seconds: '秒',
+  },
+) {
+  // Convert timestamp to seconds
+  const totalSeconds = Math.floor(timestamp / 1000)
+
+  const days = Math.floor(totalSeconds / (3600 * 24))
+  const hours = Math.floor((totalSeconds % (3600 * 24)) / 3600)
+  const minutes = Math.floor((totalSeconds % 3600) / 60)
+  const seconds = Math.floor(totalSeconds % 60)
+
+  // Build a formatted string
+  const parts: string[] = []
+  if (days > 0) {
+    parts.push(`${days} ${units.days}`)
+  }
+  if (hours > 0) {
+    parts.push(`${hours} ${units.hours}`)
+  }
+  if (minutes > 0) {
+    parts.push(`${minutes} ${units.minutes}`)
+  }
+  if (seconds > 0) {
+    parts.push(`${seconds} ${units.seconds}`)
+  }
+
+  // Return the formatted result
+  return parts.length === 0 ? `0 ${units.seconds}` : parts.join(' ')
+}
