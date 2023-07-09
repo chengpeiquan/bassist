@@ -16,8 +16,10 @@ type QueryInfoObject = Record<
 
 /**
  * Parse URL Query parameters
+ *
  * @param url - By default, it is extracted from the browser URL,
  * and this parameter can be parsed from the specified URL
+ *
  * @returns Query parameter object,
  * will convert `key1=value1&key2=value2` into an object
  *
@@ -43,7 +45,7 @@ export function parseQuery(url?: string): QueryInfo {
 
   if (!queryStringify.length) return {}
 
-  const temp = {}
+  const temp: Record<string, string> = {}
   queryStringify
     .slice(1)
     .split('&')
@@ -56,6 +58,7 @@ export function parseQuery(url?: string): QueryInfo {
 
 /**
  * Extract parameter information from URL Query
+ *
  * @returns An object containing the request path and parameters object
  *  `path`: Jump path, the same as the routing name in the Web App
  *  `params`: Parameters other than path
@@ -79,7 +82,9 @@ export function extractQueryInfo(url?: string): {
 
 /**
  * Get the specified Query parameter
+ *
  * @param key - The parameter key name to get
+ *
  * @param url - By default, it is extracted from the browser URL,
  * and this parameter can be parsed from the specified URL
  *
@@ -92,6 +97,7 @@ export function getQuery(key: string, url?: string) {
 
 /**
  * Serialize Query parameters information
+ *
  * @param queryInfoObject - The object of the Query parameter to use for serialization
  *
  * @category query
