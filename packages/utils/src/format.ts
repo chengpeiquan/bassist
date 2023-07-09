@@ -2,7 +2,9 @@ import { hasKey, isObject } from './data'
 
 /**
  * Extract numbers from text
+ *
  * @param text - Text to be processed
+ *
  * @param startsWithZero - Preserve the 0-starting format like `002`
  *
  * @category format
@@ -20,6 +22,7 @@ export function extractNumber(text: string | number, startsWithZero = false) {
 
 /**
  * Format amount with two decimal places
+ *
  * @param amount - Amount to be processed
  *
  * @category format
@@ -48,8 +51,11 @@ export function formatAmount(amount: string | number) {
 
 /**
  * Add ellipses to words that are out of length
+ *
  * @param word - The sentence to be processed
+ *
  * @param limit - The upper limit
+ *
  * @returns The processed word
  *
  * @category format
@@ -109,6 +115,7 @@ export function pascalCase(word: string) {
 
 /**
  * Escaping special characters for regular expressions
+ *
  * @copyright lodash.escaperegexp
  *
  * @category format
@@ -150,7 +157,7 @@ interface UniqueOptions<T> {
   /**
    * The key used to determine if there are duplicate values
    */
-  primaryKey: string
+  primaryKey: keyof T
 
   /**
    * he original data list
@@ -183,9 +190,13 @@ export function unique<T>({ primaryKey, list }: UniqueOptions<T>): T[] {
 
 /**
  * Exclude specified fields from the object
+ *
  * @tips Only handle first-level fields
+ *
  * @param object - An object as data source
+ *
  * @param fields - Field names to exclude
+ *
  * @returns A processed new object
  *
  * @category format
