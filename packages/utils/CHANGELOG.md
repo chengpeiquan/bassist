@@ -1,3 +1,20 @@
+# [0.12.0](https://github.com/chengpeiquan/bassist/compare/utils@0.11.2...utils@0.12.0) (2023-07-09)
+
+
+### Bug Fixes
+
+* **utils:** fix type error ([a54a67d](https://github.com/chengpeiquan/bassist/commit/a54a67dd86f91a1640ea10cc86f28eeacbf51290))
+
+
+### Features
+
+* **utils:** add debounce, when an event is triggered frequently, only execute the event processing function once ([3a5e4df](https://github.com/chengpeiquan/bassist/commit/3a5e4df737b128b4c1cd9b98f6c78ecef21ebd74))
+* **utils:** add formatDuration to generally used to format the display of two time gaps, such as countdown ([6e31c4d](https://github.com/chengpeiquan/bassist/commit/6e31c4dc5981ccf7724c87a69c527a552d5648ff))
+* **utils:** add formatTime to format the time as yyyy-MM-dd HH:mm:ss ([70e0989](https://github.com/chengpeiquan/bassist/commit/70e0989d2cb8c76384c730f0cb5eb6e19361c518))
+* **utils:** add throttle, can control how often a function is called within a specified time interval ([6b82378](https://github.com/chengpeiquan/bassist/commit/6b82378cf07cae94ffa3cc7c290495f13c864c93))
+
+
+
 ## [0.11.2](https://github.com/chengpeiquan/bassist/compare/utils@0.11.1...utils@0.11.2) (2023-03-19)
 
 
