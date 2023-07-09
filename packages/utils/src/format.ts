@@ -216,6 +216,16 @@ export function excludeFields(object: Record<string, any>, fields: string[]) {
 /**
  * Format the time as `yyyy-MM-dd HH:mm:ss`
  *
+ * @description Note:
+ *  If the date separator is `-`, it will be parsed as
+ *  a standard ISO 8601 formatted date string (e.g. 2023-01-01)
+ *
+ *  If the date separator is `/`, it will be parsed according to
+ *  the non-standard date string format (e.g. 2023/01/01 )
+ *
+ *  This will result in inconsistent processing, please be aware of such cases.
+ *  e.g. `+new Date('2023/01/01') !== +new Date('2023-01-01')`
+ *
  * @param time - A timestamp or a date object
  *
  * @param dateOnly - If `true` , only returns `yyyy-MM-dd`
