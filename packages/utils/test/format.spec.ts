@@ -11,6 +11,7 @@ import {
   sortKeys,
   unique,
   excludeFields,
+  formatTime,
 } from '..'
 
 describe('format', () => {
@@ -73,7 +74,7 @@ describe('format', () => {
   it('escapeRegExp', () => {
     expect(escapeRegExp('@bassist/utils')).toBe('@bassist/utils')
     expect(escapeRegExp('https://example.com/foo')).toBe(
-      'https://example\\.com/foo'
+      'https://example\\.com/foo',
     )
   })
 
@@ -88,7 +89,7 @@ describe('format', () => {
           { c: 3, a: 1, b: 2 },
         ],
         b: 2,
-      })
+      }),
     ).toEqual({
       a: 1,
       b: 2,
@@ -104,7 +105,7 @@ describe('format', () => {
       sortKeys([
         { c: 3, a: 1, b: 2 },
         { c: 3, a: 1, b: 2 },
-      ])
+      ]),
     ).toEqual([
       { a: 1, b: 2, c: 3 },
       { a: 1, b: 2, c: 3 },
@@ -124,7 +125,7 @@ describe('format', () => {
           { foo: 1, bar: 2 },
           { foo: 2, bar: 1 },
         ],
-      })
+      }),
     ).toEqual([
       { foo: 1, bar: 1 },
       { foo: 2, bar: 1 },
@@ -138,7 +139,7 @@ describe('format', () => {
           { foo: 1, bar: 2 },
           { foo: 2, bar: 1 },
         ],
-      })
+      }),
     ).toEqual([
       { foo: 1, bar: 1 },
       { foo: 1, bar: 2 },
@@ -153,7 +154,7 @@ describe('format', () => {
           { foo: 3, bar: [1, 2, 3] },
           { foo: 3, bar: [] },
         ],
-      })
+      }),
     ).toEqual([
       { foo: 1, bar: 1 },
       { foo: 2, bar: null },
@@ -190,5 +191,13 @@ describe('format', () => {
 
     expect(excludeFields(obj, [])).toEqual(obj)
     expect(excludeFields(obj, ['test'])).toEqual(obj)
+  })
+
+  it('formatTime', () => {
+    expect(formatTime(new Date('2023-01-01'))).toBe('2023-01-01 08:00:00')
+    expect(formatTime(new Date('2023-01-01 14:05:59'))).toBe(
+      '2023-01-01 14:05:59',
+    )
+    expect(formatTime(new Date('2023-01-01 14:05:59'), true)).toBe('2023-01-01')
   })
 })
