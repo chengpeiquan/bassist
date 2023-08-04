@@ -64,4 +64,4 @@ Please refer to [CHANGELOG](https://github.com/chengpeiquan/bassist/blob/main/pa
 
 ## License
 
-MIT License © 2022 [chengpeiquan](https://github.com/chengpeiquan)
+MIT License © 2022-PRESENT [chengpeiquan](https://github.com/chengpeiquan)
