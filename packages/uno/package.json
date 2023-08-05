@@ -26,7 +26,10 @@
   "keywords": [
     "uno",
     "unocss",
-    "unocss config"
+    "uno config",
+    "unocss config",
+    "tailwindcss",
+    "windicss"
   ],
   "devDependencies": {
     "unocss": "^0.54.1"
