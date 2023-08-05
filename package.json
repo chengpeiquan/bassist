@@ -43,6 +43,7 @@
     "prettier": "^3.0.0",
     "simple-git-hooks": "^2.8.1",
     "tsx": "^3.12.7",
+    "unocss": "^0.54.1",
     "vite": "^4.4.2",
     "vite-plugin-banner": "^0.7.0",
     "vite-plugin-commonjs-externals": "^0.1.3",
