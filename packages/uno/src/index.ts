@@ -54,7 +54,18 @@ export function defineConfig(configs: Config | Config[] = []): Config {
          */
         transformerVariantGroup(),
       ],
-      exclude: ['node_modules'],
+
+      /**
+       * Usages of utilities that comes from different sources
+       * will be merged together and generate the final CSS.
+       *
+       * @see https://unocss.dev/guide/extracting
+       */
+      content: {
+        pipeline: {
+          exclude: ['node_modules'],
+        },
+      },
     },
     ...(Array.isArray(configs) ? configs : [configs]),
   ])
