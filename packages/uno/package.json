@@ -1,0 +1,37 @@
+{
+  "name": "@bassist/uno",
+  "version": "0.1.0",
+  "description": "Custom configuration for UnoCSS by @chengpeiquan .",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/uno",
+  "files": [
+    "lib",
+    "types"
+  ],
+  "main": "./lib/index.min.js",
+  "module": "./lib/index.mjs",
+  "types": "./types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.cjs",
+      "types": "./types/index.d.js"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengpeiquan/bassist.git"
+  },
+  "keywords": [
+    "uno",
+    "unocss",
+    "unocss config"
+  ],
+  "devDependencies": {
+    "unocss": "^0.54.1"
+  },
+  "peerDependencies": {
+    "unocss": "^0.54.1"
+  }
+}
