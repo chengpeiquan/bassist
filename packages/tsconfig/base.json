@@ -2,30 +2,27 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "display": "Base",
   "compilerOptions": {
-    "target": "ES2015",
-    "module": "CommonJS",
-    "moduleResolution": "Node",
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
     "jsx": "preserve",
     "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "allowJs": false,
     "skipLibCheck": true,
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
-    "declaration": true,
+    "useDefineForClassFields": true,
     "sourceMap": true,
     "isolatedModules": true,
     "baseUrl": ".",
-    "rootDir": ".",
-    "lib": [
-      "DOM",
-      "DOM.Iterable"
-    ],
-    "composite": false,
-    "declarationMap": true,
-    "inlineSources": false
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "exclude": [
-    "node_modules"
-  ]
+  "exclude": ["node_modules"]
 }
