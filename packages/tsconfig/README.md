@@ -34,11 +34,31 @@ In the `tsconfig.json` file, use the `extends` field to extends these configurat
 }
 ```
 
-## Configuration
+## Extendable
 
-See: [Source Code](https://github.com/chengpeiquan/bassist/tree/main/packages/tsconfig) .
+Base:
 
-Just change the file name of `extends` .
+```json
+{
+  "extends": "@bassist/tsconfig/base.json"
+}
+```
+
+Web:
+
+```json
+{
+  "extends": "@bassist/tsconfig/web.json"
+}
+```
+
+Node:
+
+```json
+{
+  "extends": "@bassist/tsconfig/node.json"
+}
+```
 
 ## License
 
