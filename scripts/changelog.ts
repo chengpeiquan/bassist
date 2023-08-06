@@ -15,8 +15,8 @@ async function run() {
     `--commit-path=.`,
   ]
 
-  const cmds = [`cd ${pkgPath}`, changelogArgs.join(' ')]
-  const cmd = cmds.join(' && ')
+  const commands = [`cd ${pkgPath}`, changelogArgs.join(' ')]
+  const cmd = commands.join(' && ')
   execSync(cmd)
 }
 run().catch((e) => {

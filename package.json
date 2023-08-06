@@ -6,7 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "build": "tsx scripts/build",
+    "build": "tsx scripts/build/pkg",
     "build:all": "tsx scripts/build/all",
     "release": "tsx scripts/release",
     "changelog": "tsx scripts/changelog",

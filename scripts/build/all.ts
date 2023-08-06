@@ -1,19 +1,17 @@
 import { resolve } from 'path'
-import { buildLibrary } from './lib'
-import { buildTypes } from './dts'
 import { readdirSync } from '@withtypes/fs-extra'
+import { buildPackage } from './task'
 
 async function run() {
-  const rootPath = resolve(__dirname, `../../`)
-  const packages = readdirSync(resolve(rootPath, `./packages`))
+  const packages = readdirSync(resolve(process.cwd(), `./packages`))
+  console.log()
+  console.log('Start building, packages is as follows:')
   console.log(packages)
+  console.log()
 
   for (let i = 0; i < packages.length; i++) {
     const name = packages[i]
-    const options = { name, rootPath }
-
-    await buildLibrary(options)
-    await buildTypes(options)
+    await buildPackage(name)
   }
 }
 run().catch((e) => {

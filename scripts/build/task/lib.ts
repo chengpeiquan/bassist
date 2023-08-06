@@ -2,17 +2,18 @@ import { resolve } from 'path'
 import { build } from 'vite'
 import banner from 'vite-plugin-banner'
 import commonjsExternals from 'vite-plugin-commonjs-externals'
-import { parsePackage } from '../utils'
-import { capitalize } from '../../packages/utils'
+import { parsePackage } from '@scripts/utils'
+import { capitalize } from '@packages/utils'
 import type { UserConfig } from 'vite'
 import type { BuildOptions } from './types'
 
 /**
  * Build options provided to `vite.config.ts`
+ *
  * @see https://vitejs.dev/config/
  */
-function viteConfig({ name, rootPath, externals }: BuildOptions): UserConfig {
-  const basePath = resolve(rootPath, `./packages/${name}`)
+function viteConfig({ name, externals }: BuildOptions): UserConfig {
+  const basePath = resolve(process.cwd(), `./packages/${name}`)
   const outDir = resolve(basePath, `./lib`)
   const pkg = parsePackage(basePath)
   const deps = [
@@ -74,7 +75,7 @@ function viteConfig({ name, rootPath, externals }: BuildOptions): UserConfig {
     config.plugins?.push(
       commonjsExternals({
         externals,
-      })
+      }),
     )
   }
 
