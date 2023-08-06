@@ -1,6 +1,6 @@
 {
   "name": "@bassist/tsconfig",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Some TSConfig files for working with TypeScript projects by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
