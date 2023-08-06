@@ -4,13 +4,20 @@
     "importHelpers": true,
     "experimentalDecorators": true,
     "rootDir": ".",
+    "baseUrl": ".",
     "paths": {
-      "@bassist/utils": ["packages/utils/src/index.ts"]
+      "@packages/*": ["./packages/*"],
+      "@scripts/*": ["./scripts/*"]
     },
     "types": ["vite/client", "node"],
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "declaration": true
   },
-  "include": ["packages/**/*"],
-  "exclude": ["node_modules", "packages/**/lib"]
+  "include": ["packages/**/*", "scripts/**/*"],
+  "exclude": [
+    "node_modules",
+    "packages/**/lib",
+    "packages/**/types",
+    "packages/**/.build"
+  ]
 }

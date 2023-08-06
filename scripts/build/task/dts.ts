@@ -6,7 +6,8 @@ import type { BuildOptions } from './types'
 /**
  * Generate declaration file of library
  */
-export async function buildTypes({ name, rootPath }: BuildOptions) {
+export async function buildTypes({ name }: BuildOptions) {
+  const rootPath = process.cwd()
   const filePath = resolve(rootPath, `./packages/${name}/src/index.ts`)
   const options = [
     {
@@ -17,15 +18,15 @@ export async function buildTypes({ name, rootPath }: BuildOptions) {
     },
   ]
 
-  const dtses = generateDtsBundle(options, {
+  const declarations = generateDtsBundle(options, {
     preferredConfigPath: resolve(rootPath, `./tsconfig.json`),
   })
-  if (!Array.isArray(dtses) || !dtses.length) return
+  if (!Array.isArray(declarations) || !declarations.length) return
 
   const outDir = resolve(rootPath, `./packages/${name}/types`)
   !existsSync(outDir) && mkdirpSync(outDir)
 
-  const dts = dtses[0]
+  const dts = declarations[0]
   const output = resolve(outDir, `./index.d.ts`)
   writeFileSync(output, dts)
 }

@@ -2,8 +2,8 @@ import { readdirSync, readJSONSync, writeFileSync } from '@withtypes/fs-extra'
 import { resolve } from 'path'
 import { hasKey } from '../packages/utils'
 
-function getDeps(rootPath: string) {
-  const pkg = readJSONSync(resolve(rootPath, './package.json'))
+function getDeps() {
+  const pkg = readJSONSync(resolve(process.cwd(), './package.json'))
   const { dependencies, devDependencies, peerDependencies } = pkg
   const deps = {
     ...(dependencies || {}),
@@ -16,7 +16,7 @@ function getDeps(rootPath: string) {
 
 function syncVersion(
   packageDeps: Record<string, string>,
-  monorepoDeps: Record<string, string>
+  monorepoDeps: Record<string, string>,
 ) {
   for (const key in packageDeps) {
     if (hasKey(packageDeps, key)) {
@@ -27,16 +27,18 @@ function syncVersion(
 
 async function run() {
   // Get all deps from the root of the monorepo
-  const rootPath = resolve(__dirname, '..')
-  const deps = getDeps(rootPath)
+  const deps = getDeps()
 
   // Possible dependent fields
   const depTypes = ['dependencies', 'devDependencies', 'peerDependencies']
 
   // Read all packages info and sync deps versions
-  const packages = readdirSync(resolve(rootPath, './packages'))
+  const packages = readdirSync(resolve(process.cwd(), './packages'))
   packages.forEach((name) => {
-    const pkgFilePath = resolve(rootPath, `./packages/${name}/package.json`)
+    const pkgFilePath = resolve(
+      process.cwd(),
+      `./packages/${name}/package.json`,
+    )
     const pkg = readJSONSync(pkgFilePath)
 
     depTypes.forEach((type) => {

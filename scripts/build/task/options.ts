@@ -4,8 +4,11 @@ import { resolve } from 'path'
 /**
  * Get special build configuration
  */
-export function readBuildConfig(rootPath: string, name: string) {
-  const buildConfigFile = resolve(rootPath, `./packages/${name}/build.json`)
+export function readBuildConfig(name: string) {
+  const buildConfigFile = resolve(
+    process.cwd(),
+    `./packages/${name}/.build/config.json`,
+  )
   if (existsSync(buildConfigFile)) {
     const buildConfig = readJsonSync(buildConfigFile)
     return buildConfig
