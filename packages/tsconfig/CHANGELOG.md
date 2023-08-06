@@ -1,3 +1,12 @@
+## 0.1.1 (2023-08-06)
+
+
+### Bug Fixes
+
+* **tsconfig:** remove baseUrl and paths, need to be set by the project itself ([e180a06](https://github.com/chengpeiquan/bassist/commit/e180a06e5532b061034d169556ca4c6bdd2ea8cb))
+
+
+
 # 0.1.0 (2023-08-06)
 
 
