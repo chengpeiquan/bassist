@@ -1,0 +1,19 @@
+{
+  "name": "@bassist/tsconfig",
+  "version": "0.1.0",
+  "description": "Some TSConfig files for working with TypeScript projects by @chengpeiquan .",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/tsconfig",
+  "files": [
+    "base.json"
+  ],
+  "main": "./base.json",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengpeiquan/bassist.git"
+  },
+  "keywords": [
+    "tsconfig"
+  ]
+}
