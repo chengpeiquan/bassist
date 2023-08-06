@@ -1,22 +1,8 @@
 {
+  "extends": "./packages/tsconfig/base.json",
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
-    "strict": true,
-    "jsx": "preserve",
     "importHelpers": true,
-    "moduleResolution": "NodeNext",
-    "resolveJsonModule": true,
-    "forceConsistentCasingInFileNames": true,
     "experimentalDecorators": true,
-    "skipLibCheck": true,
-    "skipDefaultLibCheck": true,
-    "esModuleInterop": true,
-    "incremental": false,
-    "allowSyntheticDefaultImports": true,
-    "sourceMap": true,
-    "isolatedModules": false,
-    "baseUrl": ".",
     "rootDir": ".",
     "paths": {
       "@bassist/utils": ["packages/utils/src/index.ts"]
