@@ -6,7 +6,8 @@
   "license": "MIT",
   "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/tsconfig",
   "files": [
-    "base.json"
+    "base.json",
+    "web.json"
   ],
   "main": "./base.json",
   "repository": {
