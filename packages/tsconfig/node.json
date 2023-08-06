@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "extends": "./base.json",
+  "display": "Node",
+  "compilerOptions": {
+    "types": [
+      "node"
+    ]
+  }
+}

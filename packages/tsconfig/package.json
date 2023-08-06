@@ -7,7 +7,8 @@
   "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/tsconfig",
   "files": [
     "base.json",
-    "web.json"
+    "web.json",
+    "node.json"
   ],
   "main": "./base.json",
   "repository": {
