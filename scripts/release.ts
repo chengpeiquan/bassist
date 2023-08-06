@@ -11,15 +11,11 @@ async function run() {
     `--access public`,
     `${tag ? `--tag ${tag}` : ''}`,
     `--otp ${otp}`,
+    `--registry https://registry.npmjs.org/`,
   ]
 
-  const cmds = [
-    `pnpm mirror:rm`,
-    `pnpm build ${name}`,
-    publishArgs.join(' '),
-    `pnpm mirror:set`,
-  ]
-  const cmd = cmds.join(' && ')
+  const commands = [`pnpm build ${name}`, publishArgs.join(' ')]
+  const cmd = commands.join(' && ')
   execSync(cmd)
 }
 run().catch((e) => {
