@@ -1,6 +1,6 @@
 import { readdirSync, readJSONSync, writeFileSync } from '@withtypes/fs-extra'
 import { resolve } from 'path'
-import { hasKey } from '../packages/utils'
+import { hasKey } from '../packages/utils/src/index'
 
 function getDeps() {
   const pkg = readJSONSync(resolve(process.cwd(), './package.json'))

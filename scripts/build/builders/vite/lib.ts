@@ -3,7 +3,7 @@ import { build } from 'vite'
 import banner from 'vite-plugin-banner'
 import commonjsExternals from 'vite-plugin-commonjs-externals'
 import { parsePackage } from '@scripts/utils'
-import { capitalize } from '@packages/utils'
+import { capitalize } from '@packages/utils/src/index'
 import { getBanner, getDeps } from '@scripts/build/utils'
 import { ViteFormat } from '..'
 import type { UserConfig } from 'vite'
@@ -16,7 +16,7 @@ import type { BuildOptions } from '@scripts/build/types'
  */
 function viteConfig({ name, externals, entryFile }: BuildOptions): UserConfig {
   const basePath = resolve(process.cwd(), `./packages/${name}`)
-  const outDir = resolve(basePath, `./lib`)
+  const outDir = resolve(basePath, `./dist`)
   const pkg = parsePackage(basePath)
   const bannerContent = getBanner(pkg)
   const deps = getDeps(pkg)

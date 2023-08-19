@@ -6,17 +6,16 @@
   "license": "MIT",
   "homepage": "https://paka.dev/npm/@bassist/node-utils",
   "files": [
-    "lib",
-    "types"
+    "dist"
   ],
-  "main": "./lib/index.min.js",
-  "module": "./lib/index.mjs",
-  "types": "./types/index.d.ts",
+  "main": "./dist/index.min.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./lib/index.mjs",
-      "require": "./lib/index.cjs",
-      "types": "./types/index.d.js"
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
     }
   },
   "repository": {
