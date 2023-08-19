@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/chengpeiquan/bassist/compare/node-utils@0.2.1...node-utils@0.3.0) (2023-08-19)
+
+
+### Features
+
+* **node-utils:** change build scheme (internal mechanism) ([988ebda](https://github.com/chengpeiquan/bassist/commit/988ebda007077efcd8eaa3a310ad6a946e8ab54f))
+
+
+
 ## [0.2.1](https://github.com/chengpeiquan/bassist/compare/node-utils@0.2.0...node-utils@0.2.1) (2023-02-12)
 
 
