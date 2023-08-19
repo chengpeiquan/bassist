@@ -1,7 +1,7 @@
 {
   "name": "@bassist/eslint",
-  "version": "0.1.0",
-  "description": "Flat ESLint config for JavaScript, TypeScript, Vue, Prettier by @chengpeiquan .",
+  "version": "0.2.0",
+  "description": "Flat ESLint config for JavaScript, TypeScript, Vue, Prettier and so on by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
   "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/eslint",

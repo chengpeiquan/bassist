@@ -79,38 +79,52 @@ const vue3Rules: Rules = {
   ...vuePlugin.configs['vue3-recommended'].rules,
 }
 
-export const vue: FlatESLintConfigItem[] = [
-  {
-    files: [GLOB_VUE],
-    plugins: {
-      vue: vuePlugin,
-      '@typescript-eslint': tsPlugin,
-    },
-    languageOptions: {
-      ecmaVersion: 'latest',
-      parser: vueParser,
-      parserOptions: {
-        parser: '@typescript-eslint/parser',
-        sourceType: 'module',
-        extraFileExtensions: ['.vue'],
-        ecmaFeatures: {
-          jsx: true,
+const vue2Rules: Rules = {
+  ...vuePlugin.configs.base.rules,
+  ...vuePlugin.configs.essential.rules,
+  ...vuePlugin.configs['strongly-recommended'].rules,
+  ...vuePlugin.configs.recommended.rules,
+}
+
+function getVueConfig(vueVersionRules: Rules) {
+  const vueRules: FlatESLintConfigItem[] = [
+    {
+      files: [GLOB_VUE],
+      plugins: {
+        vue: vuePlugin,
+        '@typescript-eslint': tsPlugin,
+      },
+      languageOptions: {
+        ecmaVersion: 'latest',
+        parser: vueParser,
+        parserOptions: {
+          parser: '@typescript-eslint/parser',
+          sourceType: 'module',
+          extraFileExtensions: ['.vue'],
+          ecmaFeatures: {
+            jsx: true,
+          },
         },
       },
+      processor: vuePlugin.processors['.vue'],
+      rules: {
+        ...typescript[0].rules,
+      },
     },
-    processor: vuePlugin.processors['.vue'],
-    rules: {
-      ...typescript[0].rules,
+    {
+      plugins: {
+        vue: vuePlugin,
+      },
+      rules: {
+        ...vueVersionRules,
+        ...vueCustomRules,
+      },
     },
-  },
-  {
-    plugins: {
-      vue: vuePlugin,
-    },
-    rules: {
-      ...vue3Rules,
-      ...vueCustomRules,
-    },
-  },
-  ...reactivityTransform,
-]
+    ...reactivityTransform,
+  ]
+
+  return vueRules
+}
+
+export const vueLegacy = getVueConfig(vue2Rules)
+export const vue = getVueConfig(vue3Rules)
