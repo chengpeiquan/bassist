@@ -1,3 +1,12 @@
+## 0.2.1 (2023-08-19)
+
+
+### Bug Fixes
+
+* **eslint:** change deps ([0e42ec2](https://github.com/chengpeiquan/bassist/commit/0e42ec2248cd605405c1e1544f218384ab92f7db))
+
+
+
 # 0.2.0 (2023-08-19)
 
 
