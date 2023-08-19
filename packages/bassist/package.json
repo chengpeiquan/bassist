@@ -16,7 +16,7 @@
     ".": {
       "import": "./lib/index.mjs",
       "require": "./lib/index.cjs",
-      "types": "./types/index.d.js"
+      "types": "./types/index.d.ts"
     }
   },
   "repository": {
