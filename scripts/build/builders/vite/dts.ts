@@ -24,7 +24,7 @@ export async function buildTypes({ name }: BuildOptions) {
   })
   if (!Array.isArray(declarations) || !declarations.length) return
 
-  const outDir = resolve(rootPath, `./packages/${name}/types`)
+  const outDir = resolve(rootPath, `./packages/${name}/dist`)
   !existsSync(outDir) && mkdirpSync(outDir)
 
   const dts = declarations[0]

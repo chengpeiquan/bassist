@@ -1,3 +1,12 @@
+## [0.1.2](https://github.com/chengpeiquan/bassist/compare/uno@0.1.1...uno@0.1.2) (2023-08-19)
+
+
+### Bug Fixes
+
+* **uno:** typo ([b262823](https://github.com/chengpeiquan/bassist/commit/b2628230d445fe14ffda0c00116ef6d9a124f89a))
+
+
+
 ## 0.1.1 (2023-08-05)
 
 
