@@ -35,14 +35,15 @@ Requires ESLint >= `8.0.0` , and TypeScript >= `5.0.0` .
 
 This package exports some presets, which can be imported via named.
 
-|  Category  |           Named           |
-| :--------: | :-----------------------: |
-| JavaScript | js, jsx, imports, unicorn |
-|  Markdown  |         markdown          |
-|  Prettier  |         prettier          |
-| TypeScript |        typescript         |
-|   UnoCSS   |          unocss           |
-|    Vue     | reactivityTransform, vue  |
+|  Category  |             Named              |
+| :--------: | :----------------------------: |
+|   define   | defineConfig, defineFlatConfig |
+| JavaScript |   js, jsx, imports, unicorn    |
+|  Markdown  |            markdown            |
+|  Prettier  |            prettier            |
+| TypeScript |           typescript           |
+|   UnoCSS   |             unocss             |
+|    Vue     |    reactivityTransform, vue    |
 
 Among them, Vue only support 3.x, and the Vue rules are includes TypeScript's rules, no need to import at the same time.
 
