@@ -1,0 +1,52 @@
+{
+  "name": "@bassist/eslint",
+  "version": "0.1.0",
+  "description": "Flat ESLint config for JavaScript, TypeScript, Vue 2, Vue 3, Prettier by @chengpeiquan .",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/eslint",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengpeiquan/bassist.git"
+  },
+  "keywords": [
+    "eslint",
+    "eslint config"
+  ],
+  "devDependencies": {
+    "@eslint/js": "^8.47.0",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "@unocss/eslint-plugin": "^0.55.1",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-define-config": "^1.23.0",
+    "eslint-plugin-antfu": "^0.40.2",
+    "eslint-plugin-import": "^2.28.0",
+    "eslint-plugin-markdown": "^3.0.1",
+    "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-unicorn": "^48.0.1",
+    "eslint-plugin-vue": "^9.17.0",
+    "globals": "^13.21.0",
+    "prettier": "^3.0.1",
+    "typescript": "^5.1.6",
+    "vue-eslint-parser": "^9.3.1"
+  },
+  "peerDependencies": {
+    "eslint": ">=8.0.0",
+    "typescript": ">=5.0.0"
+  }
+}
