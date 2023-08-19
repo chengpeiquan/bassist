@@ -1,6 +1,6 @@
 {
   "name": "@bassist/eslint",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Flat ESLint config for JavaScript, TypeScript, Vue, Prettier and so on by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
@@ -26,7 +26,7 @@
     "eslint",
     "eslint config"
   ],
-  "devDependencies": {
+  "dependencies": {
     "@eslint/js": "^8.47.0",
     "@typescript-eslint/eslint-plugin": "^6.2.1",
     "@typescript-eslint/parser": "^6.2.1",
