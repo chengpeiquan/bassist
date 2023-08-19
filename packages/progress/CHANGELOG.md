@@ -1,3 +1,12 @@
+## [0.2.2](https://github.com/chengpeiquan/bassist/compare/progress@0.2.1...progress@0.2.2) (2023-08-19)
+
+
+### Bug Fixes
+
+* **progress:** typo ([57d8a79](https://github.com/chengpeiquan/bassist/commit/57d8a7918869a24fa8f01a28d33c6a9cdeb57d3e))
+
+
+
 ## [0.2.1](https://github.com/chengpeiquan/bassist/compare/progress@0.2.0...progress@0.2.1) (2023-03-19)
 
 
