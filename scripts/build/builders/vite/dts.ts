@@ -1,7 +1,8 @@
 import { existsSync, mkdirpSync, writeFileSync } from '@withtypes/fs-extra'
 import { resolve } from 'path'
 import { generateDtsBundle } from 'dts-bundle-generator'
-import type { BuildOptions } from './types'
+import type { EntryPointConfig } from 'dts-bundle-generator'
+import type { BuildOptions } from '@scripts/build/types'
 
 /**
  * Generate declaration file of library
@@ -9,7 +10,7 @@ import type { BuildOptions } from './types'
 export async function buildTypes({ name }: BuildOptions) {
   const rootPath = process.cwd()
   const filePath = resolve(rootPath, `./packages/${name}/src/index.ts`)
-  const options = [
+  const options: EntryPointConfig[] = [
     {
       filePath,
       output: {

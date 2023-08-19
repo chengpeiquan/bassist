@@ -30,7 +30,11 @@ async function run() {
   const deps = getDeps()
 
   // Possible dependent fields
-  const depTypes = ['dependencies', 'devDependencies', 'peerDependencies']
+  const depTypes = [
+    'dependencies',
+    'devDependencies',
+    // 'peerDependencies'
+  ]
 
   // Read all packages info and sync deps versions
   const packages = readdirSync(resolve(process.cwd(), './packages'))
