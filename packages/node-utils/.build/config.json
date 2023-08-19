@@ -1,6 +1,3 @@
 {
-  "externals": [
-    "path",
-    "url"
-  ]
+  "builder": "tsup"
 }
