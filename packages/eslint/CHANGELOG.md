@@ -1,3 +1,12 @@
+# 0.2.0 (2023-08-19)
+
+
+### Features
+
+* **eslint:** add Vue 2.x support ([bff840f](https://github.com/chengpeiquan/bassist/commit/bff840f6f7b4576859d1814c3dc65351a3a4d89e))
+
+
+
 # 0.1.0 (2023-08-19)
 
 
