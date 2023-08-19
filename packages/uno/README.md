@@ -112,6 +112,10 @@ What are the commonly used default configurations? See: [Source Code](https://gi
 
 See: [VS Code Extension](https://unocss.dev/integrations/vscode)
 
+## Release Notes
+
+Please refer to [CHANGELOG](https://github.com/chengpeiquan/bassist/blob/main/packages/uno/CHANGELOG.md) for details.
+
 ## License
 
 MIT License © 2023-PRESENT [chengpeiquan](https://github.com/chengpeiquan)
