@@ -3,6 +3,8 @@
 
 ### Bug Fixes
 
+* **uno:** typo ([40a79d9](https://github.com/chengpeiquan/bassist/commit/40a79d91ae4fad48339a4c8a75eadadd7730cc86))
+* **uno:** typo ([84767fb](https://github.com/chengpeiquan/bassist/commit/84767fbbe7baa8b0ac036bf0d4c8bd2a6d04d90f))
 * **uno:** typo ([b262823](https://github.com/chengpeiquan/bassist/commit/b2628230d445fe14ffda0c00116ef6d9a124f89a))
 
 
