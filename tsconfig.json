@@ -16,6 +16,7 @@
   "include": ["packages/**/*", "scripts/**/*"],
   "exclude": [
     "node_modules",
+    "packages/**/dist",
     "packages/**/lib",
     "packages/**/types",
     "packages/**/.build"
