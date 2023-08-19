@@ -1,6 +1,6 @@
 {
   "name": "@bassist/node-utils",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "Opinionated collection of common Node.js utils by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
@@ -8,7 +8,7 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.min.js",
+  "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
