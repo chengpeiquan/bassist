@@ -60,6 +60,10 @@ Node:
 }
 ```
 
+## Release Notes
+
+Please refer to [CHANGELOG](https://github.com/chengpeiquan/bassist/blob/main/packages/tsconfig/CHANGELOG.md) for details.
+
 ## License
 
 MIT License © 2023-PRESENT [chengpeiquan](https://github.com/chengpeiquan)

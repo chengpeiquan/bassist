@@ -134,6 +134,10 @@ Related Reading:
 - [ESLint's new config system, Part 1: Background](https://eslint.org/blog/2022/08/new-config-system-part-1/)
 - [ESLint's new config system, Part 2: Introduction to flat config](https://eslint.org/blog/2022/08/new-config-system-part-2/)
 
+## Release Notes
+
+Please refer to [CHANGELOG](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/CHANGELOG.md) for details.
+
 ## License
 
 MIT License © 2023-PRESENT [chengpeiquan](https://github.com/chengpeiquan)
