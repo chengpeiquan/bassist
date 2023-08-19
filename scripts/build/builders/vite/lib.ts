@@ -4,37 +4,37 @@ import banner from 'vite-plugin-banner'
 import commonjsExternals from 'vite-plugin-commonjs-externals'
 import { parsePackage } from '@scripts/utils'
 import { capitalize } from '@packages/utils'
+import { getBanner, getDeps } from '@scripts/build/utils'
+import { ViteFormat } from '..'
 import type { UserConfig } from 'vite'
-import type { BuildOptions } from './types'
+import type { BuildOptions } from '@scripts/build/types'
 
 /**
  * Build options provided to `vite.config.ts`
  *
  * @see https://vitejs.dev/config/
  */
-function viteConfig({ name, externals }: BuildOptions): UserConfig {
+function viteConfig({ name, externals, entryFile }: BuildOptions): UserConfig {
   const basePath = resolve(process.cwd(), `./packages/${name}`)
   const outDir = resolve(basePath, `./lib`)
   const pkg = parsePackage(basePath)
-  const deps = [
-    ...Object.keys(pkg.dependencies || {}),
-    ...Object.keys(pkg.peerDependencies || {}),
-  ]
+  const bannerContent = getBanner(pkg)
+  const deps = getDeps(pkg)
 
   const config: UserConfig = {
     build: {
       outDir,
       lib: {
-        entry: resolve(basePath, './src/index.ts'),
+        entry: resolve(basePath, `./src/${entryFile ?? 'index.ts'}`),
         name: capitalize(name),
-        formats: ['umd', 'cjs', 'es'],
+        formats: [ViteFormat.UMD, ViteFormat.CJS, ViteFormat.ESM],
         fileName: (format) => {
           switch (format) {
-            case 'umd':
+            case ViteFormat.UMD:
               return 'index.min.js'
-            case 'cjs':
+            case ViteFormat.CJS:
               return 'index.cjs'
-            case 'es':
+            case ViteFormat.ESM:
               return 'index.mjs'
             default:
               return 'index.js'
@@ -55,16 +55,7 @@ function viteConfig({ name, externals }: BuildOptions): UserConfig {
     },
     plugins: [
       banner({
-        content: [
-          `/**`,
-          ` * name: ${pkg.name}`,
-          ` * version: v${pkg.version}`,
-          ` * description: ${pkg.description}`,
-          ` * author: ${pkg.author}`,
-          ` * homepage: ${pkg.homepage}`,
-          ` * license: ${pkg.license}`,
-          ` */`,
-        ].join('\n'),
+        content: bannerContent,
         outDir,
         debug: true,
       }),
