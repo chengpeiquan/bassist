@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/chengpeiquan/bassist/compare/eslint@0.2.1...eslint@0.3.0) (2023-08-23)
+
+
+### Features
+
+* **eslint:** add React rules ([5586de8](https://github.com/chengpeiquan/bassist/commit/5586de88c92ec2098648c86006403c90b4626d99))
+
+
+
 ## 0.2.1 (2023-08-19)
 
 
