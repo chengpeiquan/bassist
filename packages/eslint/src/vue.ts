@@ -1,7 +1,6 @@
 import vueParser from 'vue-eslint-parser'
 import vuePlugin from 'eslint-plugin-vue'
-import tsPlugin from '@typescript-eslint/eslint-plugin'
-import { typescript } from './typescript'
+import { typescript, tsParser, tsPlugin } from './typescript'
 import { GLOB_VUE } from './constants'
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
@@ -98,7 +97,7 @@ function getVueConfig(vueVersionRules: Rules) {
         ecmaVersion: 'latest',
         parser: vueParser,
         parserOptions: {
-          parser: '@typescript-eslint/parser',
+          parser: tsParser,
           sourceType: 'module',
           extraFileExtensions: ['.vue'],
           ecmaFeatures: {

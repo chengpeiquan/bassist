@@ -1,7 +1,9 @@
-import tsParser from '@typescript-eslint/parser'
+import __tsParser from '@typescript-eslint/parser'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
 import { GLOB_TS, GLOB_TSX } from './constants'
-import type { FlatESLintConfigItem } from 'eslint-define-config'
+import type { FlatESLintConfigItem, Parser } from 'eslint-define-config'
+
+const tsParser = __tsParser as unknown as Parser
 
 export { tsParser, tsPlugin }
 
