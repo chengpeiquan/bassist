@@ -1,7 +1,7 @@
 {
   "name": "@bassist/eslint",
-  "version": "0.2.1",
-  "description": "Flat ESLint config for JavaScript, TypeScript, Vue, Prettier and so on by @chengpeiquan .",
+  "version": "0.3.0",
+  "description": "Flat ESLint config for JavaScript, TypeScript, Vue, React, Prettier and so on by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
   "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/eslint",
@@ -38,6 +38,8 @@
     "eslint-plugin-import": "^2.28.0",
     "eslint-plugin-markdown": "^3.0.1",
     "eslint-plugin-prettier": "^5.0.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-unicorn": "^48.0.1",
     "eslint-plugin-vue": "^9.17.0",
     "globals": "^13.21.0",

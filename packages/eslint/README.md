@@ -41,6 +41,7 @@ This package exports some presets, which can be imported via named.
 | JavaScript |      js, jsx, imports, unicorn      |
 |  Markdown  |              markdown               |
 |  Prettier  |              prettier               |
+|   React    |                react                |
 | TypeScript |             typescript              |
 |   UnoCSS   |               unocss                |
 |    Vue     | reactivityTransform, vue, vueLegacy |
@@ -133,6 +134,7 @@ Related Reading:
 - [Configuration Files (New)](https://eslint.org/docs/latest/use/configure/configuration-files-new)
 - [ESLint's new config system, Part 1: Background](https://eslint.org/blog/2022/08/new-config-system-part-1/)
 - [ESLint's new config system, Part 2: Introduction to flat config](https://eslint.org/blog/2022/08/new-config-system-part-2/)
+- [ESLint's new config system, Part 3: Developer preview](https://eslint.org/blog/2022/08/new-config-system-part-3/)
 
 ## Release Notes
 
