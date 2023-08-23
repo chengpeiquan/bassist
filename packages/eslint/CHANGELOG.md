@@ -1,3 +1,13 @@
+## 0.3.1 (2023-08-23)
+
+
+### Bug Fixes
+
+* **eslint:** complement the type of loss ([1db5b88](https://github.com/chengpeiquan/bassist/commit/1db5b88271fdcaf031497c48ec68a15869588d03))
+* **eslint:** fix some misconfigurations for React rules ([0298668](https://github.com/chengpeiquan/bassist/commit/029866813cefa25d694d9ecacb74e2f1c1f08b37))
+
+
+
 # [0.3.0](https://github.com/chengpeiquan/bassist/compare/eslint@0.2.1...eslint@0.3.0) (2023-08-23)
 
 
