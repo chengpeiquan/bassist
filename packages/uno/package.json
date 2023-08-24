@@ -1,6 +1,6 @@
 {
   "name": "@bassist/uno",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Custom configuration for UnoCSS by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
@@ -34,6 +34,6 @@
     "unocss": "^0.54.1"
   },
   "peerDependencies": {
-    "unocss": "^0.54.1"
+    "unocss": ">=0.54.1"
   }
 }
