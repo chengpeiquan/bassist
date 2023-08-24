@@ -1,3 +1,12 @@
+## [0.1.3](https://github.com/chengpeiquan/bassist/compare/uno@0.1.2...uno@0.1.3) (2023-08-24)
+
+
+### Bug Fixes
+
+* **uno:** version number limit error for peer dependencies ([346271e](https://github.com/chengpeiquan/bassist/commit/346271e0edc0efee63016f10be5164c78f41e3b8))
+
+
+
 ## [0.1.2](https://github.com/chengpeiquan/bassist/compare/uno@0.1.1...uno@0.1.2) (2023-08-19)
 
 
