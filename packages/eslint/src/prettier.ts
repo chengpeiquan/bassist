@@ -1,6 +1,9 @@
 import prettierPlugin from 'eslint-plugin-prettier'
 import prettierConfig from 'eslint-config-prettier'
+import { GLOB_EXCLUDE } from './constants'
 import type { FlatESLintConfigItem } from 'eslint-define-config'
+
+export { prettierPlugin }
 
 export const prettier: FlatESLintConfigItem[] = [
   {
@@ -12,5 +15,6 @@ export const prettier: FlatESLintConfigItem[] = [
       ...prettierPlugin.configs.recommended.rules,
       'prettier/prettier': 'warn',
     },
+    ignores: [...GLOB_EXCLUDE],
   },
 ]
