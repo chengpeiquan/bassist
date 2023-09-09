@@ -18,6 +18,7 @@ export const GLOB_JSONC = '**/*.jsonc'
 
 export const GLOB_MARKDOWN = '**/*.md'
 export const GLOB_VUE = '**/*.vue'
+export const GLOB_SVELTE = '**/*.svelte'
 export const GLOB_YAML = '**/*.y?(a)ml'
 export const GLOB_HTML = '**/*.htm?(l)'
 
@@ -58,6 +59,7 @@ export const GLOB_EXCLUDE = [
   '**/.idea',
   '**/.output',
   '**/.vite-inspect',
+  '**/.svelte-kit',
 
   '**/CHANGELOG*.md',
   '**/*.min.*',
