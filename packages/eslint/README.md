@@ -35,18 +35,19 @@ Requires ESLint >= `8.0.0` , and TypeScript >= `5.0.0` .
 
 This package exports some presets, which can be imported via named.
 
-|  Category  |                Named                |
-| :--------: | :---------------------------------: |
-|   define   |   defineConfig, defineFlatConfig    |
-| JavaScript |      js, jsx, imports, unicorn      |
-|  Markdown  |              markdown               |
-|  Prettier  |              prettier               |
-|   React    |                react                |
-| TypeScript |             typescript              |
-|   UnoCSS   |               unocss                |
-|    Vue     | reactivityTransform, vue, vueLegacy |
+|  Category  |                                Named                                |
+| :--------: | :-----------------------------------------------------------------: |
+|   define   |     defineConfig, defineFlatConfig, FlatESLintConfigItem, Rules     |
+| JavaScript | js, jsx, imports, unicorn, importPlugin, unicornPlugin, antfuPlugin |
+|  Markdown  |                      markdown, markdownPlugin                       |
+|  Prettier  |                      prettier, prettierPlugin                       |
+|   React    |                         react, reactPlugin                          |
+|   Svelte   |                 svelte, svelteParser, sveltePlugin                  |
+| TypeScript |                   typescript, tsParser, tsPlugin                    |
+|   UnoCSS   |                        unocss, unocssPlugin                         |
+|    Vue     |      vue, vueLegacy, reactivityTransform, vueParser, vuePlugin      |
 
-Btw: Vue support 3.x (vue) and 2.x (vueLegacy) , and the Vue rules are includes TypeScript's rules, no need to import at the same time.
+Btw: Vue support 3.x (vue) and 2.x (vueLegacy) , and the Vue / React / Svelte rules are includes TypeScript's rules, no need to import at the same time.
 
 e.g. `import { typescript } from '@bassist/eslint'`
 
