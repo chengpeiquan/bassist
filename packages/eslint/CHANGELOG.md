@@ -1,3 +1,13 @@
+# 0.4.0 (2023-09-09)
+
+
+### Features
+
+* **eslint:** add some APIs exports ([4f8b2a7](https://github.com/chengpeiquan/bassist/commit/4f8b2a71f4177d841fd1f3b426bdbe100f556d7f))
+* **eslint:** add Svelte rules ([ed34bbc](https://github.com/chengpeiquan/bassist/commit/ed34bbc963e6c5bdd7cc5ff51bd5918e3e3ba618))
+
+
+
 ## 0.3.1 (2023-08-23)
 
 
