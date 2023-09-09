@@ -2,8 +2,10 @@ import globals from 'globals'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksConfig from 'eslint-plugin-react-hooks'
 import { typescript, tsParser, tsPlugin } from './typescript'
-import { GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX } from './constants'
+import { GLOB_EXCLUDE, GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX } from './constants'
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+
+export { reactPlugin }
 
 const reactCustomRules: Rules = {
   'react/jsx-uses-react': 'error',
@@ -42,5 +44,6 @@ export const react: FlatESLintConfigItem[] = [
       ...reactHooksConfig.configs.recommended.rules,
       ...reactCustomRules,
     },
+    ignores: [...GLOB_EXCLUDE],
   },
 ]

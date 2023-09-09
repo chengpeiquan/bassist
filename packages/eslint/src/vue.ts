@@ -1,7 +1,7 @@
 import vueParser from 'vue-eslint-parser'
 import vuePlugin from 'eslint-plugin-vue'
 import { typescript, tsParser, tsPlugin } from './typescript'
-import { GLOB_VUE } from './constants'
+import { GLOB_EXCLUDE, GLOB_VUE } from './constants'
 import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
 
 export { vueParser, vuePlugin }
@@ -109,6 +109,7 @@ function getVueConfig(vueVersionRules: Rules) {
       rules: {
         ...typescript[0].rules,
       },
+      ignores: [...GLOB_EXCLUDE],
     },
     {
       plugins: {
@@ -118,6 +119,7 @@ function getVueConfig(vueVersionRules: Rules) {
         ...vueVersionRules,
         ...vueCustomRules,
       },
+      ignores: [...GLOB_EXCLUDE],
     },
     ...reactivityTransform,
   ]

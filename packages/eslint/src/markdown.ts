@@ -1,7 +1,9 @@
 import markdownPlugin from 'eslint-plugin-markdown'
 import tsPlugin from '@typescript-eslint/eslint-plugin'
-import { GLOB_MARKDOWN, GLOB_SRC, GLOB_VUE } from './constants'
+import { GLOB_EXCLUDE, GLOB_MARKDOWN, GLOB_SRC, GLOB_VUE } from './constants'
 import type { FlatESLintConfigItem } from 'eslint-define-config'
+
+export { markdownPlugin }
 
 export const markdown: FlatESLintConfigItem[] = [
   {
@@ -38,5 +40,6 @@ export const markdown: FlatESLintConfigItem[] = [
       'no-unused-expressions': 'off',
       'no-unused-vars': 'off',
     },
+    ignores: [...GLOB_EXCLUDE],
   },
 ]
