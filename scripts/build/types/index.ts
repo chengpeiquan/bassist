@@ -25,6 +25,13 @@ export interface BuildConfig {
   skip?: boolean
 
   /**
+   * Add `#!/usr/bin/env node` Shebang to first line
+   *
+   * @example See `./packages/commit`
+   */
+  bin?: boolean
+
+  /**
    * CommonJS Externals
    *
    * @example See `./packages/node-utils`
@@ -36,8 +43,6 @@ export interface BuildConfig {
    * In special cases, one or more entry files
    * can be specified to build sub-packages
    * or change the entry file name.
-   *
-   * @example See `./packages/eslint`
    */
   entryFile?: string
   entryFiles?: string[]

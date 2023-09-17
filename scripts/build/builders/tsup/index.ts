@@ -22,6 +22,7 @@ function getEntry({ name, entryFile, entryFiles }: GetEntryOptions) {
 // https://tsup.egoist.dev
 export async function buildByTsup({
   name,
+  bin,
   entryFile,
   entryFiles,
 }: BuildOptions) {
@@ -29,7 +30,7 @@ export async function buildByTsup({
   const outDir = resolve(basePath, `./dist`)
   const entry = getEntry({ name, entryFile, entryFiles })
   const pkg = parsePackage(basePath)
-  const banner = getBanner(pkg)
+  const banner = getBanner(pkg, { bin })
   const external = getDeps(pkg)
 
   console.log({ entry })

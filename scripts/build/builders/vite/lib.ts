@@ -14,11 +14,16 @@ import type { BuildOptions } from '@scripts/build/types'
  *
  * @see https://vitejs.dev/config/
  */
-function viteConfig({ name, externals, entryFile }: BuildOptions): UserConfig {
+function viteConfig({
+  name,
+  bin,
+  externals,
+  entryFile,
+}: BuildOptions): UserConfig {
   const basePath = resolve(process.cwd(), `./packages/${name}`)
   const outDir = resolve(basePath, `./dist`)
   const pkg = parsePackage(basePath)
-  const bannerContent = getBanner(pkg)
+  const bannerContent = getBanner(pkg, { bin })
   const deps = getDeps(pkg)
 
   const config: UserConfig = {
