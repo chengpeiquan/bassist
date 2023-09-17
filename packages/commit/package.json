@@ -1,0 +1,25 @@
+{
+  "name": "@bassist/commit",
+  "version": "0.1.0",
+  "description": "Simple Commit Lint by @chengpeiquan .",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/commit",
+  "files": [
+    "index.cjs"
+  ],
+  "bin": {
+    "@bassist/commit": "./index.cjs",
+    "commit": "./index.cjs"
+  },
+  "main": "./index.cjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengpeiquan/bassist.git"
+  },
+  "keywords": [
+    "commitlint",
+    "commit lint",
+    "verify commit"
+  ]
+}
