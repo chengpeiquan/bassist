@@ -30,6 +30,13 @@ Take `Husky` as an example:
 npx husky set .husky/commit-msg "npx @bassist/commit $1"
 ```
 
+If this package is installed locally (e.g. `devDependencies` ), it can also be called through the `commit` alias.
+
+```bash
+pnpm add -D @bassist/commit
+npx husky set .husky/commit-msg "pnpm exec commit $1"
+```
+
 ## Git Commit Message Convention
 
 This is the most popular commit message specification in the world (See: [Angular's commit convention](https://github.com/conventional-changelog/conventional-changelog/tree/master/packages/conventional-changelog-angular)).
