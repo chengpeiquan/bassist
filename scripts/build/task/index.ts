@@ -34,9 +34,11 @@ async function buildMultiple(entryFiles: string[], options: BuildOptions) {
 export async function buildPackage(name: string) {
   const options: BuildOptions = { name }
 
-  const { builder, externals, skip, entryFile, entryFiles } =
+  const { builder, externals, skip, bin, entryFile, entryFiles } =
     readBuildConfig(name)
   if (skip) return
+
+  options.bin = bin
 
   if (Array.isArray(externals)) {
     options.externals = externals

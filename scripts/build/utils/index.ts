@@ -13,8 +13,15 @@ export function readBuildConfig(name: string) {
   return {}
 }
 
-export function getBanner(pkg: Record<string, any>) {
-  return [
+interface GetBannerOptions {
+  bin?: boolean
+}
+
+export function getBanner(
+  pkg: Record<string, any>,
+  { bin }: GetBannerOptions = {},
+) {
+  const baseBanners = [
     `/**`,
     ` * name: ${pkg.name}`,
     ` * version: v${pkg.version}`,
@@ -23,7 +30,15 @@ export function getBanner(pkg: Record<string, any>) {
     ` * homepage: ${pkg.homepage}`,
     ` * license: ${pkg.license}`,
     ` */`,
-  ].join('\n')
+  ]
+
+  const banners = bin
+    ? ['#!/usr/bin/env node', '', ...baseBanners]
+    : baseBanners
+
+  console.log(banners)
+
+  return banners.join('\n')
 }
 
 export function getDeps(pkg: Record<string, any>) {
