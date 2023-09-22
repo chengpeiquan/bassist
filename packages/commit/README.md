@@ -27,14 +27,14 @@ Take `Husky` as an example:
 2. Run the following command on the command line to add the check script to the `commit-msg` hook:
 
 ```bash
-npx husky set .husky/commit-msg "npx @bassist/commit $1"
+npx husky set .husky/commit-msg 'npx @bassist/commit "$1"'
 ```
 
 If this package is installed locally (e.g. `devDependencies` ), it can also be called through the `commit` alias.
 
 ```bash
 pnpm add -D @bassist/commit
-npx husky set .husky/commit-msg "pnpm exec commit $1"
+npx husky set .husky/commit-msg 'pnpm exec commit "$1"'
 ```
 
 ## Git Commit Message Convention
