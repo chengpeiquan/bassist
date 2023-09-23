@@ -1,6 +1,6 @@
 {
   "name": "@bassist/utils",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "Opinionated collection of common JavaScript / TypeScript utils by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
