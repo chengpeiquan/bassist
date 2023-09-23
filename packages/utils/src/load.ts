@@ -15,6 +15,8 @@ export interface LoadResOptions {
 }
 
 /**
+ * Dynamic loading of resources
+ *
  * @category network
  */
 export function loadRes({ type, id, resource }: LoadResOptions) {
