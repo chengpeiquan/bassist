@@ -25,7 +25,7 @@ type QueryInfoObject = Record<
  *
  * @category query
  */
-export function parseQuery(url?: string): QueryInfo {
+export function parseQuery(url?: string) {
   let queryStringify = ''
 
   if (isBrowser) {
@@ -45,7 +45,7 @@ export function parseQuery(url?: string): QueryInfo {
 
   if (!queryStringify.length) return {}
 
-  const temp: Record<string, string> = {}
+  const temp: QueryInfo = {}
   queryStringify
     .slice(1)
     .split('&')
