@@ -36,8 +36,6 @@ export function getBanner(
     ? ['#!/usr/bin/env node', '', ...baseBanners]
     : baseBanners
 
-  console.log(banners)
-
   return banners.join('\n')
 }
 
