@@ -1,11 +1,15 @@
 import { isBrowser } from './device'
 
 /**
+ * The preferred color scheme for the appearance of the user interface
+ *
  * @category appearance
  */
 export type PrefersColorScheme = 'light' | 'dark'
 
 /**
+ * Checks if the user's preferred color scheme is dark
+ *
  * @category appearance
  */
 export function isDark() {
@@ -14,6 +18,8 @@ export function isDark() {
 }
 
 /**
+ * Checks if the user's preferred color scheme is light
+ *
  * @category appearance
  */
 export function isLight() {
@@ -22,6 +28,8 @@ export function isLight() {
 }
 
 /**
+ * Retrieves the user's preferred color scheme
+ *
  * @category appearance
  */
 export function getPrefersColorScheme(): PrefersColorScheme | undefined {

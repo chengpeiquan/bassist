@@ -7,10 +7,21 @@ import { FallbackStorage } from './fallback'
  */
 export type StorageType = 'localStorage' | 'sessionStorage'
 
+/**
+ * BaseStorage class provides a wrapper for browser storage or fallback storage.
+ *
+ * @category storage
+ */
 export class BaseStorage {
   prefix: string
   private storage: Storage | FallbackStorage
 
+  /**
+   * Creates an instance of BaseStorage
+   *
+   * @param prefix - The prefix to be added to the storage keys.
+   * @param storageType - The type of storage to use (localStorage or sessionStorage)
+   */
   constructor(prefix: string, storageType: StorageType) {
     this.prefix = prefix
     this.storage = isBrowser ? window[storageType] : new FallbackStorage(prefix)
