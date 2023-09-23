@@ -5,6 +5,8 @@ import { isBrowser } from './device'
  */
 export type ResourcesSupportedWithLoadRes = 'js' | 'css' | 'style'
 
+type ResourcesElement = HTMLScriptElement | HTMLLinkElement | HTMLStyleElement
+
 /**
  * @category network
  */
@@ -26,9 +28,7 @@ export function loadRes({ type, id, resource }: LoadResOptions) {
       return
     }
 
-    function bindStatus(
-      el: HTMLScriptElement | HTMLLinkElement | HTMLStyleElement
-    ) {
+    function bindStatus(el: ResourcesElement) {
       el.addEventListener('load', resolve)
       el.addEventListener('error', reject)
       el.addEventListener('abort', reject)
