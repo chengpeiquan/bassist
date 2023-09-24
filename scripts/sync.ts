@@ -19,7 +19,7 @@ function syncVersion(
   monorepoDeps: Record<string, string>,
 ) {
   for (const key in packageDeps) {
-    if (hasKey(packageDeps, key)) {
+    if (hasKey(packageDeps, key) && monorepoDeps[key]) {
       packageDeps[key] = monorepoDeps[key]
     }
   }
@@ -30,11 +30,7 @@ async function run() {
   const deps = getDeps()
 
   // Possible dependent fields
-  const depTypes = [
-    'dependencies',
-    'devDependencies',
-    // 'peerDependencies'
-  ]
+  const depTypes = ['dependencies', 'devDependencies']
 
   // Read all packages info and sync deps versions
   const packages = readdirSync(resolve(process.cwd(), './packages'))
@@ -51,7 +47,7 @@ async function run() {
       }
     })
 
-    const content = JSON.stringify(pkg, null, 2) + '\n'
+    const content = JSON.stringify(pkg, null, 2)
     writeFileSync(pkgFilePath, content)
   })
 }
