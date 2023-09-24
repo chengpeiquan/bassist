@@ -39,6 +39,7 @@ export async function buildPackage(name: string) {
   if (skip) return
 
   options.bin = bin
+  options.builder = builder
 
   if (Array.isArray(externals)) {
     options.externals = externals
@@ -53,6 +54,5 @@ export async function buildPackage(name: string) {
     options.entryFile = entryFile
   }
 
-  options.builder = builder
   await build(options)
 }
