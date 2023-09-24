@@ -1,3 +1,7 @@
 {
-  "builder": "tsup"
+  "builder": "tsup",
+  "entryFiles": [
+    "index.ts",
+    "svelte.ts"
+  ]
 }
