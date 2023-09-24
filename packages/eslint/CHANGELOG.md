@@ -1,3 +1,12 @@
+# 0.5.0 (2023-09-24)
+
+
+### Features
+
+* **eslint:** distribute Svelte as a sub-package, fix [#18](https://github.com/chengpeiquan/bassist/issues/18) ([b8c2d73](https://github.com/chengpeiquan/bassist/commit/b8c2d73d7a9c60da4e2a333b2eb0852e02a25f44))
+
+
+
 # 0.4.0 (2023-09-09)
 
 
