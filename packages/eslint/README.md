@@ -35,6 +35,10 @@ Requires ESLint >= `8.0.0` , and TypeScript >= `5.0.0` .
 
 This package exports some presets, which can be imported via named.
 
+### @bassist/eslint
+
+Most functionality is exported by the main package.
+
 |  Category  |                                Named                                |
 | :--------: | :-----------------------------------------------------------------: |
 |   define   |     defineConfig, defineFlatConfig, FlatESLintConfigItem, Rules     |
@@ -42,14 +46,38 @@ This package exports some presets, which can be imported via named.
 |  Markdown  |                      markdown, markdownPlugin                       |
 |  Prettier  |                      prettier, prettierPlugin                       |
 |   React    |                         react, reactPlugin                          |
-|   Svelte   |                 svelte, svelteParser, sveltePlugin                  |
 | TypeScript |                   typescript, tsParser, tsPlugin                    |
 |   UnoCSS   |                        unocss, unocssPlugin                         |
 |    Vue     |      vue, vueLegacy, reactivityTransform, vueParser, vuePlugin      |
 
-Btw: Vue support 3.x (vue) and 2.x (vueLegacy) , and the Vue / React / Svelte rules are includes TypeScript's rules, no need to import at the same time.
+Btw: Vue support 3.x (vue) and 2.x (vueLegacy) , and the Vue / React rules are includes TypeScript's rules, no need to import at the same time.
 
-e.g. `import { typescript } from '@bassist/eslint'`
+For Example:
+
+```js
+// eslint.config.js
+import { defineConfig, prettier, vue } from '@bassist/eslint'
+```
+
+### @bassist/eslint/svelte
+
+Due to unknown conflicts with Vue rules (See [#18](https://github.com/chengpeiquan/bassist/issues/18) ), since `0.5.0`, Svelte is released as a sub-package.
+
+| Category |               Named                |
+| :------: | :--------------------------------: |
+|  Svelte  | svelte, svelteParser, sveltePlugin |
+
+For Example:
+
+```js
+// eslint.config.js
+import { defineConfig, prettier } from '@bassist/eslint'
+import { svelte } from '@bassist/eslint/svelte'
+```
+
+Yeah, Svelte rules are includes TypeScript's rules.
+
+In TypeScript projects, to support this import method, please check whether the `moduleResolution` field in tsconfig.json is set to `Bundler` or `NodeNext` .
 
 ## Configuration
 
