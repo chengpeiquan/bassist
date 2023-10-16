@@ -55,3 +55,14 @@ export function hasKey(obj: Record<string, any>, key: string) {
   if (!isObject(obj)) return false
   return Object.prototype.hasOwnProperty.call(obj, key)
 }
+
+/**
+ * String to byte stream
+ *
+ * @category data
+ */
+export function getBytes(value: string) {
+  const encoder = new TextEncoder()
+  const bytes = encoder.encode(value)
+  return bytes
+}
