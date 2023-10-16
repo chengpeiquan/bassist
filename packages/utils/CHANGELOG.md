@@ -1,3 +1,16 @@
+# [0.14.0](https://github.com/chengpeiquan/bassist/compare/utils@0.12.0...utils@0.14.0) (2023-10-16)
+
+
+### Features
+
+* **utils:** add comments ([b9808e9](https://github.com/chengpeiquan/bassist/commit/b9808e973d483abed456466829fcb37d6392f36b))
+* **utils:** add getBytes to convert string to byte stream ([796f18d](https://github.com/chengpeiquan/bassist/commit/796f18d68cfef2dce1f3dbee4fbeea9aafccdea2))
+* **utils:** add jsonp to get cross-domain data ([dcfd111](https://github.com/chengpeiquan/bassist/commit/dcfd1114b5d7e28af0879186720346e137369712))
+* **utils:** add orientation media query and judgment ([fc8ec6d](https://github.com/chengpeiquan/bassist/commit/fc8ec6d2f6a493bc36cd46c8247de7acbe5646d8))
+* **utils:** add preloadImages to preload large images in advance ([3aa676d](https://github.com/chengpeiquan/bassist/commit/3aa676d7bc6267d1880fc763a90b7d89a98216ed))
+
+
+
 # [0.13.0](https://github.com/chengpeiquan/bassist/compare/utils@0.12.0...utils@0.13.0) (2023-09-23)
 
 
