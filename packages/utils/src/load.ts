@@ -86,30 +86,30 @@ export function loadRes({ type, id, resource }: LoadResOptions) {
  *
  * @example
  *
- *  ```ts
- *    interface Res {
- *      code: number
- *      data: string[]
- *      msg: string
- *    }
+ * ```ts
+ * interface Res {
+ *   code: number
+ *   data: string[]
+ *   msg: string
+ * }
  *
- *    // The default and server-side agreement is to use `callback` Query
- *    const url = `https://example.com/data`
+ * // The default and server-side agreement is to use `callback` Query
+ * const url = `https://example.com/data`
  *
- *    // When no `callback` param passed, a random function name is created
- *    // Equivalent to `https://example.com/data?callback=randomCallbackName`
- *    // Pass the type of response as a generic to get a typed return value
- *    const res = await jsonp<Res>(url)
+ * // When no `callback` param passed, a random function name is created
+ * // Equivalent to `https://example.com/data?callback=randomCallbackName`
+ * // Pass the type of response as a generic to get a typed return value
+ * const res = await jsonp<Res>(url)
  *
- *    // You can also specify the `callback` function name
- *    const callback = 'jsonp_callback_123456'
- *    const res2 = await jsonp<Res>(url, callback)
+ * // You can also specify the `callback` function name
+ * const callback = 'jsonp_callback_123456'
+ * const res2 = await jsonp<Res>(url, callback)
  *
- *    // If the server does not agree on the `callback` Query,
- *    // you can specify other valid Query in this way.
- *    const urlWithCallback = `https://example.com/data?cb=${callback}`
- *    const res3 = await jsonp<Res>(urlWithCallback)
- *  ```
+ * // If the server does not agree on the `callback` Query,
+ * // you can specify other valid Query in this way.
+ * const urlWithCallback = `https://example.com/data?cb=${callback}`
+ * const res3 = await jsonp<Res>(urlWithCallback)
+ * ```
  *
  * @category network
  */
