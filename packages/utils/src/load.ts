@@ -150,3 +150,50 @@ export function jsonp<T>(url: string, callback?: string) {
     document.body.appendChild(script)
   })
 }
+
+/**
+ * Preload images
+ *
+ * @description It can be used to preload large images in advance,
+ *              or wait for the image to be loaded before ending Loading
+ *              and other usage scenarios.
+ *
+ * @param images - An array containing image urls
+ *
+ * @example
+ *
+ * ```ts
+ * const images = [
+ *  'https://example.com/1.jpg',
+ *  'https://example.com/2.jpg',
+ *  'https://example.com/3.jpg',
+ * ]
+ *
+ * // Start loading, Show loading icon etc.
+ * setLoading(true)
+ *
+ * // Wait for the images to be pre-rendered
+ * await preloadImages(images)
+ *
+ * // End loading state
+ * setLoading(false)
+ * ```
+ *
+ * @category network
+ */
+export async function preloadImages(images: string[]) {
+  const promises = []
+
+  for (const path in images) {
+    promises.push(
+      new Promise((resolve, reject) => {
+        const img = new Image()
+        img.onload = resolve
+        img.onerror = reject
+        img.src = path
+      }),
+    )
+  }
+
+  return Promise.all(promises)
+}
