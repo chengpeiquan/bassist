@@ -32,13 +32,6 @@ export interface BuildConfig {
   bin?: boolean
 
   /**
-   * CommonJS Externals
-   *
-   * @example See `./packages/node-utils`
-   */
-  externals?: string[]
-
-  /**
    * By default, `index.ts` is used for the entry file.
    * In special cases, one or more entry files
    * can be specified to build sub-packages
