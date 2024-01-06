@@ -14,5 +14,6 @@
     "Windi",
     "windicss",
     "withtypes"
-  ]
+  ],
+  "eslint.experimental.useFlatConfig": true
 }
