@@ -3,11 +3,16 @@ import { build } from 'vite'
 import banner from 'vite-plugin-banner'
 import commonjsExternals from 'vite-plugin-commonjs-externals'
 import { parsePackage } from '@scripts/utils'
-import { capitalize } from '@packages/utils/src/index'
+// import { capitalize } from '@packages/utils/src/index'
 import { getBanner, getDeps } from '@scripts/build/utils'
 import { ViteFormat } from '..'
 import type { UserConfig } from 'vite'
 import type { BuildOptions } from '@scripts/build/types'
+
+function capitalize([first, ...rest]: string) {
+  if (!first) return ''
+  return first.toUpperCase() + rest.join('')
+}
 
 /**
  * Build options provided to `vite.config.ts`
