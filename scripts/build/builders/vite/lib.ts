@@ -1,9 +1,7 @@
 import { resolve } from 'path'
 import { build } from 'vite'
 import banner from 'vite-plugin-banner'
-import commonjsExternals from 'vite-plugin-commonjs-externals'
 import { parsePackage } from '@scripts/utils'
-// import { capitalize } from '@packages/utils/src/index'
 import { getBanner, getDeps } from '@scripts/build/utils'
 import { ViteFormat } from '..'
 import type { UserConfig } from 'vite'
@@ -19,12 +17,7 @@ function capitalize([first, ...rest]: string) {
  *
  * @see https://vitejs.dev/config/
  */
-function viteConfig({
-  name,
-  bin,
-  externals,
-  entryFile,
-}: BuildOptions): UserConfig {
+function viteConfig({ name, bin, entryFile }: BuildOptions): UserConfig {
   const basePath = resolve(process.cwd(), `./packages/${name}`)
   const outDir = resolve(basePath, `./dist`)
   const pkg = parsePackage(basePath)
@@ -70,14 +63,6 @@ function viteConfig({
         debug: true,
       }),
     ],
-  }
-
-  if (Array.isArray(externals) && externals.length) {
-    config.plugins?.push(
-      commonjsExternals({
-        externals,
-      }),
-    )
   }
 
   return config
