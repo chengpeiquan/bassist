@@ -5,6 +5,7 @@
     "experimentalDecorators": true,
     "rootDir": ".",
     "baseUrl": ".",
+    "outDir": "./**/dist",
     "paths": {
       "@packages/*": ["./packages/*"],
       "@scripts/*": ["./scripts/*"]
