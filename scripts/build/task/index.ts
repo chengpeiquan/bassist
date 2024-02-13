@@ -3,7 +3,7 @@ import { readBuildConfig } from '../utils'
 import type { BuildOptions } from '../types'
 
 async function build(options: BuildOptions) {
-  const builder = options.builder ?? Builder.Vite
+  const builder = options.builder ?? Builder.Tsup
 
   console.log('Current Builder: ', builder.toUpperCase())
   console.log()
