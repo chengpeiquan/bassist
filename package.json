@@ -10,7 +10,7 @@
     "build": "tsx scripts/build/build-single",
     "build:all": "tsx scripts/build/build-multiple",
     "release": "tsx scripts/release",
-    "changelog": "tsx scripts/changelog",
+    "changelog": "tsx scripts/changelog.cts",
     "sync": "tsx scripts/sync",
     "test": "vitest",
     "coverage": "vitest run --coverage",
