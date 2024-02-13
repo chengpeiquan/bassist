@@ -23,7 +23,13 @@ Please configure Git Hooks management tools based on [Husky](https://github.com/
 
 Take `Husky` as an example:
 
-1. Initialize Husky configuration according to [getting-started](https://typicode.github.io/husky/getting-started.html) documentation
+1. Initialize Husky configuration according to [getting-started](https://typicode.github.io/husky/get-started.html) documentation
+
+```bash
+pnpm add -D husky
+pnpm exec husky init
+```
+
 2. Run the following command on the command line to add the check script to the `commit-msg` hook:
 
 ```bash
@@ -35,6 +41,16 @@ If this package is installed locally (e.g. `devDependencies` ), it can also be c
 ```bash
 pnpm add -D @bassist/commit
 npx husky set .husky/commit-msg 'pnpm exec commit "$1"'
+```
+
+## FAQ
+
+- Q: hook was ignored because it's not set as executable
+
+A: solve it with the command below (See: [#1177](https://github.com/typicode/husky/issues/1177)).
+
+```bash
+chmod ug+x .husky/*
 ```
 
 ## Git Commit Message Convention

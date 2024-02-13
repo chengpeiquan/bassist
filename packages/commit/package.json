@@ -1,6 +1,6 @@
 {
   "name": "@bassist/commit",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple Commit Lint by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
