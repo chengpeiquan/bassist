@@ -3,7 +3,10 @@ import { readdirSync } from '@withtypes/fs-extra'
 import { buildPackage } from './task'
 
 async function run() {
-  const packages = readdirSync(resolve(process.cwd(), `./packages`))
+  const packages = readdirSync(
+    resolve(process.cwd(), `./packages`),
+  ).toReversed()
+
   console.log()
   console.log('Start building, packages is as follows:')
   console.log(packages)
