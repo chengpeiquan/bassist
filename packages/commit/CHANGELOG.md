@@ -1,3 +1,12 @@
+## [0.1.1](https://github.com/chengpeiquan/bassist/compare/commit@0.1.0...commit@0.1.1) (2024-02-13)
+
+
+### Bug Fixes
+
+* **commit:** add FAQ and fix the broken link for husky ([89fb612](https://github.com/chengpeiquan/bassist/commit/89fb612f044ed08a08ba1fdb8770763b8a16f4fc))
+
+
+
 # 0.1.0 (2023-09-17)
 
 
