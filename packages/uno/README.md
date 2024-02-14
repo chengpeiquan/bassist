@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/npm/v/@bassist/uno?color=f43f5e&label=npm" />
   </a>
   <a href="https://www.npmjs.com/package/@bassist/uno" target="__blank">
-    <img src="https://img.shields.io/npm/dm/@bassist/uno?color=f43f5e&label=" />
+    <img src="https://img.shields.io/npm/dt/@bassist/uno?color=f43f5e&label=downloads" />
   </a>
   <a href="https://github.com/chengpeiquan/bassist/tree/main/packages/uno" target="__blank">
     <img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20demos&color=f43f5e" />
