@@ -1,0 +1,30 @@
+{
+  "name": "@bassist/changelog",
+  "version": "0.1.0",
+  "description": "Simple CHANGELOG generator by @chengpeiquan , based on conventional-changelog-cli.",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/changelog",
+  "files": [
+    "index.cjs"
+  ],
+  "bin": {
+    "@bassist/changelog": "./index.cjs",
+    "changelog": "./index.cjs"
+  },
+  "main": "./index.cjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengpeiquan/bassist.git"
+  },
+  "keywords": [
+    "changelog",
+    "changelog generator",
+    "generate changelog",
+    "CHANGELOG.md"
+  ],
+  "dependencies": {
+    "@withtypes/minimist": "^0.1.1",
+    "conventional-changelog-cli": "^4.1.0"
+  }
+}

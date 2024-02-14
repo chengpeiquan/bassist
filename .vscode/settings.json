@@ -2,10 +2,13 @@
   "cSpell.words": [
     "antfu",
     "Attributify",
+    "codemirror",
     "commitlint",
+    "conventionalcommits",
     "EDITMSG",
     "escaperegexp",
     "IIFE",
+    "infile",
     "kolorist",
     "nprogress",
     "nuxt",
