@@ -1,17 +1,17 @@
 import globals from 'globals'
 import svelteParser from 'svelte-eslint-parser'
 import sveltePlugin from 'eslint-plugin-svelte'
+import { GLOB_EXCLUDE, GLOB_SVELTE } from '../constants'
 import { typescript, tsParser, tsPlugin } from './typescript'
-import { GLOB_EXCLUDE, GLOB_SVELTE } from './constants'
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
 export { svelteParser, sveltePlugin }
 
 const svelteRules = {
   ...sveltePlugin.configs.recommended.rules,
-} as Rules
+} as unknown as Rules
 
-export const svelte: FlatESLintConfigItem[] = [
+export const svelte: FlatESLintConfig[] = [
   {
     files: [GLOB_SVELTE],
     plugins: {
