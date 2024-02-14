@@ -1,3 +1,19 @@
+# [0.6.0](https://github.com/chengpeiquan/bassist/compare/eslint@0.5.0...eslint@0.6.0) (2024-02-14)
+
+
+### Bug Fixes
+
+* typescript overwrite warning ([ced9c2c](https://github.com/chengpeiquan/bassist/commit/ced9c2c8a162f63b8b0ae66f65c384177eb7b0e3))
+
+
+### Features
+
+* **eslint:** add refresh plugin for react ([484e4e5](https://github.com/chengpeiquan/bassist/commit/484e4e5158b43603f6f91cb10abb580ede69e25f))
+* **eslint:** adjust the source code directory and upgrade dependency versions ([581ded6](https://github.com/chengpeiquan/bassist/commit/581ded6a6b7755b4ad663f0b6b5ff550ef84bd84))
+* **eslint:** update eslint deps ([17db886](https://github.com/chengpeiquan/bassist/commit/17db886d96b395d42f7f78b8749dca2ceed0c52d))
+
+
+
 # 0.5.0 (2023-09-24)
 
 
