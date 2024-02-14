@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/npm/v/@bassist/eslint?color=f43f5e&label=npm" />
   </a>
   <a href="https://www.npmjs.com/package/@bassist/eslint" target="__blank">
-    <img src="https://img.shields.io/npm/dm/@bassist/eslint?color=f43f5e&label=" />
+    <img src="https://img.shields.io/npm/dt/@bassist/eslint?color=f43f5e&label=" />
   </a>
   <a href="https://github.com/chengpeiquan/bassist/tree/main/packages/eslint" target="__blank">
     <img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20demos&color=f43f5e" />
@@ -31,59 +31,15 @@ If using TypeScript's Lint configuration, also make sure TypeScript is installed
 
 Requires ESLint >= `8.0.0` , and TypeScript >= `5.0.0` .
 
-## Presets
-
-This package exports some presets, which can be imported via named.
-
-### @bassist/eslint
-
-Most functionality is exported by the main package.
-
-|  Category  |                                Named                                |
-| :--------: | :-----------------------------------------------------------------: |
-|   define   |     defineConfig, defineFlatConfig, FlatESLintConfigItem, Rules     |
-| JavaScript | js, jsx, imports, unicorn, importPlugin, unicornPlugin, antfuPlugin |
-|  Markdown  |                      markdown, markdownPlugin                       |
-|  Prettier  |                      prettier, prettierPlugin                       |
-|   React    |                         react, reactPlugin                          |
-| TypeScript |                   typescript, tsParser, tsPlugin                    |
-|   UnoCSS   |                        unocss, unocssPlugin                         |
-|    Vue     |      vue, vueLegacy, reactivityTransform, vueParser, vuePlugin      |
-
-Btw: Vue support 3.x (vue) and 2.x (vueLegacy) , and the Vue / React rules are includes TypeScript's rules, no need to import at the same time.
-
-For Example:
-
-```js
-// eslint.config.js
-import { defineConfig, prettier, vue } from '@bassist/eslint'
-```
-
-### @bassist/eslint/svelte
-
-Due to unknown conflicts with Vue rules (See [#18](https://github.com/chengpeiquan/bassist/issues/18) ), since `0.5.0`, Svelte is released as a sub-package.
-
-| Category |               Named                |
-| :------: | :--------------------------------: |
-|  Svelte  | svelte, svelteParser, sveltePlugin |
-
-For Example:
-
-```js
-// eslint.config.js
-import { defineConfig, prettier } from '@bassist/eslint'
-import { svelte } from '@bassist/eslint/svelte'
-```
-
-Yeah, Svelte rules are includes TypeScript's rules.
-
-In TypeScript projects, to support this import method, please check whether the `moduleResolution` field in tsconfig.json is set to `Bundler` or `NodeNext` .
-
-## Configuration
+## Configuration File
 
 Create a configuration file named `eslint.config.js` in the root path of the project.
 
-Then you can import the desired presets depending on the type of project.
+> If using another filename (e.g. `eslint.config.cjs` or `eslint.config.mjs`), please use the `--config` command line option to specify your config.
+
+### Simple Usage
+
+You can import the desired presets depending on the type of project, please remember that each config is an array, and the default export is also an array.
 
 ```js
 // eslint.config.js
@@ -108,7 +64,7 @@ In lint script, `src` is your source code folder, please adjust it according to 
 
 You can run `npm run lint` to start linting the code.
 
-## Custom Rules
+### Usage with type checking
 
 If you need to adjust or add configuration, it is recommended to wrap the configuration through the `defineFlatConfig` of `defineConfig` (Alias) API to get a better configuration experience.
 
@@ -116,9 +72,9 @@ Remember use `// @ts-check` at the first line in your `eslint.config.js` .
 
 ```js
 // @ts-check
-import { defineConfig, prettier, vue } from '@bassist/eslint'
+import { defineFlatConfig, prettier, vue } from '@bassist/eslint'
 
-export default defineConfig([
+export default defineFlatConfig([
   ...prettier,
   ...vue,
   {
@@ -144,6 +100,40 @@ Please turn on this setting, which can solve VS Code's error reporting to `eslin
 ```
 
 In order not to affect other irrelevant projects, it is highly recommended that this setting only take effect in the workspace, not globally. So please fill it into `.vscode/settings.json`.
+
+## ESLint Config
+
+This package exports some config of ESLint, which can be imported via named.
+
+### Helpers
+
+Helper functions and types for type checking are provided here (See: [Usage with type checking](#usage-with-type-checking)).
+
+- [Define](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/define.ts)
+
+### Languages
+
+- [JavaScript (with JSX)](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/javascript.ts)
+- [TypeScript](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/typescript.ts)
+- [Markdown](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/markdown.ts)
+
+### Frameworks
+
+Typescript rules are built-in when using framework presets.
+
+- [React](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/react.ts)
+- [Vue (v2 and v3)](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/vue.ts)
+- [Svelte](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/svelte.ts) (from `@bassist/eslint/svelte`)
+- [Uno CSS](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/unocss.ts)
+
+### Formatters
+
+- [Prettier](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/prettier.ts)
+
+### Others
+
+- [Imports](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/imports.ts)
+- [Unicorn](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/unicorn.ts)
 
 ## Note
 
