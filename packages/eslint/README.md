@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/npm/v/@bassist/eslint?color=f43f5e&label=npm" />
   </a>
   <a href="https://www.npmjs.com/package/@bassist/eslint" target="__blank">
-    <img src="https://img.shields.io/npm/dt/@bassist/eslint?color=f43f5e&label=" />
+    <img src="https://img.shields.io/npm/dt/@bassist/eslint?color=f43f5e&label=downloads" />
   </a>
   <a href="https://github.com/chengpeiquan/bassist/tree/main/packages/eslint" target="__blank">
     <img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20demos&color=f43f5e" />
