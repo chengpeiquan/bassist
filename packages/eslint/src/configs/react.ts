@@ -1,6 +1,7 @@
 import globals from 'globals'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooksConfig from 'eslint-plugin-react-hooks'
+import reactRefresh from 'eslint-plugin-react-refresh'
 import { typescript, tsParser, tsPlugin } from './typescript'
 import {
   GLOB_EXCLUDE,
@@ -29,6 +30,7 @@ export const react: FlatESLintConfig[] = [
     plugins: {
       react: reactPlugin,
       'react-hooks': reactHooksConfig,
+      'react-refresh': reactRefresh,
       '@typescript-eslint': tsPlugin,
     },
     languageOptions: {
