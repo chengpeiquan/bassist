@@ -1,6 +1,6 @@
 {
   "name": "@bassist/eslint",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "Flat ESLint config for JavaScript, TypeScript, Vue, React, Svelte, Prettier and so on by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
@@ -76,6 +76,9 @@
   },
   "peerDependenciesMeta": {
     "svelte": {
+      "optional": true
+    },
+    "typescript": {
       "optional": true
     }
   }
