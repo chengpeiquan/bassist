@@ -1,3 +1,12 @@
+## [0.6.1](https://github.com/chengpeiquan/bassist/compare/eslint@0.5.0...eslint@0.6.1) (2024-02-14)
+
+
+### Bug Fixes
+
+* **eslint:** the TypeScript peerDependency is set to optional ([32a4ce1](https://github.com/chengpeiquan/bassist/commit/32a4ce1e5e08b7dae8d6320d747eff8672626c31))
+
+
+
 # [0.6.0](https://github.com/chengpeiquan/bassist/compare/eslint@0.5.0...eslint@0.6.0) (2024-02-14)
 
 
