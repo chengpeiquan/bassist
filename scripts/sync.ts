@@ -1,6 +1,10 @@
 import { readdirSync, readJSONSync, writeFileSync } from '@withtypes/fs-extra'
 import { resolve } from 'path'
-import { hasKey } from '../packages/utils/src/index'
+
+function hasKey(obj: Record<string, any>, key: string) {
+  if (Object.prototype.toString.call(obj) !== '[object Object]') return false
+  return Object.prototype.hasOwnProperty.call(obj, key)
+}
 
 function getDeps() {
   const pkg = readJSONSync(resolve(process.cwd(), './package.json'))
