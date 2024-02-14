@@ -2,6 +2,6 @@
   "builder": "tsup",
   "entryFiles": [
     "index.ts",
-    "svelte.ts"
+    "configs/svelte.ts"
   ]
 }

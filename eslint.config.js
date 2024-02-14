@@ -1,9 +1,19 @@
 // @ts-check
-import { defineConfig, prettier, vue } from './packages/eslint/dist/index.cjs'
+import {
+  defineFlatConfig,
+  prettier,
+  typescript as _typescript,
+} from './packages/eslint/dist/index.mjs'
 
-export default defineConfig([
+/**
+ * @typedef {import('eslint-define-config').FlatESLintConfig} FlatESLintConfig
+ */
+
+const typescript = /** @type {FlatESLintConfig[]} */ (_typescript)
+
+export default defineFlatConfig([
   ...prettier,
-  ...vue,
+  ...typescript,
   {
     ignores: ['dist', 'lib', 'types', 'test'],
   },

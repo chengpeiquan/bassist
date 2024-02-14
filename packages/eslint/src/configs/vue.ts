@@ -1,22 +1,22 @@
 import vueParser from 'vue-eslint-parser'
 import vuePlugin from 'eslint-plugin-vue'
-import { typescript, tsParser, tsPlugin } from './typescript'
-import { GLOB_EXCLUDE, GLOB_VUE } from './constants'
-import type { FlatESLintConfigItem, Rules } from 'eslint-define-config'
+import { GLOB_EXCLUDE, GLOB_VUE } from '../constants'
+import { tsParser, tsPlugin, typescript } from './typescript'
+import type { FlatESLintConfig, Rules } from 'eslint-define-config'
 
 export { vueParser, vuePlugin }
 
-export const reactivityTransform: FlatESLintConfigItem[] = [
+export const reactivityTransform: FlatESLintConfig[] = [
   {
     languageOptions: {
       globals: {
         $: 'readonly',
         $$: 'readonly',
-        $ref: 'readonly',
         $computed: 'readonly',
+        $customRef: 'readonly',
+        $ref: 'readonly',
         $shallowRef: 'readonly',
         $toRef: 'readonly',
-        $customRef: 'readonly',
       },
     },
     plugins: {
@@ -28,13 +28,13 @@ export const reactivityTransform: FlatESLintConfigItem[] = [
   },
 ]
 
-const vueCustomRules: Rules = {
-  'vue/max-attributes-per-line': 'off',
-  'vue/no-v-html': 'off',
-  'vue/multi-word-component-names': 'off',
-  'vue/require-prop-types': 'off',
-  'vue/require-default-prop': 'off',
-
+const vueCustomRules = {
+  'vue/component-tags-order': [
+    'off',
+    { order: ['script', 'template', 'style'] },
+  ],
+  'vue/custom-event-name-casing': ['error', 'camelCase'],
+  'vue/eqeqeq': ['error', 'smart'],
   'vue/html-self-closing': [
     'error',
     {
@@ -47,18 +47,14 @@ const vueCustomRules: Rules = {
       math: 'always',
     },
   ],
-  'vue/component-tags-order': [
-    'off',
-    { order: ['script', 'template', 'style'] },
-  ],
-  'vue/custom-event-name-casing': ['error', 'camelCase'],
-  'vue/no-useless-v-bind': 'error',
-  'vue/no-unused-refs': 'error',
-  'vue/padding-line-between-blocks': ['error', 'always'],
-
-  'vue/prefer-template': 'error',
-  'vue/eqeqeq': ['error', 'smart'],
+  'vue/max-attributes-per-line': 'off',
+  'vue/multi-word-component-names': 'off',
   'vue/no-constant-condition': 'warn',
+  'vue/no-empty-pattern': 'error',
+  'vue/no-loss-of-precision': 'error',
+  'vue/no-unused-refs': 'error',
+  'vue/no-useless-v-bind': 'error',
+  'vue/no-v-html': 'off',
   'vue/object-shorthand': [
     'error',
     'always',
@@ -67,9 +63,11 @@ const vueCustomRules: Rules = {
       avoidQuotes: true,
     },
   ],
-  'vue/no-loss-of-precision': 'error',
-  'vue/no-empty-pattern': 'error',
-}
+  'vue/padding-line-between-blocks': ['error', 'always'],
+  'vue/prefer-template': 'error',
+  'vue/require-prop-types': 'off',
+  'vue/require-default-prop': 'off',
+} as unknown as Rules
 
 const vue3Rules: Rules = {
   ...vuePlugin.configs.base.rules,
@@ -86,7 +84,7 @@ const vue2Rules: Rules = {
 }
 
 function getVueConfig(vueVersionRules: Rules) {
-  const vueRules: FlatESLintConfigItem[] = [
+  const vueRules: FlatESLintConfig[] = [
     {
       files: [GLOB_VUE],
       plugins: {

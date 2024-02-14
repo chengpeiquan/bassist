@@ -1,11 +1,11 @@
 import markdownPlugin from 'eslint-plugin-markdown'
-import tsPlugin from '@typescript-eslint/eslint-plugin'
-import { GLOB_EXCLUDE, GLOB_MARKDOWN, GLOB_SRC, GLOB_VUE } from './constants'
-import type { FlatESLintConfigItem } from 'eslint-define-config'
+import { GLOB_EXCLUDE, GLOB_MARKDOWN, GLOB_SRC, GLOB_VUE } from '../constants'
+import { tsPlugin } from './typescript'
+import type { FlatESLintConfig } from 'eslint-define-config'
 
 export { markdownPlugin }
 
-export const markdown: FlatESLintConfigItem[] = [
+export const markdown: FlatESLintConfig[] = [
   {
     files: [GLOB_MARKDOWN],
     plugins: {
