@@ -1,0 +1,40 @@
+{
+  "name": "@bassist/release",
+  "version": "0.1.0",
+  "description": "Simple GitHub release generator by @chengpeiquan , based on GitHub CLI.",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/release",
+  "files": [
+    "dist"
+  ],
+  "bin": {
+    "@bassist/release": "./dist/index.mjs",
+    "release": "./dist/index.mjs"
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chengpeiquan/bassist"
+  },
+  "keywords": [
+    "release",
+    "release generator",
+    "generate release",
+    "github release"
+  ],
+  "dependencies": {
+    "@bassist/utils": "workspace:^",
+    "@withtypes/fs-extra": "^0.1.1",
+    "@withtypes/minimist": "^0.1.1"
+  }
+}
