@@ -228,6 +228,18 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0
 
+  packages/release:
+    dependencies:
+      '@bassist/utils':
+        specifier: workspace:^
+        version: link:../utils
+      '@withtypes/fs-extra':
+        specifier: ^0.1.1
+        version: 0.1.1
+      '@withtypes/minimist':
+        specifier: ^0.1.1
+        version: 0.1.1
+
   packages/tsconfig: {}
 
   packages/uno:
