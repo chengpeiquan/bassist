@@ -1,4 +1,4 @@
-import { Builder } from '../builders'
+import { type Builder } from '../builders'
 
 /**
  * Some special options for the build process

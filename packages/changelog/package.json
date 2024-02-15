@@ -1,18 +1,27 @@
 {
   "name": "@bassist/changelog",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple CHANGELOG generator by @chengpeiquan , based on conventional-changelog-cli.",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
   "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/changelog",
   "files": [
-    "index.cjs"
+    "dist"
   ],
   "bin": {
-    "@bassist/changelog": "./index.cjs",
-    "changelog": "./index.cjs"
+    "@bassist/changelog": "./dist/index.cjs",
+    "changelog": "./dist/index.cjs"
   },
-  "main": "./index.cjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/chengpeiquan/bassist.git"
