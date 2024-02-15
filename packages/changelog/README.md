@@ -71,7 +71,7 @@ If there are any running problems, please provide a reproducible example in the 
 
 ## Release Notes
 
-Please refer to [CHANGELOG](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/CHANGELOG.md) for details.
+Please refer to [CHANGELOG](https://github.com/chengpeiquan/bassist/blob/main/packages/changelog/CHANGELOG.md) for details.
 
 ## License
 
