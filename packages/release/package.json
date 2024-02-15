@@ -1,6 +1,6 @@
 {
   "name": "@bassist/release",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Simple GitHub release generator by @chengpeiquan , based on GitHub CLI.",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",

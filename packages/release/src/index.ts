@@ -1,7 +1,7 @@
 import { resolve } from 'node:path'
 import { execSync } from 'node:child_process'
 import { readJsonSync } from '@withtypes/fs-extra'
-import { getNotes } from './utils'
+import { getName, getNotes, getRepo } from './utils'
 import minimist from '@withtypes/minimist'
 import pkg from '../package.json'
 
@@ -18,9 +18,12 @@ async function run() {
 
   const cwd = process.cwd()
   const pkgPath = resolve(cwd, './package.json')
-  const json = readJsonSync(pkgPath) || {}
+  const pkgJson = readJsonSync(pkgPath) || {}
 
-  const { version, repository } = json
+  const { name, version, repository } = pkgJson
+  if (!name) {
+    throw new Error(`[${pkg.name}] Missing package name`)
+  }
   if (!version) {
     throw new Error(`[${pkg.name}] Missing package version`)
   }
@@ -28,17 +31,26 @@ async function run() {
     throw new Error(`[${pkg.name}] Missing package repository`)
   }
 
+  const repoInfo = getRepo(repository)
+  if (!repoInfo) {
+    throw new Error(`[${pkg.name}] Unsupported repository information`)
+  }
+
   const notes = getNotes({
-    repository,
+    repoInfo,
     branch,
     changelog,
   })
 
+  const isMonorepo = !!repoInfo.directory
+  const pkgName = getName(name)
+  const tagName = isMonorepo ? `${pkgName}@${version}` : `v${version}`
+
   const releaseArgs = [
     'gh --version',
-    `git tag -a v${version} -m "v${version}"`,
-    `git push origin v${version}`,
-    `gh release create v${version} --title "v${version}" --notes "${notes}"`,
+    `git tag -a ${tagName} -m "${tagName}"`,
+    `git push origin ${tagName}`,
+    `gh release create ${tagName} --title "${tagName}" --notes "${notes}"`,
   ]
 
   const cmd = releaseArgs.join(' && ')

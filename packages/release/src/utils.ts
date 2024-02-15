@@ -10,7 +10,12 @@ interface Repository {
   directory: string
 }
 
-function getRepo(repository?: Repository) {
+interface RepoInfo {
+  repo: string
+  directory: string
+}
+
+export function getRepo(repository?: Repository): RepoInfo | undefined {
   if (!repository || !isObject(repository)) return undefined
   const { url = '', directory = '' } = repository
   if (!url) return undefined
@@ -34,13 +39,12 @@ function getTips(label = DETAILS_LABEL) {
 }
 
 interface GetNotesOptions {
-  repository?: Repository
+  repoInfo?: RepoInfo
   branch: string
   changelog: string
 }
 
-export function getNotes({ repository, branch, changelog }: GetNotesOptions) {
-  const repoInfo = getRepo(repository)
+export function getNotes({ repoInfo, branch, changelog }: GetNotesOptions) {
   if (!repoInfo) return getTips()
 
   const url = [repoInfo.repo, 'blob', branch, repoInfo.directory, changelog]
@@ -49,4 +53,12 @@ export function getNotes({ repository, branch, changelog }: GetNotesOptions) {
 
   const label = `[${DETAILS_LABEL}](${url})`
   return getTips(label)
+}
+
+export function getName(name: string) {
+  if (name.startsWith('@')) {
+    const [, scopedName] = name.split('/')
+    return scopedName
+  }
+  return name
 }
