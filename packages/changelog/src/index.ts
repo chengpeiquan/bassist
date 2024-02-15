@@ -1,4 +1,3 @@
-import { resolve } from 'node:path'
 import { execSync } from 'node:child_process'
 import minimist from '@withtypes/minimist'
 import pkg from '../package.json'
@@ -22,15 +21,6 @@ async function run() {
     'lerna-package': lernaPackageValue,
   } = argv
 
-  const cwd = process.cwd()
-
-  const cli = resolve(
-    cwd,
-    './node_modules',
-    pkg.name,
-    `./node_modules/conventional-changelog-cli/cli.mjs`,
-  )
-
   const preset = presetValue || 'angular'
   const infile = infileValue || 'CHANGELOG.md'
   const releaseCount = releaseCountValue || 1
@@ -38,7 +28,7 @@ async function run() {
   const commitPath = commitPathValue || './src'
 
   const changelogArgs = [
-    `node ${cli}`,
+    `conventional-changelog`,
     lernaPackage ? `--lerna-package ${lernaPackage}` : '',
     `-p ${preset}`,
     `-i ${infile}`,

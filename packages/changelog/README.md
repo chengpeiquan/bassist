@@ -26,7 +26,7 @@ This is a CLI tool, you can install it locally and run it through commands such 
 Install it:
 
 ```bash
-pnpm add -D @bassist/changelog
+pnpm add -D @bassist/changelog conventional-changelog-cli
 ```
 
 In your `package.json` :
@@ -49,7 +49,7 @@ You can see a CHANGELOG.md file in the project root directory, which will genera
 
 ## Implementation Principle
 
-Inside this package, the program will run the conventional-changelog CLI command to generate CHANGELOG, so "conventional-changelog-cli" is provided as a dependency of the package and does not need to be installed separately.
+In this package, the program will run the conventional-changelog CLI command to generate CHANGELOG, so `conventional-changelog-cli`, as the peerDependency of the package, also needs to be installed together.
 
 ## Options
 
