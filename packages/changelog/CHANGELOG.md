@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/chengpeiquan/bassist/compare/changelog@0.2.0...changelog@0.3.0) (2024-02-15)
+
+
+### Features
+
+* **changelog:** let the CLI as a peer dependency to installed ([5ec81ce](https://github.com/chengpeiquan/bassist/commit/5ec81ceb6b0b322dbcbc4178cbf98fa292df04d3))
+
+
+
 # [0.2.0](https://github.com/chengpeiquan/bassist/compare/changelog@0.1.0...changelog@0.2.0) (2024-02-15)
 
 
