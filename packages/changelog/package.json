@@ -1,6 +1,6 @@
 {
   "name": "@bassist/changelog",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Simple CHANGELOG generator by @chengpeiquan , based on conventional-changelog-cli.",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
@@ -9,8 +9,8 @@
     "dist"
   ],
   "bin": {
-    "@bassist/changelog": "./dist/index.cjs",
-    "changelog": "./dist/index.cjs"
+    "@bassist/changelog": "./dist/index.mjs",
+    "changelog": "./dist/index.mjs"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -35,5 +35,8 @@
   "dependencies": {
     "@withtypes/minimist": "^0.1.1",
     "conventional-changelog-cli": "^4.1.0"
+  },
+  "peerDependencies": {
+    "conventional-changelog-cli": ">=4.1.0"
   }
 }
