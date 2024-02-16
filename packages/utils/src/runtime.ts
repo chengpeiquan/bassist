@@ -3,7 +3,7 @@
  *
  * @category runtime
  */
-export type RuntimeEnv = 'development' | 'test' | 'production' | undefined
+export type RuntimeEnv = 'dev' | 'development' | 'test' | 'prod' | 'production'
 
 /**
  * Get current runtime environment
@@ -34,7 +34,7 @@ export const runtimeEnv = getRuntimeEnv()
  *
  * @category runtime
  */
-export function checkRuntimeEnv(runtimeEnv: string) {
+export function checkRuntimeEnv(runtimeEnv: unknown): runtimeEnv is RuntimeEnv {
   try {
     return process.env.NODE_ENV === runtimeEnv
   } catch (e) {
@@ -47,7 +47,8 @@ export function checkRuntimeEnv(runtimeEnv: string) {
  *
  * @category runtime
  */
-export const isDevRuntime = checkRuntimeEnv('development')
+export const isDevRuntime =
+  checkRuntimeEnv('dev') || checkRuntimeEnv('development')
 
 /**
  * Determine whether the current runtime is test
@@ -61,4 +62,5 @@ export const isTestRuntime = checkRuntimeEnv('test')
  *
  * @category runtime
  */
-export const isProdRuntime = checkRuntimeEnv('production')
+export const isProdRuntime =
+  checkRuntimeEnv('prod') || checkRuntimeEnv('production')
