@@ -1,3 +1,23 @@
+# [0.15.0](https://github.com/chengpeiquan/bassist/compare/utils@0.14.0...utils@0.15.0) (2024-02-16)
+
+
+### Bug Fixes
+
+* typescript overwrite warning ([ced9c2c](https://github.com/chengpeiquan/bassist/commit/ced9c2c8a162f63b8b0ae66f65c384177eb7b0e3))
+
+
+### Features
+
+* **utils:** add dev and prod into RuntimeEnv types ([7252e6d](https://github.com/chengpeiquan/bassist/commit/7252e6d212e91bd0099715c5ffef05756792439b))
+* **utils:** add inRange to checks if a number is between minimum and maximum ([8031f98](https://github.com/chengpeiquan/bassist/commit/8031f98fa225af8f2a81b7c830954da369d988c4))
+* **utils:** add isAppleDevice to checks if the code is being executed on an apple device ([cd1e355](https://github.com/chengpeiquan/bassist/commit/cd1e3555bd630fd8942c28d2b6d06957c46e27f0))
+* **utils:** add isTablet to checks if the code is being executed on a tablet device ([86f1dc4](https://github.com/chengpeiquan/bassist/commit/86f1dc4af968394427bc6efd21d6a06c85e818a5))
+* **utils:** add isXX methods to check whether the data is of the specified type ([03e3dee](https://github.com/chengpeiquan/bassist/commit/03e3dee0d1954ef57359f51ec0d51df843b5973b))
+* **utils:** add noop and pnoop for no operation function ([8e5d006](https://github.com/chengpeiquan/bassist/commit/8e5d006c7073e07a3bfda8b9345ee35f2ea8a403))
+* **utils:** clipboard add fallback mechanism ([39cc4b2](https://github.com/chengpeiquan/bassist/commit/39cc4b271704fda05950361133044866ace9e796))
+
+
+
 # [0.14.0](https://github.com/chengpeiquan/bassist/compare/utils@0.12.0...utils@0.14.0) (2023-10-16)
 
 
