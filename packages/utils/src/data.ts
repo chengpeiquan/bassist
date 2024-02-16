@@ -276,3 +276,34 @@ export function inRange({
 
   return isMin && isMax
 }
+
+/**
+ * No operation function type
+ *
+ * @category data
+ */
+export type NoOperationFunction = (...args: any) => void
+
+/**
+ * A no operation function
+ *
+ * @category data
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const noop: NoOperationFunction = (..._args) => void 0
+
+/**
+ * Promisify No operation function type
+ *
+ * @category data
+ */
+export type PromisifyNoOperationFunction = (...args: any) => Promise<void>
+
+/**
+ * A promisify no operation function
+ *
+ * @category data
+ */
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export const pnoop: PromisifyNoOperationFunction = (..._args) =>
+  new Promise<void>((r) => r())
