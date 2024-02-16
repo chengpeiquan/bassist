@@ -32,6 +32,25 @@ export function isMobile() {
 }
 
 /**
+ * Regular expression pattern to match tablet device user agents
+ *
+ * @category device
+ */
+export const tabletDevicesRegExp =
+  /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/i
+
+/**
+ * Checks if the code is being executed on a tablet device
+ *
+ * @category device
+ */
+export function isTablet() {
+  if (!isBrowser) return false
+  if (!isMobile()) return false
+  return tabletDevicesRegExp.test(getUserAgent())
+}
+
+/**
  * Checks if the code is being executed on a desktop device
  *
  * @category device
