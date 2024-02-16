@@ -1,6 +1,6 @@
 {
   "name": "@bassist/utils",
-  "version": "0.14.0",
+  "version": "0.15.0",
   "description": "Opinionated collection of common JavaScript / TypeScript utils by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
@@ -20,7 +20,8 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chengpeiquan/bassist.git"
+    "url": "https://github.com/chengpeiquan/bassist",
+    "directory": "packages/utils"
   },
   "keywords": [
     "utils"
