@@ -61,6 +61,23 @@ export function isDesktop() {
 }
 
 /**
+ * Regular expression pattern to match apple device user agents
+ *
+ * @category device
+ */
+export const appleDevicesRegExp = /(mac|iphone|ipod|ipad)/i
+
+/**
+ * Checks if the code is being executed on an apple device
+ *
+ * @category device
+ */
+export function isAppleDevice() {
+  if (!isBrowser) return false
+  return appleDevicesRegExp.test(getUserAgent())
+}
+
+/**
  * Checks if the code is running on an Android device
  *
  * @category device
