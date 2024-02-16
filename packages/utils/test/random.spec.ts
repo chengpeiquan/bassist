@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { randomNumber, randomUserAgent } from '..'
+import { inRange as isInRange, randomNumber, randomUserAgent } from '..'
 
 console.log(randomUserAgent())
 console.log(randomUserAgent())
@@ -7,7 +7,7 @@ console.log(randomUserAgent())
 
 describe('randomNumber', () => {
   function inRange(value: number, min: number, max: number) {
-    return value >= min && value <= max
+    return isInRange({ num: value, min, max })
   }
 
   it('Valid data', () => {

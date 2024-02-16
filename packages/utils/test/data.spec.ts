@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { getDataType, isObject, isArray } from '..'
+import { getDataType, isObject, isArray, inRange } from '..'
 
 describe('getDataType', () => {
   it('Valid data', () => {
@@ -42,5 +42,24 @@ describe('isObject', () => {
     expect(isObject(null)).toBeFalsy()
     expect(isObject(undefined)).toBeFalsy()
     expect(isObject(Object(1))).toBeFalsy()
+  })
+})
+
+describe('inRange', () => {
+  it('Valid data', () => {
+    expect(inRange({ num: 1, min: 0, max: 5 })).toBeTruthy()
+    expect(inRange({ num: 1, min: -5, max: 5 })).toBeTruthy()
+    expect(inRange({ num: 1, min: 5, max: -5 })).toBeTruthy()
+    expect(
+      inRange({ num: -4, min: -5, max: 5, includeMin: false }),
+    ).toBeTruthy()
+    expect(inRange({ num: 4, min: -5, max: 5, includeMax: false })).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(inRange({ num: 10, min: 0, max: 5 })).toBeFalsy()
+    expect(inRange({ num: -99, min: -5, max: 5 })).toBeFalsy()
+    expect(inRange({ num: NaN, min: 5, max: -5 })).toBeFalsy()
+    expect(inRange({ num: -5, min: -5, max: 5, includeMin: false })).toBeFalsy()
+    expect(inRange({ num: 5, min: -5, max: 5, includeMax: false })).toBeFalsy()
   })
 })

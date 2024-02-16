@@ -240,3 +240,39 @@ export function getBytes(value: string) {
   const bytes = encoder.encode(value)
   return bytes
 }
+
+/**
+ * @category data
+ */
+export interface InRangeOptions {
+  num: number
+  min: number
+  max: number
+  includeMin?: boolean
+  includeMax?: boolean
+}
+
+/**
+ * Checks if a number is between minimum and maximum
+ *
+ * @category data
+ */
+export function inRange({
+  num,
+  min,
+  max,
+  includeMin = true,
+  includeMax = true,
+}: InRangeOptions) {
+  if (!isNumber(num) || !isNumber(min) || !isNumber(max)) return false
+
+  const isMin = includeMin
+    ? num >= Math.min(min, max)
+    : num > Math.min(min, max)
+
+  const isMax = includeMax
+    ? num <= Math.max(min, max)
+    : num < Math.max(min, max)
+
+  return isMin && isMax
+}
