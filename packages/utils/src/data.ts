@@ -171,7 +171,7 @@ export function isMap(value: unknown): value is Map<any, any> {
  *
  * @category data
  */
-export function isWeakSet(value: unknown): value is WeakSet<WeakKey> {
+export function isWeakSet(value: unknown): value is WeakSet<any> {
   return getDataType(value) === 'weakset'
 }
 
@@ -180,7 +180,7 @@ export function isWeakSet(value: unknown): value is WeakSet<WeakKey> {
  *
  * @category data
  */
-export function isWeakMap(value: unknown): value is WeakMap<WeakKey, any> {
+export function isWeakMap(value: unknown): value is WeakMap<any, any> {
   return getDataType(value) === 'weakmap'
 }
 
