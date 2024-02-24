@@ -1,3 +1,4 @@
+import { isUndefined } from './data'
 import { getUserAgent } from './ua'
 
 /**
@@ -5,7 +6,7 @@ import { getUserAgent } from './ua'
  *
  * @category device
  */
-export const isBrowser = typeof window !== 'undefined'
+export const isBrowser = !isUndefined(window)
 
 /**
  * Checks if the code is being executed in a server environment

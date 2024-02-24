@@ -1,5 +1,5 @@
 import { isBrowser } from './device'
-import { isObject } from './data'
+import { isObject, isString } from './data'
 
 /**
  * @category query
@@ -33,7 +33,7 @@ export function parseQuery(url?: string) {
     queryStringify = search
   }
 
-  if (typeof url === 'string' && url.startsWith('http')) {
+  if (isString(url) && url.startsWith('http')) {
     const index = url.indexOf('?')
     queryStringify = index === -1 ? '' : url.slice(index)
   }

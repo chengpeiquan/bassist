@@ -126,13 +126,14 @@ export function jsonp<T>(url: string, callback?: string) {
       callback ||
       `jsonp_callback_${randomString().replace(/-/g, '_')}`
 
-    // @ts-ignore
+    // @ts-expect-error
     window[cb] = (data: T) => {
       try {
-        // @ts-ignore
+        // @ts-expect-error
+        // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
         delete window[cb]
       } catch (e) {
-        // @ts-ignore
+        // @ts-expect-error
         window[cb] = undefined
       }
       document.body.removeChild(script)

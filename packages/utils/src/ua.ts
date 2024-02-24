@@ -1,10 +1,12 @@
+import { isBrowser } from './device'
+
 /**
  * Current user agent
  *
  * @category network
  */
 export function getUserAgent() {
-  return typeof window !== 'undefined' ? navigator.userAgent.toLowerCase() : ''
+  return isBrowser ? navigator.userAgent.toLowerCase() : ''
 }
 
 /**

@@ -26,11 +26,9 @@ export function debounce<T extends (...args: any[]) => void>(
   let timeout: ReturnType<typeof setTimeout> | number
 
   return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
-    const context = this
-
     clearTimeout(timeout)
-    timeout = setTimeout(function () {
-      func.apply(context, args)
+    timeout = setTimeout(() => {
+      func.apply(this, args)
     }, wait)
   }
 }
