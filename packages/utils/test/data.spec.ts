@@ -6,10 +6,15 @@ import {
   inRange,
   isFunction,
   isAsyncFunction,
+  isPromise,
 } from '..'
 
 class Foo {
   bar() {}
+}
+
+const obj = {
+  then() {},
 }
 
 describe('getDataType', () => {
@@ -42,6 +47,20 @@ describe('isArray', () => {
   })
 })
 
+describe('isAsyncFunction', () => {
+  it('Valid data', () => {
+    expect(isAsyncFunction(async () => {})).toBeTruthy()
+    expect(isAsyncFunction(async function () {})).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(isAsyncFunction(new Function())).toBeFalsy()
+    expect(isAsyncFunction(function () {})).toBeFalsy()
+    expect(isAsyncFunction(() => {})).toBeFalsy()
+    expect(isAsyncFunction(Foo)).toBeFalsy()
+    expect(isAsyncFunction(new Foo().bar)).toBeFalsy()
+  })
+})
+
 describe('isFunction', () => {
   it('Valid data', () => {
     expect(isFunction(new Function())).toBeTruthy()
@@ -62,20 +81,6 @@ describe('isFunction', () => {
   })
 })
 
-describe('isAsyncFunction', () => {
-  it('Valid data', () => {
-    expect(isAsyncFunction(async () => {})).toBeTruthy()
-    expect(isAsyncFunction(async function () {})).toBeTruthy()
-  })
-  it('Invalid data', () => {
-    expect(isAsyncFunction(new Function())).toBeFalsy()
-    expect(isAsyncFunction(function () {})).toBeFalsy()
-    expect(isAsyncFunction(() => {})).toBeFalsy()
-    expect(isAsyncFunction(Foo)).toBeFalsy()
-    expect(isAsyncFunction(new Foo().bar)).toBeFalsy()
-  })
-})
-
 describe('isObject', () => {
   it('Valid data', () => {
     expect(isObject({})).toBeTruthy()
@@ -87,6 +92,24 @@ describe('isObject', () => {
     expect(isObject(null)).toBeFalsy()
     expect(isObject(undefined)).toBeFalsy()
     expect(isObject(Object(1))).toBeFalsy()
+  })
+})
+
+describe('isPromise', () => {
+  it('Valid data', () => {
+    expect(isPromise(new Promise<void>((r) => r()))).toBeTruthy()
+    expect(isPromise(Promise.resolve())).toBeTruthy()
+    expect(isPromise((async () => {})())).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(isPromise(obj)).toBeFalsy()
+    expect(isPromise('')).toBeFalsy()
+    expect(isPromise(null)).toBeFalsy()
+    expect(isPromise(undefined)).toBeFalsy()
+    expect(isPromise(Object(1))).toBeFalsy()
+    expect(isPromise({})).toBeFalsy()
+    expect(isPromise(new Object())).toBeFalsy()
+    expect(isPromise(Object.create({ foo: 1 }))).toBeFalsy()
   })
 })
 
