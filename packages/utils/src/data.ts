@@ -41,7 +41,7 @@ export function getDataType(target: any) {
 }
 
 /**
- * Determine whether the data is array
+ * Determine whether the data is Array
  *
  * @category data
  */
@@ -50,7 +50,7 @@ export function isArray(value: unknown): value is any[] {
 }
 
 /**
- * Determine whether the data is arraybuffer
+ * Determine whether the data is ArrayBuffer
  *
  * @category data
  */
@@ -59,7 +59,7 @@ export function isArrayBuffer(value: unknown): value is ArrayBuffer {
 }
 
 /**
- * Determine whether the data is async function
+ * Determine whether the data is AsyncFunction
  *
  * @category data
  */
@@ -71,7 +71,7 @@ export function isAsyncFunction(
 }
 
 /**
- * Determine whether the data is bigint
+ * Determine whether the data is BigInt
  *
  * @category data
  */
@@ -80,7 +80,7 @@ export function isBigInt(value: unknown): value is bigint {
 }
 
 /**
- * Determine whether the data is blob
+ * Determine whether the data is Blob
  *
  * @category data
  */
@@ -89,7 +89,7 @@ export function isBlob(value: unknown): value is Blob {
 }
 
 /**
- * Determine whether the data is boolean
+ * Determine whether the data is Boolean
  *
  * @category data
  */
@@ -98,7 +98,7 @@ export function isBoolean(value: unknown): value is boolean {
 }
 
 /**
- * Determine whether the data is date
+ * Determine whether the data is Date
  *
  * @category data
  */
@@ -107,7 +107,7 @@ export function isDate(value: unknown): value is Date {
 }
 
 /**
- * Determine whether the data is error
+ * Determine whether the data is Error
  *
  * @category data
  */
@@ -116,7 +116,7 @@ export function isError(value: unknown): value is Error {
 }
 
 /**
- * Determine whether the data is file
+ * Determine whether the data is File
  *
  * @category data
  */
@@ -125,7 +125,7 @@ export function isFile(value: unknown): value is File {
 }
 
 /**
- * Determine whether the data is function
+ * Determine whether the data is Function
  *
  * @category data
  */
@@ -134,7 +134,7 @@ export function isFunction(value: unknown): value is (...args: any) => any {
 }
 
 /**
- * Determine whether the data is map
+ * Determine whether the data is Map
  *
  * @category data
  */
@@ -152,7 +152,7 @@ export function isMath(value: unknown): value is Math {
 }
 
 /**
- * Determine whether the data is null
+ * Determine whether the data is Null
  *
  * @category data
  */
@@ -161,7 +161,7 @@ export function isNull(value: unknown): value is null {
 }
 
 /**
- * Determine whether the data is number
+ * Determine whether the data is Number
  *
  * @category data
  */
@@ -170,7 +170,7 @@ export function isNumber(value: unknown): value is number {
 }
 
 /**
- * Determine whether the data is object
+ * Determine whether the data is Object
  *
  * @category data
  */
@@ -188,7 +188,7 @@ export function isPromise(value: unknown): value is Promise<any> {
 }
 
 /**
- * Determine whether the data is set
+ * Determine whether the data is Promise
  *
  * @category data
  */
@@ -197,7 +197,7 @@ export function isSet(value: unknown): value is Set<any> {
 }
 
 /**
- * Determine whether the data is string
+ * Determine whether the data is String
  *
  * @category data
  */
@@ -206,7 +206,7 @@ export function isString(value: unknown): value is string {
 }
 
 /**
- * Determine whether the data is symbol
+ * Determine whether the data is Symbol
  *
  * @category data
  */
@@ -215,7 +215,7 @@ export function isSymbol(value: unknown): value is symbol {
 }
 
 /**
- * Determine whether the data is undefined
+ * Determine whether the data is Undefined
  *
  * @category data
  */
@@ -224,7 +224,7 @@ export function isUndefined(value: unknown): value is undefined {
 }
 
 /**
- * Determine whether the data is weakmap
+ * Determine whether the data is WeakMap
  *
  * @category data
  */
@@ -233,7 +233,7 @@ export function isWeakMap(value: unknown): value is WeakMap<any, any> {
 }
 
 /**
- * Determine whether the data is weakset
+ * Determine whether the data is WeakSet
  *
  * @category data
  */
@@ -242,7 +242,7 @@ export function isWeakSet(value: unknown): value is WeakSet<any> {
 }
 
 /**
- * Determine whether the data is regexp
+ * Determine whether the data is RegExp
  *
  * @category data
  */
