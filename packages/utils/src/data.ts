@@ -4,26 +4,26 @@
  * @category data
  */
 export type DataType =
-  | 'boolean'
-  | 'string'
-  | 'number'
-  | 'bigint'
-  | 'symbol'
-  | 'null'
-  | 'undefined'
-  | 'function'
-  | 'object'
-  | 'array'
-  | 'date'
-  | 'error'
-  | 'set'
-  | 'map'
-  | 'weakset'
-  | 'weakmap'
-  | 'file'
-  | 'blob'
-  | 'arraybuffer'
-  | 'regexp'
+  | 'Array'
+  | 'ArrayBuffer'
+  | 'BigInt'
+  | 'Blob'
+  | 'Boolean'
+  | 'Date'
+  | 'Error'
+  | 'File'
+  | 'Function'
+  | 'Map'
+  | 'Null'
+  | 'Number'
+  | 'Object'
+  | 'Set'
+  | 'String'
+  | 'Symbol'
+  | 'RegExp'
+  | 'Undefined'
+  | 'WeakMap'
+  | 'WeakSet'
 
 /**
  * Get the real data type
@@ -34,91 +34,7 @@ export type DataType =
  * @category data
  */
 export function getDataType(target: any) {
-  return Object.prototype.toString
-    .call(target)
-    .slice(8, -1)
-    .toLowerCase() as DataType
-}
-
-/**
- * Determine whether the data is boolean
- *
- * @category data
- */
-export function isBoolean(value: unknown): value is boolean {
-  return getDataType(value) === 'boolean'
-}
-
-/**
- * Determine whether the data is string
- *
- * @category data
- */
-export function isString(value: unknown): value is string {
-  return getDataType(value) === 'string'
-}
-
-/**
- * Determine whether the data is number
- *
- * @category data
- */
-export function isNumber(value: unknown): value is number {
-  return getDataType(value) === 'number'
-}
-
-/**
- * Determine whether the data is bigint
- *
- * @category data
- */
-export function isBigInt(value: unknown): value is bigint {
-  return getDataType(value) === 'bigint'
-}
-
-/**
- * Determine whether the data is symbol
- *
- * @category data
- */
-export function isSymbol(value: unknown): value is symbol {
-  return getDataType(value) === 'symbol'
-}
-
-/**
- * Determine whether the data is null
- *
- * @category data
- */
-export function isNull(value: unknown): value is null {
-  return getDataType(value) === 'null'
-}
-
-/**
- * Determine whether the data is undefined
- *
- * @category data
- */
-export function isUndefined(value: unknown): value is undefined {
-  return getDataType(value) === 'undefined'
-}
-
-/**
- * Determine whether the data is function
- *
- * @category data
- */
-export function isFunction(value: unknown): value is (...args: any) => any {
-  return getDataType(value) === 'function'
-}
-
-/**
- * Determine whether the data is object
- *
- * @category data
- */
-export function isObject(value: unknown): value is Record<any, any> {
-  return getDataType(value) === 'object'
+  return Object.prototype.toString.call(target).slice(8, -1) as DataType
 }
 
 /**
@@ -127,79 +43,7 @@ export function isObject(value: unknown): value is Record<any, any> {
  * @category data
  */
 export function isArray(value: unknown): value is any[] {
-  return getDataType(value) === 'array'
-}
-
-/**
- * Determine whether the data is date
- *
- * @category data
- */
-export function isDate(value: unknown): value is Date {
-  return getDataType(value) === 'date'
-}
-
-/**
- * Determine whether the data is error
- *
- * @category data
- */
-export function isError(value: unknown): value is Error {
-  return getDataType(value) === 'error'
-}
-
-/**
- * Determine whether the data is set
- *
- * @category data
- */
-export function isSet(value: unknown): value is Set<any> {
-  return getDataType(value) === 'set'
-}
-
-/**
- * Determine whether the data is map
- *
- * @category data
- */
-export function isMap(value: unknown): value is Map<any, any> {
-  return getDataType(value) === 'map'
-}
-
-/**
- * Determine whether the data is weakset
- *
- * @category data
- */
-export function isWeakSet(value: unknown): value is WeakSet<any> {
-  return getDataType(value) === 'weakset'
-}
-
-/**
- * Determine whether the data is weakmap
- *
- * @category data
- */
-export function isWeakMap(value: unknown): value is WeakMap<any, any> {
-  return getDataType(value) === 'weakmap'
-}
-
-/**
- * Determine whether the data is file
- *
- * @category data
- */
-export function isFile(value: unknown): value is File {
-  return getDataType(value) === 'file'
-}
-
-/**
- * Determine whether the data is blob
- *
- * @category data
- */
-export function isBlob(value: unknown): value is Blob {
-  return getDataType(value) === 'blob'
+  return getDataType(value) === 'Array'
 }
 
 /**
@@ -208,7 +52,160 @@ export function isBlob(value: unknown): value is Blob {
  * @category data
  */
 export function isArrayBuffer(value: unknown): value is ArrayBuffer {
-  return getDataType(value) === 'arraybuffer'
+  return getDataType(value) === 'ArrayBuffer'
+}
+
+/**
+ * Determine whether the data is bigint
+ *
+ * @category data
+ */
+export function isBigInt(value: unknown): value is bigint {
+  return getDataType(value) === 'BigInt'
+}
+
+/**
+ * Determine whether the data is blob
+ *
+ * @category data
+ */
+export function isBlob(value: unknown): value is Blob {
+  return getDataType(value) === 'Blob'
+}
+
+/**
+ * Determine whether the data is boolean
+ *
+ * @category data
+ */
+export function isBoolean(value: unknown): value is boolean {
+  return getDataType(value) === 'Boolean'
+}
+
+/**
+ * Determine whether the data is date
+ *
+ * @category data
+ */
+export function isDate(value: unknown): value is Date {
+  return getDataType(value) === 'Date'
+}
+
+/**
+ * Determine whether the data is error
+ *
+ * @category data
+ */
+export function isError(value: unknown): value is Error {
+  return getDataType(value) === 'Error'
+}
+
+/**
+ * Determine whether the data is file
+ *
+ * @category data
+ */
+export function isFile(value: unknown): value is File {
+  return getDataType(value) === 'File'
+}
+
+/**
+ * Determine whether the data is function
+ *
+ * @category data
+ */
+export function isFunction(value: unknown): value is (...args: any) => any {
+  return getDataType(value) === 'Function'
+}
+
+/**
+ * Determine whether the data is map
+ *
+ * @category data
+ */
+export function isMap(value: unknown): value is Map<any, any> {
+  return getDataType(value) === 'Map'
+}
+
+/**
+ * Determine whether the data is null
+ *
+ * @category data
+ */
+export function isNull(value: unknown): value is null {
+  return getDataType(value) === 'Null'
+}
+
+/**
+ * Determine whether the data is number
+ *
+ * @category data
+ */
+export function isNumber(value: unknown): value is number {
+  return getDataType(value) === 'Number'
+}
+
+/**
+ * Determine whether the data is object
+ *
+ * @category data
+ */
+export function isObject(value: unknown): value is Record<any, any> {
+  return getDataType(value) === 'Object'
+}
+
+/**
+ * Determine whether the data is set
+ *
+ * @category data
+ */
+export function isSet(value: unknown): value is Set<any> {
+  return getDataType(value) === 'Set'
+}
+
+/**
+ * Determine whether the data is string
+ *
+ * @category data
+ */
+export function isString(value: unknown): value is string {
+  return getDataType(value) === 'String'
+}
+
+/**
+ * Determine whether the data is symbol
+ *
+ * @category data
+ */
+export function isSymbol(value: unknown): value is symbol {
+  return getDataType(value) === 'Symbol'
+}
+
+/**
+ * Determine whether the data is undefined
+ *
+ * @category data
+ */
+export function isUndefined(value: unknown): value is undefined {
+  return getDataType(value) === 'Undefined'
+}
+
+/**
+ * Determine whether the data is weakmap
+ *
+ * @category data
+ */
+export function isWeakMap(value: unknown): value is WeakMap<any, any> {
+  return getDataType(value) === 'WeakMap'
+}
+
+/**
+ * Determine whether the data is weakset
+ *
+ * @category data
+ */
+export function isWeakSet(value: unknown): value is WeakSet<any> {
+  return getDataType(value) === 'WeakSet'
 }
 
 /**
@@ -217,7 +214,7 @@ export function isArrayBuffer(value: unknown): value is ArrayBuffer {
  * @category data
  */
 export function isRegExp(value: unknown): value is RegExp {
-  return getDataType(value) === 'regexp'
+  return getDataType(value) === 'RegExp'
 }
 
 /**
