@@ -1,3 +1,4 @@
+import { pnoop } from './data'
 import { isBrowser } from './device'
 import { getQuery } from './query'
 import { randomString } from './random'
@@ -153,6 +154,39 @@ export function jsonp<T>(url: string, callback?: string) {
 }
 
 /**
+ * Load a batch of images in concurrent mode
+ *
+ * @category network
+ */
+export function concurrentLoadImages(images: string[]) {
+  const promises = []
+
+  for (const path in images) {
+    promises.push(
+      new Promise((resolve, reject) => {
+        const img = new Image()
+        img.onload = resolve
+        img.onerror = reject
+        img.src = path
+      }),
+    )
+  }
+
+  return Promise.all(promises)
+}
+
+/**
+ * Load a batch of images in serial mode
+ *
+ * @category network
+ */
+export async function serialLoadImages(images: string[]) {
+  for (const path in images) {
+    await concurrentLoadImages([path])
+  }
+}
+
+/**
  * Preload images
  *
  * @description It can be used to preload large images in advance,
@@ -160,6 +194,10 @@ export function jsonp<T>(url: string, callback?: string) {
  *              and other usage scenarios.
  *
  * @param images - An array containing image urls
+ *
+ * @param mode - concurrent mode is used by default.
+ *               If there are too many pictures,
+ *               you can choose serial mode.
  *
  * @example
  *
@@ -182,19 +220,24 @@ export function jsonp<T>(url: string, callback?: string) {
  *
  * @category network
  */
-export async function preloadImages(images: string[]) {
-  const promises = []
+export async function preloadImages(
+  images: string[],
+  mode: 'concurrent' | 'serial' = 'concurrent',
+) {
+  switch (mode) {
+    case 'concurrent': {
+      await concurrentLoadImages(images)
+      break
+    }
 
-  for (const path in images) {
-    promises.push(
-      new Promise((resolve, reject) => {
-        const img = new Image()
-        img.onload = resolve
-        img.onerror = reject
-        img.src = path
-      }),
-    )
+    case 'serial': {
+      await serialLoadImages(images)
+      break
+    }
+
+    default: {
+      await pnoop()
+      break
+    }
   }
-
-  return Promise.all(promises)
 }
