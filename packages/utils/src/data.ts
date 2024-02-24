@@ -316,6 +316,8 @@ export function hasKey<T, K extends keyof T>(obj: T, key: K): key is K {
   return Object.prototype.hasOwnProperty.call(obj, key)
 }
 
+export const hasOwnProperty = hasKey
+
 /**
  * String to byte stream
  *
