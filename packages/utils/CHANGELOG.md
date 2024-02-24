@@ -1,3 +1,28 @@
+# [0.16.0](https://github.com/chengpeiquan/bassist/compare/utils@0.15.0...utils@0.16.0) (2024-02-24)
+
+
+### Bug Fixes
+
+* **utils:** fix the return type of isWeakSet and isWeakMap ([326fa91](https://github.com/chengpeiquan/bassist/commit/326fa918095ba020f72114f35ca487594ba160cd))
+
+
+### Features
+
+* **utils:** add concurrent and serial modes to preload images ([115f7dd](https://github.com/chengpeiquan/bassist/commit/115f7dd7990f1a44c75c6427d04b10e60d456e0f))
+* **utils:** add ensurePrefix and ensureSuffix ([3355b0b](https://github.com/chengpeiquan/bassist/commit/3355b0bd629f579a0c5ec0b9558cf5dfcf4a7d5e))
+* **utils:** add hasOwnProperty alias to hasKey ([bd1fa23](https://github.com/chengpeiquan/bassist/commit/bd1fa236ab423918a193aa8bb74443f5ae82ad43))
+* **utils:** add isMath to determine whether the data is Math ([4fa9596](https://github.com/chengpeiquan/bassist/commit/4fa95964558096b2b21f28f5392a07fc00d5389c))
+* **utils:** add isOdd and isEven, and add some wrapper funtions named isInteger and isSafeInteger ([ad346f8](https://github.com/chengpeiquan/bassist/commit/ad346f8cb54e862db5862360f5a81f58b1e0c431))
+* **utils:** add isPromise to determine whether the data is Promise ([5e387d9](https://github.com/chengpeiquan/bassist/commit/5e387d929a4c95ea254727e70fdfcddce3176adf))
+* **utils:** add removeHtmlTags and html2text ([911c99b](https://github.com/chengpeiquan/bassist/commit/911c99bec6657dc2635e9c32dc44f139a3aaaba1))
+* **utils:** add some wrapper funtions named isFinite, isArray, isNaN ([ed7884d](https://github.com/chengpeiquan/bassist/commit/ed7884d7c03618271bfa680b65f23afab399c89c))
+* **utils:** add toArray to make sure the data you get is an array ([c8b2887](https://github.com/chengpeiquan/bassist/commit/c8b28873e1e2deedc5816db6e5098c0122a458c9))
+* **utils:** adjust the judgment of isFunction to typeof, and add isAsyncFunction ([82d9f45](https://github.com/chengpeiquan/bassist/commit/82d9f458c664c463a2596b6cfefa49ca1095f3b4))
+* **utils:** cancel lowercase conversion of data types ([a807f97](https://github.com/chengpeiquan/bassist/commit/a807f972bc9d0e3d4d2e70366407d23ca1d4bc79))
+* **utils:** split UA to desktop and mobile categories, and support get a random UA on the specified device type ([e5fe3be](https://github.com/chengpeiquan/bassist/commit/e5fe3be72c8b45f5d2c53f288d3471398eb3007c))
+
+
+
 # [0.15.0](https://github.com/chengpeiquan/bassist/compare/utils@0.14.0...utils@0.15.0) (2024-02-16)
 
 
