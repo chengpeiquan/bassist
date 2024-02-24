@@ -1,4 +1,4 @@
-import { hasKey, isObject, isString } from './data'
+import { hasKey, isArray, isObject, isString } from './data'
 
 /**
  * Extract numbers from text
@@ -347,4 +347,14 @@ export function html2text(content: string) {
     .replace(/&divide;/g, '÷')
     .replace(/&middot;/g, '·')
     .replace(/&mdash;/g, '—')
+}
+
+/**
+ * Make sure the data you get is an array
+ *
+ * @category format
+ */
+export function toArray<T>(value?: T | T[]): T[] {
+  value = value ?? []
+  return isArray(value) ? value : [value]
 }
