@@ -18,6 +18,7 @@ export type DataType =
   | 'Null'
   | 'Number'
   | 'Object'
+  | 'Promise'
   | 'Set'
   | 'String'
   | 'Symbol'
@@ -165,6 +166,15 @@ export function isNumber(value: unknown): value is number {
  */
 export function isObject(value: unknown): value is Record<any, any> {
   return getDataType(value) === 'Object'
+}
+
+/**
+ * Determine whether the data is Promise
+ *
+ * @category data
+ */
+export function isPromise(value: unknown): value is Promise<any> {
+  return getDataType(value) === 'Promise'
 }
 
 /**
