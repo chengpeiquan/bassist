@@ -41,12 +41,12 @@ export function getDataType(target: any) {
 }
 
 /**
- * Determine whether the data is Array
+ * Wrapper for `Array.isArray`, determine whether the data is Array
  *
  * @category data
  */
 export function isArray(value: unknown): value is any[] {
-  return getDataType(value) === 'Array'
+  return Array.isArray(value)
 }
 
 /**
@@ -125,6 +125,15 @@ export function isFile(value: unknown): value is File {
 }
 
 /**
+ * Wrapper for `Number.isFinite`, determine whether the data is finite
+
+* @category data
+ */
+export function isFinite(value: unknown): value is number {
+  return Number.isFinite(value)
+}
+
+/**
  * Determine whether the data is Function
  *
  * @category data
@@ -149,6 +158,15 @@ export function isMap(value: unknown): value is Map<any, any> {
  */
 export function isMath(value: unknown): value is Math {
   return getDataType(value) === 'Math'
+}
+
+/**
+ * Wrapper for `Number.isNaN`, determine whether the data is NaN
+
+* @category data
+ */
+export function isNaN(value: unknown): value is number {
+  return Number.isNaN(value)
 }
 
 /**
