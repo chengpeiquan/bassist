@@ -6,6 +6,7 @@
 export type DataType =
   | 'Array'
   | 'ArrayBuffer'
+  | 'AsyncFunction'
   | 'BigInt'
   | 'Blob'
   | 'Boolean'
@@ -53,6 +54,18 @@ export function isArray(value: unknown): value is any[] {
  */
 export function isArrayBuffer(value: unknown): value is ArrayBuffer {
   return getDataType(value) === 'ArrayBuffer'
+}
+
+/**
+ * Determine whether the data is async function
+ *
+ * @category data
+ */
+export function isAsyncFunction(
+  value: unknown,
+): value is (...args: any) => Promise<any> {
+  if (!isFunction(value)) return false
+  return getDataType(value) === 'AsyncFunction'
 }
 
 /**
@@ -115,7 +128,7 @@ export function isFile(value: unknown): value is File {
  * @category data
  */
 export function isFunction(value: unknown): value is (...args: any) => any {
-  return getDataType(value) === 'Function'
+  return typeof value === 'function'
 }
 
 /**
