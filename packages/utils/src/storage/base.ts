@@ -1,5 +1,5 @@
 import { isBrowser } from '../device'
-import { getDataType } from '../data'
+import { isString } from '../data'
 import { FallbackStorage } from './fallback'
 
 /**
@@ -52,8 +52,7 @@ export class BaseStorage {
    */
   set(key: string, value: any) {
     try {
-      const isString = getDataType(value) === 'string'
-      const data = isString ? value : JSON.stringify(value)
+      const data = isString(value) ? value : JSON.stringify(value)
       this.storage.setItem(`${this.prefix}-${key}`, data)
     } catch (e) {
       console.log(e)
