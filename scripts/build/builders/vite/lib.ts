@@ -2,15 +2,10 @@ import { resolve } from 'path'
 import { build } from 'vite'
 import banner from 'vite-plugin-banner'
 import { parsePackage } from '@scripts/utils'
-import { getBanner, getDeps } from '@scripts/build/utils'
+import { capitalize, getBanner, getDeps } from '@scripts/build/utils'
 import { ViteFormat } from '..'
 import type { UserConfig } from 'vite'
 import type { BuildOptions } from '@scripts/build/types'
-
-function capitalize([first, ...rest]: string) {
-  if (!first) return ''
-  return first.toUpperCase() + rest.join('')
-}
 
 /**
  * Build options provided to `vite.config.ts`

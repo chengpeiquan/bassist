@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import { build } from 'tsup'
 import { TsupFormat } from '..'
-import { getBanner, getDeps } from '@scripts/build/utils'
+import { capitalize, getBanner, getDeps } from '@scripts/build/utils'
 import { parsePackage } from '@scripts/utils'
 import type { Options } from 'tsup'
 import type { BuildOptions } from '@scripts/build/types'
@@ -17,6 +17,20 @@ function getEntry({ name, entryFile, entryFiles }: GetEntryOptions) {
 
   const fileName = entryFile ?? 'index.ts'
   return [`${basePath}/${fileName}`]
+}
+
+function getJsFormat(format: TsupFormat) {
+  switch (format) {
+    case TsupFormat.CJS: {
+      return '.cjs'
+    }
+    case TsupFormat.ESM: {
+      return '.mjs'
+    }
+    default: {
+      return '.min.js'
+    }
+  }
 }
 
 // https://tsup.egoist.dev
@@ -41,14 +55,15 @@ export async function buildByTsup({
     outDir,
     platform: 'node',
     target: ['es2020'],
-    format: [TsupFormat.CJS, TsupFormat.ESM],
+    format: [TsupFormat.CJS, TsupFormat.ESM, TsupFormat.IIFE],
     dts: true,
     external,
     outExtension({ format }) {
       return {
-        js: `.${format === TsupFormat.CJS ? 'c' : 'm'}js`,
+        js: getJsFormat(format as TsupFormat),
       }
     },
+    globalName: capitalize(name),
     banner: {
       js: banner,
       css: banner,
