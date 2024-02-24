@@ -15,6 +15,7 @@ export type DataType =
   | 'File'
   | 'Function'
   | 'Map'
+  | 'Math'
   | 'Null'
   | 'Number'
   | 'Object'
@@ -139,6 +140,15 @@ export function isFunction(value: unknown): value is (...args: any) => any {
  */
 export function isMap(value: unknown): value is Map<any, any> {
   return getDataType(value) === 'Map'
+}
+
+/**
+ * Determine whether the data is Math
+ *
+ * @category data
+ */
+export function isMath(value: unknown): value is Math {
+  return getDataType(value) === 'Math'
 }
 
 /**
