@@ -14,6 +14,7 @@ import {
   formatTime,
   formatDuration,
   removeHtmlTags,
+  toArray,
 } from '..'
 
 describe('format', () => {
@@ -253,5 +254,11 @@ describe('format', () => {
   it('removeHtmlTags', () => {
     expect(removeHtmlTags('<p>hello</>')).toBe('hello')
     expect(removeHtmlTags('<p>hello <span>world</span></>')).toBe('hello world')
+  })
+
+  it('toArray', () => {
+    expect(toArray([1, 2, 3])).toEqual([1, 2, 3])
+    expect(toArray(1)).toEqual([1])
+    expect(toArray()).toEqual([])
   })
 })
