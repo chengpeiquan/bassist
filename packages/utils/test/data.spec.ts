@@ -7,6 +7,8 @@ import {
   isFunction,
   isAsyncFunction,
   isPromise,
+  isEven,
+  isOdd,
 } from '..'
 
 class Foo {
@@ -61,6 +63,21 @@ describe('isAsyncFunction', () => {
   })
 })
 
+describe('isEven', () => {
+  it('Valid data', () => {
+    expect(isEven(0)).toBeTruthy()
+    expect(isEven(2)).toBeTruthy()
+    expect(isEven(4)).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(isEven(-1)).toBeFalsy()
+    expect(isEven(1)).toBeFalsy()
+    expect(isEven(1.5)).toBeFalsy()
+    expect(isEven(3)).toBeFalsy()
+    expect(isEven(15)).toBeFalsy()
+  })
+})
+
 describe('isFunction', () => {
   it('Valid data', () => {
     expect(isFunction(new Function())).toBeTruthy()
@@ -78,6 +95,21 @@ describe('isFunction', () => {
     expect(isFunction(null)).toBeFalsy()
     expect(isFunction({})).toBeFalsy()
     expect(isFunction([])).toBeFalsy()
+  })
+})
+
+describe('isOdd', () => {
+  it('Valid data', () => {
+    expect(isOdd(-1)).toBeTruthy()
+    expect(isOdd(1)).toBeTruthy()
+    expect(isOdd(3)).toBeTruthy()
+    expect(isOdd(15)).toBeTruthy()
+  })
+  it('Invalid data', () => {
+    expect(isOdd(0)).toBeFalsy()
+    expect(isOdd(1.5)).toBeFalsy()
+    expect(isOdd(2)).toBeFalsy()
+    expect(isOdd(4)).toBeFalsy()
   })
 })
 

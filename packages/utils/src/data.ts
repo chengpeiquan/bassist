@@ -116,6 +116,16 @@ export function isError(value: unknown): value is Error {
 }
 
 /**
+ * Determine whether the data is Even
+ *
+ * @category data
+ */
+export function isEven(value: unknown): value is number {
+  if (!isInteger(value)) return false
+  return value % 2 === 0
+}
+
+/**
  * Determine whether the data is File
  *
  * @category data
@@ -140,6 +150,15 @@ export function isFinite(value: unknown): value is number {
  */
 export function isFunction(value: unknown): value is (...args: any) => any {
   return typeof value === 'function'
+}
+
+/**
+ * Wrapper for `Number.isInteger`, determine whether the data is Integer
+
+* @category data
+ */
+export function isInteger(value: unknown): value is number {
+  return Number.isInteger(value)
 }
 
 /**
@@ -188,6 +207,16 @@ export function isNumber(value: unknown): value is number {
 }
 
 /**
+ * Determine whether the data is Odd
+ *
+ * @category data
+ */
+export function isOdd(value: unknown): value is number {
+  if (!isInteger(value)) return false
+  return value % 2 !== 0
+}
+
+/**
  * Determine whether the data is Object
  *
  * @category data
@@ -203,6 +232,15 @@ export function isObject(value: unknown): value is Record<any, any> {
  */
 export function isPromise(value: unknown): value is Promise<any> {
   return getDataType(value) === 'Promise'
+}
+
+/**
+ * Wrapper for `Number.isSafeInteger`, determine whether the data is Safe Integer
+
+* @category data
+ */
+export function isSafeInteger(value: unknown): value is number {
+  return Number.isSafeInteger(value)
 }
 
 /**
