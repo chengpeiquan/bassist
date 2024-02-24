@@ -1,4 +1,4 @@
-import { hasKey, isObject } from './data'
+import { hasKey, isObject, isString } from './data'
 
 /**
  * Extract numbers from text
@@ -307,14 +307,27 @@ export function formatDuration(
 }
 
 /**
+ * Remove HTML tags
+ *
+ * @param content HTML Codes
+ *
+ * @category format
+ */
+export function removeHtmlTags(content: string) {
+  if (!isString(content)) return ''
+  return content.replace(/<[^<>]+>/g, '')
+}
+
+/**
  * Remove HTML tags and escape sequence
  *
  * @param content HTML Codes
+ *
+ * @category format
  */
 export function html2text(content: string) {
-  content = String(content)
-  content = content
-    .replace(/<[^<>]+>/g, '')
+  if (!isString(content)) return ''
+  return removeHtmlTags(content)
     .replace(/&nbsp;/g, ' ')
     .replace(/&lt;/g, '<')
     .replace(/&gt;/g, '>')
@@ -334,6 +347,4 @@ export function html2text(content: string) {
     .replace(/&divide;/g, '÷')
     .replace(/&middot;/g, '·')
     .replace(/&mdash;/g, '—')
-
-  return content
 }
