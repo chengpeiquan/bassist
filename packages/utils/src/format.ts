@@ -305,3 +305,35 @@ export function formatDuration(
   // Return the formatted result
   return parts.length === 0 ? `0 ${units.seconds}` : parts.join(' ')
 }
+
+/**
+ * Remove HTML tags and escape sequence
+ *
+ * @param content HTML Codes
+ */
+export function html2text(content: string) {
+  content = String(content)
+  content = content
+    .replace(/<[^<>]+>/g, '')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&amp;/g, '&')
+    .replace(/&quot;/g, '"')
+    .replace(/&apos;/g, '`')
+    .replace(/&cent;/g, '￠')
+    .replace(/&pound;/g, '£')
+    .replace(/&yen;/g, '¥')
+    .replace(/&euro;/g, '€')
+    .replace(/&sect;/g, '§')
+    .replace(/&copy;/g, '©')
+    .replace(/&reg;/g, '®')
+    .replace(/&trade;/g, '™')
+    .replace(/&times;/g, '×')
+    .replace(/&times;/g, '×')
+    .replace(/&divide;/g, '÷')
+    .replace(/&middot;/g, '·')
+    .replace(/&mdash;/g, '—')
+
+  return content
+}
