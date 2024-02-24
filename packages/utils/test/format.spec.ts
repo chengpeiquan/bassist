@@ -15,6 +15,8 @@ import {
   formatDuration,
   removeHtmlTags,
   toArray,
+  ensurePrefix,
+  ensureSuffix,
 } from '..'
 
 describe('format', () => {
@@ -260,5 +262,17 @@ describe('format', () => {
     expect(toArray([1, 2, 3])).toEqual([1, 2, 3])
     expect(toArray(1)).toEqual([1])
     expect(toArray()).toEqual([])
+  })
+
+  it('ensurePrefix', () => {
+    expect(ensurePrefix('https://', 'https://example.com')).toBe(
+      'https://example.com',
+    )
+    expect(ensurePrefix('https://', 'example.com')).toBe('https://example.com')
+  })
+
+  it('ensureSuffix', () => {
+    expect(ensureSuffix('/', '/path/to')).toBe('/path/to/')
+    expect(ensureSuffix('/', '/path/to/')).toBe('/path/to/')
   })
 })
