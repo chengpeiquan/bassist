@@ -358,3 +358,23 @@ export function toArray<T>(value?: T | T[]): T[] {
   value = value ?? []
   return isArray(value) ? value : [value]
 }
+
+/**
+ * Ensure prefix of a string
+ *
+ * @category format
+ */
+export function ensurePrefix(prefix: string, str: string) {
+  if (!str.startsWith(prefix)) return prefix + str
+  return str
+}
+
+/**
+ * Ensure suffix of a string
+ *
+ * @category format
+ */
+export function ensureSuffix(suffix: string, str: string) {
+  if (!str.endsWith(suffix)) return str + suffix
+  return str
+}
