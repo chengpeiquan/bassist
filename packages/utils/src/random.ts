@@ -1,4 +1,4 @@
-import { userAgents } from './ua'
+import { desktopUserAgents, mobileUserAgents, userAgents } from './ua'
 
 /**
  * Generate random number
@@ -69,9 +69,18 @@ export function shuffle(arr: any[]): any[] {
 /**
  * Randomly returns a mocked UA
  *
+ * @param device - Get a random UA on the specified device type
+ *
  * @category random
  */
-export function randomUserAgent() {
-  const index = randomNumber(0, userAgents.length - 1)
-  return userAgents[index]
+export function randomUserAgent(device?: 'desktop' | 'mobile') {
+  const uaList =
+    device === 'desktop'
+      ? desktopUserAgents
+      : device === 'mobile'
+        ? mobileUserAgents
+        : userAgents
+
+  const index = randomNumber(0, uaList.length - 1)
+  return uaList[index]
 }
