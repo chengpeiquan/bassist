@@ -13,6 +13,7 @@ import {
   excludeFields,
   formatTime,
   formatDuration,
+  removeHtmlTags,
 } from '..'
 
 describe('format', () => {
@@ -247,5 +248,10 @@ describe('format', () => {
         },
       ),
     ).toBe('11 Days 4 Hours 15 Minutes 36 Seconds')
+  })
+
+  it('removeHtmlTags', () => {
+    expect(removeHtmlTags('<p>hello</>')).toBe('hello')
+    expect(removeHtmlTags('<p>hello <span>world</span></>')).toBe('hello world')
   })
 })
