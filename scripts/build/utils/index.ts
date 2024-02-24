@@ -46,3 +46,8 @@ export function getDeps(pkg: Record<string, any>) {
     ...Object.keys(pkg.peerDependencies || {}),
   ]
 }
+
+export function capitalize([first, ...rest]: string) {
+  if (!first) return ''
+  return first.toUpperCase() + rest.join('')
+}
