@@ -89,13 +89,30 @@ export default defineFlatConfig([
 
 See [eslint-define-config](https://github.com/Shinigami92/eslint-define-config) to learn more.
 
+## Note
+
+1. ESLint lower than 8.x does not support this configuration file.
+2. In ESLint 8.x, VS Code needs to enable special configuration to use this configuration file normally, see: [VS Code Setting](#vs-code-setting)
+3. The lint script no longer supports the `--ext` option, see: [#16991](https://github.com/eslint/eslint/issues/16991) .
+4. Currently this package is not friendly to CommonJS, please enable `"type": "module"` to support ES Module, see: [Configuration](#configuration) .
+
 ## VS Code Setting
 
 Please turn on this setting, which can solve VS Code's error reporting to `eslint.config.js`.
 
+If the version number of ESLint is lower than 8.57 :
+
 ```json
 {
   "eslint.experimental.useFlatConfig": true
+}
+```
+
+Use ESLint version 8.57 or later and `eslint.useFlatConfig` instead.
+
+```json
+{
+  "eslint.useFlatConfig": true
 }
 ```
 
@@ -123,7 +140,6 @@ Typescript rules are built-in when using framework presets.
 
 - [React](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/react.ts)
 - [Vue (v2 and v3)](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/vue.ts)
-- [Svelte](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/svelte.ts) (from `@bassist/eslint/svelte`)
 - [Uno CSS](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/unocss.ts)
 
 ### Formatters
@@ -134,13 +150,6 @@ Typescript rules are built-in when using framework presets.
 
 - [Imports](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/imports.ts)
 - [Unicorn](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint/src/configs/unicorn.ts)
-
-## Note
-
-1. ESLint lower than 8.x does not support this configuration file.
-2. In ESLint 8.x, VS Code needs to enable special configuration to use this configuration file normally, see: [VS Code Setting](#vs-code-setting)
-3. The lint script no longer supports the `--ext` option, see: [#16991](https://github.com/eslint/eslint/issues/16991) .
-4. Currently this package is not friendly to CommonJS, please enable `"type": "module"` to support ES Module, see: [Configuration](#configuration) .
 
 ## Migration
 
