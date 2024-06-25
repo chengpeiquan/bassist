@@ -18,7 +18,7 @@
     "mirror:get": "npm config get registry",
     "mirror:set": "npm config set registry https://registry.npmmirror.com",
     "mirror:rm": "npm config rm registry",
-    "up": "npx npm-check-updates -u",
+    "up": "npx taze minor -r -f -w -i",
     "backup": "git add . && git commit -m \"chore: backup\" && git push",
     "prepare": "husky install"
   },
