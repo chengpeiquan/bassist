@@ -51,3 +51,14 @@ export function capitalize([first, ...rest]: string) {
   if (!first) return ''
   return first.toUpperCase() + rest.join('')
 }
+
+export function camelCase([first, ...rest]: string) {
+  if (!first) return ''
+  const word = first.toLowerCase() + rest.join('')
+  return word.replace(/[-_](\w)/g, (_, c) => (c ? c.toUpperCase() : ''))
+}
+
+export function pascalCase(word: string) {
+  if (!word) return ''
+  return capitalize(camelCase(word))
+}
