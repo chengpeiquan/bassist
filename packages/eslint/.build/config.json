@@ -1,7 +1,6 @@
 {
   "builder": "tsup",
   "entryFiles": [
-    "index.ts",
-    "configs/svelte.ts"
+    "index.ts"
   ]
 }

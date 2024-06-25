@@ -1,7 +1,7 @@
 {
   "name": "@bassist/eslint",
-  "version": "0.6.1",
-  "description": "Flat ESLint config for JavaScript, TypeScript, Vue, React, Svelte, Prettier and so on by @chengpeiquan .",
+  "version": "0.7.0",
+  "description": "Flat ESLint config for JavaScript, TypeScript, Vue, React, Prettier and so on by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
   "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/eslint",
@@ -13,9 +13,6 @@
   "types": "./dist/index.d.ts",
   "typesVersions": {
     "*": {
-      "svelte": [
-        "./dist/svelte.d.ts"
-      ],
       "*": [
         "./dist/index.d.ts",
         "./dist/*"
@@ -27,11 +24,6 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.mjs",
       "require": "./dist/index.cjs"
-    },
-    "./svelte": {
-      "types": "./dist/svelte.d.ts",
-      "import": "./dist/svelte.mjs",
-      "require": "./dist/svelte.cjs"
     }
   },
   "repository": {
@@ -57,27 +49,18 @@
     "eslint-plugin-react": "^7.34.3",
     "eslint-plugin-react-hooks": "^4.6.2",
     "eslint-plugin-react-refresh": "^0.4.7",
-    "eslint-plugin-svelte": "^2.41.0",
     "eslint-plugin-unicorn": "^51.0.1",
     "eslint-plugin-vue": "^9.26.0",
     "globals": "^14.0.0",
     "prettier": "^3.3.2",
-    "svelte-eslint-parser": "^0.33.1",
     "typescript": "^5.5.2",
     "vue-eslint-parser": "^9.4.3"
   },
-  "devDependencies": {
-    "svelte": "^4.2.18"
-  },
   "peerDependencies": {
     "eslint": ">=8.0.0",
-    "svelte": ">=4.0.0",
     "typescript": ">=5.0.0"
   },
   "peerDependenciesMeta": {
-    "svelte": {
-      "optional": true
-    },
     "typescript": {
       "optional": true
     }
