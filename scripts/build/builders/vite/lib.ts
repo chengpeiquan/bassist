@@ -2,7 +2,7 @@ import { resolve } from 'path'
 import { build } from 'vite'
 import banner from 'vite-plugin-banner'
 import { parsePackage } from '@scripts/utils'
-import { capitalize, getBanner, getDeps } from '@scripts/build/utils'
+import { pascalCase, getBanner, getDeps } from '@scripts/build/utils'
 import { ViteFormat } from '..'
 import type { UserConfig } from 'vite'
 import type { BuildOptions } from '@scripts/build/types'
@@ -24,7 +24,7 @@ function viteConfig({ name, bin, entryFile }: BuildOptions): UserConfig {
       outDir,
       lib: {
         entry: resolve(basePath, `./src/${entryFile ?? 'index.ts'}`),
-        name: capitalize(name),
+        name: pascalCase(name),
         formats: [ViteFormat.UMD, ViteFormat.CJS, ViteFormat.ESM],
         fileName: (format) => {
           switch (format) {
@@ -44,7 +44,7 @@ function viteConfig({ name, bin, entryFile }: BuildOptions): UserConfig {
       rollupOptions: {
         external: deps,
         output: {
-          globals: (name) => capitalize(name),
+          globals: (name) => pascalCase(name),
         },
       },
     },

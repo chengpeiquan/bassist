@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import { build } from 'tsup'
 import { TsupFormat } from '..'
-import { capitalize, getBanner, getDeps } from '@scripts/build/utils'
+import { pascalCase, getBanner, getDeps } from '@scripts/build/utils'
 import { parsePackage } from '@scripts/utils'
 import type { Options } from 'tsup'
 import type { BuildOptions } from '@scripts/build/types'
@@ -63,7 +63,7 @@ export async function buildByTsup({
         js: getJsFormat(format as TsupFormat),
       }
     },
-    globalName: capitalize(name),
+    globalName: pascalCase(name),
     banner: {
       js: banner,
       css: banner,
