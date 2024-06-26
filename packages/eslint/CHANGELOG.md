@@ -1,3 +1,12 @@
+# [0.7.0](https://github.com/chengpeiquan/bassist/compare/eslint@0.6.1...eslint@0.7.0) (2024-06-26)
+
+
+### Features
+
+* **eslint:** the svelte eslint configuration is now deprecated ([684fed0](https://github.com/chengpeiquan/bassist/commit/684fed0bc41821cbdad7905b743a957f848b6669))
+
+
+
 ## [0.6.1](https://github.com/chengpeiquan/bassist/compare/eslint@0.5.0...eslint@0.6.1) (2024-02-14)
 
 
