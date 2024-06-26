@@ -1,6 +1,6 @@
 {
-  "builder": "tsup",
-  "entryFiles": [
-    "index.ts"
+  "formats": [
+    "cjs",
+    "esm"
   ]
 }
