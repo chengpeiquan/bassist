@@ -1,4 +1,8 @@
-import { type Builder } from '../builders'
+export enum BundleFormat {
+  CJS = 'cjs',
+  ESM = 'esm',
+  IIFE = 'iife',
+}
 
 /**
  * Some special options for the build process
@@ -7,16 +11,6 @@ import { type Builder } from '../builders'
  *   `./packages/${name}/.build/config.json`
  */
 export interface BuildConfig {
-  /**
-   * There are currently two sets of construction processes
-   * to temporarily solve unknown construction problems in business scenarios.
-   *
-   * @todo May unify into one set of tools and enable this option in the future
-   *
-   * @default Builder.Vite
-   */
-  builder?: Builder
-
   /**
    * Skip the build process
    *
@@ -39,6 +33,12 @@ export interface BuildConfig {
    */
   entryFile?: string
   entryFiles?: string[]
+
+  /**
+   * Specify which formats to output
+   * By default, all formats are output
+   */
+  formats?: BundleFormat
 }
 
 export interface BuildOptions extends BuildConfig {

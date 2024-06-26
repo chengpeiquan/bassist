@@ -1,6 +1,6 @@
 import { resolve } from 'path'
 import { build } from 'tsup'
-import { TsupFormat } from '..'
+import { BundleFormat } from './types'
 import { pascalCase, getBanner, getDeps } from '@scripts/build/utils'
 import { parsePackage } from '@scripts/utils'
 import type { Options } from 'tsup'
@@ -19,12 +19,12 @@ function getEntry({ name, entryFile, entryFiles }: GetEntryOptions) {
   return [`${basePath}/${fileName}`]
 }
 
-function getJsFormat(format: TsupFormat) {
+function getJsFormat(format: BundleFormat) {
   switch (format) {
-    case TsupFormat.CJS: {
+    case BundleFormat.CJS: {
       return '.cjs'
     }
-    case TsupFormat.ESM: {
+    case BundleFormat.ESM: {
       return '.mjs'
     }
     default: {
@@ -39,6 +39,7 @@ export async function buildByTsup({
   bin,
   entryFile,
   entryFiles,
+  formats,
 }: BuildOptions) {
   const basePath = resolve(process.cwd(), `./packages/${name}`)
   const outDir = resolve(basePath, `./dist`)
@@ -46,6 +47,9 @@ export async function buildByTsup({
   const pkg = parsePackage(basePath)
   const banner = getBanner(pkg, { bin })
   const external = getDeps(pkg)
+  const format = Array.isArray(formats)
+    ? formats
+    : [BundleFormat.CJS, BundleFormat.ESM, BundleFormat.IIFE]
 
   console.log({ entry })
   console.log()
@@ -55,12 +59,12 @@ export async function buildByTsup({
     outDir,
     platform: 'node',
     target: ['es2020'],
-    format: [TsupFormat.CJS, TsupFormat.ESM, TsupFormat.IIFE],
+    format,
     dts: true,
     external,
     outExtension({ format }) {
       return {
-        js: getJsFormat(format as TsupFormat),
+        js: getJsFormat(format as BundleFormat),
       }
     },
     globalName: pascalCase(name),
