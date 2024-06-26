@@ -11,7 +11,6 @@
     "build:all": "tsx scripts/build/build-multiple",
     "release": "tsx scripts/release",
     "changelog": "tsx scripts/changelog.cts",
-    "sync": "tsx scripts/sync",
     "test": "vitest",
     "lint": "eslint packages --ext .js,.ts,.jsx,.tsx,.vue",
     "format": "prettier --write packages",
@@ -27,7 +26,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^8.57.0",
-    "@types/node": "^20.14.8",
+    "@types/node": "^20.14.9",
     "@types/nprogress": "^0.2.3",
     "@typescript-eslint/eslint-plugin": "^7.14.1",
     "@typescript-eslint/parser": "^7.14.1",
