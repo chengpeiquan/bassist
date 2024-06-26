@@ -31,6 +31,8 @@ If using TypeScript's Lint configuration, also make sure TypeScript is installed
 
 Requires ESLint >= `8.0.0` , and TypeScript >= `5.0.0` .
 
+> ESLint v9 is not yet supported, see: [#37](https://github.com/chengpeiquan/bassist/issues/37) .
+
 ## Configuration File
 
 Create a configuration file named `eslint.config.js` in the root path of the project.
