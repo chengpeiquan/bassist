@@ -1,6 +1,6 @@
 {
   "name": "@bassist/release",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Simple GitHub release generator by @chengpeiquan , based on GitHub CLI.",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
@@ -33,8 +33,8 @@
     "github release"
   ],
   "dependencies": {
+    "@bassist/node-utils": "workspace:^",
     "@bassist/utils": "workspace:^",
-    "@withtypes/fs-extra": "^0.1.1",
     "@withtypes/minimist": "^0.1.1"
   }
 }
