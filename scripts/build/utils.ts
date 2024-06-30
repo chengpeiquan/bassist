@@ -1,5 +1,6 @@
-import { resolve } from 'path'
-import { existsSync, readJsonSync } from '@withtypes/fs-extra'
+import { resolve } from 'node:path'
+import { existsSync } from 'node:fs'
+import { readJsonSync } from 'fs-extra/esm'
 
 export function readBuildConfig(name: string) {
   const buildConfigFile = resolve(

@@ -1,5 +1,5 @@
-import { resolve } from 'path'
-import { readFileSync } from '@withtypes/fs-extra'
+import { resolve } from 'node:path'
+import { readFileSync } from 'node:fs'
 import minimist from '@withtypes/minimist'
 
 /**

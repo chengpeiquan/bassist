@@ -1,5 +1,5 @@
-import { resolve } from 'path'
-import { readdirSync } from '@withtypes/fs-extra'
+import { readdirSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { buildPackage } from './task'
 
 async function run() {
