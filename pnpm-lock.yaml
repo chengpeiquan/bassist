@@ -15,6 +15,9 @@ importers:
       '@eslint/js':
         specifier: ^8.57.0
         version: 8.57.0
+      '@types/fs-extra':
+        specifier: ^11.0.4
+        version: 11.0.4
       '@types/node':
         specifier: ^20.14.9
         version: 20.14.9
@@ -30,9 +33,6 @@ importers:
       '@unocss/eslint-plugin':
         specifier: ^0.58.9
         version: 0.58.9(eslint@8.57.0)(typescript@5.5.2)
-      '@withtypes/fs-extra':
-        specifier: ^0.1.1
-        version: 0.1.1
       '@withtypes/mime':
         specifier: ^0.1.2
         version: 0.1.2
@@ -78,6 +78,9 @@ importers:
       eslint-plugin-vue:
         specifier: ^9.26.0
         version: 9.26.0(eslint@8.57.0)
+      fs-extra:
+        specifier: ^11.2.0
+        version: 11.2.0
       globals:
         specifier: ^14.0.0
         version: 14.0.0
@@ -94,8 +97,8 @@ importers:
         specifier: ^8.1.0
         version: 8.1.0(postcss@8.4.38)(typescript@5.5.2)
       tsx:
-        specifier: ^4.15.7
-        version: 4.15.7
+        specifier: ^4.16.0
+        version: 4.16.0
       typescript:
         specifier: ^5.5.2
         version: 5.5.2
@@ -187,9 +190,16 @@ importers:
 
   packages/node-utils:
     dependencies:
-      '@withtypes/fs-extra':
-        specifier: ^0.1.1
-        version: 0.1.1
+      '@bassist/utils':
+        specifier: workspace:^
+        version: link:../utils
+      fs-extra:
+        specifier: ^11.2.0
+        version: 11.2.0
+    devDependencies:
+      '@types/fs-extra':
+        specifier: ^11.0.4
+        version: 11.0.4
 
   packages/progress:
     dependencies:
@@ -202,12 +212,12 @@ importers:
 
   packages/release:
     dependencies:
+      '@bassist/node-utils':
+        specifier: workspace:^
+        version: link:../node-utils
       '@bassist/utils':
         specifier: workspace:^
         version: link:../utils
-      '@withtypes/fs-extra':
-        specifier: ^0.1.1
-        version: 0.1.1
       '@withtypes/minimist':
         specifier: ^0.1.1
         version: 0.1.1
@@ -706,8 +716,14 @@ packages:
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
 
+  '@types/fs-extra@11.0.4':
+    resolution: {integrity: sha512-yTbItCNreRooED33qjunPthRcSjERP1r4MqCZc7wv0u2sUkzTFp45tgUfS5+r7FrZPdmCCNflLhVSP/o+SemsQ==}
+
   '@types/json5@0.0.29':
     resolution: {integrity: sha512-dRLjCWHYg4oaA77cxO64oO+7JwCwnIzkZPdrrC71jQmQtlhM556pwKo5bUzqvZndkVbeFLIIi+9TC40JNF5hNQ==}
+
+  '@types/jsonfile@6.1.4':
+    resolution: {integrity: sha512-D5qGUYwjvnNNextdU59/+fI+spnwtTFmyQP0h+PfIOSkNfpU6AOICUOkm4i0OnSk+NyjdPJrxCDro0sJsWlRpQ==}
 
   '@types/mdast@3.0.15':
     resolution: {integrity: sha512-LnwD+mUEfxWMa1QpDraczIn6k0Ee3SMicuYSSzS6ZYl2gKS09EClnJYGd8Du6rfc5r/GZEk5o1mRb8TaTj03sQ==}
@@ -889,9 +905,6 @@ packages:
 
   '@vitest/utils@1.6.0':
     resolution: {integrity: sha512-21cPiuGMoMZwiOHa2i4LXkMkMkCGzA+MVFV70jRwHo95dL4x/ts5GZhML1QWuy7yfp3WzK3lRvZi3JnXTYqrBw==}
-
-  '@withtypes/fs-extra@0.1.1':
-    resolution: {integrity: sha512-CRkgyqOU00CYHaxjcA7lKyUc9XxHqrtWtBc6TcH7jPeKtBMlSW3SWuizf2b73w3Y1w8+SdlPa2/1V4cQGKLpww==}
 
   '@withtypes/mime@0.1.2':
     resolution: {integrity: sha512-PB9BfZGzwblUONJY0LiOwsHCA6uV3DIPj/w9ReekdHxPOl0VdUFgI5s4avKycuuq9Gf5Nz2ZPA2O36GAUzlMPA==}
@@ -1575,9 +1588,9 @@ packages:
     resolution: {integrity: sha512-PXUUyLqrR2XCWICfv6ukppP96sdFwWbNEnfEMt7jNsISjMsvaLNinAHNDYyvkyU+SZG2BTSbT5NjG+vZslfGTA==}
     engines: {node: '>=14'}
 
-  fs-extra@10.1.0:
-    resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
-    engines: {node: '>=12'}
+  fs-extra@11.2.0:
+    resolution: {integrity: sha512-PmDi3uwK5nFuXh7XDTlVnS17xJS7vW36is2+w3xcv8SVxiB4NyATf4ctkVY5bkSjX0Y4nbvZCq1/EjtEyr9ktw==}
+    engines: {node: '>=14.14'}
 
   fs.realpath@1.0.0:
     resolution: {integrity: sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==}
@@ -2781,8 +2794,8 @@ packages:
       typescript:
         optional: true
 
-  tsx@4.15.7:
-    resolution: {integrity: sha512-u3H0iSFDZM3za+VxkZ1kywdCeHCn+8/qHQS1MNoO2sONDgD95HlWtt8aB23OzeTmFP9IU4/8bZUdg58Uu5J4cg==}
+  tsx@4.16.0:
+    resolution: {integrity: sha512-MPgN+CuY+4iKxGoJNPv+1pyo5YWZAQ5XfsyobUG+zoKG7IkvCPLZDEyoIb8yLS2FcWci1nlxAqmvPlFWD5AFiQ==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -3487,7 +3500,16 @@ snapshots:
 
   '@types/estree@1.0.5': {}
 
+  '@types/fs-extra@11.0.4':
+    dependencies:
+      '@types/jsonfile': 6.1.4
+      '@types/node': 20.14.9
+
   '@types/json5@0.0.29': {}
+
+  '@types/jsonfile@6.1.4':
+    dependencies:
+      '@types/node': 20.14.9
 
   '@types/mdast@3.0.15':
     dependencies:
@@ -3779,10 +3801,6 @@ snapshots:
       estree-walker: 3.0.3
       loupe: 2.3.7
       pretty-format: 29.7.0
-
-  '@withtypes/fs-extra@0.1.1':
-    dependencies:
-      fs-extra: 10.1.0
 
   '@withtypes/mime@0.1.2':
     dependencies:
@@ -4664,7 +4682,7 @@ snapshots:
       cross-spawn: 7.0.3
       signal-exit: 4.1.0
 
-  fs-extra@10.1.0:
+  fs-extra@11.2.0:
     dependencies:
       graceful-fs: 4.2.11
       jsonfile: 6.1.0
@@ -5871,7 +5889,7 @@ snapshots:
       - supports-color
       - ts-node
 
-  tsx@4.15.7:
+  tsx@4.16.0:
     dependencies:
       esbuild: 0.21.5
       get-tsconfig: 4.7.5
