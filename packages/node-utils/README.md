@@ -15,11 +15,12 @@
   </a>
 </p>
 
-Opinionated collection of common JavaScript / TypeScript utils by [@chengpeiquan](https://github.com/chengpeiquan) .
+Opinionated collection of common Node.js utils by [@chengpeiquan](https://github.com/chengpeiquan) .
 
 - 🌳 Fully tree shakeable
 - 💪 Type Strong
 - ⚡ Simplify complex operations
+- 🚀 Built-in [fs-extra](https://github.com/jprichardson/node-fs-extra)
 
 > Note: This package is only for use in Node.js, don't use it in the browser.
 
@@ -43,6 +44,8 @@ console.log(getPackageManagerByUserAgent())
 ## Documentation
 
 See: [Documentation of node-utils](https://paka.dev/npm/@bassist/node-utils)
+
+About `fs` API, see: [fs-extra](https://github.com/jprichardson/node-fs-extra) .
 
 ## Release Notes
 
