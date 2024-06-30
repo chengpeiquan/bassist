@@ -1,6 +1,6 @@
 {
   "name": "@bassist/node-utils",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "Opinionated collection of common Node.js utils by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
@@ -20,13 +20,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/chengpeiquan/bassist.git"
+    "url": "https://github.com/chengpeiquan/bassist",
+    "directory": "packages/node-utils"
   },
   "keywords": [
     "utils",
-    "node utils"
+    "node utils",
+    "file system utils",
+    "file utils",
+    "fs utils",
+    "fs extra"
   ],
   "dependencies": {
-    "@withtypes/fs-extra": "^0.1.1"
+    "@bassist/utils": "workspace:^",
+    "fs-extra": "^11.2.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4"
   }
 }
