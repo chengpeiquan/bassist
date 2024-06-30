@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/chengpeiquan/bassist/compare/release@0.2.0...release@0.3.0) (2024-06-30)
+
+
+### Features
+
+* **release:** use node-utils instead fs-extra ([3624f8e](https://github.com/chengpeiquan/bassist/commit/3624f8e19327f041815647ec032385561675308a))
+
+
+
 # [0.2.0](https://github.com/chengpeiquan/bassist/compare/release@0.1.0...release@0.2.0) (2024-02-15)
 
 
