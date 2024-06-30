@@ -193,13 +193,12 @@ importers:
       '@bassist/utils':
         specifier: workspace:^
         version: link:../utils
-      fs-extra:
-        specifier: ^11.2.0
-        version: 11.2.0
-    devDependencies:
       '@types/fs-extra':
         specifier: ^11.0.4
         version: 11.0.4
+      fs-extra:
+        specifier: ^11.2.0
+        version: 11.2.0
 
   packages/progress:
     dependencies:
