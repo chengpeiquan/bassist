@@ -1,3 +1,12 @@
+## [0.4.1](https://github.com/chengpeiquan/bassist/compare/node-utils@0.4.0...node-utils@0.4.1) (2024-06-30)
+
+
+### Bug Fixes
+
+* **node-utils:** missing types ([3de219a](https://github.com/chengpeiquan/bassist/commit/3de219ac8a7b95a7d6aed8342eb4e75726ba7717))
+
+
+
 # [0.4.0](https://github.com/chengpeiquan/bassist/compare/node-utils@0.3.0...node-utils@0.4.0) (2024-06-30)
 
 
