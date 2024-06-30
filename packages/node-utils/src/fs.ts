@@ -1,3 +1,4 @@
+import { resolve } from 'node:path'
 import {
   copyFileSync,
   existsSync,
@@ -8,8 +9,14 @@ import {
   statSync,
   unlinkSync,
   writeFileSync,
-} from '@withtypes/fs-extra'
-import { resolve } from 'path'
+} from 'node:fs'
+
+/**
+ * On the `fs` variable, the `node:fs` and `fs-extra` APIs are provided.
+ *
+ * @category fs
+ */
+export * as fs from 'fs-extra'
 
 /**
  * Write file content
