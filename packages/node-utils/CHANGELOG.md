@@ -1,3 +1,19 @@
+# [0.4.0](https://github.com/chengpeiquan/bassist/compare/node-utils@0.3.0...node-utils@0.4.0) (2024-06-30)
+
+
+### Bug Fixes
+
+* typescript overwrite warning ([ced9c2c](https://github.com/chengpeiquan/bassist/commit/ced9c2c8a162f63b8b0ae66f65c384177eb7b0e3))
+
+
+### Features
+
+* **node-utils:** add bundle helpers ([62e3ee7](https://github.com/chengpeiquan/bassist/commit/62e3ee756743cc4b373f1dad021e1ea5e096b8a2))
+* **node-utils:** built-in fs-extra ([664731f](https://github.com/chengpeiquan/bassist/commit/664731f868f4aa2e1a6177e53196f6c0adc46ecc))
+* **node-utils:** use fs-extra instead of the original fs method encapsulation ([10d5cd7](https://github.com/chengpeiquan/bassist/commit/10d5cd747a9f75f2e49d39bd10efc36dfaf885fb))
+
+
+
 # [0.3.0](https://github.com/chengpeiquan/bassist/compare/node-utils@0.2.1...node-utils@0.3.0) (2023-08-19)
 
 
