@@ -1,10 +1,10 @@
 {
   "name": "@bassist/utils",
-  "version": "0.16.0",
+  "version": "0.17.0",
   "description": "Opinionated collection of common JavaScript / TypeScript utils by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
-  "homepage": "https://paka.dev/npm/@bassist/utils",
+  "homepage": "https://jsdocs.io/package/@bassist/utils",
   "files": [
     "dist"
   ],
