@@ -7,7 +7,7 @@
   <a href="https://www.npmjs.com/package/@bassist/eslint-config" target="__blank">
     <img src="https://img.shields.io/npm/dy/@bassist/eslint-config?color=f43f5e&label=downloads" />
   </a>
-  <a href="https://github.com/chengpeiquan/bassist/tree/main/packages/eslint" target="__blank">
+  <a href="https://github.com/chengpeiquan/bassist/tree/main/packages/eslint-config" target="__blank">
     <img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20demos&color=f43f5e" />
   </a>
   <a href="https://github.com/chengpeiquan/bassist" target="__blank">
@@ -21,9 +21,9 @@ A modern flat ESLint configuration for [ESLint](https://eslint.org/), crafted by
 
 Using this ESLint configuration only requires three steps:
 
-1. Install dependencies (See: [🚀 Installation](#🚀-installation))
-2. Add ESLint configuration file (See: [📂 Configuration File](#📂-configuration-file))
-3. Enable automatic Lint for VS Code settings.json (See: [🛠 VS Code Setup](#🛠-vs-code-setup))
+1. Install dependencies (See: [🚀 Installation](#-installation))
+2. Add ESLint configuration file (See: [📂 Configuration File](#-configuration-file))
+3. Enable automatic Lint for VS Code settings.json (See: [🛠 VS Code Setup](#-vs-code-setup))
 
 This quick guide helps you get up and running without missing key steps 🚀 .
 
