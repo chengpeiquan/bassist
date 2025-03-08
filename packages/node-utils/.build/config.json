@@ -1,6 +1,3 @@
 {
-  "formats": [
-    "cjs",
-    "esm"
-  ]
+  "formats": ["cjs", "esm"]
 }

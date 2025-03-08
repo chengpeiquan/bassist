@@ -34,7 +34,7 @@
   ],
   "dependencies": {
     "@withtypes/minimist": "^0.1.1",
-    "conventional-changelog-cli": "^4.1.0"
+    "conventional-changelog-cli": "^5.0.0"
   },
   "peerDependencies": {
     "conventional-changelog-cli": ">=4.1.0"

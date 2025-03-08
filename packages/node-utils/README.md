@@ -7,7 +7,7 @@
   <a href="https://www.npmjs.com/package/@bassist/node-utils" target="__blank">
     <img src="https://img.shields.io/npm/dt/@bassist/node-utils?color=f43f5e&label=downloads" />
   </a>
-  <a href="https://paka.dev/npm/@bassist/node-utils" target="__blank">
+  <a href="https://jsdocs.io/package/@bassist/node-utils" target="__blank">
     <img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20demos&color=f43f5e" />
   </a>
   <a href="https://github.com/chengpeiquan/bassist" target="__blank">
@@ -43,7 +43,7 @@ console.log(getPackageManagerByUserAgent())
 
 ## Documentation
 
-See: [Documentation of node-utils](https://paka.dev/npm/@bassist/node-utils)
+See: [Documentation of node-utils](https://jsdocs.io/package/@bassist/node-utils)
 
 About `fs` API, see: [fs-extra](https://github.com/jprichardson/node-fs-extra) .
 

@@ -4,11 +4,14 @@
     "apos",
     "Attributify",
     "baiduboxapp",
+    "callees",
     "codemirror",
     "commitlint",
+    "commonmark",
     "conventionalcommits",
     "EDITMSG",
     "escaperegexp",
+    "ianvs",
     "IIFE",
     "infile",
     "kolorist",
@@ -29,5 +32,11 @@
     "windicss",
     "withtypes"
   ],
-  "eslint.useFlatConfig": true
+  "editor.formatOnSave": true,
+  "eslint.useFlatConfig": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.prettier": "always"
+  },
+  "eslint.validate": ["typescript", "typescriptreact"]
 }

@@ -31,7 +31,7 @@
     "windicss"
   ],
   "devDependencies": {
-    "unocss": "^0.58.9"
+    "unocss": "^66.0.0"
   },
   "peerDependencies": {
     "unocss": ">=0.54.1"
