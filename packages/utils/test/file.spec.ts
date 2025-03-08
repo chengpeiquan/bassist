@@ -11,8 +11,8 @@ describe('file', () => {
     expect(file.getMimeType('example')).toBe('')
     expect(
       file.getMimeType(
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR4'
-      )
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR4',
+      ),
     ).toBe('image/png')
   })
 
@@ -26,8 +26,8 @@ describe('file', () => {
     expect(file.getExtension('example')).toBe('')
     expect(
       file.getExtension(
-        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR4'
-      )
+        'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACrElEQVR4',
+      ),
     ).toBe('png')
   })
 })

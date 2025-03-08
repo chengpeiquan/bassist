@@ -3,8 +3,6 @@
   "extends": "./base.json",
   "display": "Node",
   "compilerOptions": {
-    "types": [
-      "node"
-    ]
+    "types": ["node"]
   }
 }

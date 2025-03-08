@@ -4,7 +4,7 @@
   "description": "Opinionated collection of common Node.js utils by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
-  "homepage": "https://paka.dev/npm/@bassist/node-utils",
+  "homepage": "https://jsdocs.io/package/@bassist/node-utils",
   "files": [
     "dist"
   ],
@@ -34,6 +34,6 @@
   "dependencies": {
     "@bassist/utils": "workspace:^",
     "@types/fs-extra": "^11.0.4",
-    "fs-extra": "^11.2.0"
+    "fs-extra": "^11.3.0"
   }
 }

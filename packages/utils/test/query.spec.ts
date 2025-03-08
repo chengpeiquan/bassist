@@ -14,7 +14,7 @@ describe('query', () => {
     })
 
     expect(
-      parseQuery('https://example.com/?url=https%3A%2F%2Fexample.com')
+      parseQuery('https://example.com/?url=https%3A%2F%2Fexample.com'),
     ).toStrictEqual({
       url: 'https://example.com',
     })
@@ -36,7 +36,7 @@ describe('query', () => {
 
   it('extractQueryInfo', () => {
     expect(
-      extractQueryInfo('https://example.com/?path=%2Ffoo&a=1&b=2')
+      extractQueryInfo('https://example.com/?path=%2Ffoo&a=1&b=2'),
     ).toStrictEqual({
       path: '/foo',
       params: {
@@ -58,7 +58,7 @@ describe('query', () => {
     expect(getQuery('b', 'https://example.com/?a=1&b=2')).toBe('2')
 
     expect(
-      getQuery('url', 'https://example.com/?url=https%3A%2F%2Fexample.com')
+      getQuery('url', 'https://example.com/?url=https%3A%2F%2Fexample.com'),
     ).toBe('https://example.com')
   })
 
@@ -67,13 +67,13 @@ describe('query', () => {
       stringifyQuery({
         a: 1,
         b: 2,
-      })
+      }),
     ).toBe('a=1&b=2')
 
     expect(
       stringifyQuery({
         url: 'https://example.com',
-      })
+      }),
     ).toBe('url=https%3A%2F%2Fexample.com')
   })
 })

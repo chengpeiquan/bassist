@@ -7,7 +7,7 @@
   <a href="https://www.npmjs.com/package/@bassist/progress" target="__blank">
     <img src="https://img.shields.io/npm/dt/@bassist/progress?color=f43f5e&label=downloads" />
   </a>
-  <a href="https://paka.dev/npm/@bassist/progress" target="__blank">
+  <a href="https://jsdocs.io/package/@bassist/progress" target="__blank">
     <img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20demos&color=f43f5e" />
   </a>
   <a href="https://github.com/chengpeiquan/bassist" target="__blank">

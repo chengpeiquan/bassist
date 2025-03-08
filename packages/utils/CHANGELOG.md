@@ -1,3 +1,12 @@
+# [0.17.0](https://github.com/chengpeiquan/bassist/compare/utils@0.16.0...utils@0.17.0) (2025-03-08)
+
+
+### Bug Fixes
+
+* **utils:** broken docs link ([cde23ca](https://github.com/chengpeiquan/bassist/commit/cde23caea82eb6cba50f6883086402f8ccdd505f))
+
+
+
 # [0.16.0](https://github.com/chengpeiquan/bassist/compare/utils@0.15.0...utils@0.16.0) (2024-02-24)
 
 

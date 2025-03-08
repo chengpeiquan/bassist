@@ -3,10 +3,6 @@
   "extends": "./base.json",
   "display": "Web",
   "compilerOptions": {
-    "lib": [
-      "ESNext",
-      "DOM",
-      "DOM.Iterable"
-    ]
+    "lib": ["ESNext", "DOM", "DOM.Iterable"]
   }
 }
