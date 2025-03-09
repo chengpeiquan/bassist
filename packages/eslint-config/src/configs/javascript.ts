@@ -4,7 +4,10 @@ import { getConfigName } from '../shared'
 import { type FlatESLintConfig } from '../types'
 
 export const javascript: FlatESLintConfig[] = [
-  jsConfig.configs.recommended,
+  {
+    ...jsConfig.configs.recommended,
+    name: getConfigName('js', 'eslint-recommended'),
+  },
   {
     name: getConfigName('js', 'base'),
     languageOptions: {
