@@ -1,25 +1,28 @@
-import importPlugin from 'eslint-plugin-import'
-import { GLOB_MARKDOWN, GLOB_SRC, GLOB_SRC_EXT } from '../globs'
+import importPlugin from 'eslint-plugin-import-x'
 import { getConfigName } from '../shared'
-import { type FlatESLintConfig } from '../types'
+import { type FlatESLintPlugin, type FlatESLintConfig } from '../types'
 
 export { importPlugin }
 
 export const imports: FlatESLintConfig[] = [
   {
-    name: getConfigName('imports', 'base'),
+    name: getConfigName('imports'),
     plugins: {
-      import: importPlugin,
-    },
-    settings: {
-      'import/resolver': {
-        node: { extensions: ['.js', '.mjs', '.ts', '.mts', '.d.ts'] },
-      },
+      import: importPlugin as unknown as FlatESLintPlugin,
     },
     rules: {
       'import/first': 'error',
       'import/no-mutable-exports': 'error',
       'import/no-duplicates': 'error',
+
+      // Some scenes must provide a default export
+      // e.g. Configuration files, Next.js routing, etc.
+      'import/no-default-export': 'off',
+
+      'import/no-named-default': 'error',
+      'import/no-self-import': 'error',
+      'import/no-webpack-loader-syntax': 'error',
+
       'import/order': [
         'error',
         {
@@ -35,26 +38,15 @@ export const imports: FlatESLintConfig[] = [
           ],
           pathGroups: [{ pattern: '@/**', group: 'internal' }],
           pathGroupsExcludedImportTypes: ['type'],
+          alphabetize: {
+            order: 'asc',
+            orderImportKind: 'asc',
+            caseInsensitive: false,
+          },
         },
       ],
-      'import/no-default-export': 'error',
-    },
-  },
-  {
-    name: getConfigName('imports', 'special-cases'),
-    files: [
-      `**/*config*.${GLOB_SRC_EXT}`,
-      `**/views/${GLOB_SRC}`,
-      `**/pages/${GLOB_SRC}`,
-      `**/{index,vite,esbuild,rollup,webpack,rspack}.ts`,
-      '**/*.d.ts',
-      `${GLOB_MARKDOWN}/**`,
-    ],
-    plugins: {
-      import: importPlugin,
-    },
-    rules: {
-      'import/no-default-export': 'off',
+
+      'import/newline-after-import': ['error', { count: 1 }],
     },
   },
 ]
