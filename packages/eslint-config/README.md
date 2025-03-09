@@ -58,7 +58,7 @@ Then add `"type": "module"` to your `package.json`:
   "type": "module",
   "scripts": {
     "lint": "eslint src",
-    "lint:inspector": "npx @eslint/config-inspector --config eslint.config.ts"
+    "lint:inspector": "npx @eslint/config-inspector"
   }
 }
 ```

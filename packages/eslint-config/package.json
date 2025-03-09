@@ -1,6 +1,6 @@
 {
   "name": "@bassist/eslint-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Flat ESLint config for JavaScript, TypeScript, Vue, React, Prettier and so on by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
