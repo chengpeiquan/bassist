@@ -1,10 +1,10 @@
 {
   "name": "@bassist/eslint-config",
-  "version": "0.1.1",
-  "description": "Flat ESLint config for JavaScript, TypeScript, Vue, React, Prettier and so on by @chengpeiquan .",
+  "version": "0.1.2",
+  "description": "A modern flat ESLint configuration for ESLint, crafted by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
-  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/eslint-config",
+  "homepage": "https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/README.md",
   "files": [
     "dist"
   ],
@@ -37,18 +37,19 @@
   ],
   "devDependencies": {
     "@types/eslint-config-prettier": "^6.11.3",
-    "@types/eslint-plugin-tailwindcss": "^3.17.0"
+    "@types/eslint-plugin-tailwindcss": "^3.17.0",
+    "eslint": "^9.22.0",
+    "prettier": "^3.5.3",
+    "typescript": "^5.8.2"
   },
   "dependencies": {
     "@eslint/js": "^9.22.0",
     "@eslint/markdown": "^6.3.0",
-    "@ianvs/prettier-plugin-sort-imports": "^4.4.1",
     "@next/eslint-plugin-next": "^15.2.1",
     "@typescript-eslint/eslint-plugin": "^8.26.0",
     "@typescript-eslint/parser": "^8.26.0",
-    "eslint": "^9.22.0",
     "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-import-x": "^4.6.1",
     "eslint-plugin-n": "^17.16.2",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
@@ -59,13 +60,12 @@
     "eslint-plugin-unicorn": "^57.0.0",
     "eslint-plugin-vue": "^9.33.0",
     "globals": "^16.0.0",
-    "prettier": "^3.5.3",
     "prettier-plugin-jsdoc": "1.3.2",
-    "typescript": "^5.8.2",
     "vue-eslint-parser": "^9.4.3"
   },
   "peerDependencies": {
     "eslint": ">=9.0.0",
+    "prettier": ">=3.0.0",
     "typescript": ">=5.0.0"
   },
   "peerDependenciesMeta": {
