@@ -13,7 +13,7 @@
     "pkg:changelog": "tsx ./scripts/changelog.cts",
     "test": "vitest",
     "lint": "eslint packages --ext .js,.ts,.jsx,.tsx,.vue",
-    "lint:inspector": "npx @eslint/config-inspector --config eslint.config.ts",
+    "lint:inspector": "npx @eslint/config-inspector",
     "format": "prettier --write packages",
     "mirror:get": "npm config get registry",
     "mirror:set": "npm config set registry https://registry.npmmirror.com",
