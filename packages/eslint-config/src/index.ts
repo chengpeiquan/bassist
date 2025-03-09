@@ -24,3 +24,5 @@ export {
   defaultTailwindcssSettings,
   type TailwindcssSettings,
 } from './private-configs/tailwindcss'
+
+export { createGetConfigNameFactory } from './shared'
