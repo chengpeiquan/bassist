@@ -62,11 +62,7 @@ export const createPrettierConfig = (
 
   const finalPrettierConfig: PartialPrettierExtendedOptions = {
     ...resolvedConfig,
-    plugins: [
-      ...plugins,
-      '@ianvs/prettier-plugin-sort-imports',
-      './node_modules/prettier-plugin-jsdoc/dist/index.js',
-    ],
+    plugins: [...plugins, './node_modules/prettier-plugin-jsdoc/dist/index.js'],
   }
 
   const resolvedIgnore = loadPrettierIgnore(cwd)
