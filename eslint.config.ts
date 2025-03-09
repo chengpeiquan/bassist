@@ -1,17 +1,22 @@
 import {
+  createGetConfigNameFactory,
   defineFlatConfig,
+  imports,
   markdown,
   node,
   typescript,
 } from './packages/eslint-config/src'
 
+const getConfigName = createGetConfigNameFactory('@bassist/monorepo')
+
 export default defineFlatConfig(
   [
+    ...imports,
     ...typescript,
     ...markdown,
     ...node,
     {
-      name: '@bassist/monorepo/ignore',
+      name: getConfigName('ignore'),
       ignores: ['**/dist/**', '**/.build/**', '**/CHANGELOG.md'],
     },
   ],

@@ -37,6 +37,13 @@ npm install -D eslint @bassist/eslint-config
 
 **Note:** Requires ESLint >= `9.0.0` , and TypeScript >= `5.0.0` .
 
+If you’re using pnpm, consider adding a `.npmrc` file to your project root with the following settings to handle peer dependencies more smoothly:
+
+```ini
+shamefully-hoist=true
+auto-install-peers=true
+```
+
 > For ESLint v8 users, refer to the legacy (unmaintained) package: [@bassist/eslint](https://www.npmjs.com/package/@bassist/eslint).
 
 ## 📂 Configuration File
@@ -45,10 +52,10 @@ Create an `eslint.config.js` file at the project root:
 
 ```js
 // eslint.config.js
-import { markdown, typescript } from '@bassist/eslint-config'
+import { imports, typescript } from '@bassist/eslint-config'
 
 // export an array of configuration objects
-export default [...markdown, ...typescript]
+export default [...imports, ...typescript]
 ```
 
 Then add `"type": "module"` to your `package.json`:
@@ -78,10 +85,10 @@ For enhanced type safety, use `defineFlatConfig`:
 
 ```js
 // @ts-check
-import { defineFlatConfig, prettier, vue } from '@bassist/eslint-config'
+import { defineFlatConfig, imports, vue } from '@bassist/eslint-config'
 
 export default defineFlatConfig([
-  ...prettier,
+  ...imports,
   ...vue,
   // Add more custom configurations
   {
@@ -193,6 +200,54 @@ interface DefineFlatConfigOptions {
   tailwindcssSettings?: TailwindcssSettings
 }
 ```
+
+### createGetConfigNameFactory
+
+`createGetConfigNameFactory` is a flexible tool function for generating ESLint configuration naming tools. It helps you quickly splice configuration names, ensure consistent namespaces, and facilitate the organization and management of complex rule sets.
+
+The API type declaration:
+
+```ts
+/**
+ * A flexible tool function for generating ESLint configuration naming tools. It
+ * helps you quickly splice configuration names, ensure consistent namespaces,
+ * and facilitate the organization and management of complex rule sets.
+ *
+ * @param prefix - A string representing the prefix for your configuration
+ *   names.
+ * @returns A function that concatenates the provided name segments with the
+ *   given prefix.
+ */
+declare const createGetConfigNameFactory: (
+  prefix: string,
+) => (...names: string[]) => string
+```
+
+Usage:
+
+```ts
+import {
+  createGetConfigNameFactory,
+  defineFlatConfig,
+} from '@bassist/eslint-config'
+
+const getConfigName = createGetConfigNameFactory('my-prefix')
+
+export default defineFlatConfig([
+  {
+    name: getConfigName('ignore'), // --> `my-prefix/ignore`
+    ignores: ['**/dist/**', '**/.build/**', '**/CHANGELOG.md'],
+  },
+])
+```
+
+Why Use This?
+
+- Consistency: Enforces a clear and uniform naming pattern for your configurations.
+- Flexibility: Allows custom prefixes for different projects or scopes.
+- Simplified Management: Makes it easier to organize and navigate large ESLint configurations.
+
+This utility is especially helpful when building reusable ESLint configurations or maintaining a well-structured ruleset for complex projects.
 
 ### Exported Configurations
 
