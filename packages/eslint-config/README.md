@@ -15,7 +15,9 @@
   </a>
 </p>
 
-A modern flat ESLint configuration for [ESLint](https://eslint.org/), crafted by [@chengpeiquan](https://github.com/chengpeiquan).
+English | [简体中文](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/README.zh-CN.md)
+
+A modern flat ESLint configuration for [ESLint](https://eslint.org/) V9, crafted by [@chengpeiquan](https://github.com/chengpeiquan).
 
 ## ⚡ Usage
 
@@ -70,7 +72,7 @@ Then add `"type": "module"` to your `package.json`:
 }
 ```
 
-Run `npm run lint` to lint your code, or `npm run lint:inspector` to visualize your ESLint config at [localhost:7777](http://localhost:7777/).
+Run `npm run lint` to lint your code, or `npm run lint:inspector` to visualize your ESLint config at `http://localhost:7777`.
 
 > For typescript file type (e.g. `eslint.config.ts` ), requires [additional setup](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files) .
 
