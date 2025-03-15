@@ -27,11 +27,11 @@
 2. 添加 ESLint 配置文件（参考：[📂 配置文件](#-配置文件)）
 3. 在 VS Code 的 `settings.json` 启用自动 Lint（参考：[🛠 VS Code 配置](#-vs-code-配置)）
 
-这个快速指南可以帮助你顺利上手，避免遗漏关键步骤 🚀 。
+这个快速指南可以作为入门辅助，避免遗漏关键步骤 🚀 。
 
 ## 🚀 安装
 
-使用你喜欢的包管理器安装该包：
+使用常用的包管理器安装该包：
 
 ```bash
 npm install -D eslint @bassist/eslint-config
@@ -39,14 +39,14 @@ npm install -D eslint @bassist/eslint-config
 
 **注意：** 需要 ESLint 版本 >= `9.0.0` ，以及 TypeScript 版本 >= `5.0.0`。
 
-如果你使用的是 `pnpm`，建议在项目根目录添加 `.npmrc` 文件，并包含以下配置，以更顺利地处理 peer 依赖：
+如果使用的是 `pnpm`，建议在项目根目录添加 `.npmrc` 文件，并包含以下配置，以更顺利地处理 peer 依赖：
 
 ```ini
 shamefully-hoist=true
 auto-install-peers=true
 ```
 
-> 如果你仍在使用 ESLint v8，请参考旧版（已不再维护）包：[@bassist/eslint](https://www.npmjs.com/package/@bassist/eslint)。
+> 如果仍在使用 ESLint v8，请参考旧版（已不再维护）包：[@bassist/eslint](https://www.npmjs.com/package/@bassist/eslint)。
 
 ## 📂 配置文件
 
@@ -72,7 +72,7 @@ export default [...imports, ...typescript]
 }
 ```
 
-运行 `npm run lint` 以检查代码，或运行 `npm run lint:inspector` 在 `http://localhost:7777` 可视化你的 ESLint 配置。
+运行 `npm run lint` 以检查代码，或运行 `npm run lint:inspector` 在 `http://localhost:7777` 查看可视化的 ESLint 配置。
 
 > 对于 TypeScript 配置文件（例如 `eslint.config.ts` ），需要 [额外的设置](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files) 。
 
@@ -168,7 +168,7 @@ interface DefineFlatConfigOptions {
   /**
    * 默认情况下，会从当前工作目录读取 `.prettierrc`，并且 `.prettierrc` 文件必须是 JSON 格式。
    *
-   * 如果你的配置文件不是 JSON 格式，或者使用了不同的文件名，可以将其转换为 JSON 规则后传入。
+   * 如果配置文件不是 JSON 格式，或者使用了不同的文件名，可以将其转换为 JSON 规则后传入。
    *
    * 读取自定义配置后，会与默认的 ESLint 规则合并。
    *
@@ -177,7 +177,7 @@ interface DefineFlatConfigOptions {
   prettierRules?: PartialPrettierExtendedOptions
 
   /**
-   * Tailwind CSS 规则默认启用。如果它们影响了你的项目，可以通过该选项禁用。
+   * Tailwind CSS 规则默认启用。如果它们影响了项目，可以通过该选项禁用。
    *
    * @default true
    */
@@ -196,14 +196,14 @@ interface DefineFlatConfigOptions {
 
 ### createGetConfigNameFactory
 
-`createGetConfigNameFactory` 是一个灵活的工具函数，用于生成 ESLint 配置命名工具。它可以帮助你快速拼接配置名称，确保命名空间一致，并便于组织和管理复杂的规则集。
+`createGetConfigNameFactory` 是一个灵活的工具函数，用于生成 ESLint 配置命名工具。它可以快速拼接配置名称，确保命名空间一致，并便于组织和管理复杂的规则集。
 
 API 类型声明：
 
 ```ts
 /**
  * 一个灵活的工具函数，用于生成 ESLint 配置命名工具。
- * 它可以帮助你快速拼接配置名称，确保命名空间一致，并便于组织和管理复杂的规则集。
+ * 它可以快速拼接配置名称，确保命名空间一致，并便于组织和管理复杂的规则集。
  *
  * @param prefix - 表示配置名称前缀的字符串。
  * @returns 一个函数，该函数会将提供的名称片段与指定的前缀拼接在一起。
@@ -241,7 +241,7 @@ export default defineFlatConfig([
 
 ## 📦 导出的配置
 
-这些是我常用的配置，如果你有额外需求，欢迎提交 PR！
+这些是一些常用的配置，如果有额外需求，欢迎提交 PR！
 
 ### 语言支持
 
