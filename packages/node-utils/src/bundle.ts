@@ -3,9 +3,8 @@ import { isArray, isObject, isString } from '@bassist/utils'
 /**
  * Bundler format based on tsup
  *
+ * @category Bundle
  * @see https://tsup.egoist.dev/#bundle-formats
- *
- * @category bundle
  */
 export enum BundleFormat {
   CJS = 'cjs',
@@ -16,9 +15,8 @@ export enum BundleFormat {
 /**
  * Default bundler format config based on tsup
  *
+ * @category Bundle
  * @see https://tsup.egoist.dev/#bundle-formats
- *
- * @category bundle
  */
 export const defaultBundleFormatConfig = [
   BundleFormat.CJS,
@@ -27,12 +25,10 @@ export const defaultBundleFormatConfig = [
 ]
 
 /**
- * Provides the extension of the JavaScript file
- * according to the bundle format
+ * Provides the extension of the JavaScript file according to the bundle format
  *
+ * @category Bundle
  * @see https://tsup.egoist.dev/#output-extension
- *
- * @category bundle
  */
 export const getBundleExtension = ({ format }: Record<string, unknown>) => {
   switch (format) {
@@ -48,9 +44,7 @@ export const getBundleExtension = ({ format }: Record<string, unknown>) => {
   }
 }
 
-/**
- * @category bundle
- */
+/** @category Bundle */
 export const bundleBannerFields = [
   'name',
   'version',
@@ -60,22 +54,19 @@ export const bundleBannerFields = [
   'license',
 ] as const
 
-/**
- * @category bundle
- */
+/** @category Bundle */
 export interface GetBundleBannerOptions {
   /**
-   * Generates a shebang that lets the script
-   * be executed using the Node.js interpreter
+   * Generates a shebang that lets the script be executed using the Node.js
+   * interpreter
    */
   bin?: boolean
 
   /**
    * Fields that need to be generated to Banner
    *
-   * @note Please make sure the value is a string
-   *
    * @default bundleBannerFields
+   * @note Please make sure the value is a string
    */
   fields?: string[]
 }
@@ -83,14 +74,11 @@ export interface GetBundleBannerOptions {
 /**
  * Generate Banner content based on package.json
  *
- * @see https://www.npmjs.com/package/vite-plugin-banner
- *
+ * @category Bundle
  * @param pkg - Contents of package.json
  * @param options - Options for adjusting output results
- *
  * @returns Banner content for generated chunks
- *
- * @category bundle
+ * @see https://www.npmjs.com/package/vite-plugin-banner
  */
 export const getBundleBanner = (
   pkg: Record<string, unknown>,
