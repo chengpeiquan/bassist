@@ -1,7 +1,7 @@
 /**
  * Check the package name is valid
  *
- * @category pkg
+ * @category Pkg
  */
 export function isValidPackageName(packageName: string) {
   return /^(?:@[a-z0-9-*~][a-z0-9-*._~]*\/)?[a-z0-9-~][a-z0-9-._~]*$/.test(
@@ -12,7 +12,7 @@ export function isValidPackageName(packageName: string) {
 /**
  * Format the package name to valid
  *
- * @category pkg
+ * @category Pkg
  */
 export function toValidPackageName(name: string) {
   return name
@@ -26,7 +26,7 @@ export function toValidPackageName(name: string) {
 /**
  * Get package manager info
  *
- * @category pkg
+ * @category Pkg
  */
 export function getPackageManagerByUserAgent() {
   const defaultInfo = {
@@ -43,7 +43,7 @@ export function getPackageManagerByUserAgent() {
     const spec = userAgent.split(' ')[0]
     const [name, version] = spec.split('/')
     return { name, version }
-  } catch (e) {
+  } catch {
     return { ...defaultInfo }
   }
 }

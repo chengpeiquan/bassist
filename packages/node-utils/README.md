@@ -45,7 +45,7 @@ console.log(getPackageManagerByUserAgent())
 
 See: [Documentation of node-utils](https://jsdocs.io/package/@bassist/node-utils)
 
-About `fs` API, see: [fs-extra](https://github.com/jprichardson/node-fs-extra) .
+About `fse` API, see: [fs-extra](https://github.com/jprichardson/node-fs-extra) .
 
 ## Release Notes
 
