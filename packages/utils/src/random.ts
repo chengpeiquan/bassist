@@ -3,13 +3,10 @@ import { desktopUserAgents, mobileUserAgents, userAgents } from './ua'
 /**
  * Generate random number
  *
+ * @category Random
  * @param min - The minimum value in the range
- *
  * @param max - The maximum value in the range
- *
  * @param roundingType - Round the result
- *
- * @category random
  */
 export function randomNumber(
   min = 0,
@@ -22,9 +19,8 @@ export function randomNumber(
 /**
  * Generate random string
  *
+ * @category Random
  * @param length - The length of the string to be returned
- *
- * @category random
  */
 export function randomString(length = 10) {
   // https://github.com/ai/nanoid/blob/main/url-alphabet/index.js
@@ -41,7 +37,7 @@ export function randomString(length = 10) {
 /**
  * Generate random boolean
  *
- * @category random
+ * @category Random
  */
 export function randomBoolean() {
   const index = randomNumber(0, 1)
@@ -51,7 +47,7 @@ export function randomBoolean() {
 /**
  * Shuffle the array and sort it randomly
  *
- * @category random
+ * @category Random
  */
 export function shuffle(arr: any[]): any[] {
   if (!Array.isArray(arr)) return arr
@@ -69,9 +65,8 @@ export function shuffle(arr: any[]): any[] {
 /**
  * Randomly returns a mocked UA
  *
+ * @category Random
  * @param device - Get a random UA on the specified device type
- *
- * @category random
  */
 export function randomUserAgent(device?: 'desktop' | 'mobile') {
   const uaList =

@@ -1,6 +1,6 @@
+import { loadRes, isBrowser, randomString } from '@bassist/utils'
 import nprogress from 'nprogress'
 import resource from 'nprogress/nprogress.css?inline'
-import { loadRes, isBrowser, randomString } from '@bassist/utils'
 import type { Progress } from './types'
 
 loadRes({

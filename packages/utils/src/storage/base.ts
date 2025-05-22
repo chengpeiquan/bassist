@@ -1,16 +1,14 @@
-import { isBrowser } from '../device'
 import { isString } from '../data'
+import { isBrowser } from '../device'
 import { FallbackStorage } from './fallback'
 
-/**
- * @category storage
- */
+/** @category Storage */
 export type StorageType = 'localStorage' | 'sessionStorage'
 
 /**
  * BaseStorage class provides a wrapper for browser storage or fallback storage.
  *
- * @category storage
+ * @category Storage
  */
 export class BaseStorage {
   prefix: string
@@ -20,7 +18,8 @@ export class BaseStorage {
    * Creates an instance of BaseStorage
    *
    * @param prefix - The prefix to be added to the storage keys.
-   * @param storageType - The type of storage to use (localStorage or sessionStorage)
+   * @param storageType - The type of storage to use (localStorage or
+   *   sessionStorage)
    */
   constructor(prefix: string, storageType: StorageType) {
     this.prefix = prefix
@@ -29,8 +28,9 @@ export class BaseStorage {
 
   /**
    * Read stored data
-   * @tips The `key` doesn't need to be prefixed
+   *
    * @returns The data in the format before storage
+   * @tips The `key` doesn't need to be prefixed
    */
   get(key: string) {
     const localData = this.storage.getItem(`${this.prefix}-${key}`)
@@ -42,33 +42,27 @@ export class BaseStorage {
       if (localData === 'null') return null
       if (localData === 'undefined') return undefined
       return JSON.parse(localData)
-    } catch (e) {
+    } catch {
       return localData
     }
   }
 
-  /**
-   * Set storage data
-   */
+  /** Set storage data */
   set(key: string, value: any) {
     try {
       const data = isString(value) ? value : JSON.stringify(value)
       this.storage.setItem(`${this.prefix}-${key}`, data)
     } catch (e) {
-      console.log(e)
+      console.error(e)
     }
   }
 
-  /**
-   * Remove the specified storage data under the current prefix
-   */
+  /** Remove the specified storage data under the current prefix */
   remove(key: string) {
     this.storage.removeItem(`${this.prefix}-${key}`)
   }
 
-  /**
-   * Clear all stored data under the current prefix
-   */
+  /** Clear all stored data under the current prefix */
   clear() {
     const keys = this.list()
     keys.forEach((key) => {
@@ -76,15 +70,14 @@ export class BaseStorage {
     })
   }
 
-  /**
-   * Count the number of storage related to the current prefix
-   */
+  /** Count the number of storage related to the current prefix */
   count() {
     return this.list().length
   }
 
   /**
    * List storage keys associated under the current prefix
+   *
    * @tips All keys without prefix
    */
   list() {

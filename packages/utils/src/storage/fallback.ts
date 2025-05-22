@@ -4,9 +4,10 @@ import { hasKey } from '../data'
 const fallbackStorageRecord: Record<string, FallbackStorage> = {}
 
 /**
- * FallbackStorage class provides a fallback storage implementation when running outside the browser environment
+ * FallbackStorage class provides a fallback storage implementation when running
+ * outside the browser environment
  *
- * @category storage
+ * @category Storage
  */
 export class FallbackStorage {
   private data: Record<string, string>
@@ -30,23 +31,17 @@ export class FallbackStorage {
     }
   }
 
-  /**
-   * Gets the number of stored items
-   */
+  /** Gets the number of stored items */
   get length() {
     return Object.keys(this.data).length
   }
 
-  /**
-   * Clears all stored items.
-   */
+  /** Clears all stored items. */
   clear() {
     this.data = {}
   }
 
-  /**
-   * Retrieves the value associated with the specified key
-   */
+  /** Retrieves the value associated with the specified key */
   getItem(key: string) {
     if (hasKey(this.data, key)) {
       return this.data[key]
@@ -54,25 +49,20 @@ export class FallbackStorage {
     return null
   }
 
-  /**
-   * Sets the value for the specified key.
-   */
+  /** Sets the value for the specified key. */
   setItem(key: string, value: string) {
     this.data[key] = value
   }
 
-  /**
-   * Removes the item associated with the specified key.
-   */
+  /** Removes the item associated with the specified key. */
   removeItem(key: string) {
     if (hasKey(this.data, key)) {
+      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
       delete this.data[key]
     }
   }
 
-  /**
-   * Retrieves the key at the specified index.
-   */
+  /** Retrieves the key at the specified index. */
   key(index: number) {
     const keys = Object.keys(this.data)
     if (index > keys.length) return null

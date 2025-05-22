@@ -1,6 +1,6 @@
 import { buildByTsup } from './builder'
-import { readBuildConfig } from './utils'
 import { type BuildOptions } from './types'
+import { readBuildConfig } from './utils'
 
 async function build(options: BuildOptions) {
   await buildByTsup(options)

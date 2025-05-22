@@ -3,14 +3,14 @@ import { isBrowser } from './device'
 /**
  * The preferred color scheme for the appearance of the user interface
  *
- * @category appearance
+ * @category Appearance
  */
 export type PrefersColorScheme = 'light' | 'dark'
 
 /**
  * Dark mode media query
  *
- * @category appearance
+ * @category Appearance
  */
 export const darkMediaQuery = isBrowser
   ? window.matchMedia('(prefers-color-scheme: dark)')
@@ -19,7 +19,7 @@ export const darkMediaQuery = isBrowser
 /**
  * Checks if the user's preferred color scheme is dark
  *
- * @category appearance
+ * @category Appearance
  */
 export function isDark() {
   if (!isBrowser) return false
@@ -29,7 +29,7 @@ export function isDark() {
 /**
  * Light mode media query
  *
- * @category appearance
+ * @category Appearance
  */
 export const lightMediaQuery = isBrowser
   ? window.matchMedia('(prefers-color-scheme: light)')
@@ -38,7 +38,7 @@ export const lightMediaQuery = isBrowser
 /**
  * Checks if the user's preferred color scheme is light
  *
- * @category appearance
+ * @category Appearance
  */
 export function isLight() {
   if (!isBrowser) return false
@@ -48,7 +48,7 @@ export function isLight() {
 /**
  * Retrieves the user's preferred color scheme
  *
- * @category appearance
+ * @category Appearance
  */
 export function getPrefersColorScheme(): PrefersColorScheme | undefined {
   if (isDark()) return 'dark'
@@ -59,7 +59,7 @@ export function getPrefersColorScheme(): PrefersColorScheme | undefined {
 /**
  * Portrait orientation media query
  *
- * @category appearance
+ * @category Appearance
  */
 export const portraitMediaQuery = isBrowser
   ? window.matchMedia('(orientation: portrait)')
@@ -68,7 +68,7 @@ export const portraitMediaQuery = isBrowser
 /**
  * Check whether the current screen is in portrait mode
  *
- * @category appearance
+ * @category Appearance
  */
 export function isPortrait() {
   if (!isBrowser) return false
@@ -78,7 +78,7 @@ export function isPortrait() {
 /**
  * Landscape orientation media query
  *
- * @category appearance
+ * @category Appearance
  */
 export const landscapeMediaQuery = isBrowser
   ? window.matchMedia('(orientation: landscape)')
@@ -87,7 +87,7 @@ export const landscapeMediaQuery = isBrowser
 /**
  * Check whether the current screen is in landscape mode
  *
- * @category appearance
+ * @category Appearance
  */
 export function isLandscape() {
   if (!isBrowser) return false

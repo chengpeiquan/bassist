@@ -1,10 +1,8 @@
-import { resolve } from 'node:path'
 import { readFileSync } from 'node:fs'
+import { resolve } from 'node:path'
 import minimist from '@withtypes/minimist'
 
-/**
- * Get argv from Command Line
- */
+/** Get argv from Command Line */
 export function getArgv() {
   const argv = minimist(process.argv.slice(2), { string: ['_'] })
   const { _, otp, tag } = argv
@@ -30,6 +28,7 @@ export function getArgv() {
 
 /**
  * Parse package.json
+ *
  * @param path - The path where the `package.json` file is located
  */
 export function parsePackage(path: string): { [key: string]: any } {
@@ -40,7 +39,7 @@ export function parsePackage(path: string): { [key: string]: any } {
     const pkgStringify = readFileSync(pkgPath, 'utf-8')
     const pkg = JSON.parse(pkgStringify)
     return pkg
-  } catch (e) {
+  } catch {
     return {}
   }
 }

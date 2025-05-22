@@ -1,25 +1,19 @@
 import { isBrowser } from '../device'
 import { fallbackReadText, fallbackWriteText } from './fallback'
 
-/**
- * @category interactive
- */
+/** @category Interactive */
 export type WritableElement = HTMLInputElement | HTMLTextAreaElement
 
-/**
- * @category interactive
- */
+/** @category Interactive */
 export type CopyableElement = HTMLElement | WritableElement
 
 /**
  * Extensions based on the Clipboard API and with fallback mechanism
  *
- * @category interactive
+ * @category Interactive
  */
 export class ClipboardInstance {
-  /**
-   * Determine whether the clipboard is supported
-   */
+  /** Determine whether the clipboard is supported */
   isSupported: boolean
 
   constructor() {
@@ -32,10 +26,9 @@ export class ClipboardInstance {
    * Copy the text passed in or the text of the specified DOM element
    *
    * @example
-   *
-   * ```
-   * clipboard.copy(document.querySelector('.foo'))
-   * ```
+   *   ;```
+   *   clipboard.copy(document.querySelector('.foo'))
+   *   ```
    */
   async copy(el: CopyableElement) {
     if (!this.isSupported) return false
@@ -47,10 +40,9 @@ export class ClipboardInstance {
    * Cut the text passed in or the text of the specified DOM element
    *
    * @example
-   *
-   * ```
-   * clipboard.cut(document.querySelector('.foo'))
-   * ```
+   *   ;```
+   *   clipboard.cut(document.querySelector('.foo'))
+   *   ```
    */
   async cut(el: WritableElement) {
     if (!this.isSupported) return false
@@ -60,27 +52,23 @@ export class ClipboardInstance {
     return true
   }
 
-  /**
-   * Read the text content of the clipboard
-   */
+  /** Read the text content of the clipboard */
   async read() {
     if (!this.isSupported) return ''
     try {
       return await navigator!.clipboard.readText()
-    } catch (e) {
+    } catch {
       return fallbackReadText()
     }
   }
 
-  /**
-   * Write text content to clipboard
-   */
+  /** Write text content to clipboard */
   async write(text: string) {
     if (!this.isSupported) return false
     try {
       await navigator!.clipboard.writeText(text)
       return true
-    } catch (e) {
+    } catch {
       return fallbackWriteText(text)
     }
   }
@@ -89,6 +77,6 @@ export class ClipboardInstance {
 /**
  * Initialized Clipboard Instance
  *
- * @category interactive
+ * @category Interactive
  */
 export const clipboard = new ClipboardInstance()

@@ -1,8 +1,4 @@
-/* eslint-disable no-unused-vars */
-
-/**
- * Types provided from @types/nprogress
- */
+/** Types provided from @types/nprogress */
 interface NProgressOptions {
   minimum: number
   template: string
@@ -38,25 +34,26 @@ interface NProgress {
   getPositioningCSS(): 'translate3d' | 'translate' | 'margin'
 }
 
-/**
- * Types of functionality that this plugin extends
- */
+/** Types of functionality that this plugin extends */
 export interface Progress extends NProgress {
   /**
+   * @example
+   *   use HEX
+   *   progress.setColor('#ff0000')
+   *
+   * @example
+   *   use RGB
+   *   progress.setColor('rgb(255, 0, 0)')
+   *
+   * @example
+   *   use RGBA
+   *   progress.setColor('rgba(255, 0, 0, 1)')
+   *
+   * @example
+   *   use CSS Variable
+   *   progress.setColor('var(--color-primary)')
    *
    * @param color - A valid CSS color value or CSS variable
-   *
-   * @example use HEX
-   *  progress.setColor('#ff0000')
-   *
-   * @example use RGB
-   *  progress.setColor('rgb(255, 0, 0)')
-   *
-   * @example use RGBA
-   *  progress.setColor('rgba(255, 0, 0, 1)')
-   *
-   * @example use CSS Variable
-   *  progress.setColor('var(--color-primary)')
    */
   setColor: (color: string) => void
 }

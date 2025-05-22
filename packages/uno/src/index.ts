@@ -14,9 +14,9 @@ export function defineConfig(configs: Config | Config[] = []): Config {
     {
       presets: [
         /**
-         * This preset attempts to provide a common superset
-         * of the popular utility-first frameworks,
-         * including Tailwind CSS, Windi CSS, Bootstrap, Tachyons, etc.
+         * This preset attempts to provide a common superset of the popular
+         * utility-first frameworks, including Tailwind CSS, Windi CSS,
+         * Bootstrap, Tachyons, etc.
          *
          * @see https://unocss.dev/presets/uno
          */
@@ -30,8 +30,8 @@ export function defineConfig(configs: Config | Config[] = []): Config {
         presetAttributify(),
 
         /**
-         * Provides a set of prose classes
-         * you can use to add typographic defaults to vanilla HTML.
+         * Provides a set of prose classes you can use to add typographic
+         * defaults to vanilla HTML.
          *
          * @see https://unocss.dev/presets/typography
          */
@@ -39,7 +39,8 @@ export function defineConfig(configs: Config | Config[] = []): Config {
       ],
       transformers: [
         /**
-         * You can use a combination of directives and CSS to take advantage of the available utilities.
+         * You can use a combination of directives and CSS to take advantage of
+         * the available utilities.
          *
          * @see https://unocss.dev/transformers/directives
          */
@@ -48,7 +49,8 @@ export function defineConfig(configs: Config | Config[] = []): Config {
         }),
 
         /**
-         * Apply utilities for the same variant by grouping them with a parenthesis.
+         * Apply utilities for the same variant by grouping them with a
+         * parenthesis.
          *
          * @see https://unocss.dev/transformers/variant-group
          */
@@ -56,8 +58,8 @@ export function defineConfig(configs: Config | Config[] = []): Config {
       ],
 
       /**
-       * Usages of utilities that comes from different sources
-       * will be merged together and generate the final CSS.
+       * Usages of utilities that comes from different sources will be merged
+       * together and generate the final CSS.
        *
        * @see https://unocss.dev/guide/extracting
        */

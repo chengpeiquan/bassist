@@ -1,10 +1,10 @@
 import { resolve } from 'path'
 import { build } from 'tsup'
+import { pascalCase, getBanner, getDeps } from '../build/utils'
+import { parsePackage } from '../utils'
 import { BundleFormat } from './types'
-import { pascalCase, getBanner, getDeps } from '@scripts/build/utils'
-import { parsePackage } from '@scripts/utils'
+import type { BuildOptions } from '../build/types'
 import type { Options } from 'tsup'
-import type { BuildOptions } from '@scripts/build/types'
 
 type GetEntryOptions = Pick<BuildOptions, 'name' | 'entryFile' | 'entryFiles'>
 

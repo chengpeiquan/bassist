@@ -10,9 +10,9 @@ async function run() {
     `--no-git-checks`,
     `--access public`,
     `${tag ? `--tag ${tag}` : ''}`,
-    `--otp ${otp}`,
+    `${otp ? `--otp=${otp}` : ''}`,
     `--registry https://registry.npmjs.org/`,
-  ]
+  ].filter(Boolean)
 
   const commands = [`pnpm build ${name}`, publishArgs.join(' ')]
   const cmd = commands.join(' && ')
