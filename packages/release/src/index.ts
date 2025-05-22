@@ -1,9 +1,9 @@
-import { resolve } from 'node:path'
 import { execSync } from 'node:child_process'
-import { fs } from '@bassist/node-utils'
-import { getName, getNotes, getRepo } from './utils'
+import { resolve } from 'node:path'
+import { fse } from '@bassist/node-utils'
 import minimist from '@withtypes/minimist'
 import pkg from '../package.json'
+import { getName, getNotes, getRepo } from './utils'
 
 async function run() {
   const argv = minimist(process.argv.slice(2), {
@@ -18,7 +18,7 @@ async function run() {
 
   const cwd = process.cwd()
   const pkgPath = resolve(cwd, './package.json')
-  const pkgJson = fs.readJsonSync(pkgPath) || {}
+  const pkgJson = fse.readJsonSync(pkgPath) || {}
 
   const { name, version, repository } = pkgJson
   if (!name) {
