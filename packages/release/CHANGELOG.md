@@ -1,3 +1,12 @@
+## [0.3.1](https://github.com/chengpeiquan/bassist/compare/release@0.3.0...release@0.3.1) (2025-05-22)
+
+
+### Bug Fixes
+
+* **release:** internal dependency upgrade ([af59e48](https://github.com/chengpeiquan/bassist/commit/af59e486710ec4d40500d8b3229e89fc4ecb9ea2))
+
+
+
 # [0.3.0](https://github.com/chengpeiquan/bassist/compare/release@0.2.0...release@0.3.0) (2024-06-30)
 
 
