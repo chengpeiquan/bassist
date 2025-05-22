@@ -1,21 +1,20 @@
 /**
  * Common runtime environment types
  *
- * @category runtime
+ * @category Runtime
  */
 export type RuntimeEnv = 'dev' | 'development' | 'test' | 'prod' | 'production'
 
 /**
  * Get current runtime environment
  *
+ * @category Runtime
  * @precondition The `cross-env` package is installed
- *
- * @category runtime
  */
 export function getRuntimeEnv() {
   try {
     return process.env.NODE_ENV as RuntimeEnv
-  } catch (e) {
+  } catch {
     return undefined
   }
 }
@@ -23,21 +22,20 @@ export function getRuntimeEnv() {
 /**
  * Current runtime environment
  *
- * @category runtime
+ * @category Runtime
  */
 export const runtimeEnv = getRuntimeEnv()
 
 /**
  * Determine whether the specified runtime environment is currently
  *
+ * @category Runtime
  * @precondition The `cross-env` package is installed
- *
- * @category runtime
  */
 export function checkRuntimeEnv(runtimeEnv: unknown): runtimeEnv is RuntimeEnv {
   try {
     return process.env.NODE_ENV === runtimeEnv
-  } catch (e) {
+  } catch {
     return false
   }
 }
@@ -45,7 +43,7 @@ export function checkRuntimeEnv(runtimeEnv: unknown): runtimeEnv is RuntimeEnv {
 /**
  * Determine whether the current runtime is development
  *
- * @category runtime
+ * @category Runtime
  */
 export const isDevRuntime =
   checkRuntimeEnv('dev') || checkRuntimeEnv('development')
@@ -53,14 +51,14 @@ export const isDevRuntime =
 /**
  * Determine whether the current runtime is test
  *
- * @category runtime
+ * @category Runtime
  */
 export const isTestRuntime = checkRuntimeEnv('test')
 
 /**
  * Determine whether the current runtime is production
  *
- * @category runtime
+ * @category Runtime
  */
 export const isProdRuntime =
   checkRuntimeEnv('prod') || checkRuntimeEnv('production')

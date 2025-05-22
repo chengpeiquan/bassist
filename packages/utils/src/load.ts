@@ -3,16 +3,12 @@ import { isBrowser } from './device'
 import { getQuery } from './query'
 import { randomString } from './random'
 
-/**
- * @category network
- */
+/** @category Network */
 export type ResourcesSupportedWithLoadRes = 'js' | 'css' | 'style'
 
 type ResourcesElement = HTMLScriptElement | HTMLLinkElement | HTMLStyleElement
 
-/**
- * @category network
- */
+/** @category Network */
 export interface LoadResOptions {
   type: ResourcesSupportedWithLoadRes
   id: string
@@ -22,7 +18,7 @@ export interface LoadResOptions {
 /**
  * Dynamic loading of resources
  *
- * @category network
+ * @category Network
  */
 export function loadRes({ type, id, resource }: LoadResOptions) {
   return new Promise((resolve, reject) => {
@@ -73,46 +69,42 @@ export function loadRes({ type, id, resource }: LoadResOptions) {
 /**
  * JSON with Padding
  *
- * @description Note:
- *  JSONP is a method for sending JSON data without worrying about cross-domain issues.
- *  JSONP does not use the XMLHttpRequest or Fetch, it uses the `<script />` tag instead.
+ * Note: JSONP is a method for sending JSON data without worrying about
+ * cross-domain issues. JSONP does not use the XMLHttpRequest or Fetch, it uses
+ * the `<script />` tag instead.
  *
- * @see https://en.wikipedia.org/wiki/JSONP
- *
- * @param url - The Resource script URL.
- *
- * @param callback - The Callback function name, Optional,
- *                   it will be an attribute name of `window`, so needs to be unique,
- *                   If not passed, a random function name will be automatically generated.
- *
+ * @category Network
  * @example
- *
- * ```ts
- * interface Res {
+ *   ```ts
+ *   interface Res {
  *   code: number
  *   data: string[]
  *   msg: string
- * }
+ *   }
  *
- * // The default and server-side agreement is to use `callback` Query
- * const url = `https://example.com/data`
+ *   // The default and server-side agreement is to use `callback` Query
+ *   const url = `https://example.com/data`
  *
- * // When no `callback` param passed, a random function name is created
- * // Equivalent to `https://example.com/data?callback=randomCallbackName`
- * // Pass the type of response as a generic to get a typed return value
- * const res = await jsonp<Res>(url)
+ *   // When no `callback` param passed, a random function name is created
+ *   // Equivalent to `https://example.com/data?callback=randomCallbackName`
+ *   // Pass the type of response as a generic to get a typed return value
+ *   const res = await jsonp<Res>(url)
  *
- * // You can also specify the `callback` function name
- * const callback = 'jsonp_callback_123456'
- * const res2 = await jsonp<Res>(url, callback)
+ *   // You can also specify the `callback` function name
+ *   const callback = 'jsonp_callback_123456'
+ *   const res2 = await jsonp<Res>(url, callback)
  *
- * // If the server does not agree on the `callback` Query,
- * // you can specify other valid Query in this way.
- * const urlWithCallback = `https://example.com/data?cb=${callback}`
- * const res3 = await jsonp<Res>(urlWithCallback)
- * ```
+ *   // If the server does not agree on the `callback` Query,
+ *   // you can specify other valid Query in this way.
+ *   const urlWithCallback = `https://example.com/data?cb=${callback}`
+ *   const res3 = await jsonp<Res>(urlWithCallback)
+ *   ```
  *
- * @category network
+ * @param url - The Resource script URL.
+ * @param callback - The Callback function name, Optional, it will be an
+ *   attribute name of `window`, so needs to be unique, If not passed, a random
+ *   function name will be automatically generated.
+ * @see https://en.wikipedia.org/wiki/JSONP
  */
 export function jsonp<T>(url: string, callback?: string) {
   return new Promise<T>((resolve, reject) => {
@@ -133,7 +125,7 @@ export function jsonp<T>(url: string, callback?: string) {
         // @ts-expect-error
         // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
         delete window[cb]
-      } catch (e) {
+      } catch {
         // @ts-expect-error
         window[cb] = undefined
       }
@@ -156,7 +148,7 @@ export function jsonp<T>(url: string, callback?: string) {
 /**
  * Load a batch of images in concurrent mode
  *
- * @category network
+ * @category Network
  */
 export function concurrentLoadImages(images: string[]) {
   const promises = []
@@ -178,7 +170,7 @@ export function concurrentLoadImages(images: string[]) {
 /**
  * Load a batch of images in serial mode
  *
- * @category network
+ * @category Network
  */
 export async function serialLoadImages(images: string[]) {
   for (const path in images) {
@@ -189,36 +181,31 @@ export async function serialLoadImages(images: string[]) {
 /**
  * Preload images
  *
- * @description It can be used to preload large images in advance,
- *              or wait for the image to be loaded before ending Loading
- *              and other usage scenarios.
+ * It can be used to preload large images in advance, or wait for the image to
+ * be loaded before ending Loading and other usage scenarios.
+ *
+ * @category Network
+ * @example
+ *   ;```ts
+ *   const images = [
+ *    'https://example.com/1.jpg',
+ *    'https://example.com/2.jpg',
+ *    'https://example.com/3.jpg',
+ *   ]
+ *
+ *   // Start loading, Show loading icon etc.
+ *   setLoading(true)
+ *
+ *   // Wait for the images to be pre-rendered
+ *   await preloadImages(images)
+ *
+ *   // End loading state
+ *   setLoading(false)
+ *   ```
  *
  * @param images - An array containing image urls
- *
- * @param mode - concurrent mode is used by default.
- *               If there are too many pictures,
- *               you can choose serial mode.
- *
- * @example
- *
- * ```ts
- * const images = [
- *  'https://example.com/1.jpg',
- *  'https://example.com/2.jpg',
- *  'https://example.com/3.jpg',
- * ]
- *
- * // Start loading, Show loading icon etc.
- * setLoading(true)
- *
- * // Wait for the images to be pre-rendered
- * await preloadImages(images)
- *
- * // End loading state
- * setLoading(false)
- * ```
- *
- * @category network
+ * @param mode - Concurrent mode is used by default. If there are too many
+ *   pictures, you can choose serial mode.
  */
 export async function preloadImages(
   images: string[],

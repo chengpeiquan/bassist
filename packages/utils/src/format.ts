@@ -3,11 +3,9 @@ import { hasKey, isArray, isObject, isString } from './data'
 /**
  * Extract numbers from text
  *
+ * @category Format
  * @param text - Text to be processed
- *
  * @param startsWithZero - Preserve the 0-starting format like `002`
- *
- * @category format
  */
 export function extractNumber(text: string | number, startsWithZero = false) {
   text = text ? String(text) : ''
@@ -23,9 +21,8 @@ export function extractNumber(text: string | number, startsWithZero = false) {
 /**
  * Format amount with two decimal places
  *
+ * @category Format
  * @param amount - Amount to be processed
- *
- * @category format
  */
 export function formatAmount(amount: string | number) {
   amount = String(amount)
@@ -52,13 +49,10 @@ export function formatAmount(amount: string | number) {
 /**
  * Add ellipses to words that are out of length
  *
+ * @category Format
  * @param word - The sentence to be processed
- *
  * @param limit - The upper limit
- *
  * @returns The processed word
- *
- * @category format
  */
 export function ellipsis(word: string, limit: number): string {
   return String(word).length > limit
@@ -69,7 +63,7 @@ export function ellipsis(word: string, limit: number): string {
 /**
  * Capitalize the first letter
  *
- * @category format
+ * @category Format
  */
 export function capitalize([first, ...rest]: string) {
   if (!first) return ''
@@ -79,7 +73,7 @@ export function capitalize([first, ...rest]: string) {
 /**
  * Formatted in `kebab-case` style
  *
- * @category format
+ * @category Format
  */
 export function kebabCase(word: string) {
   if (!word) return ''
@@ -95,7 +89,7 @@ export function kebabCase(word: string) {
 /**
  * Formatted in `camelCase` style
  *
- * @category format
+ * @category Format
  */
 export function camelCase([first, ...rest]: string) {
   if (!first) return ''
@@ -106,7 +100,7 @@ export function camelCase([first, ...rest]: string) {
 /**
  * Formatted in `PascalCase` style
  *
- * @category format
+ * @category Format
  */
 export function pascalCase(word: string) {
   if (!word) return ''
@@ -116,9 +110,8 @@ export function pascalCase(word: string) {
 /**
  * Escaping special characters for regular expressions
  *
+ * @category Format
  * @copyright lodash.escaperegexp
- *
- * @category format
  */
 export function escapeRegExp(name: string) {
   const reRegExpChar = /[\\^$.*+?()[\]{}|]/g
@@ -131,7 +124,7 @@ export function escapeRegExp(name: string) {
 /**
  * Sort the keys of an object
  *
- * @category format
+ * @category Format
  */
 export function sortKeys(target: any): any {
   if (!Array.isArray(target) && !isObject(target)) {
@@ -150,25 +143,19 @@ export function sortKeys(target: any): any {
   return newObj
 }
 
-/**
- * @category format
- */
+/** @category Format */
 interface UniqueOptions<T> {
-  /**
-   * The key used to determine if there are duplicate values
-   */
+  /** The key used to determine if there are duplicate values */
   primaryKey: keyof T
 
-  /**
-   * he original data list
-   */
+  /** He original data list */
   list: T[]
 }
 
 /**
  * Deduplicate an array containing objects
  *
- * @category format
+ * @category Format
  */
 export function unique<T>({ primaryKey, list }: UniqueOptions<T>): T[] {
   // Use the value as the key and store it in the dictionary
@@ -191,15 +178,11 @@ export function unique<T>({ primaryKey, list }: UniqueOptions<T>): T[] {
 /**
  * Exclude specified fields from the object
  *
- * @tips Only handle first-level fields
- *
+ * @category Format
  * @param object - An object as data source
- *
  * @param fields - Field names to exclude
- *
  * @returns A processed new object
- *
- * @category format
+ * @tips Only handle first-level fields
  */
 export function excludeFields(object: Record<string, any>, fields: string[]) {
   if (!isObject) return object
@@ -216,21 +199,18 @@ export function excludeFields(object: Record<string, any>, fields: string[]) {
 /**
  * Format the time as `yyyy-MM-dd HH:mm:ss`
  *
- * @description Note:
- *  If the date separator is `-`, it will be parsed as
- *  a standard ISO 8601 formatted date string (e.g. 2023-01-01)
+ * Note: If the date separator is `-`, it will be parsed as a standard ISO 8601
+ * formatted date string (e.g. 2023-01-01)
  *
- *  If the date separator is `/`, it will be parsed according to
- *  the non-standard date string format (e.g. 2023/01/01 )
+ * If the date separator is `/`, it will be parsed according to the non-standard
+ * date string format (e.g. 2023/01/01 )
  *
- *  This will result in inconsistent processing, please be aware of such cases.
- *  e.g. `+new Date('2023/01/01') !== +new Date('2023-01-01')`
+ * This will result in inconsistent processing, please be aware of such cases.
+ * e.g. `+new Date('2023/01/01') !== +new Date('2023-01-01')`
  *
+ * @category Format
  * @param time - A timestamp or a date object
- *
  * @param dateOnly - If `true` , only returns `yyyy-MM-dd`
- *
- * @category format
  */
 export function formatTime(time: number | Date, dateOnly?: boolean) {
   const date = new Date(time)
@@ -249,9 +229,7 @@ export function formatTime(time: number | Date, dateOnly?: boolean) {
   return formattedDate
 }
 
-/**
- * @category format
- */
+/** @category Format */
 interface FormatDurationUnit {
   days: string
   hours: string
@@ -262,13 +240,10 @@ interface FormatDurationUnit {
 /**
  * Generally used to format the display of two time gaps, such as countdown
  *
+ * @category Format
  * @param timestamp - Timestamp with two time gaps
- *
- * @param units - Time units,
- *                different languages can be passed in when i18n is needed,
- *                the default is Simplified Chinese
- *
- * @category format
+ * @param units - Time units, different languages can be passed in when i18n is
+ *   needed, the default is Simplified Chinese
  */
 export function formatDuration(
   timestamp: number,
@@ -309,9 +284,8 @@ export function formatDuration(
 /**
  * Remove HTML tags
  *
+ * @category Format
  * @param content HTML Codes
- *
- * @category format
  */
 export function removeHtmlTags(content: string) {
   if (!isString(content)) return ''
@@ -321,9 +295,8 @@ export function removeHtmlTags(content: string) {
 /**
  * Remove HTML tags and escape sequence
  *
+ * @category Format
  * @param content HTML Codes
- *
- * @category format
  */
 export function html2text(content: string) {
   if (!isString(content)) return ''
@@ -352,7 +325,7 @@ export function html2text(content: string) {
 /**
  * Make sure the data you get is an array
  *
- * @category format
+ * @category Format
  */
 export function toArray<T>(value?: T | T[]): T[] {
   value = value ?? []
@@ -362,7 +335,7 @@ export function toArray<T>(value?: T | T[]): T[] {
 /**
  * Ensure prefix of a string
  *
- * @category format
+ * @category Format
  */
 export function ensurePrefix(prefix: string, str: string) {
   if (!str.startsWith(prefix)) return prefix + str
@@ -372,7 +345,7 @@ export function ensurePrefix(prefix: string, str: string) {
 /**
  * Ensure suffix of a string
  *
- * @category format
+ * @category Format
  */
 export function ensureSuffix(suffix: string, str: string) {
   if (!str.endsWith(suffix)) return str + suffix

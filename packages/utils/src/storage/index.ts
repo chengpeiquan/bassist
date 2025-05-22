@@ -1,9 +1,9 @@
 import { BaseStorage } from './base'
 
 /**
- * localStorage that supports prefixes
+ * LocalStorage that supports prefixes
  *
- * @category storage
+ * @category Storage
  */
 export class LocalStorage extends BaseStorage {
   constructor(prefix: string) {
@@ -12,9 +12,9 @@ export class LocalStorage extends BaseStorage {
 }
 
 /**
- * sessionStorage that supports prefixes
+ * SessionStorage that supports prefixes
  *
- * @category storage
+ * @category Storage
  */
 export class SessionStorage extends BaseStorage {
   constructor(prefix: string) {

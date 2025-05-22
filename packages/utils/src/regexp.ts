@@ -1,7 +1,7 @@
 /**
  * Verify the mobile phone number format in mainland China
  *
- * @category regexp
+ * @category Regexp
  */
 export function isMob(phoneNumber: number | string) {
   return /^1[3456789]\d{9}$/.test(String(phoneNumber))
@@ -10,7 +10,7 @@ export function isMob(phoneNumber: number | string) {
 /**
  * Verify email format
  *
- * @category regexp
+ * @category Regexp
  */
 export function isEmail(email: string) {
   return /^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/.test(
@@ -21,7 +21,7 @@ export function isEmail(email: string) {
 /**
  * Verify url format
  *
- * @category regexp
+ * @category Regexp
  */
 export function isUrl(url: string) {
   return /https?:\/\/[\w-]+(\.[\w-]+){1,2}(\/[\w-]{3,6}){0,2}(\?[\w_]{4,6}=[\w_]{4,6}(&[\w_]{4,6}=[\w_]{4,6}){0,2})?/.test(
@@ -32,7 +32,7 @@ export function isUrl(url: string) {
 /**
  * Verify the ID card number format in mainland China
  *
- * @category regexp
+ * @category Regexp
  */
 export function isIdCard(idCardNumber: string) {
   // 18-digit ID number
@@ -49,7 +49,7 @@ export function isIdCard(idCardNumber: string) {
 /**
  * Verify the bank card number format in mainland China
  *
- * @category regexp
+ * @category Regexp
  */
 export function isBankCard(bankCardNumber: string) {
   return /^([1-9]{1})(\d{15}|\d{16}|\d{18})$/.test(bankCardNumber)
@@ -58,7 +58,7 @@ export function isBankCard(bankCardNumber: string) {
 /**
  * Verify the IP is IPv4
  *
- * @category regexp
+ * @category Regexp
  */
 export function isIPv4(ip: string) {
   return /^((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$/.test(
@@ -69,7 +69,7 @@ export function isIPv4(ip: string) {
 /**
  * Verify the IP is IPv6
  *
- * @category regexp
+ * @category Regexp
  */
 export function isIPv6(ip: string) {
   return /^([\da-fA-F]{1,4}:){6}((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$|^::([\da-fA-F]{1,4}:){0,4}((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$|^([\da-fA-F]{1,4}:):([\da-fA-F]{1,4}:){0,3}((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$|^([\da-fA-F]{1,4}:){2}:([\da-fA-F]{1,4}:){0,2}((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$|^([\da-fA-F]{1,4}:){3}:([\da-fA-F]{1,4}:){0,1}((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$|^([\da-fA-F]{1,4}:){4}:((25[0-5]|2[0-4]\d|[01]?\d\d?)\.){3}(25[0-5]|2[0-4]\d|[01]?\d\d?)$|^([\da-fA-F]{1,4}:){7}[\da-fA-F]{1,4}$|^:((:[\da-fA-F]{1,4}){1,6}|:)$|^[\da-fA-F]{1,4}:((:[\da-fA-F]{1,4}){1,5}|:)$|^([\da-fA-F]{1,4}:){2}((:[\da-fA-F]{1,4}){1,4}|:)$|^([\da-fA-F]{1,4}:){3}((:[\da-fA-F]{1,4}){1,3}|:)$|^([\da-fA-F]{1,4}:){4}((:[\da-fA-F]{1,4}){1,2}|:)$|^([\da-fA-F]{1,4}:){5}:([\da-fA-F]{1,4})?$|^([\da-fA-F]{1,4}:){6}:$/.test(

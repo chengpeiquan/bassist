@@ -1,5 +1,5 @@
-import { resolve } from 'node:path'
 import { existsSync } from 'node:fs'
+import { resolve } from 'node:path'
 import { readJsonSync } from 'fs-extra/esm'
 
 export function readBuildConfig(name: string) {

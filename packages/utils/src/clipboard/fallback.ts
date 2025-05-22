@@ -18,7 +18,7 @@ export function fallbackWriteText(text: string) {
     const successful = document.execCommand('copy')
     document.body.removeChild(textArea)
     return successful
-  } catch (err) {
+  } catch {
     return false
   }
 }
@@ -36,7 +36,7 @@ export function fallbackReadText() {
     const text = textarea.value
     textarea.remove()
     return text
-  } catch (e) {
+  } catch {
     return ''
   }
 }

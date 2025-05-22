@@ -1,4 +1,12 @@
-import { Mock, afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import {
+  type Mock,
+  afterEach,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  vi,
+} from 'vitest'
 import { sleep, debounce, throttle } from '..'
 
 const mockFn = vi.fn()

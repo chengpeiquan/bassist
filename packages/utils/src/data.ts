@@ -1,7 +1,7 @@
 /**
  * The actual type of the data
  *
- * @category data
+ * @category Data
  */
 export type DataType =
   | 'Array'
@@ -31,10 +31,10 @@ export type DataType =
 /**
  * Get the real data type
  *
- * @description Solve the judgment error of the value wrapped in an Object
- *  e.g. Object(1n), Object(1)
+ * Solve the judgment error of the value wrapped in an Object e.g. Object(1n),
+ * Object(1)
  *
- * @category data
+ * @category Data
  */
 export function getDataType(target: any) {
   return Object.prototype.toString.call(target).slice(8, -1) as DataType
@@ -43,7 +43,7 @@ export function getDataType(target: any) {
 /**
  * Wrapper for `Array.isArray`, determine whether the data is Array
  *
- * @category data
+ * @category Data
  */
 export function isArray(value: unknown): value is any[] {
   return Array.isArray(value)
@@ -52,7 +52,7 @@ export function isArray(value: unknown): value is any[] {
 /**
  * Determine whether the data is ArrayBuffer
  *
- * @category data
+ * @category Data
  */
 export function isArrayBuffer(value: unknown): value is ArrayBuffer {
   return getDataType(value) === 'ArrayBuffer'
@@ -61,7 +61,7 @@ export function isArrayBuffer(value: unknown): value is ArrayBuffer {
 /**
  * Determine whether the data is AsyncFunction
  *
- * @category data
+ * @category Data
  */
 export function isAsyncFunction(
   value: unknown,
@@ -73,7 +73,7 @@ export function isAsyncFunction(
 /**
  * Determine whether the data is BigInt
  *
- * @category data
+ * @category Data
  */
 export function isBigInt(value: unknown): value is bigint {
   return getDataType(value) === 'BigInt'
@@ -82,7 +82,7 @@ export function isBigInt(value: unknown): value is bigint {
 /**
  * Determine whether the data is Blob
  *
- * @category data
+ * @category Data
  */
 export function isBlob(value: unknown): value is Blob {
   return getDataType(value) === 'Blob'
@@ -91,7 +91,7 @@ export function isBlob(value: unknown): value is Blob {
 /**
  * Determine whether the data is Boolean
  *
- * @category data
+ * @category Data
  */
 export function isBoolean(value: unknown): value is boolean {
   return getDataType(value) === 'Boolean'
@@ -100,7 +100,7 @@ export function isBoolean(value: unknown): value is boolean {
 /**
  * Determine whether the data is Date
  *
- * @category data
+ * @category Data
  */
 export function isDate(value: unknown): value is Date {
   return getDataType(value) === 'Date'
@@ -109,7 +109,7 @@ export function isDate(value: unknown): value is Date {
 /**
  * Determine whether the data is Error
  *
- * @category data
+ * @category Data
  */
 export function isError(value: unknown): value is Error {
   return getDataType(value) === 'Error'
@@ -118,7 +118,7 @@ export function isError(value: unknown): value is Error {
 /**
  * Determine whether the data is Even
  *
- * @category data
+ * @category Data
  */
 export function isEven(value: unknown): value is number {
   if (!isInteger(value)) return false
@@ -128,7 +128,7 @@ export function isEven(value: unknown): value is number {
 /**
  * Determine whether the data is File
  *
- * @category data
+ * @category Data
  */
 export function isFile(value: unknown): value is File {
   return getDataType(value) === 'File'
@@ -136,8 +136,8 @@ export function isFile(value: unknown): value is File {
 
 /**
  * Wrapper for `Number.isFinite`, determine whether the data is finite
-
-* @category data
+ *
+ * @category Data
  */
 export function isFinite(value: unknown): value is number {
   return Number.isFinite(value)
@@ -146,7 +146,7 @@ export function isFinite(value: unknown): value is number {
 /**
  * Determine whether the data is Function
  *
- * @category data
+ * @category Data
  */
 export function isFunction(value: unknown): value is (...args: any) => any {
   return typeof value === 'function'
@@ -154,8 +154,8 @@ export function isFunction(value: unknown): value is (...args: any) => any {
 
 /**
  * Wrapper for `Number.isInteger`, determine whether the data is Integer
-
-* @category data
+ *
+ * @category Data
  */
 export function isInteger(value: unknown): value is number {
   return Number.isInteger(value)
@@ -164,7 +164,7 @@ export function isInteger(value: unknown): value is number {
 /**
  * Determine whether the data is Map
  *
- * @category data
+ * @category Data
  */
 export function isMap(value: unknown): value is Map<any, any> {
   return getDataType(value) === 'Map'
@@ -173,7 +173,7 @@ export function isMap(value: unknown): value is Map<any, any> {
 /**
  * Determine whether the data is Math
  *
- * @category data
+ * @category Data
  */
 export function isMath(value: unknown): value is Math {
   return getDataType(value) === 'Math'
@@ -181,8 +181,8 @@ export function isMath(value: unknown): value is Math {
 
 /**
  * Wrapper for `Number.isNaN`, determine whether the data is NaN
-
-* @category data
+ *
+ * @category Data
  */
 export function isNaN(value: unknown): value is number {
   return Number.isNaN(value)
@@ -191,7 +191,7 @@ export function isNaN(value: unknown): value is number {
 /**
  * Determine whether the data is Null
  *
- * @category data
+ * @category Data
  */
 export function isNull(value: unknown): value is null {
   return getDataType(value) === 'Null'
@@ -200,7 +200,7 @@ export function isNull(value: unknown): value is null {
 /**
  * Determine whether the data is Number
  *
- * @category data
+ * @category Data
  */
 export function isNumber(value: unknown): value is number {
   return getDataType(value) === 'Number'
@@ -209,7 +209,7 @@ export function isNumber(value: unknown): value is number {
 /**
  * Determine whether the data is Odd
  *
- * @category data
+ * @category Data
  */
 export function isOdd(value: unknown): value is number {
   if (!isInteger(value)) return false
@@ -219,7 +219,7 @@ export function isOdd(value: unknown): value is number {
 /**
  * Determine whether the data is Object
  *
- * @category data
+ * @category Data
  */
 export function isObject(value: unknown): value is Record<any, any> {
   return getDataType(value) === 'Object'
@@ -228,16 +228,17 @@ export function isObject(value: unknown): value is Record<any, any> {
 /**
  * Determine whether the data is Promise
  *
- * @category data
+ * @category Data
  */
 export function isPromise(value: unknown): value is Promise<any> {
   return getDataType(value) === 'Promise'
 }
 
 /**
- * Wrapper for `Number.isSafeInteger`, determine whether the data is Safe Integer
-
-* @category data
+ * Wrapper for `Number.isSafeInteger`, determine whether the data is Safe
+ * Integer
+ *
+ * @category Data
  */
 export function isSafeInteger(value: unknown): value is number {
   return Number.isSafeInteger(value)
@@ -246,7 +247,7 @@ export function isSafeInteger(value: unknown): value is number {
 /**
  * Determine whether the data is Promise
  *
- * @category data
+ * @category Data
  */
 export function isSet(value: unknown): value is Set<any> {
   return getDataType(value) === 'Set'
@@ -255,7 +256,7 @@ export function isSet(value: unknown): value is Set<any> {
 /**
  * Determine whether the data is String
  *
- * @category data
+ * @category Data
  */
 export function isString(value: unknown): value is string {
   return getDataType(value) === 'String'
@@ -264,7 +265,7 @@ export function isString(value: unknown): value is string {
 /**
  * Determine whether the data is Symbol
  *
- * @category data
+ * @category Data
  */
 export function isSymbol(value: unknown): value is symbol {
   return getDataType(value) === 'Symbol'
@@ -273,7 +274,7 @@ export function isSymbol(value: unknown): value is symbol {
 /**
  * Determine whether the data is Undefined
  *
- * @category data
+ * @category Data
  */
 export function isUndefined(value: unknown): value is undefined {
   return getDataType(value) === 'Undefined'
@@ -282,7 +283,7 @@ export function isUndefined(value: unknown): value is undefined {
 /**
  * Determine whether the data is WeakMap
  *
- * @category data
+ * @category Data
  */
 export function isWeakMap(value: unknown): value is WeakMap<any, any> {
   return getDataType(value) === 'WeakMap'
@@ -291,7 +292,7 @@ export function isWeakMap(value: unknown): value is WeakMap<any, any> {
 /**
  * Determine whether the data is WeakSet
  *
- * @category data
+ * @category Data
  */
 export function isWeakSet(value: unknown): value is WeakSet<any> {
   return getDataType(value) === 'WeakSet'
@@ -300,7 +301,7 @@ export function isWeakSet(value: unknown): value is WeakSet<any> {
 /**
  * Determine whether the data is RegExp
  *
- * @category data
+ * @category Data
  */
 export function isRegExp(value: unknown): value is RegExp {
   return getDataType(value) === 'RegExp'
@@ -309,7 +310,7 @@ export function isRegExp(value: unknown): value is RegExp {
 /**
  * Determine whether the specified key exists on the object
  *
- * @category data
+ * @category Data
  */
 export function hasKey<T, K extends keyof T>(obj: T, key: K): key is K {
   if (!isObject(obj)) return false
@@ -321,7 +322,7 @@ export const hasOwnProperty = hasKey
 /**
  * String to byte stream
  *
- * @category data
+ * @category Data
  */
 export function getBytes(value: string) {
   const encoder = new TextEncoder()
@@ -329,9 +330,7 @@ export function getBytes(value: string) {
   return bytes
 }
 
-/**
- * @category data
- */
+/** @category Data */
 export interface InRangeOptions {
   num: number
   min: number
@@ -343,7 +342,7 @@ export interface InRangeOptions {
 /**
  * Checks if a number is between minimum and maximum
  *
- * @category data
+ * @category Data
  */
 export function inRange({
   num,
@@ -368,14 +367,14 @@ export function inRange({
 /**
  * No operation function type
  *
- * @category data
+ * @category Data
  */
 export type NoOperationFunction = (...args: any) => void
 
 /**
  * A no operation function
  *
- * @category data
+ * @category Data
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const noop: NoOperationFunction = (..._args) => void 0
@@ -383,14 +382,14 @@ export const noop: NoOperationFunction = (..._args) => void 0
 /**
  * Promisify No operation function type
  *
- * @category data
+ * @category Data
  */
 export type PromisifyNoOperationFunction = (...args: any) => Promise<void>
 
 /**
  * A promisify no operation function
  *
- * @category data
+ * @category Data
  */
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const pnoop: PromisifyNoOperationFunction = (..._args) =>

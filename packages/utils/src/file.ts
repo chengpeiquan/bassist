@@ -1,7 +1,7 @@
 /**
  * Get file info via `mime` package
  *
- * @category file
+ * @category File
  */
 export class FileInfo {
   mime: any
@@ -16,7 +16,7 @@ export class FileInfo {
         return path.split(',')[0].replace(/data:(.*);base64/, '$1')
       }
       return this.mime.getType(path) || ''
-    } catch (e) {
+    } catch {
       return ''
     }
   }
@@ -24,7 +24,7 @@ export class FileInfo {
   getExtensionFromMimeType(mimeType: string) {
     try {
       return this.mime.getExtension(mimeType) || ''
-    } catch (e) {
+    } catch {
       return ''
     }
   }
@@ -33,7 +33,7 @@ export class FileInfo {
     try {
       const mimeType = this.getMimeType(path)
       return this.getExtensionFromMimeType(mimeType)
-    } catch (e) {
+    } catch {
       return ''
     }
   }

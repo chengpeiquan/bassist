@@ -1,7 +1,7 @@
 /**
  * Put the program to sleep for a while
  *
- * @category performance
+ * @category Performance
  */
 export function sleep(ms: number): Promise<void> {
   return new Promise((resolve) => {
@@ -12,16 +12,15 @@ export function sleep(ms: number): Promise<void> {
 }
 
 /**
- * When an event is triggered frequently,
- * only execute the event processing function once.
+ * When an event is triggered frequently, only execute the event processing
+ * function once.
  *
- * @category performance
+ * @category Performance
  */
-// eslint-disable-next-line no-unused-vars
+
 export function debounce<T extends (...args: any[]) => void>(
   func: T,
   wait = 200,
-  // eslint-disable-next-line no-unused-vars
 ): (...args: Parameters<T>) => void {
   let timeout: ReturnType<typeof setTimeout> | number
 
@@ -36,9 +35,9 @@ export function debounce<T extends (...args: any[]) => void>(
 /**
  * Can control how often a function is called within a specified time interval
  *
- * @category performance
+ * @category Performance
  */
-// eslint-disable-next-line no-unused-vars
+
 export function throttle<T extends (...args: any[]) => void>(
   func: T,
   wait: number,

@@ -1,14 +1,10 @@
-import { isBrowser } from './device'
 import { isObject, isString } from './data'
+import { isBrowser } from './device'
 
-/**
- * @category query
- */
+/** @category Query */
 type QueryInfo = Record<string, string>
 
-/**
- * @category query
- */
+/** @category Query */
 type QueryInfoObject = Record<
   string,
   string | number | boolean | undefined | null
@@ -17,13 +13,11 @@ type QueryInfoObject = Record<
 /**
  * Parse URL Query parameters
  *
- * @param url - By default, it is extracted from the browser URL,
- * and this parameter can be parsed from the specified URL
- *
- * @returns Query parameter object,
- * will convert `key1=value1&key2=value2` into an object
- *
- * @category query
+ * @category Query
+ * @param url - By default, it is extracted from the browser URL, and this
+ *   parameter can be parsed from the specified URL
+ * @returns Query parameter object, will convert `key1=value1&key2=value2` into
+ *   an object
  */
 export function parseQuery(url?: string) {
   let queryStringify = ''
@@ -59,11 +53,10 @@ export function parseQuery(url?: string) {
 /**
  * Extract parameter information from URL Query
  *
- * @returns An object containing the request path and parameters object
- *  `path`: Jump path, the same as the routing name in the Web App
- *  `params`: Parameters other than path
- *
- * @category query
+ * @category Query
+ * @returns An object containing the request path and parameters object `path`:
+ *   Jump path, the same as the routing name in the Web App `params`: Parameters
+ *   other than path
  */
 export function extractQueryInfo(url?: string): {
   path: string
@@ -83,12 +76,10 @@ export function extractQueryInfo(url?: string): {
 /**
  * Get the specified Query parameter
  *
+ * @category Query
  * @param key - The parameter key name to get
- *
- * @param url - By default, it is extracted from the browser URL,
- * and this parameter can be parsed from the specified URL
- *
- * @category query
+ * @param url - By default, it is extracted from the browser URL, and this
+ *   parameter can be parsed from the specified URL
  */
 export function getQuery(key: string, url?: string) {
   const query = parseQuery(url)
@@ -98,9 +89,9 @@ export function getQuery(key: string, url?: string) {
 /**
  * Serialize Query parameters information
  *
- * @param queryInfoObject - The object of the Query parameter to use for serialization
- *
- * @category query
+ * @category Query
+ * @param queryInfoObject - The object of the Query parameter to use for
+ *   serialization
  */
 export function stringifyQuery(queryInfoObject: QueryInfoObject) {
   if (!isObject(queryInfoObject)) return ''
