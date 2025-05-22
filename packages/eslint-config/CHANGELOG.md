@@ -1,3 +1,12 @@
+## [0.1.3](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.1.2...eslint-config@0.1.3) (2025-05-22)
+
+
+### Bug Fixes
+
+* **eslint-config:** update deps ([e6c47c7](https://github.com/chengpeiquan/bassist/commit/e6c47c70a6c51c757d9f958d9711f2da597f3ee4))
+
+
+
 ## [0.1.2](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.1.1...eslint-config@0.1.2) (2025-03-09)
 
 

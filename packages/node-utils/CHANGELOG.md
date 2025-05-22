@@ -1,3 +1,12 @@
+## [0.4.2](https://github.com/chengpeiquan/bassist/compare/node-utils@0.4.1...node-utils@0.4.2) (2025-05-22)
+
+
+### Bug Fixes
+
+* **node-utils:** reexport fse apis ([f2242c1](https://github.com/chengpeiquan/bassist/commit/f2242c18b179b41bae408692e53386618b8974f7))
+
+
+
 ## [0.4.1](https://github.com/chengpeiquan/bassist/compare/node-utils@0.4.0...node-utils@0.4.1) (2024-06-30)
 
 
