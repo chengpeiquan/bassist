@@ -1,6 +1,6 @@
 {
   "name": "@bassist/node-utils",
-  "version": "0.4.2",
+  "version": "0.5.0",
   "description": "Opinionated collection of common Node.js utils by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
@@ -31,6 +31,9 @@
     "fs utils",
     "fs extra"
   ],
+  "scripts": {
+    "build": "tsup"
+  },
   "dependencies": {
     "@bassist/utils": "workspace:^",
     "@types/fs-extra": "^11.0.4",
