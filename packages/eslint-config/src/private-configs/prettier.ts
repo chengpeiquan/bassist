@@ -9,7 +9,8 @@ import {
 } from 'prettier'
 import { type Options as JsdocOptions } from 'prettier-plugin-jsdoc'
 import { GLOB_EXCLUDE } from '../globs'
-import { getConfigName } from '../shared'
+import defaultPrettierConfig from '../shared/prettier-config.mjs'
+import { getConfigName } from '../shared/utils'
 import { type FlatESLintConfig } from '../types'
 
 export { prettierPlugin }
@@ -34,7 +35,7 @@ const loadPrettierConfig = (cwd: string): PartialPrettierExtendedOptions => {
     const prettierrc = readFileSync(join(cwd, '.prettierrc'), 'utf-8')
     return prettierrc ? JSON.parse(prettierrc) : {}
   } catch {
-    return {}
+    return { ...defaultPrettierConfig }
   }
 }
 
@@ -62,7 +63,7 @@ export const createPrettierConfig = (
 
   const finalPrettierConfig: PartialPrettierExtendedOptions = {
     ...resolvedConfig,
-    plugins: [...plugins, './node_modules/prettier-plugin-jsdoc/dist/index.js'],
+    plugins: [...plugins, 'prettier-plugin-jsdoc'],
   }
 
   const resolvedIgnore = loadPrettierIgnore(cwd)

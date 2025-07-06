@@ -114,13 +114,24 @@ Enable automatic linting and fixing in VS Code by adding the following to your w
 ```json
 {
   "editor.formatOnSave": true,
-  "eslint.useFlatConfig": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always",
     "source.fixAll.prettier": "always"
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.useFlatConfig": true,
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "prettier.configPath": "./.prettierrc.js"
 }
 ```
+
+See the [Formatters](#formatters) section for more information about `prettier.configPath`.
 
 ## 📘 API Reference
 
@@ -176,6 +187,8 @@ interface DefineFlatConfigOptions {
    *
    * After reading the custom configuration, it will be merged with the default
    * ESLint rules.
+   *
+   * @default Loads from .prettierrc file, falls back to default config
    *
    * @see https://prettier.io/docs/configuration.html
    */
@@ -272,7 +285,9 @@ These are mainly the ones I use frequently. If you need any additions, welcome P
 
 Formatting rules are enabled by default and not exported externally. Please pass custom configuration via `options` of [defineFlatConfig API](#defineflatconfig) .
 
-- [Prettier](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/private-configs/prettier.ts) : By default, the contents of `.prettierrc` and `.prettierignore` are read and added to ESLint rules.
+- [Prettier](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/private-configs/prettier.ts) :
+  - By default, the contents of `.prettierrc` and `.prettierignore` are read and added to ESLint rules.
+  - If the expected configuration file does not exist, the [built-in Prettier rules](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/shared/prettier-config.mjs) are used as a fallback rule.
 - [Tailwind CSS](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/private-configs/tailwindcss.ts) : By default, `tailwind.config.js` is passed as the Tailwind CSS configuration file.
 
 #### Others

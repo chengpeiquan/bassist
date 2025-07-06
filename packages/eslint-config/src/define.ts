@@ -37,6 +37,8 @@ export interface DefineFlatConfigOptions {
    * After reading the custom configuration, it will be merged with the default
    * ESLint rules.
    *
+   * @default Loads from .prettierrc file, falls back to default config
+   *
    * @see https://prettier.io/docs/configuration.html
    */
   prettierRules?: PartialPrettierExtendedOptions
