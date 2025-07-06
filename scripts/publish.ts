@@ -5,8 +5,7 @@ async function run() {
   const { name, otp, tag } = getArgv()
 
   const publishArgs = [
-    `pnpm publish`,
-    `-r ${name}`,
+    `pnpm --filter ${name} publish`,
     `--no-git-checks`,
     `--access public`,
     `${tag ? `--tag ${tag}` : ''}`,
