@@ -330,7 +330,9 @@ export function getBytes(value: string) {
   return bytes
 }
 
-/** @category Data */
+/**
+ * @category Data
+ */
 export interface InRangeOptions {
   num: number
   min: number

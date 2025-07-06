@@ -1,5 +1,5 @@
 import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
-import { getConfigName } from '../shared'
+import { getConfigName } from '../shared/utils'
 import { type FlatESLintConfig } from '../types'
 
 export { tailwindcssPlugin }

@@ -1,5 +1,5 @@
 import nextPlugin from '@next/eslint-plugin-next'
-import { getConfigName } from '../shared'
+import { getConfigName } from '../shared/utils'
 import { type FlatESLintConfig } from '../types'
 
 export { nextPlugin }

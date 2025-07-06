@@ -5,7 +5,7 @@ import {
   GLOB_MARKDOWN_CODE,
   GLOB_VUE,
 } from '../globs'
-import { getConfigName } from '../shared'
+import { getConfigName } from '../shared/utils'
 import { type FlatESLintConfig } from '../types'
 
 export { markdownPlugin }

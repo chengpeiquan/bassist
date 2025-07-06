@@ -1,5 +1,5 @@
 import { configs } from 'eslint-plugin-regexp'
-import { getConfigName } from '../shared'
+import { getConfigName } from '../shared/utils'
 import { type FlatESLintConfig } from '../types'
 
 const recommendedConfigs = configs['flat/recommended']

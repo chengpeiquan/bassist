@@ -1,5 +1,5 @@
 import unicornPlugin from 'eslint-plugin-unicorn'
-import { getConfigName } from '../shared'
+import { getConfigName } from '../shared/utils'
 import { type FlatESLintConfig } from '../types'
 
 export { unicornPlugin }

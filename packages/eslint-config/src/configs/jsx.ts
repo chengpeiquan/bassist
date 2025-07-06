@@ -1,5 +1,5 @@
 import { GLOB_JSX, GLOB_TSX } from '../globs'
-import { getConfigName } from '../shared'
+import { getConfigName } from '../shared/utils'
 import { type FlatESLintConfig } from '../types'
 
 export const jsx: FlatESLintConfig[] = [

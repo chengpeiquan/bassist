@@ -31,17 +31,23 @@ export class FallbackStorage {
     }
   }
 
-  /** Gets the number of stored items */
+  /**
+   * Gets the number of stored items
+   */
   get length() {
     return Object.keys(this.data).length
   }
 
-  /** Clears all stored items. */
+  /**
+   * Clears all stored items.
+   */
   clear() {
     this.data = {}
   }
 
-  /** Retrieves the value associated with the specified key */
+  /**
+   * Retrieves the value associated with the specified key
+   */
   getItem(key: string) {
     if (hasKey(this.data, key)) {
       return this.data[key]
@@ -49,12 +55,16 @@ export class FallbackStorage {
     return null
   }
 
-  /** Sets the value for the specified key. */
+  /**
+   * Sets the value for the specified key.
+   */
   setItem(key: string, value: string) {
     this.data[key] = value
   }
 
-  /** Removes the item associated with the specified key. */
+  /**
+   * Removes the item associated with the specified key.
+   */
   removeItem(key: string) {
     if (hasKey(this.data, key)) {
       // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
@@ -62,7 +72,9 @@ export class FallbackStorage {
     }
   }
 
-  /** Retrieves the key at the specified index. */
+  /**
+   * Retrieves the key at the specified index.
+   */
   key(index: number) {
     const keys = Object.keys(this.data)
     if (index > keys.length) return null

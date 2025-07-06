@@ -1,6 +1,6 @@
 import jsConfig from '@eslint/js'
 import globals from 'globals'
-import { getConfigName } from '../shared'
+import { getConfigName } from '../shared/utils'
 import { type FlatESLintConfig } from '../types'
 
 export const javascript: FlatESLintConfig[] = [

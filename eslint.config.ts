@@ -3,6 +3,7 @@ import {
   defineFlatConfig,
   imports,
   markdown,
+  // jsdoc,
   node,
   typescript,
 } from './packages/eslint-config/src'
@@ -14,6 +15,7 @@ export default defineFlatConfig(
     ...imports,
     ...typescript,
     ...markdown,
+    // ...jsdoc,
     ...node,
     {
       name: getConfigName('ignore'),

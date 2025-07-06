@@ -1,10 +1,14 @@
 import { isObject, isString } from './data'
 import { isBrowser } from './device'
 
-/** @category Query */
+/**
+ * @category Query
+ */
 type QueryInfo = Record<string, string>
 
-/** @category Query */
+/**
+ * @category Query
+ */
 type QueryInfoObject = Record<
   string,
   string | number | boolean | undefined | null

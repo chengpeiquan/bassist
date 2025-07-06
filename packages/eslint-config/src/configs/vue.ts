@@ -1,7 +1,7 @@
 import vuePlugin from 'eslint-plugin-vue'
 import _vueParser from 'vue-eslint-parser'
 import { GLOB_EXCLUDE, GLOB_VUE } from '../globs'
-import { getConfigName } from '../shared'
+import { getConfigName } from '../shared/utils'
 import {
   type FlatESLintConfig,
   type FlatESLintParser,
