@@ -138,7 +138,7 @@ export const createBaseConfig = (options: CreateBaseConfigOptions) => {
     outDir,
     dts: true,
     banner: {
-      js: getBundleBanner(pkg),
+      js: getBundleBanner(pkg, { bin: !!pkg.bin }),
     },
     bundle: true,
     minify: true,
