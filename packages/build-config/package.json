@@ -1,0 +1,41 @@
+{
+  "name": "@bassist/build-config",
+  "version": "0.1.0",
+  "description": "Opinionated collection of common build config by @chengpeiquan .",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "homepage": "https://jsdocs.io/package/@bassist/build-config",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./tsup": {
+      "types": "./dist/tsup.d.ts",
+      "import": "./dist/tsup.mjs",
+      "require": "./dist/tsup.cjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chengpeiquan/bassist",
+    "directory": "packages/build-config"
+  },
+  "keywords": [
+    "build config",
+    "tsup config"
+  ],
+  "scripts": {
+    "build": "tsup"
+  },
+  "devDependencies": {
+    "tsup": "^8.5.0"
+  },
+  "peerDependencies": {
+    "tsup": ">=8.0.0"
+  },
+  "peerDependenciesMeta": {
+    "tsup": {
+      "optional": true
+    }
+  }
+}
