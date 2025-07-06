@@ -113,13 +113,24 @@ export default defineFlatConfig([
 ```json
 {
   "editor.formatOnSave": true,
-  "eslint.useFlatConfig": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always",
     "source.fixAll.prettier": "always"
-  }
+  },
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "eslint.useFlatConfig": true,
+  "eslint.format.enable": true,
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "prettier.configPath": "./.prettierrc.js"
 }
 ```
+
+关于 `prettier.configPath` 请查看 [格式化工具](#格式化工具) 部分。
 
 ## 📘 API 参考
 
@@ -260,7 +271,9 @@ export default defineFlatConfig([
 
 格式化规则默认启用，不会单独导出。如需自定义配置，请通过 [defineFlatConfig API](#defineflatconfig) 的 `options` 传入。
 
-- [Prettier](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/private-configs/prettier.ts) : 默认会读取 `.prettierrc` 和 `.prettierignore` 的内容，并添加到 ESLint 规则中。
+- [Prettier](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/private-configs/prettier.ts) :
+  - 默认会读取 `.prettierrc` 和 `.prettierignore` 的内容，并添加到 ESLint 规则中。
+  - 如果预期的配置文件不存在，则会使用 [内置的 Prettier](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/shared/prettier-config.mjs) 规则作为兜底规则。
 - [Tailwind CSS](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/private-configs/tailwindcss.ts) : 默认会将 `tailwind.config.js` 作为 Tailwind CSS 配置文件传入。
 
 #### 其它
