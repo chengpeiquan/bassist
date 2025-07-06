@@ -3,7 +3,7 @@ import reactHooksConfig from 'eslint-plugin-react-hooks'
 import reactRefresh from 'eslint-plugin-react-refresh'
 import globals from 'globals'
 import { GLOB_EXCLUDE, GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX } from '../globs'
-import { getConfigName } from '../shared'
+import { getConfigName } from '../shared/utils'
 import { type FlatESLintConfig, type FlatESLintRules } from '../types'
 import { tsParser, tsPlugin, typescript } from './typescript'
 

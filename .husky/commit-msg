@@ -1,1 +1,1 @@
-pnpm exec node ./packages/commit $1
+pnpm exec commitlint --edit $1

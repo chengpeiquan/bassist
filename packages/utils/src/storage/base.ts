@@ -2,7 +2,9 @@ import { isString } from '../data'
 import { isBrowser } from '../device'
 import { FallbackStorage } from './fallback'
 
-/** @category Storage */
+/**
+ * @category Storage
+ */
 export type StorageType = 'localStorage' | 'sessionStorage'
 
 /**
@@ -47,7 +49,9 @@ export class BaseStorage {
     }
   }
 
-  /** Set storage data */
+  /**
+   * Set storage data
+   */
   set(key: string, value: any) {
     try {
       const data = isString(value) ? value : JSON.stringify(value)
@@ -57,12 +61,16 @@ export class BaseStorage {
     }
   }
 
-  /** Remove the specified storage data under the current prefix */
+  /**
+   * Remove the specified storage data under the current prefix
+   */
   remove(key: string) {
     this.storage.removeItem(`${this.prefix}-${key}`)
   }
 
-  /** Clear all stored data under the current prefix */
+  /**
+   * Clear all stored data under the current prefix
+   */
   clear() {
     const keys = this.list()
     keys.forEach((key) => {
@@ -70,7 +78,9 @@ export class BaseStorage {
     })
   }
 
-  /** Count the number of storage related to the current prefix */
+  /**
+   * Count the number of storage related to the current prefix
+   */
   count() {
     return this.list().length
   }

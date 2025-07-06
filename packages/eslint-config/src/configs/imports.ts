@@ -1,5 +1,5 @@
 import importPlugin from 'eslint-plugin-import-x'
-import { getConfigName } from '../shared'
+import { getConfigName } from '../shared/utils'
 import { type FlatESLintPlugin, type FlatESLintConfig } from '../types'
 
 export { importPlugin }

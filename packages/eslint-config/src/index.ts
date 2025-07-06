@@ -25,4 +25,4 @@ export {
   type TailwindcssSettings,
 } from './private-configs/tailwindcss'
 
-export { createGetConfigNameFactory } from './shared'
+export { createGetConfigNameFactory } from './shared/utils'

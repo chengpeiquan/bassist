@@ -140,7 +140,9 @@ export const isWeibo = /(weibo).*weibo__([\d.]+)/i.test(getUserAgent())
  */
 export const isBaidu = /(baiduboxapp)\/([\d.]+)/i.test(getUserAgent())
 
-/** @category Device */
+/**
+ * @category Device
+ */
 interface DeviceResizeWatcherOptions {
   // Executed when the page load done
   immediate: boolean

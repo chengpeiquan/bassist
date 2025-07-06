@@ -32,6 +32,9 @@
     "generate release",
     "github release"
   ],
+  "scripts": {
+    "build": "tsup"
+  },
   "dependencies": {
     "@bassist/node-utils": "workspace:^",
     "@bassist/utils": "workspace:^",

@@ -143,12 +143,18 @@ export function sortKeys(target: any): any {
   return newObj
 }
 
-/** @category Format */
+/**
+ * @category Format
+ */
 interface UniqueOptions<T> {
-  /** The key used to determine if there are duplicate values */
+  /**
+   * The key used to determine if there are duplicate values
+   */
   primaryKey: keyof T
 
-  /** He original data list */
+  /**
+   * He original data list
+   */
   list: T[]
 }
 
@@ -229,7 +235,9 @@ export function formatTime(time: number | Date, dateOnly?: boolean) {
   return formattedDate
 }
 
-/** @category Format */
+/**
+ * @category Format
+ */
 interface FormatDurationUnit {
   days: string
   hours: string

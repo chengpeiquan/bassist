@@ -1,4 +1,6 @@
-/** Types provided from @types/nprogress */
+/**
+ * Types provided from @types/nprogress
+ */
 interface NProgressOptions {
   minimum: number
   template: string
@@ -34,7 +36,9 @@ interface NProgress {
   getPositioningCSS(): 'translate3d' | 'translate' | 'margin'
 }
 
-/** Types of functionality that this plugin extends */
+/**
+ * Types of functionality that this plugin extends
+ */
 export interface Progress extends NProgress {
   /**
    * @example

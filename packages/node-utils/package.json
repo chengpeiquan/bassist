@@ -36,7 +36,9 @@
   },
   "dependencies": {
     "@bassist/utils": "workspace:^",
-    "@types/fs-extra": "^11.0.4",
     "fs-extra": "^11.3.0"
+  },
+  "devDependencies": {
+    "@types/fs-extra": "^11.0.4"
   }
 }

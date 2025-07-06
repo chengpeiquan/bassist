@@ -1,3 +1,12 @@
+# [0.5.0](https://github.com/chengpeiquan/bassist/compare/node-utils@0.4.2...node-utils@0.5.0) (2025-07-06)
+
+
+### Refactor
+
+* **node-utils:** migrate bundle.ts to @bassist/build-config package ([7e2f1c0](https://github.com/chengpeiquan/bassist/commit/7e2f1c09f6a0b2762063c8c3b328c094e0803a39))
+
+
+
 ## [0.4.2](https://github.com/chengpeiquan/bassist/compare/node-utils@0.4.1...node-utils@0.4.2) (2025-05-22)
 
 

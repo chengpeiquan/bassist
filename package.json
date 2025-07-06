@@ -5,10 +5,11 @@
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
   "private": true,
+  "packageManager": "pnpm@10.12.4",
   "type": "module",
   "scripts": {
-    "build": "jiti ./scripts/build/build-single",
-    "build:all": "jiti ./scripts/build/build-multiple",
+    "build": "turbo run build",
+    "build:lib": "jiti ./scripts/build",
     "pkg:publish": "jiti ./scripts/publish",
     "pkg:changelog": "jiti ./scripts/changelog.cts",
     "test": "vitest",
@@ -26,6 +27,8 @@
     "nprogress": "^0.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@eslint/js": "^9.30.1",
     "@eslint/markdown": "^6.6.0",
     "@next/eslint-plugin-next": "^15.3.5",
@@ -57,8 +60,9 @@
     "jiti": "^2.4.2",
     "lint-staged": "^15.5.2",
     "prettier": "^3.6.2",
-    "prettier-plugin-jsdoc": "1.3.2",
+    "prettier-plugin-jsdoc": "^1.3.3",
     "tsup": "^8.5.0",
+    "turbo": "^2.5.4",
     "typescript": "^5.8.3",
     "vitest": "^3.2.4",
     "vue-eslint-parser": "^9.4.3"

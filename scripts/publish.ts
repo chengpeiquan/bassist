@@ -14,10 +14,11 @@ async function run() {
     `--registry https://registry.npmjs.org/`,
   ].filter(Boolean)
 
-  const commands = [`pnpm build ${name}`, publishArgs.join(' ')]
+  const commands = [`pnpm build:lib ${name}`, publishArgs.join(' ')]
   const cmd = commands.join(' && ')
   execSync(cmd)
 }
+
 run().catch((e) => {
   console.log(e)
 })

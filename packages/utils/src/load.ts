@@ -3,12 +3,16 @@ import { isBrowser } from './device'
 import { getQuery } from './query'
 import { randomString } from './random'
 
-/** @category Network */
+/**
+ * @category Network
+ */
 export type ResourcesSupportedWithLoadRes = 'js' | 'css' | 'style'
 
 type ResourcesElement = HTMLScriptElement | HTMLLinkElement | HTMLStyleElement
 
-/** @category Network */
+/**
+ * @category Network
+ */
 export interface LoadResOptions {
   type: ResourcesSupportedWithLoadRes
   id: string

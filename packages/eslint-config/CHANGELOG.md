@@ -1,3 +1,12 @@
+# [0.2.0](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.1.3...eslint-config@0.2.0) (2025-07-06)
+
+
+### Features
+
+* **eslint-config:** add built-in Prettier rules ([0b88636](https://github.com/chengpeiquan/bassist/commit/0b8863628fd7751fb3ec810d1204f2d40a462e02))
+
+
+
 ## [0.1.3](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.1.2...eslint-config@0.1.3) (2025-05-22)
 
 

@@ -1,5 +1,5 @@
 import nodePlugin from 'eslint-plugin-n'
-import { getConfigName } from '../shared'
+import { getConfigName } from '../shared/utils'
 import { type FlatESLintConfig } from '../types'
 
 export const node: FlatESLintConfig[] = [

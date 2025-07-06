@@ -1,10 +1,14 @@
 import { isBrowser } from '../device'
 import { fallbackReadText, fallbackWriteText } from './fallback'
 
-/** @category Interactive */
+/**
+ * @category Interactive
+ */
 export type WritableElement = HTMLInputElement | HTMLTextAreaElement
 
-/** @category Interactive */
+/**
+ * @category Interactive
+ */
 export type CopyableElement = HTMLElement | WritableElement
 
 /**
@@ -13,7 +17,9 @@ export type CopyableElement = HTMLElement | WritableElement
  * @category Interactive
  */
 export class ClipboardInstance {
-  /** Determine whether the clipboard is supported */
+  /**
+   * Determine whether the clipboard is supported
+   */
   isSupported: boolean
 
   constructor() {
@@ -52,7 +58,9 @@ export class ClipboardInstance {
     return true
   }
 
-  /** Read the text content of the clipboard */
+  /**
+   * Read the text content of the clipboard
+   */
   async read() {
     if (!this.isSupported) return ''
     try {
@@ -62,7 +70,9 @@ export class ClipboardInstance {
     }
   }
 
-  /** Write text content to clipboard */
+  /**
+   * Write text content to clipboard
+   */
   async write(text: string) {
     if (!this.isSupported) return false
     try {

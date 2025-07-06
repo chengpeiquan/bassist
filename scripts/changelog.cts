@@ -19,6 +19,7 @@ async function run() {
   const cmd = commands.join(' && ')
   execSync(cmd)
 }
+
 run().catch((e) => {
   console.log(e)
 })
