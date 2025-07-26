@@ -2,27 +2,17 @@ import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import prettierConfig from 'eslint-config-prettier'
 import prettierPlugin from 'eslint-plugin-prettier'
-import {
-  type BuiltInParserName,
-  type LiteralUnion,
-  type RequiredOptions,
-} from 'prettier'
-import { type Options as JsdocOptions } from 'prettier-plugin-jsdoc'
 import { GLOB_EXCLUDE } from '../globs'
-import defaultPrettierConfig from '../shared/prettier-config.mjs'
+import defaultPrettierConfig, {
+  defaultPrettierPlugins,
+} from '../shared/prettier-config.mjs'
 import { getConfigName } from '../shared/utils'
-import { type FlatESLintConfig } from '../types'
+import {
+  type PartialPrettierExtendedOptions,
+  type FlatESLintConfig,
+} from '../types'
 
 export { prettierPlugin }
-
-export type PrettierParser = BuiltInParserName
-
-export interface PrettierOptions extends RequiredOptions {
-  parser: LiteralUnion<PrettierParser>
-}
-
-export type PartialPrettierExtendedOptions = Partial<PrettierOptions> &
-  Partial<JsdocOptions>
 
 const isValidPrettierRules = (
   prettierRules: unknown,
@@ -63,7 +53,9 @@ export const createPrettierConfig = (
 
   const finalPrettierConfig: PartialPrettierExtendedOptions = {
     ...resolvedConfig,
-    plugins: [...plugins, 'prettier-plugin-jsdoc'],
+
+    // Ensure plugins are unique to avoid duplicate loading
+    plugins: Array.from(new Set([...plugins, ...defaultPrettierPlugins])),
   }
 
   const resolvedIgnore = loadPrettierIgnore(cwd)
