@@ -1,12 +1,12 @@
-import {
-  createPrettierConfig,
-  type PartialPrettierExtendedOptions,
-} from './private-configs/prettier'
+import { createPrettierConfig } from './private-configs/prettier'
 import {
   createTailwindcssConfig,
   type TailwindcssSettings,
 } from './private-configs/tailwindcss'
-import { type FlatESLintConfig } from './types'
+import {
+  type PartialPrettierExtendedOptions,
+  type FlatESLintConfig,
+} from './types'
 
 export interface DefineFlatConfigOptions {
   /**

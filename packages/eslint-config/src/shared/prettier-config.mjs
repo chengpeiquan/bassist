@@ -1,15 +1,21 @@
 /**
- * @typedef {import('prettier').RequiredOptions} RequiredOptions
- *
- * @typedef {import('prettier-plugin-jsdoc').Options} JsdocOptions
- *
- * @typedef {Partial<RequiredOptions> & Partial<JsdocOptions>} PrettierConfig
+ * @typedef {import('../types').PartialPrettierExtendedOptions} PartialPrettierExtendedOptions
  */
+
+/**
+ * Prettier Config Plugins
+ *
+ * @type {NonNullable<PartialPrettierExtendedOptions['plugins']>}
+ */
+export const defaultPrettierPlugins = [
+  'prettier-plugin-jsdoc',
+  'prettier-plugin-lint-md',
+]
 
 /**
  * Prettier Config
  *
- * @type {PrettierConfig}
+ * @type {PartialPrettierExtendedOptions}
  */
 export default {
   /**
@@ -53,6 +59,9 @@ export default {
   htmlWhitespaceSensitivity: 'css',
   // Use LF line endings
   endOfLine: 'lf',
+  // Explicitly specify plugins here to ensure Prettier loads custom plugins
+  // (like jsdoc and lint-md) when run directly via CLI.
+  plugins: [...defaultPrettierPlugins],
 
   /**
    * JSDoc Options

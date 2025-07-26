@@ -12,12 +12,9 @@ export * from './configs/vue'
 
 export * from './define'
 
-export {
-  prettierPlugin,
-  type PrettierParser,
-  type PrettierOptions,
-  type PartialPrettierExtendedOptions,
-} from './private-configs/prettier'
+export * from './types'
+
+export { prettierPlugin } from './private-configs/prettier'
 
 export {
   tailwindcssPlugin,
