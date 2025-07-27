@@ -1,3 +1,12 @@
+# [0.3.0](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.2.0...eslint-config@0.3.0) (2025-07-27)
+
+
+### Features
+
+* **eslint-config:** upgrade dependencies and add pangu space formatting support for markdown ([499f888](https://github.com/chengpeiquan/bassist/commit/499f888a88f3abe8eb03c09655f36282481ec5b9))
+
+
+
 # [0.2.0](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.1.3...eslint-config@0.2.0) (2025-07-06)
 
 
