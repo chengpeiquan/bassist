@@ -78,6 +78,7 @@ export default [...imports, ...typescript]
 
 ```bash
 # 为 Node.js 提供运行时 TypeScript 和 ESM 支持
+# 才可以使用 `eslint.config.ts` 作为配置文件
 npm install -D jiti
 ```
 
@@ -146,7 +147,6 @@ API 类型声明：
  *
  * @param configs 基础 ESLint 配置数组。
  * @param options - 配置选项。
- *
  * @returns 最终的 ESLint 配置数组。
  */
 declare const defineFlatConfig: (
@@ -169,8 +169,8 @@ interface DefineFlatConfigOptions {
   cwd?: string
 
   /**
-   * 如果 `prettierEnabled` 设为 `false`，则所有与 Prettier 相关的规则和配置都将被忽略，
-   * 即使提供了 `prettierRules` 也不会生效。
+   * 如果 `prettierEnabled` 设为 `false`，则所有与 Prettier 相关的规则和配置都将被忽略， 即使提供了
+   * `prettierRules` 也不会生效。
    *
    * @default true
    */
@@ -200,6 +200,8 @@ interface DefineFlatConfigOptions {
    * 如果想要合并配置，可以导入 `defaultTailwindcssSettings`，手动合并后再传入。
    *
    * 如果传入空对象 `{}`，则会使用默认设置。
+   *
+   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/v3.18.2
    */
   tailwindcssSettings?: TailwindcssSettings
 }
@@ -213,8 +215,7 @@ API 类型声明：
 
 ```ts
 /**
- * 一个灵活的工具函数，用于生成 ESLint 配置命名工具。
- * 它可以快速拼接配置名称，确保命名空间一致，并便于组织和管理复杂的规则集。
+ * 一个灵活的工具函数，用于生成 ESLint 配置命名工具。 它可以快速拼接配置名称，确保命名空间一致，并便于组织和管理复杂的规则集。
  *
  * @param prefix - 表示配置名称前缀的字符串。
  * @returns 一个函数，该函数会将提供的名称片段与指定的前缀拼接在一起。
@@ -274,7 +275,10 @@ export default defineFlatConfig([
 - [Prettier](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/private-configs/prettier.ts) :
   - 默认会读取 `.prettierrc` 和 `.prettierignore` 的内容，并添加到 ESLint 规则中。
   - 如果预期的配置文件不存在，则会使用 [内置的 Prettier](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/shared/prettier-config.mjs) 规则作为兜底规则。
-- [Tailwind CSS](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/private-configs/tailwindcss.ts) : 默认会将 `tailwind.config.js` 作为 Tailwind CSS 配置文件传入。
+  - 非以上配置文件并且不喜欢默认规则时，可以通过 [defineFlatConfig](#defineflatconfig) 的 `options.prettierRules` 将完整配置传递进来优先作为 ESLint 规则使用
+- [Tailwind CSS](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/private-configs/tailwindcss.ts) :
+  - 默认会将 `tailwind.config.js` 作为 Tailwind CSS 配置文件传入。
+  - 非默认文件或者需要更改规则，可通过 `options.tailwindcssSettings` 传递
 
 #### 其它
 
