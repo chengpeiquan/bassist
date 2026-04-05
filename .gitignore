@@ -29,6 +29,8 @@ pnpm-debug.log*
 # Compressed file
 *.rar
 *.zip
+*.tar
+*.gz
 
 # Agentic documentation
 docs/plans

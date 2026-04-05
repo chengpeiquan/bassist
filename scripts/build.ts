@@ -4,7 +4,7 @@ import { getArgv } from './utils'
 async function run() {
   const { name } = getArgv()
 
-  execSync(`turbo run build --filter @bassist/${name}`, {
+  execSync(`bunx turbo run build --filter @bassist/${name}`, {
     stdio: 'inherit',
   })
 }

@@ -8,7 +8,7 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.min.js",
+  "main": "./dist/index.iife.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -27,6 +27,6 @@
     "utils"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   }
 }

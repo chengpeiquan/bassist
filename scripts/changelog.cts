@@ -17,7 +17,7 @@ async function run() {
 
   const commands = [`cd ${pkgPath}`, changelogArgs.join(' ')]
   const cmd = commands.join(' && ')
-  execSync(cmd)
+  execSync(cmd, { stdio: 'inherit' })
 }
 
 run().catch((e) => {

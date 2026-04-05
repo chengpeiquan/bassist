@@ -33,7 +33,7 @@
     "github release"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@bassist/node-utils": "workspace:^",

@@ -32,7 +32,7 @@
     "fs extra"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@bassist/utils": "workspace:^",
