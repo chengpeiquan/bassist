@@ -17,7 +17,7 @@
 
 English | [简体中文](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/README.zh-CN.md)
 
-A modern flat ESLint configuration for [ESLint](https://eslint.org/) V9, crafted by [@chengpeiquan](https://github.com/chengpeiquan).
+A modern flat ESLint configuration for [ESLint](https://eslint.org/) v9 and v10, crafted by [@chengpeiquan](https://github.com/chengpeiquan).
 
 ## ⚡ Usage
 
@@ -37,7 +37,7 @@ Install the package with your favorite package manager:
 npm install -D eslint @bassist/eslint-config
 ```
 
-**Note:** Requires ESLint >= `9.0.0` , and TypeScript >= `5.0.0` .
+**Note:** Supports ESLint `9.x` and `10.x`, and requires TypeScript >= `5.0.0` .
 
 If you’re using pnpm, consider adding a `.npmrc` file to your project root with the following settings to handle peer dependencies more smoothly:
 
@@ -74,12 +74,11 @@ Then add `"type": "module"` to your `package.json`:
 
 Run `npm run lint` to lint your code, or `npm run lint:inspector` to visualize your ESLint config at `http://localhost:7777`.
 
-> For typescript file type (e.g. `eslint.config.ts` ), requires [additional setup](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files) .
+> Bun can load `eslint.config.ts` directly. If you run ESLint with Node.js, prefer `eslint.config.mjs` or follow the [additional setup](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files) from ESLint.
 
 ```bash
-# Runtime typescript and ESM support for Node.js,
-# to use `eslint.config.ts` as a configuration file
-npm install -D jiti
+# Bun-first workflow
+bun run lint
 ```
 
 ## ✅ Type-Safe Config

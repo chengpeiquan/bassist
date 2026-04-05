@@ -4,7 +4,11 @@ import reactRefresh from 'eslint-plugin-react-refresh'
 import globals from 'globals'
 import { GLOB_EXCLUDE, GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX } from '../globs'
 import { getConfigName } from '../shared/utils'
-import { type FlatESLintConfig, type FlatESLintRules } from '../types'
+import {
+  type FlatESLintConfig,
+  type FlatESLintPlugin,
+  type FlatESLintRules,
+} from '../types'
 import { tsParser, tsPlugin, typescript } from './typescript'
 
 export { reactPlugin }
@@ -25,8 +29,8 @@ export const react: FlatESLintConfig[] = [
     files: [GLOB_JS, GLOB_JSX, GLOB_TS, GLOB_TSX],
     plugins: {
       react: reactPlugin,
-      'react-hooks': reactHooksConfig,
-      'react-refresh': reactRefresh,
+      'react-hooks': reactHooksConfig as unknown as FlatESLintPlugin,
+      'react-refresh': reactRefresh as unknown as FlatESLintPlugin,
       '@typescript-eslint': tsPlugin,
     },
     languageOptions: {

@@ -77,18 +77,31 @@ const vueCustomRules = {
   'vue/require-default-prop': 'off',
 } as unknown as FlatESLintRules
 
+const getVueConfigRules = (...configNames: string[]) => {
+  for (const configName of configNames) {
+    const config =
+      vuePlugin.configs[configName as keyof typeof vuePlugin.configs]
+
+    if (config && 'rules' in config && config.rules) {
+      return config.rules as unknown as FlatESLintRules
+    }
+  }
+
+  return {} as FlatESLintRules
+}
+
 const vue3Rules = {
-  ...vuePlugin.configs.base.rules,
-  ...vuePlugin.configs['vue3-essential'].rules,
-  ...vuePlugin.configs['vue3-strongly-recommended'].rules,
-  ...vuePlugin.configs['vue3-recommended'].rules,
+  ...getVueConfigRules('base'),
+  ...getVueConfigRules('vue3-essential', 'essential'),
+  ...getVueConfigRules('vue3-strongly-recommended', 'strongly-recommended'),
+  ...getVueConfigRules('vue3-recommended', 'recommended'),
 } as unknown as FlatESLintRules
 
 const vue2Rules = {
-  ...vuePlugin.configs.base.rules,
-  ...vuePlugin.configs.essential.rules,
-  ...vuePlugin.configs['strongly-recommended'].rules,
-  ...vuePlugin.configs.recommended.rules,
+  ...getVueConfigRules('base'),
+  ...getVueConfigRules('vue2-essential', 'essential'),
+  ...getVueConfigRules('vue2-strongly-recommended', 'strongly-recommended'),
+  ...getVueConfigRules('vue2-recommended', 'recommended'),
 } as unknown as FlatESLintRules
 
 const getVueConfig = (vueVersion: 'vue2' | 'vue3') => {
