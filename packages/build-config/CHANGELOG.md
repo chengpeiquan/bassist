@@ -1,8 +1,10 @@
-## [Unreleased]
+# [0.2.0](https://github.com/chengpeiquan/bassist/compare/build-config@0.1.0...build-config@0.2.0) (2026-04-05)
+
 
 ### Features
 
-* **build-config:** add tsdown configuration utilities
+* **build-config:** introduce tsdown configuration utilities ([a3aa09f](https://github.com/chengpeiquan/bassist/commit/a3aa09fc4127db78f5c590a6089111b5bdd1b389))
+
 
 # 0.1.0 (2025-07-06)
 

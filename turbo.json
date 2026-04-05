@@ -3,28 +3,21 @@
   "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": [
-        "^build"
-      ],
-      "inputs": [
-        "$TURBO_DEFAULT$",
-        ".env*"
-      ],
-      "outputs": [
-        "dist"
-      ],
+      "dependsOn": ["^build"],
+      "inputs": ["$TURBO_DEFAULT$", ".env*"],
+      "outputs": ["dist"],
       "outputLogs": "full"
     },
     "lint": {
-      "dependsOn": [
-        "^lint"
-      ],
+      "dependsOn": ["^lint"],
+      "outputLogs": "full"
+    },
+    "verify:eslint-v10": {
+      "dependsOn": ["^build"],
       "outputLogs": "full"
     },
     "check-types": {
-      "dependsOn": [
-        "^check-types"
-      ],
+      "dependsOn": ["^check-types"],
       "outputLogs": "full"
     },
     "dev": {

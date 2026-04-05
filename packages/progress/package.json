@@ -8,7 +8,7 @@
   "files": [
     "dist"
   ],
-  "main": "./dist/index.min.js",
+  "main": "./dist/index.iife.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
   "exports": {
@@ -28,7 +28,7 @@
     "progress bar"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@bassist/utils": "workspace:^",

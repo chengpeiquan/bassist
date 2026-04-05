@@ -1,4 +1,4 @@
-import { describe, expect, it } from 'vitest'
+import { afterEach, describe, expect, it } from 'vitest'
 import {
   isValidPackageName,
   toValidPackageName,
@@ -6,6 +6,12 @@ import {
 } from '..'
 
 describe('pkg', () => {
+  const originalUserAgent = process.env.npm_config_user_agent
+
+  afterEach(() => {
+    process.env.npm_config_user_agent = originalUserAgent
+  })
+
   it('isValidPackageName', () => {
     expect(isValidPackageName('hello')).toBeTruthy()
     expect(isValidPackageName('hello123')).toBeTruthy()
@@ -29,7 +35,19 @@ describe('pkg', () => {
   })
 
   it('getPackageManagerByUserAgent', () => {
-    console.log('userAgent', process.env.npm_config_user_agent)
+    process.env.npm_config_user_agent =
+      'pnpm/10.13.1 npm/? node/v22.19.0 darwin arm64'
+
     expect(getPackageManagerByUserAgent().name).toBe('pnpm')
+    expect(getPackageManagerByUserAgent().version).toBe('10.13.1')
+  })
+
+  it('getPackageManagerByUserAgent fallback', () => {
+    delete process.env.npm_config_user_agent
+
+    expect(getPackageManagerByUserAgent()).toEqual({
+      name: '',
+      version: '0.0.0',
+    })
   })
 })

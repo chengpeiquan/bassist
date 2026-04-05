@@ -14,8 +14,8 @@ export function getArgv() {
       '🚧 Missing package name to generate declaration files.',
       '',
       '💡 Related command arguments and options:',
-      '   pnpm build:lib <package-name>',
-      '   pnpm release <package-name> [--otp] [--tag]',
+      '   bun run build:lib <package-name>',
+      '   bun run pkg:publish <package-name> [--otp] [--tag]',
       '',
       '',
     ]

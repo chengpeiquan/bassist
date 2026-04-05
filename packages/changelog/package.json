@@ -33,7 +33,7 @@
     "CHANGELOG.md"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   },
   "dependencies": {
     "@withtypes/minimist": "^0.1.1",
