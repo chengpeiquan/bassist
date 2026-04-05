@@ -19,6 +19,7 @@ Opinionated collection of common build tool configurations, carefully crafted by
 
 Currently provides configurations for the following build tools:
 
+- [tsdown](https://tsdown.dev): An elegant TypeScript library bundler powered by Rolldown
 - [tsup](https://github.com/egoist/tsup): The most convenient tool for building TypeScript libraries based on ESBuild
 
 ## 🤔 Why do we need this?
@@ -27,9 +28,11 @@ While using certain tool configurations in a single repository is convenient eno
 
 By abstracting and sharing commonly used tool configurations, different projects can complete their setup faster.
 
-## ⚡ Usage: Based on tsup
+## ⚡ Usage
 
-- 🎯 **Preset Configurations**: Provides out-of-the-box tsup base configurations
+### Based on tsdown
+
+- 🎯 **Preset Configurations**: Provides out-of-the-box tsdown base configurations
 - 📦 **Multi-format Support**: Default support for CommonJS and ESM formats
 - 🏷️ **Auto Banner**: Automatically generates file header comments based on package.json
 - 🧹 **Auto Clean**: Automatically cleans output directory before building
@@ -41,20 +44,20 @@ By abstracting and sharing commonly used tool configurations, different projects
 Install the package using your preferred package manager:
 
 ```bash
-npm install -D @bassist/build-config tsup
+npm install -D @bassist/build-config tsdown
 ```
 
-**Note**: This submodule requires tsup as a peer dependency. As shown in the installation command above, please ensure tsup is installed.
+**Note**: This submodule requires the build tool you use as a peer dependency. For `tsdown`, please install `tsdown`; for legacy `tsup` usage, please keep `tsup` installed.
 
 ### Usage
 
-All APIs are provided uniformly by `@bassist/build-config/tsup`.
+All APIs are provided uniformly by `@bassist/build-config/tsdown`.
 
 Typically, you only need to use the configuration returned by `createBaseConfig`, and you can pass custom options as needed:
 
 ```ts
-import { createBaseConfig } from '@bassist/build-config/tsup'
-import { defineConfig } from 'tsup'
+import { createBaseConfig } from '@bassist/build-config/tsdown'
+import { defineConfig } from 'tsdown'
 import pkg from './package.json'
 
 const config = createBaseConfig({ pkg })
@@ -64,7 +67,16 @@ export default defineConfig(config)
 
 If the configuration options don't meet your needs, you can destructure and merge objects to pass them to the `defineConfig` API.
 
-For more APIs and configuration options, please check the source code [tsup.ts](https://github.com/chengpeiquan/bassist/blob/main/packages/build-config/src/tsup.ts).
+For more APIs and configuration options, please check the source code [tsdown.ts](https://github.com/chengpeiquan/bassist/blob/main/packages/build-config/src/tsdown.ts).
+
+### Legacy tsup support
+
+The original `@bassist/build-config/tsup` entry is still available during the migration window:
+
+```ts
+import { createBaseConfig } from '@bassist/build-config/tsup'
+import { defineConfig } from 'tsup'
+```
 
 ## 📝 Release Notes
 

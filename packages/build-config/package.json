@@ -1,6 +1,6 @@
 {
   "name": "@bassist/build-config",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Opinionated collection of common build config by @chengpeiquan .",
   "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
   "license": "MIT",
@@ -9,6 +9,11 @@
     "dist"
   ],
   "exports": {
+    "./tsdown": {
+      "types": "./dist/tsdown.d.ts",
+      "import": "./dist/tsdown.mjs",
+      "require": "./dist/tsdown.cjs"
+    },
     "./tsup": {
       "types": "./dist/tsup.d.ts",
       "import": "./dist/tsup.mjs",
@@ -22,18 +27,24 @@
   },
   "keywords": [
     "build config",
+    "tsdown config",
     "tsup config"
   ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsdown"
   },
   "devDependencies": {
-    "tsup": "^8.5.0"
+    "tsdown": "^0.21.7",
+    "tsup": "^8.5.1"
   },
   "peerDependencies": {
-    "tsup": ">=8.0.0"
+    "tsdown": ">=0.21.0",
+    "tsup": ">=8.5.0"
   },
   "peerDependenciesMeta": {
+    "tsdown": {
+      "optional": true
+    },
     "tsup": {
       "optional": true
     }
