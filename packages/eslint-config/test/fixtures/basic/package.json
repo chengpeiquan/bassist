@@ -1,0 +1,5 @@
+{
+  "name": "eslint-v10-smoke-fixture",
+  "private": true,
+  "type": "module"
+}

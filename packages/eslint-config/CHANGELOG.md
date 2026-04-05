@@ -1,3 +1,9 @@
+## [Unreleased]
+
+### Bug Fixes
+
+* **eslint-config:** support ESLint v10 and update Vue preset compatibility
+
 # [0.3.0](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.2.0...eslint-config@0.3.0) (2025-07-27)
 
 
@@ -51,6 +57,5 @@
 ### Features
 
 * **eslint-config:** add flat configurations for ESLint v9 ([3f649fb](https://github.com/chengpeiquan/bassist/commit/3f649fb55b7eee40b1e8fe79a4820b9f3a5ffde0))
-
 
 

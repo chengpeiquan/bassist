@@ -17,7 +17,7 @@
 
 [English](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/README.md) | 简体中文
 
-一款现代化的扁平 ESLint 配置，适用于 [ESLint](https://eslint.org/) V9 ，由 [@chengpeiquan](https://github.com/chengpeiquan) 精心打造。
+一款现代化的扁平 ESLint 配置，适用于 [ESLint](https://eslint.org/) v9 和 v10 ，由 [@chengpeiquan](https://github.com/chengpeiquan) 精心打造。
 
 ## ⚡ 使用方法
 
@@ -37,7 +37,7 @@
 npm install -D eslint @bassist/eslint-config
 ```
 
-**注意：** 需要 ESLint 版本 >= `9.0.0` ，以及 TypeScript 版本 >= `5.0.0`。
+**注意：** 支持 ESLint `9.x` 和 `10.x`，并且需要 TypeScript 版本 >= `5.0.0`。
 
 如果使用的是 `pnpm`，建议在项目根目录添加 `.npmrc` 文件，并包含以下配置，以更顺利地处理 peer 依赖：
 
@@ -74,12 +74,11 @@ export default [...imports, ...typescript]
 
 运行 `npm run lint` 以检查代码，或运行 `npm run lint:inspector` 在 `http://localhost:7777` 查看可视化的 ESLint 配置。
 
-> 对于 TypeScript 配置文件（例如 `eslint.config.ts` ），需要 [额外的设置](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files) 。
+> Bun 可以直接加载 `eslint.config.ts` 。如果你通过 Node.js 运行 ESLint，建议改用 `eslint.config.mjs`，或者按照 ESLint 文档完成[额外的设置](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files)。
 
 ```bash
-# 为 Node.js 提供运行时 TypeScript 和 ESM 支持
-# 才可以使用 `eslint.config.ts` 作为配置文件
-npm install -D jiti
+# Bun 优先的用法
+bun run lint
 ```
 
 ## ✅ 类型安全的配置
