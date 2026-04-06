@@ -69,6 +69,7 @@ npm i -D oxlint oxfmt @bassist/oxc-integration
 - `react`：大多数情况下可以 Oxc 优先，但很多项目仍建议保留 ESLint fallback
 - `vue`：默认建议保留 ESLint fallback
 - `next`：默认建议保留 ESLint fallback
+- `tailwindcss`：如果项目使用 Tailwind CSS 原子类，建议补上 ESLint fallback
 - `vitest`：如果你需要更完整的测试规则，建议保留 ESLint fallback
 
 ## 内建的 Fallback Coverage
@@ -80,6 +81,7 @@ npm i -D oxlint oxfmt @bassist/oxc-integration
 - `jsx`
 - `imports`
 - `react`
+- `tailwindcss`
 - `vue`
 - `next`
 - `vitest`
@@ -184,12 +186,14 @@ import { defineEslintConfig, eslintPresets } from '@bassist/oxc-integration'
 export default defineEslintConfig(
   eslintPresets.imports(),
   eslintPresets.react(),
+  eslintPresets.tailwindcss(),
   eslintPresets.vitest(),
 )
 ```
 
 如果是 Vue 项目，把 `react()` 换成 `vue()` 即可。
 如果是 Next 项目，请使用 `next()`。
+只有项目真的在使用 Tailwind CSS 时，才需要再加上 `tailwindcss()`。
 
 ## Oxfmt 快速开始
 
