@@ -80,6 +80,7 @@ Current built-in ESLint fallback presets provided by `@bassist/oxc-integration`:
 - `typescript`
 - `jsx`
 - `imports`
+- `markdown`
 - `react`
 - `tailwindcss`
 - `vue`
@@ -88,7 +89,6 @@ Current built-in ESLint fallback presets provided by `@bassist/oxc-integration`:
 
 Current out-of-scope area for this Oxc-first workflow:
 
-- `markdown`
 - `lint-md`
 - Prettier-based Markdown content workflows
 
@@ -194,6 +194,18 @@ export default defineEslintConfig(
 For Vue projects, switch `react()` to `vue()`.
 For Next projects, use `next()`.
 Add `tailwindcss()` only when the project actually uses Tailwind CSS.
+
+### Markdown content linting
+
+```js
+// eslint.config.js
+import { defineEslintConfig, eslintPresets } from '@bassist/oxc-integration'
+
+export default defineEslintConfig(eslintPresets.markdown())
+```
+
+Use `markdown()` when you want standalone Markdown linting behavior without
+pulling Markdown files into the `lint-md` or Prettier-based content workflow.
 
 ## Oxfmt Quick Start
 

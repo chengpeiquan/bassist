@@ -72,4 +72,16 @@ describe('workflow smoke fixtures', () => {
     expect(oxlintResult.status).toBe(0)
     expect(eslintResult.status).toBe(0)
   })
+
+  test('markdown fixture runs with ESLint fallback', () => {
+    const eslintResult = runInFixture('markdown', [
+      'x',
+      'eslint',
+      '.',
+      '--config',
+      'eslint.config.mjs',
+    ])
+
+    expect(eslintResult.status).toBe(0)
+  })
 })
