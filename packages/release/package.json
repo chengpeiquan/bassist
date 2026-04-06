@@ -2,16 +2,26 @@
   "name": "@bassist/release",
   "version": "0.3.1",
   "description": "Simple GitHub release generator by @chengpeiquan , based on GitHub CLI.",
-  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/release",
-  "files": [
-    "dist"
+  "keywords": [
+    "generate release",
+    "github release",
+    "release",
+    "release generator"
   ],
+  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/release",
+  "license": "MIT",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chengpeiquan/bassist"
+  },
   "bin": {
     "@bassist/release": "./dist/index.mjs",
     "release": "./dist/index.mjs"
   },
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -22,16 +32,6 @@
       "require": "./dist/index.cjs"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chengpeiquan/bassist"
-  },
-  "keywords": [
-    "release",
-    "release generator",
-    "generate release",
-    "github release"
-  ],
   "scripts": {
     "build": "tsdown"
   },

@@ -9,7 +9,7 @@ import {
 } from 'vitest'
 import { sleep, debounce, throttle } from '..'
 
-const mockFn = vi.fn()
+const mockFn = vi.fn<(...args: unknown[]) => void>()
 
 function advanceTimersByTime(ms: number) {
   return new Promise((resolve) => {
@@ -76,12 +76,12 @@ describe('performance', () => {
   })
 
   describe('throttle', () => {
-    let testFunction: Mock
+    let testFunction: Mock<(...args: unknown[]) => void>
     let throttledFunction: (this: unknown, ...args: any) => void
 
     beforeEach(() => {
       vi.useFakeTimers()
-      testFunction = vi.fn()
+      testFunction = vi.fn<(...args: unknown[]) => void>()
       throttledFunction = throttle(testFunction, 1000)
     })
 

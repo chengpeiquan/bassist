@@ -1,3 +1,4 @@
+import process from 'node:process'
 import { createPrettierConfig } from './private-configs/prettier'
 import {
   createTailwindcssConfig,

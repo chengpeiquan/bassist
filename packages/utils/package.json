@@ -2,9 +2,17 @@
   "name": "@bassist/utils",
   "version": "0.17.0",
   "description": "Opinionated collection of common JavaScript / TypeScript utils by @chengpeiquan .",
-  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
-  "license": "MIT",
+  "keywords": [
+    "utils"
+  ],
   "homepage": "https://jsdocs.io/package/@bassist/utils",
+  "license": "MIT",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chengpeiquan/bassist",
+    "directory": "packages/utils"
+  },
   "files": [
     "dist"
   ],
@@ -18,14 +26,6 @@
       "require": "./dist/index.cjs"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chengpeiquan/bassist",
-    "directory": "packages/utils"
-  },
-  "keywords": [
-    "utils"
-  ],
   "scripts": {
     "build": "tsdown"
   }

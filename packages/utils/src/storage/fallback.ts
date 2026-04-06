@@ -67,7 +67,6 @@ export class FallbackStorage {
    */
   removeItem(key: string) {
     if (hasKey(this.data, key)) {
-      // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
       delete this.data[key]
     }
   }

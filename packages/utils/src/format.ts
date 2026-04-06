@@ -194,9 +194,9 @@ export function excludeFields(object: Record<string, any>, fields: string[]) {
   if (!isObject) return object
 
   const newObject: Record<string, any> = {}
-  for (const key in object) {
+  for (const [key, value] of Object.entries(object)) {
     if (hasKey(object, key) && !fields.includes(key)) {
-      newObject[key] = object[key]
+      newObject[key] = value
     }
   }
   return newObject

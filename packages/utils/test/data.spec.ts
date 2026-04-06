@@ -52,11 +52,11 @@ describe('isArray', () => {
 describe('isAsyncFunction', () => {
   it('Valid data', () => {
     expect(isAsyncFunction(async () => {})).toBeTruthy()
-    expect(isAsyncFunction(async function () {})).toBeTruthy()
+    expect(isAsyncFunction(async () => {})).toBeTruthy()
   })
   it('Invalid data', () => {
     expect(isAsyncFunction(new Function())).toBeFalsy()
-    expect(isAsyncFunction(function () {})).toBeFalsy()
+    expect(isAsyncFunction(() => {})).toBeFalsy()
     expect(isAsyncFunction(() => {})).toBeFalsy()
     expect(isAsyncFunction(Foo)).toBeFalsy()
     expect(isAsyncFunction(new Foo().bar)).toBeFalsy()
@@ -81,10 +81,10 @@ describe('isEven', () => {
 describe('isFunction', () => {
   it('Valid data', () => {
     expect(isFunction(new Function())).toBeTruthy()
-    expect(isFunction(function () {})).toBeTruthy()
+    expect(isFunction(() => {})).toBeTruthy()
     expect(isFunction(() => {})).toBeTruthy()
     expect(isFunction(async () => {})).toBeTruthy()
-    expect(isFunction(async function () {})).toBeTruthy()
+    expect(isFunction(async () => {})).toBeTruthy()
     expect(isFunction(Foo)).toBeTruthy()
     expect(isFunction(new Foo().bar)).toBeTruthy()
   })
@@ -129,7 +129,13 @@ describe('isObject', () => {
 
 describe('isPromise', () => {
   it('Valid data', () => {
-    expect(isPromise(new Promise<void>((r) => r()))).toBeTruthy()
+    expect(
+      isPromise(
+        new Promise<void>((resolve) => {
+          resolve()
+        }),
+      ),
+    ).toBeTruthy()
     expect(isPromise(Promise.resolve())).toBeTruthy()
     expect(isPromise((async () => {})())).toBeTruthy()
   })

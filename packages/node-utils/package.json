@@ -2,9 +2,22 @@
   "name": "@bassist/node-utils",
   "version": "0.5.0",
   "description": "Opinionated collection of common Node.js utils by @chengpeiquan .",
-  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
-  "license": "MIT",
+  "keywords": [
+    "file system utils",
+    "file utils",
+    "fs extra",
+    "fs utils",
+    "node utils",
+    "utils"
+  ],
   "homepage": "https://jsdocs.io/package/@bassist/node-utils",
+  "license": "MIT",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chengpeiquan/bassist",
+    "directory": "packages/node-utils"
+  },
   "files": [
     "dist"
   ],
@@ -18,19 +31,6 @@
       "require": "./dist/index.cjs"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chengpeiquan/bassist",
-    "directory": "packages/node-utils"
-  },
-  "keywords": [
-    "utils",
-    "node utils",
-    "file system utils",
-    "file utils",
-    "fs utils",
-    "fs extra"
-  ],
   "scripts": {
     "build": "tsdown"
   },
