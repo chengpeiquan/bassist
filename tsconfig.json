@@ -16,7 +16,7 @@
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
     "declaration": true
   },
-  "include": ["packages/**/*", "scripts/**/*", "eslint.config.ts"],
+  "include": ["packages/**/*", "scripts/**/*", "eslint.config.js"],
   "exclude": [
     "node_modules",
     "packages/**/dist",
