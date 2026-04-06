@@ -1,25 +1,10 @@
-import {
-  createGetConfigNameFactory,
-  defineFlatConfig,
-  imports,
-  markdown,
-  node,
-  typescript,
-} from './packages/eslint-config/src'
+import { defineEslintConfig, eslintPresets } from '@bassist/oxc-integration'
 
-const getConfigName = createGetConfigNameFactory('@bassist/monorepo')
-
-export default defineFlatConfig(
-  [
-    ...imports,
-    ...typescript,
-    ...markdown,
-    ...node,
-
-    {
-      name: getConfigName('ignore'),
-      ignores: ['**/dist/**', '**/.build/**', '**/CHANGELOG.md'],
-    },
-  ],
-  { tailwindcssEnabled: false },
+export default defineEslintConfig(
+  eslintPresets.node(),
+  eslintPresets.vitest(),
+  {
+    name: '@bassist/monorepo/ignore',
+    ignores: ['**/dist/**', '**/.build/**', '**/CHANGELOG.md'],
+  },
 )

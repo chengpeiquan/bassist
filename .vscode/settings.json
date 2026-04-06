@@ -5,6 +5,7 @@
     "apos",
     "Attributify",
     "baiduboxapp",
+    "bunx",
     "callees",
     "codemirror",
     "commitlint",
@@ -20,6 +21,8 @@
     "mqqbrowser",
     "nprogress",
     "nuxt",
+    "Oxfmt",
+    "Oxlint",
     "pnoop",
     "qqbrowser",
     "qzone",
@@ -38,7 +41,7 @@
     ".env": ".env.*",
     "tsconfig.json": "tsconfig.*.json, env.d.ts",
     "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
-    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .prettier*, prettier*, .editorconfig, postcss.config.js, tailwind.config.ts, tailwind.whitelist.js, turbo.json, commitlint.config.js"
+    "package.json": "package-lock.json, pnpm*, bun.*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .oxfmt*, oxfmt*, .prettier*, prettier*, .editorconfig, postcss.config.js, tailwind.config.ts, tailwind.whitelist.js, turbo.json, commitlint.config.js"
   },
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
