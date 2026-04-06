@@ -1,0 +1,71 @@
+{
+  "name": "@bassist/oxc-integration",
+  "version": "0.1.0",
+  "description": "An Oxc-first lint and format integration preset by @chengpeiquan .",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/oxc-integration",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chengpeiquan/bassist",
+    "directory": "packages/oxc-integration"
+  },
+  "keywords": [
+    "oxc",
+    "oxlint",
+    "oxfmt"
+  ],
+  "dependencies": {
+    "@bassist/eslint-config": "workspace:*",
+    "eslint-plugin-oxlint": "^1.58.0",
+    "@vitest/eslint-plugin": "^1.6.14",
+    "eslint-plugin-n": "^17.24.0"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/parser": ">=8.0.0",
+    "eslint": ">=10.0.0",
+    "eslint-plugin-vue": ">=10.0.0",
+    "oxfmt": ">=0.42.0",
+    "oxlint": ">=1.57.0",
+    "vue-eslint-parser": ">=10.0.0",
+    "eslint-plugin-n": ">=17.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@typescript-eslint/parser": {
+      "optional": true
+    },
+    "eslint": {
+      "optional": true
+    },
+    "eslint-plugin-vue": {
+      "optional": true
+    },
+    "vue-eslint-parser": {
+      "optional": true
+    },
+    "eslint-plugin-n": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "tsdown"
+  },
+  "devDependencies": {
+    "oxfmt": "^0.43.0",
+    "oxlint": "^1.58.0"
+  },
+  "type": "module"
+}
