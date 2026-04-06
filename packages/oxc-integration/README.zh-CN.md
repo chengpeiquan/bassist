@@ -1,5 +1,20 @@
 # @bassist/oxc-integration
 
+<p>
+  <a href='https://www.npmjs.com/package/@bassist/oxc-integration'>
+    <img src="https://img.shields.io/npm/v/@bassist/oxc-integration?color=f43f5e&label=npm" />
+  </a>
+  <a href="https://www.npmjs.com/package/@bassist/oxc-integration" target="__blank">
+    <img src="https://img.shields.io/npm/dy/@bassist/oxc-integration?color=f43f5e&label=downloads" />
+  </a>
+  <a href="https://github.com/chengpeiquan/bassist/tree/main/packages/oxc-integration" target="__blank">
+    <img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20demos&color=f43f5e" />
+  </a>
+  <a href="https://github.com/chengpeiquan/bassist" target="__blank">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/chengpeiquan/bassist?style=social" />
+  </a>
+</p>
+
 [English](./README.md) | 简体中文
 
 `@bassist/oxc-integration` 是一个 Oxc 优先的工作流包，适合希望现在就用上带类型提示的 `oxlint.config.ts` 与 `oxfmt.config.ts`，同时在 Oxc 能力尚未完全覆盖时保留 ESLint 兜底能力的项目。

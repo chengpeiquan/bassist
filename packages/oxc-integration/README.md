@@ -1,5 +1,20 @@
 # @bassist/oxc-integration
 
+<p>
+  <a href='https://www.npmjs.com/package/@bassist/oxc-integration'>
+    <img src="https://img.shields.io/npm/v/@bassist/oxc-integration?color=f43f5e&label=npm" />
+  </a>
+  <a href="https://www.npmjs.com/package/@bassist/oxc-integration" target="__blank">
+    <img src="https://img.shields.io/npm/dy/@bassist/oxc-integration?color=f43f5e&label=downloads" />
+  </a>
+  <a href="https://github.com/chengpeiquan/bassist/tree/main/packages/oxc-integration" target="__blank">
+    <img src="https://img.shields.io/static/v1?label=&message=docs%20%26%20demos&color=f43f5e" />
+  </a>
+  <a href="https://github.com/chengpeiquan/bassist" target="__blank">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/chengpeiquan/bassist?style=social" />
+  </a>
+</p>
+
 English | [简体中文](./README.zh-CN.md)
 
 `@bassist/oxc-integration` is an Oxc-first workflow package for projects that want typed `oxlint.config.ts` and `oxfmt.config.ts` setups today, while still keeping an ESLint fallback available where framework coverage is not yet enough.

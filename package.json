@@ -10,7 +10,7 @@
   ],
   "type": "module",
   "scripts": {
-    "prepare": "husky install",
+    "prepare": "husky",
     "build": "turbo run build",
     "build:lib": "bun ./scripts/build.ts",
     "pkg:publish": "bun ./scripts/publish.ts",
