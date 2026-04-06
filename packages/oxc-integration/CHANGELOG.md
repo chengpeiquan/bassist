@@ -5,7 +5,6 @@
 
 * **oxc-integration:** add standalone Markdown ESLint fallback preset and update documentation ([8753420](https://github.com/chengpeiquan/bassist/commit/8753420f044393aee53ddc9cc8e917eacc5188e0))
 * **oxc-integration:** add Tailwind CSS ESLint fallback support ([f5a218f](https://github.com/chengpeiquan/bassist/commit/f5a218fe736160d61727e745c9082e95373f9f62))
-* **oxc-integration:** build oxc-first workflow package ([1ff4750](https://github.com/chengpeiquan/bassist/commit/1ff4750389d5d86c9017a77ef5fd157339b21c6c))
 
 
 
