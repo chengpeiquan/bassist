@@ -6,6 +6,7 @@ import {
   next,
   node,
   react,
+  type TailwindcssSettings,
   typescript,
   vue,
   type FlatESLintConfig,
@@ -41,6 +42,14 @@ const createFallbackConfig = (configs: FlatESLintConfig[]) =>
   defineFlatConfig(configs, {
     prettierEnabled: false,
     tailwindcssEnabled: false,
+  })
+
+const createTailwindcssFallbackConfig = (
+  settings?: TailwindcssSettings,
+): FlatESLintConfig[] =>
+  defineFlatConfig([], {
+    prettierEnabled: false,
+    tailwindcssSettings: settings,
   })
 
 export const base = (): FlatESLintConfig[] =>
@@ -94,6 +103,10 @@ export const nextFallback = (): FlatESLintConfig[] =>
     'flat/nextjs',
   ])
 
+export const tailwindcssFallback = (
+  settings?: TailwindcssSettings,
+): FlatESLintConfig[] => createTailwindcssFallbackConfig(settings)
+
 export const vitestFallback = (): FlatESLintConfig[] =>
   withOxlintDedupe(
     createFallbackConfig([
@@ -119,6 +132,7 @@ export const eslintPresets = {
   jsx: jsxFallback,
   next: nextFallback,
   react: reactFallback,
+  tailwindcss: tailwindcssFallback,
   typescript: typescriptFallback,
   vitest: vitestFallback,
   vue: vueFallback,

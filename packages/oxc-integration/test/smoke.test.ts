@@ -51,6 +51,11 @@ describe('@bassist/oxc-integration', () => {
 
   test('exports fallback presets with oxlint dedupe', () => {
     const reactConfig = defineEslintConfig(eslintPresets.react())
+    const tailwindConfig = defineEslintConfig(
+      eslintPresets.tailwindcss({
+        config: './configs/tailwind.config.js',
+      }),
+    )
     const vueConfig = defineEslintConfig(eslintPresets.vue())
     const importsConfig = defineEslintConfig(eslintPresets.imports())
     const nextConfig = defineEslintConfig(eslintPresets.next())
@@ -74,6 +79,19 @@ describe('@bassist/oxc-integration', () => {
     expect(
       vitestConfig.some((item) => item.name?.includes('vitest/recommended')),
     ).toBe(true)
+    expect(
+      tailwindConfig.some((item) => item.name === 'tailwindcss:base'),
+    ).toBe(true)
+    expect(
+      tailwindConfig.some((item) => item.name === 'tailwindcss:rules'),
+    ).toBe(true)
+    expect(
+      tailwindConfig.some(
+        (item) =>
+          item.name === 'bassist/tailwindcss/settings' &&
+          item.settings?.tailwindcss?.config === './configs/tailwind.config.js',
+      ),
+    ).toBe(true)
   })
 
   test('README explains workflow and fallback coverage', () => {
@@ -86,6 +104,7 @@ describe('@bassist/oxc-integration', () => {
     expect(readme).toContain('jsx')
     expect(readme).toContain('imports')
     expect(readme).toContain('react')
+    expect(readme).toContain('tailwindcss')
     expect(readme).toContain('vue')
     expect(readme).toContain('next')
     expect(readme).toContain('vitest')
@@ -101,6 +120,7 @@ describe('@bassist/oxc-integration', () => {
     expect(readme).toContain('jsx')
     expect(readme).toContain('imports')
     expect(readme).toContain('react')
+    expect(readme).toContain('tailwindcss')
     expect(readme).toContain('vue')
     expect(readme).toContain('next')
     expect(readme).toContain('vitest')

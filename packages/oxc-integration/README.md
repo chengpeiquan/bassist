@@ -69,6 +69,7 @@ In practice:
 - `react`: Oxlint-first works well, but ESLint fallback is still useful in many projects
 - `vue`: keep ESLint fallback by default
 - `next`: keep ESLint fallback by default
+- `tailwindcss`: add ESLint fallback when your project uses Tailwind CSS utility classes
 - `vitest`: add ESLint fallback when you want test-specific rules beyond Oxlint
 
 ## Built-in Fallback Coverage
@@ -80,6 +81,7 @@ Current built-in ESLint fallback presets provided by `@bassist/oxc-integration`:
 - `jsx`
 - `imports`
 - `react`
+- `tailwindcss`
 - `vue`
 - `next`
 - `vitest`
@@ -184,12 +186,14 @@ import { defineEslintConfig, eslintPresets } from '@bassist/oxc-integration'
 export default defineEslintConfig(
   eslintPresets.imports(),
   eslintPresets.react(),
+  eslintPresets.tailwindcss(),
   eslintPresets.vitest(),
 )
 ```
 
 For Vue projects, switch `react()` to `vue()`.
 For Next projects, use `next()`.
+Add `tailwindcss()` only when the project actually uses Tailwind CSS.
 
 ## Oxfmt Quick Start
 
