@@ -36,6 +36,22 @@ npm i -D oxlint oxfmt @bassist/oxc-integration
 
 If your project needs ESLint fallback, install the framework-specific ESLint packages too.
 
+## Editor Setup
+
+`oxlint` / `eslint` CLI checks and editor diagnostics are not the same thing.
+
+If you want in-editor Oxc lint feedback while coding, install an Oxc editor
+extension too. Otherwise you may only discover some issues when running the
+lint command in the terminal, even though the editor showed no warning.
+
+- VS Code / Cursor: install the official `oxc.oxc-vscode` extension
+- Other editors: follow the official Oxc editor setup guide
+
+See the official docs: https://oxc.rs/docs/guide/usage/linter/editors.html
+
+Oxc editor extensions use `oxlint --lsp` from your project, so make sure
+`oxlint` is installed locally in `devDependencies`.
+
 ## Positioning
 
 - Use `@bassist/eslint-config` when you want the current stable ESLint-first mainline.
