@@ -2,9 +2,18 @@
   "name": "@bassist/eslint-config",
   "version": "0.4.0",
   "description": "A modern flat ESLint configuration for ESLint, crafted by @chengpeiquan .",
-  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
-  "license": "MIT",
+  "keywords": [
+    "eslint",
+    "eslint config",
+    "eslint flat config"
+  ],
   "homepage": "https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/README.md",
+  "license": "MIT",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chengpeiquan/bassist"
+  },
   "files": [
     "dist"
   ],
@@ -34,25 +43,8 @@
       "require": "./dist/index.cjs"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chengpeiquan/bassist"
-  },
-  "keywords": [
-    "eslint",
-    "eslint config",
-    "eslint flat config"
-  ],
   "scripts": {
     "build": "tsdown"
-  },
-  "devDependencies": {
-    "@lint-md/core": "^2.0.0",
-    "@types/eslint-config-prettier": "^6.11.3",
-    "@types/eslint-plugin-tailwindcss": "^3.17.0",
-    "eslint": "^10.2.0",
-    "prettier": "^3.6.2",
-    "typescript": ">=6.0.2 <6.1.0"
   },
   "dependencies": {
     "@eslint/js": "^10.0.1",
@@ -75,6 +67,14 @@
     "prettier-plugin-jsdoc": "^1.3.3",
     "prettier-plugin-lint-md": "^1.0.1",
     "vue-eslint-parser": "^10.4.0"
+  },
+  "devDependencies": {
+    "@lint-md/core": "^2.0.0",
+    "@types/eslint-config-prettier": "^6.11.3",
+    "@types/eslint-plugin-tailwindcss": "^3.17.0",
+    "eslint": "^10.2.0",
+    "prettier": "^3.6.2",
+    "typescript": ">=6.0.2 <6.1.0"
   },
   "peerDependencies": {
     "eslint": ">=9.0.0 <11.0.0",

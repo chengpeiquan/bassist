@@ -2,9 +2,18 @@
   "name": "@bassist/progress",
   "version": "0.2.2",
   "description": "Simple slim progress bars base on NProgress.",
-  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
-  "license": "MIT",
+  "keywords": [
+    "nprogress",
+    "progress",
+    "progress bar"
+  ],
   "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/progress",
+  "license": "MIT",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengpeiquan/bassist.git"
+  },
   "files": [
     "dist"
   ],
@@ -18,15 +27,6 @@
       "require": "./dist/index.cjs"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chengpeiquan/bassist.git"
-  },
-  "keywords": [
-    "nprogress",
-    "progress",
-    "progress bar"
-  ],
   "scripts": {
     "build": "tsdown"
   },

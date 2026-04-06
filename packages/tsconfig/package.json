@@ -2,20 +2,20 @@
   "name": "@bassist/tsconfig",
   "version": "0.1.1",
   "description": "Some TSConfig files for working with TypeScript projects by @chengpeiquan .",
-  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
-  "license": "MIT",
+  "keywords": [
+    "tsconfig"
+  ],
   "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/tsconfig",
+  "license": "MIT",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengpeiquan/bassist.git"
+  },
   "files": [
     "base.json",
     "web.json",
     "node.json"
   ],
-  "main": "./base.json",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chengpeiquan/bassist.git"
-  },
-  "keywords": [
-    "tsconfig"
-  ]
+  "main": "./base.json"
 }

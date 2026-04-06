@@ -39,7 +39,8 @@ export class ClipboardInstance {
   async copy(el: CopyableElement) {
     if (!this.isSupported) return false
     const clipText = el.innerText || (el as WritableElement).value
-    return await this.write(clipText)
+    const isOk = await this.write(clipText)
+    return isOk
   }
 
   /**

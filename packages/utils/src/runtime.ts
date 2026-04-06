@@ -13,6 +13,7 @@ export type RuntimeEnv = 'dev' | 'development' | 'test' | 'prod' | 'production'
  */
 export function getRuntimeEnv() {
   try {
+    // eslint-disable-next-line n/prefer-global/process
     return process.env.NODE_ENV as RuntimeEnv
   } catch {
     return undefined
@@ -34,6 +35,7 @@ export const runtimeEnv = getRuntimeEnv()
  */
 export function checkRuntimeEnv(runtimeEnv: unknown): runtimeEnv is RuntimeEnv {
   try {
+    // eslint-disable-next-line n/prefer-global/process
     return process.env.NODE_ENV === runtimeEnv
   } catch {
     return false

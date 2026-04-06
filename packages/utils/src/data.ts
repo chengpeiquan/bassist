@@ -378,7 +378,7 @@ export type NoOperationFunction = (...args: any) => void
  *
  * @category Data
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+
 export const noop: NoOperationFunction = (..._args) => void 0
 
 /**
@@ -393,6 +393,5 @@ export type PromisifyNoOperationFunction = (...args: any) => Promise<void>
  *
  * @category Data
  */
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const pnoop: PromisifyNoOperationFunction = (..._args) =>
   new Promise<void>((r) => r())

@@ -1,4 +1,5 @@
 import { execSync } from 'node:child_process'
+import process from 'node:process'
 import minimist from '@withtypes/minimist'
 import pkg from '../package.json'
 

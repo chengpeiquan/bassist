@@ -2,9 +2,19 @@
   "name": "@bassist/build-config",
   "version": "0.2.0",
   "description": "Opinionated collection of common build config by @chengpeiquan .",
-  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
-  "license": "MIT",
+  "keywords": [
+    "build config",
+    "tsdown config",
+    "tsup config"
+  ],
   "homepage": "https://jsdocs.io/package/@bassist/build-config",
+  "license": "MIT",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/chengpeiquan/bassist",
+    "directory": "packages/build-config"
+  },
   "files": [
     "dist"
   ],
@@ -20,16 +30,6 @@
       "require": "./dist/tsup.cjs"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/chengpeiquan/bassist",
-    "directory": "packages/build-config"
-  },
-  "keywords": [
-    "build config",
-    "tsdown config",
-    "tsup config"
-  ],
   "scripts": {
     "build": "tsdown"
   },

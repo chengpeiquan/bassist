@@ -1,5 +1,6 @@
 import { execSync } from 'node:child_process'
 import { resolve } from 'node:path'
+import process from 'node:process'
 import { fse } from '@bassist/node-utils'
 import minimist from '@withtypes/minimist'
 import pkg from '../package.json'

@@ -2,16 +2,26 @@
   "name": "@bassist/changelog",
   "version": "0.3.0",
   "description": "Simple CHANGELOG generator by @chengpeiquan , based on conventional-changelog-cli.",
-  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
-  "license": "MIT",
-  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/changelog",
-  "files": [
-    "dist"
+  "keywords": [
+    "CHANGELOG.md",
+    "changelog",
+    "changelog generator",
+    "generate changelog"
   ],
+  "homepage": "https://github.com/chengpeiquan/bassist/tree/main/packages/changelog",
+  "license": "MIT",
+  "author": "chengpeiquan <chengpeiquan@chengpeiquan.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chengpeiquan/bassist.git"
+  },
   "bin": {
     "@bassist/changelog": "./dist/index.mjs",
     "changelog": "./dist/index.mjs"
   },
+  "files": [
+    "dist"
+  ],
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
@@ -22,16 +32,6 @@
       "require": "./dist/index.cjs"
     }
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/chengpeiquan/bassist.git"
-  },
-  "keywords": [
-    "changelog",
-    "changelog generator",
-    "generate changelog",
-    "CHANGELOG.md"
-  ],
   "scripts": {
     "build": "tsdown"
   },

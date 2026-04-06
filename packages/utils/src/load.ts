@@ -127,7 +127,6 @@ export function jsonp<T>(url: string, callback?: string) {
     window[cb] = (data: T) => {
       try {
         // @ts-expect-error
-        // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
         delete window[cb]
       } catch {
         // @ts-expect-error
@@ -157,7 +156,7 @@ export function jsonp<T>(url: string, callback?: string) {
 export function concurrentLoadImages(images: string[]) {
   const promises = []
 
-  for (const path in images) {
+  for (const path of images) {
     promises.push(
       new Promise((resolve, reject) => {
         const img = new Image()
@@ -177,7 +176,7 @@ export function concurrentLoadImages(images: string[]) {
  * @category Network
  */
 export async function serialLoadImages(images: string[]) {
-  for (const path in images) {
+  for (const path of images) {
     await concurrentLoadImages([path])
   }
 }
