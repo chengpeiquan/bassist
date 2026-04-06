@@ -80,6 +80,7 @@ npm i -D oxlint oxfmt @bassist/oxc-integration
 - `typescript`
 - `jsx`
 - `imports`
+- `markdown`
 - `react`
 - `tailwindcss`
 - `vue`
@@ -88,7 +89,6 @@ npm i -D oxlint oxfmt @bassist/oxc-integration
 
 当前暂不纳入这个 Oxc-first 工作流范围的内容：
 
-- `markdown`
 - `lint-md`
 - 基于 Prettier 的 Markdown 内容工作流
 
@@ -194,6 +194,18 @@ export default defineEslintConfig(
 如果是 Vue 项目，把 `react()` 换成 `vue()` 即可。
 如果是 Next 项目，请使用 `next()`。
 只有项目真的在使用 Tailwind CSS 时，才需要再加上 `tailwindcss()`。
+
+### Markdown 内容 lint
+
+```js
+// eslint.config.js
+import { defineEslintConfig, eslintPresets } from '@bassist/oxc-integration'
+
+export default defineEslintConfig(eslintPresets.markdown())
+```
+
+如果你只想为 Markdown 文件开启独立的 lint 行为，而不希望把它并入
+`lint-md` 或基于 Prettier 的内容工作流，可以使用 `markdown()`。
 
 ## Oxfmt 快速开始
 
