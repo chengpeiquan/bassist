@@ -1,0 +1,225 @@
+# @bassist/oxc-integration
+
+English | [简体中文](./README.zh-CN.md)
+
+`@bassist/oxc-integration` is an Oxc-first workflow package for projects that want typed `oxlint.config.ts` and `oxfmt.config.ts` setups today, while still keeping an ESLint fallback available where framework coverage is not yet enough.
+
+## Usage
+
+Using this package usually follows four steps:
+
+1. Install dependencies (See: [Install](#install))
+2. Add `oxlint.config.ts` (See: [Oxlint Quick Start](#oxlint-quick-start))
+3. Add `oxfmt.config.ts` (See: [Oxfmt Quick Start](#oxfmt-quick-start))
+4. Add `eslint.config.js` only when your project needs fallback coverage (See: [ESLint Fallback Quick Start](#eslint-fallback-quick-start))
+
+## Install
+
+```sh
+npm i -D oxlint oxfmt @bassist/oxc-integration
+```
+
+If your project needs ESLint fallback, install the framework-specific ESLint packages too.
+
+## Positioning
+
+- Use `@bassist/eslint-config` when you want the current stable ESLint-first mainline.
+- Use `@bassist/oxc-integration` when you want an Oxc-first workflow package.
+- Treat this package as the transition path toward a future `@bassist/oxc-config`.
+
+## How It Works
+
+`@bassist/oxc-integration` uses an Oxc-first workflow:
+
+- `oxlint` is the primary linter
+- `eslint` is the fallback linter for rules not fully covered by Oxc yet
+- `oxfmt` is the primary formatter
+
+This is why some projects still keep both `oxlint.config.ts` and `eslint.config.js`.
+They are not two equal lint entrypoints anymore:
+
+- `oxlint.config.ts` is the main lint config
+- `eslint.config.js` is the fallback config
+
+Inside the fallback presets, `eslint-plugin-oxlint` is applied to disable overlapping ESLint rules that Oxlint already covers.
+
+## When You Need ESLint Fallback
+
+Use only `oxlint.config.ts` when Oxc already covers your project well enough.
+Add `eslint.config.js` when your project still needs ecosystem-specific ESLint coverage.
+
+In practice:
+
+- `base` / `node`: often Oxlint-only is enough
+- `react`: Oxlint-first works well, but ESLint fallback is still useful in many projects
+- `vue`: keep ESLint fallback by default
+- `next`: keep ESLint fallback by default
+- `vitest`: add ESLint fallback when you want test-specific rules beyond Oxlint
+
+## Built-in Fallback Coverage
+
+Current built-in ESLint fallback presets provided by `@bassist/oxc-integration`:
+
+- `javascript`
+- `typescript`
+- `jsx`
+- `imports`
+- `react`
+- `vue`
+- `next`
+- `vitest`
+
+Current out-of-scope area for this Oxc-first workflow:
+
+- `markdown`
+- `lint-md`
+- Prettier-based Markdown content workflows
+
+These can be revisited later as a separate content-layer workflow.
+
+## Config Overview
+
+| Project Type | `oxlint.config.ts` | `eslint.config.js` | `oxfmt.config.ts` |
+| ------------ | ------------------ | ------------------ | ----------------- |
+| Base TS/JS   | required           | optional           | required          |
+| Node         | required           | optional           | required          |
+| React        | required           | recommended        | required          |
+| Vue          | required           | recommended        | required          |
+| Next         | required           | recommended        | required          |
+
+## Oxlint Quick Start
+
+### Base TS/JS
+
+```ts
+// oxlint.config.ts
+import { defineOxlintConfig, oxlintPresets } from '@bassist/oxc-integration'
+
+export default defineOxlintConfig(oxlintPresets.base())
+```
+
+### React
+
+```ts
+// oxlint.config.ts
+import { defineOxlintConfig, oxlintPresets } from '@bassist/oxc-integration'
+
+export default defineOxlintConfig(oxlintPresets.react(), oxlintPresets.vitest())
+```
+
+### Vue
+
+```ts
+// oxlint.config.ts
+import { defineOxlintConfig, oxlintPresets } from '@bassist/oxc-integration'
+
+export default defineOxlintConfig(oxlintPresets.vue(), oxlintPresets.vitest())
+```
+
+If you need official `oxlint` types, import them directly from `oxlint` instead of from this package.
+
+## Built-in Oxlint Defaults
+
+`oxlintPresets.base()` is not an empty shell. It already enables the shared Oxc baseline used by this package.
+
+Current built-in defaults include:
+
+- plugins: `typescript`, `oxc`
+- categories:
+  - `correctness: error`
+  - `suspicious: error`
+  - `pedantic: warn`
+  - `style: off`
+- base override:
+  - `typescript/no-explicit-any: off`
+
+Then higher-level presets extend that baseline:
+
+- `oxlintPresets.node()` adds Node runtime env
+- `oxlintPresets.react()` adds `react`, `react-perf`, `jsx-a11y`
+- `oxlintPresets.vue()` adds `vue`
+- `oxlintPresets.vitest()` adds `vitest`
+
+## Extending Oxlint Presets
+
+Use the built-in defaults first, then pass extra config only for project-specific overrides.
+
+```ts
+// oxlint.config.ts
+import { defineOxlintConfig, oxlintPresets } from '@bassist/oxc-integration'
+
+export default defineOxlintConfig(oxlintPresets.react(), {
+  rules: {
+    'no-console': 'warn',
+  },
+  ignorePatterns: ['fixtures/**'],
+})
+```
+
+Think of the presets as the default baseline, and the extra object as the per-project extension layer.
+
+## ESLint Fallback Quick Start
+
+### Vue / Next / complex React projects
+
+```js
+// eslint.config.js
+import { defineEslintConfig, eslintPresets } from '@bassist/oxc-integration'
+
+export default defineEslintConfig(
+  eslintPresets.imports(),
+  eslintPresets.react(),
+  eslintPresets.vitest(),
+)
+```
+
+For Vue projects, switch `react()` to `vue()`.
+For Next projects, use `next()`.
+
+## Oxfmt Quick Start
+
+Prefer a typed `oxfmt.config.ts` file so the config shape stays aligned with the official formatter API.
+
+```ts
+// oxfmt.config.ts
+import { defineConfig } from 'oxfmt'
+import { oxfmtConfig } from '@bassist/oxc-integration'
+
+export default defineConfig(oxfmtConfig)
+```
+
+If you want to override the defaults:
+
+```ts
+// oxfmt.config.ts
+import { defineConfig } from 'oxfmt'
+import { getOxfmtConfig } from '@bassist/oxc-integration'
+
+export default defineConfig(
+  getOxfmtConfig({
+    semi: true,
+  }),
+)
+```
+
+`oxfmt .` will automatically discover `oxfmt.config.ts`, so you usually do not need to pass a config path explicitly.
+
+If you need official formatter types, import them directly from `oxfmt` instead of from this package.
+
+## Recommended Scripts
+
+```json
+{
+  "scripts": {
+    "lint": "oxlint .",
+    "lint:eslint": "eslint .",
+    "lint:full": "npm run lint && npm run lint:eslint",
+    "format": "oxfmt ."
+  }
+}
+```
+
+Recommended usage:
+
+- start with `lint` for `base` / `node`
+- use `lint:full` for `vue`, `next`, and more complex `react` projects
