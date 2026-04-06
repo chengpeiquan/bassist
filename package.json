@@ -11,18 +11,20 @@
     "packages/*"
   ],
   "scripts": {
+    "prepare": "husky install",
     "build": "turbo run build",
     "build:lib": "bun ./scripts/build.ts",
     "pkg:publish": "bun ./scripts/publish.ts",
     "pkg:changelog": "bun ./scripts/changelog.cts",
     "test": "vitest",
-    "lint": "bunx --bun eslint packages --ext .js,.ts,.jsx,.tsx,.md",
+    "lint": "bun run lint:oxlint && bun run lint:eslint",
+    "lint:oxlint": "oxlint .",
+    "lint:eslint": "bunx --bun eslint .",
     "lint:inspector": "bunx @eslint/config-inspector",
     "verify:eslint-v10": "bun ./packages/eslint-config/scripts/verify-eslint-v10.ts",
-    "format": "prettier --write packages",
-    "up": "bunx taze minor -r -f -w -i",
-    "backup": "git add . && git commit -m \"chore: backup\" && git push",
-    "prepare": "husky install"
+    "format": "oxfmt .",
+    "format:prettier": "prettier --write packages",
+    "up": "bunx taze minor -r -f -w -i"
   },
   "dependencies": {
     "nprogress": "^0.2.0"
@@ -67,7 +69,11 @@
     "turbo": "^2.5.5",
     "typescript": ">=6.0.2 <6.1.0",
     "vitest": "^3.2.4",
-    "vue-eslint-parser": "^10.4.0"
+    "vue-eslint-parser": "^10.4.0",
+    "@bassist/oxc-integration": "workspace:*",
+    "oxfmt": "^0.43.0",
+    "oxlint": "^1.58.0",
+    "eslint-plugin-oxlint": "^1.58.0"
   },
   "lint-staged": {
     "*.{js,jsx,md,ts,tsx}": [

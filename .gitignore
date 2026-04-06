@@ -34,6 +34,7 @@ pnpm-debug.log*
 
 # Agentic documentation
 docs/plans
+.tmp-*
 
 # others
 .nyc_output
