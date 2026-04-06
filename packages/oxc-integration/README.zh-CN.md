@@ -36,6 +36,21 @@ npm i -D oxlint oxfmt @bassist/oxc-integration
 
 如果你的项目需要 ESLint fallback，请再安装对应框架所需的 ESLint 生态依赖。
 
+## 编辑器设置
+
+`oxlint` / `eslint` 的 CLI 检查结果，与编辑器里的实时诊断并不是同一件事。
+
+如果你希望在编码过程中就获得 Oxc 的实时 lint 提示，还需要额外安装对应的编辑器插件。否则就可能出现“执行 lint 命令时能查出错误，但编辑器里没有任何
+提示”的情况。
+
+- VS Code / Cursor：安装官方 `oxc.oxc-vscode` 扩展
+- 其他编辑器：参考 Oxc 官方的编辑器接入文档
+
+官方文档： https://oxc.rs/docs/guide/usage/linter/editors.html
+
+Oxc 的编辑器扩展会通过项目本地的 `oxlint --lsp` 工作，因此也请确保项目的
+`devDependencies` 里已经安装了 `oxlint`。
+
 ## 定位
 
 - 如果你需要当前稳定、完整的 ESLint 优先方案，请使用 `@bassist/eslint-config`
