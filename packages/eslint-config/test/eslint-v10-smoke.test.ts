@@ -1,4 +1,5 @@
 import { spawnSync } from 'node:child_process'
+import { mkdirSync, rmSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
 import process from 'node:process'
 import { fileURLToPath } from 'node:url'
@@ -9,6 +10,10 @@ const repoRoot = resolve(testDir, '../../..')
 const fixtureDir = resolve(testDir, 'fixtures/basic')
 const fixtureConfigPath = resolve(fixtureDir, 'eslint.config.mjs')
 const fixtureSourcePath = resolve(fixtureDir, 'src/index.ts')
+const jsoncFixtureDir = resolve(testDir, 'fixtures/jsonc')
+const jsoncFixtureConfigPath = resolve(jsoncFixtureDir, 'eslint.config.mjs')
+const lockRoot = resolve(repoRoot, '.tmp-test-locks')
+const eslintDistLockDir = resolve(lockRoot, 'eslint-config-dist')
 const bunBin = process.platform === 'win32' ? 'bun.exe' : 'bun'
 
 const runCommand = (args: string[]) =>
@@ -17,26 +22,79 @@ const runCommand = (args: string[]) =>
     encoding: 'utf8',
   })
 
-const runEslint = () => {
-  const buildResult = runCommand([
-    'run',
-    '--filter',
-    '@bassist/eslint-config',
-    'build',
-  ])
+const sleep = (ms: number) => {
+  Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms)
+}
 
-  if (buildResult.status !== 0) {
-    return buildResult
+const withEslintDistLock = <T>(fn: () => T): T => {
+  mkdirSync(lockRoot, { recursive: true })
+
+  while (true) {
+    try {
+      mkdirSync(eslintDistLockDir)
+      break
+    } catch (error) {
+      if ((error as NodeJS.ErrnoException).code !== 'EEXIST') {
+        throw error
+      }
+
+      sleep(50)
+    }
   }
 
-  return runCommand([
-    'x',
-    'eslint',
-    '--no-config-lookup',
-    '--config',
-    fixtureConfigPath,
-    fixtureSourcePath,
-  ])
+  try {
+    return fn()
+  } finally {
+    rmSync(eslintDistLockDir, { recursive: true, force: true })
+  }
+}
+
+const runEslint = () => {
+  return withEslintDistLock(() => {
+    const buildResult = runCommand([
+      'run',
+      '--filter',
+      '@bassist/eslint-config',
+      'build',
+    ])
+
+    if (buildResult.status !== 0) {
+      return buildResult
+    }
+
+    return runCommand([
+      'x',
+      'eslint',
+      '--no-config-lookup',
+      '--config',
+      fixtureConfigPath,
+      fixtureSourcePath,
+    ])
+  })
+}
+
+const runEslintJsonc = () => {
+  return withEslintDistLock(() => {
+    const buildResult = runCommand([
+      'run',
+      '--filter',
+      '@bassist/eslint-config',
+      'build',
+    ])
+
+    if (buildResult.status !== 0) {
+      return buildResult
+    }
+
+    return runCommand([
+      'x',
+      'eslint',
+      '--no-config-lookup',
+      '--config',
+      jsoncFixtureConfigPath,
+      jsoncFixtureDir,
+    ])
+  })
 }
 
 describe('@bassist/eslint-config', () => {
@@ -52,5 +110,15 @@ describe('@bassist/eslint-config', () => {
 
     expect(result.status).toBe(0)
     expect(result.stderr).toBe('')
+  })
+
+  test('lints jsonc fixture with recursive sort-keys', () => {
+    const result = runEslintJsonc()
+
+    expect(result.status).toBe(1)
+    expect(result.stdout).toContain('jsonc/sort-keys')
+    expect(result.stdout).toContain('messages.jsonc')
+    expect(result.stdout).not.toContain('natural-order.jsonc')
+    expect(result.stdout).not.toContain('package.json')
   })
 })

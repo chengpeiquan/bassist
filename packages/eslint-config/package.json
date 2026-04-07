@@ -1,6 +1,6 @@
 {
   "name": "@bassist/eslint-config",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "description": "A modern flat ESLint configuration for ESLint, crafted by @chengpeiquan .",
   "keywords": [
     "eslint",
@@ -54,6 +54,7 @@
     "@typescript-eslint/parser": "^8.58.0",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import-x": "^4.16.2",
+    "eslint-plugin-jsonc": "^3.1.2",
     "eslint-plugin-n": "^17.24.0",
     "eslint-plugin-prettier": "^5.5.5",
     "eslint-plugin-react": "^7.37.5",
@@ -64,6 +65,7 @@
     "eslint-plugin-unicorn": "^64.0.0",
     "eslint-plugin-vue": "^10.8.0",
     "globals": "^17.4.0",
+    "jsonc-eslint-parser": "^3.1.0",
     "prettier-plugin-jsdoc": "^1.3.3",
     "prettier-plugin-lint-md": "^1.0.1",
     "vue-eslint-parser": "^10.4.0"
