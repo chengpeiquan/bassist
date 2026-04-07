@@ -1,3 +1,9 @@
+## [0.1.2](https://github.com/chengpeiquan/bassist/compare/oxc-integration@0.1.1...oxc-integration@0.1.2) (2026-04-07)
+
+
+### Features
+
+* **oxc-integration:** add JSONC fallback support ([e0bf920](https://github.com/chengpeiquan/bassist/commit/e0bf920c59a755ef5211b9f16c6de9d56c5a53b3))
 ## 0.1.1 (2026-04-06)
 
 

@@ -1,3 +1,9 @@
+## [0.4.1](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.4.0...eslint-config@0.4.1) (2026-04-07)
+
+
+### Features
+
+* **eslint-config:** add JSONC support with configuration ([841d9dd](https://github.com/chengpeiquan/bassist/commit/841d9ddb3ce8c8f8509e245954bb3807c43e3aa7))
 # [0.4.0](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.3.0...eslint-config@0.4.0) (2026-04-05)
 
 

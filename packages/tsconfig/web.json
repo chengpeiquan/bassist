@@ -1,8 +1,8 @@
 {
   "$schema": "https://json.schemastore.org/tsconfig",
-  "extends": "./base.json",
-  "display": "Web",
   "compilerOptions": {
     "lib": ["ESNext", "DOM", "DOM.Iterable"]
-  }
+  },
+  "display": "Web",
+  "extends": "./base.json"
 }

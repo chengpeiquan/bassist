@@ -1,27 +1,27 @@
 {
-  "extends": "./packages/tsconfig/base.json",
   "compilerOptions": {
-    "allowJs": true,
     "allowImportingTsExtensions": true,
-    "noEmit": true,
-    "importHelpers": true,
+    "allowJs": true,
+    "declaration": true,
     "experimentalDecorators": true,
-    "rootDir": ".",
+    "importHelpers": true,
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "noEmit": true,
     "outDir": "./**/dist",
     "paths": {
       "@packages/*": ["./packages/*"],
       "@scripts/*": ["./scripts/*"]
     },
-    "types": ["node"],
-    "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "declaration": true
+    "rootDir": ".",
+    "types": ["node"]
   },
-  "include": ["packages/**/*", "scripts/**/*", "eslint.config.js"],
   "exclude": [
     "node_modules",
     "packages/**/dist",
     "packages/**/lib",
     "packages/**/types",
     "packages/**/.build"
-  ]
+  ],
+  "extends": "./packages/tsconfig/base.json",
+  "include": ["packages/**/*", "scripts/**/*", "eslint.config.js"]
 }

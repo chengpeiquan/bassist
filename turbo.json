@@ -1,29 +1,42 @@
 {
   "$schema": "https://turbo.build/schema.json",
-  "ui": "tui",
   "tasks": {
     "build": {
-      "dependsOn": ["^build"],
-      "inputs": ["$TURBO_DEFAULT$", ".env*"],
-      "outputs": ["dist"],
-      "outputLogs": "full"
-    },
-    "lint": {
-      "dependsOn": ["^lint"],
-      "outputLogs": "full"
-    },
-    "verify:eslint-v10": {
-      "dependsOn": ["^build"],
-      "outputLogs": "full"
+      "dependsOn": [
+        "^build"
+      ],
+      "inputs": [
+        "$TURBO_DEFAULT$",
+        ".env*"
+      ],
+      "outputLogs": "full",
+      "outputs": [
+        "dist"
+      ]
     },
     "check-types": {
-      "dependsOn": ["^check-types"],
+      "dependsOn": [
+        "^check-types"
+      ],
       "outputLogs": "full"
     },
     "dev": {
       "cache": false,
-      "persistent": true,
+      "outputLogs": "full",
+      "persistent": true
+    },
+    "lint": {
+      "dependsOn": [
+        "^lint"
+      ],
+      "outputLogs": "full"
+    },
+    "verify:eslint-v10": {
+      "dependsOn": [
+        "^build"
+      ],
       "outputLogs": "full"
     }
-  }
+  },
+  "ui": "tui"
 }
