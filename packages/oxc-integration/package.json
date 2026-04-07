@@ -1,6 +1,6 @@
 {
   "name": "@bassist/oxc-integration",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "An Oxc-first lint and format integration preset by @chengpeiquan .",
   "keywords": [
     "oxc",
