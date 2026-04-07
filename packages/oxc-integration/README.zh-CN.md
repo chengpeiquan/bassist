@@ -51,6 +51,24 @@ npm i -D oxlint oxfmt @bassist/oxc-integration
 Oxc 的编辑器扩展会通过项目本地的 `oxlint --lsp` 工作，因此也请确保项目的
 `devDependencies` 里已经安装了 `oxlint`。
 
+如果你使用 VS Code 或 Cursor，也可以在项目里补一个
+`.vscode/settings.json`，让保存时修复和类型感知检查更完整：
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.oxc": "always"
+  },
+  "oxc.typeAware": true
+}
+```
+
+- `source.fixAll.oxc` 用于通过 `oxc.oxc-vscode` 扩展启用 Oxc 的保存时自动修复
+- `oxc.typeAware: true` 可以在 TypeScript 项目里提供类型感知诊断
+- 如果你的项目还保留 `eslint.config.js` 作为 fallback layer，建议继续保留 `source.fixAll.eslint`
+- 如果项目已经是纯 Oxlint 工作流，可以移除 ESLint 的保存时动作
+
 ## 定位
 
 - 如果你需要当前稳定、完整的 ESLint 优先方案，请使用 `@bassist/eslint-config`
