@@ -52,6 +52,25 @@ See the official docs: https://oxc.rs/docs/guide/usage/linter/editors.html
 Oxc editor extensions use `oxlint --lsp` from your project, so make sure
 `oxlint` is installed locally in `devDependencies`.
 
+If you use VS Code or Cursor, adding a workspace-level
+`.vscode/settings.json` can make save actions and type-aware checks feel much
+more complete:
+
+```json
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always",
+    "source.fixAll.oxc": "always"
+  },
+  "oxc.typeAware": true
+}
+```
+
+- `source.fixAll.oxc` enables Oxc fixes on save through the `oxc.oxc-vscode` extension
+- `oxc.typeAware: true` helps the extension provide type-aware diagnostics when your project uses TypeScript
+- Keep `source.fixAll.eslint` if your project also uses `eslint.config.js` as a fallback layer
+- If your project is fully Oxlint-only, you can remove the ESLint save action
+
 ## Positioning
 
 - Use `@bassist/eslint-config` when you want the current stable ESLint-first mainline.
