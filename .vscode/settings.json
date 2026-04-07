@@ -5,7 +5,6 @@
     "apos",
     "Attributify",
     "baiduboxapp",
-    "bunx",
     "callees",
     "codemirror",
     "commitlint",
@@ -55,7 +54,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.patterns": {
     ".env": ".env.*",
-    "package.json": "package-lock.json, pnpm*, bun.*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .oxfmt*, oxfmt*, .prettier*, prettier*, .editorconfig, postcss.config.js, tailwind.config.ts, tailwind.whitelist.js, turbo.json, commitlint.config.js",
+    "package.json": "package-lock.json, pnpm*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .oxfmt*, oxfmt*, .prettier*, prettier*, .editorconfig, postcss.config.js, tailwind.config.ts, tailwind.whitelist.js, turbo.json, commitlint.config.js",
     "tsconfig.json": "tsconfig.*.json, env.d.ts",
     "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*"
   },

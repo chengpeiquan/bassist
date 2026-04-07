@@ -77,8 +77,8 @@ Run `npm run lint` to lint your code, or `npm run lint:inspector` to visualize y
 > Bun can load `eslint.config.ts` directly. If you run ESLint with Node.js, prefer `eslint.config.mjs` or follow the [additional setup](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files) from ESLint.
 
 ```bash
-# Bun-first workflow
-bun run lint
+# pnpm workflow
+pnpm lint
 ```
 
 ## 🧩 JSONC Preset

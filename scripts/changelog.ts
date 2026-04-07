@@ -1,10 +1,12 @@
-import { execSync } from 'child_process'
-import { resolve } from 'path'
-import { getArgv } from './utils'
+import { execSync } from 'node:child_process'
+import { resolve } from 'node:path'
+import process from 'node:process'
+import { getArgv } from './utils.ts'
 
 async function run() {
   const { name } = getArgv()
-  const pkgPath = resolve(__dirname, `../packages/${name}`)
+
+  const pkgPath = resolve(process.cwd(), `./packages/${name}`)
 
   const changelogArgs = [
     `conventional-changelog`,

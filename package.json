@@ -12,18 +12,18 @@
   "scripts": {
     "prepare": "husky",
     "build": "turbo run build",
-    "build:lib": "bun ./scripts/build.ts",
-    "pkg:publish": "bun ./scripts/publish.ts",
-    "pkg:changelog": "bun ./scripts/changelog.cts",
+    "build:lib": "node ./scripts/build.ts",
+    "pkg:publish": "node ./scripts/publish.ts",
+    "pkg:changelog": "node ./scripts/changelog.ts",
     "test": "vitest",
-    "lint": "bun run lint:oxlint && bun run lint:eslint",
+    "lint": "pnpm run lint:oxlint && pnpm run lint:eslint",
     "lint:oxlint": "oxlint .",
-    "lint:eslint": "bunx --bun eslint .",
-    "lint:inspector": "bunx @eslint/config-inspector",
-    "verify:eslint-v10": "bun ./packages/eslint-config/scripts/verify-eslint-v10.ts",
+    "lint:eslint": "pnpm exec eslint .",
+    "lint:inspector": "pnpm dlx @eslint/config-inspector",
+    "verify:eslint-v10": "node ./packages/eslint-config/scripts/verify-eslint-v10.ts",
     "format": "oxfmt .",
-    "format:prettier": "prettier --write packages",
-    "up": "bunx taze minor -r -f -w -i"
+    "format:prettier": "pnpm exec prettier --write packages",
+    "up": "pnpm dlx taze minor -r -f -w -i"
   },
   "dependencies": {
     "nprogress": "^0.2.0"
@@ -80,11 +80,11 @@
     "*.{js,jsx,ts,tsx}": [
       "oxfmt --write",
       "oxlint --fix",
-      "bunx --bun eslint --fix"
+      "pnpm exec eslint --fix"
     ],
     "*.md": [
       "prettier --write"
     ]
   },
-  "packageManager": "bun@1.3.11"
+  "packageManager": "pnpm@10.13.1"
 }

@@ -1,23 +1,19 @@
 import { execSync } from 'child_process'
-import { resolve } from 'path'
-import { getArgv } from './utils'
+import { getArgv } from './utils.ts'
 
 async function run() {
   const { name, otp, tag } = getArgv()
-  const pkgPath = resolve(import.meta.dirname, `../packages/${name}`)
 
   const publishArgs = [
-    `bun publish`,
+    `pnpm --filter @bassist/${name} publish`,
+    `--no-git-checks`,
     `--access public`,
+    `--registry https://registry.npmjs.org/`,
     `${tag ? `--tag ${tag}` : ''}`,
     `${otp ? `--otp=${otp}` : ''}`,
   ].filter(Boolean)
 
-  const commands = [
-    `bun run build:lib ${name}`,
-    `cd ${pkgPath}`,
-    publishArgs.join(' '),
-  ]
+  const commands = [`pnpm run build:lib ${name}`, publishArgs.join(' ')]
   const cmd = commands.join(' && ')
   execSync(cmd, { stdio: 'inherit' })
 }

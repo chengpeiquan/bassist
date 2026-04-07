@@ -1,9 +1,29 @@
+## [0.1.4](https://github.com/chengpeiquan/bassist/compare/oxc-integration@0.1.3...oxc-integration@0.1.4) (2026-04-07)
+
+
+### Bug Fixes
+
+* **oxc-integration:** reverting to pnpm workspace to fix incorrect dependency versions ([cb24e09](https://github.com/chengpeiquan/bassist/commit/cb24e09b3b961cae9c3f6f22d6626a229e8c1c07))
+
+
+
+## [0.1.3](https://github.com/chengpeiquan/bassist/compare/oxc-integration@0.1.2...oxc-integration@0.1.3) (2026-04-07)
+
+
+### Bug Fixes
+
+* **oxc-integration:** verify the workspace version of bun ([e27376b](https://github.com/chengpeiquan/bassist/commit/e27376b79cfd32d1b213df0dd71b87a40f6b24a5))
+
+
 ## [0.1.2](https://github.com/chengpeiquan/bassist/compare/oxc-integration@0.1.1...oxc-integration@0.1.2) (2026-04-07)
 
 
 ### Features
 
 * **oxc-integration:** add JSONC fallback support ([e0bf920](https://github.com/chengpeiquan/bassist/commit/e0bf920c59a755ef5211b9f16c6de9d56c5a53b3))
+
+
+
 ## 0.1.1 (2026-04-06)
 
 

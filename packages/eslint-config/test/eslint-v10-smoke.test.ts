@@ -14,10 +14,10 @@ const jsoncFixtureDir = resolve(testDir, 'fixtures/jsonc')
 const jsoncFixtureConfigPath = resolve(jsoncFixtureDir, 'eslint.config.mjs')
 const lockRoot = resolve(repoRoot, '.tmp-test-locks')
 const eslintDistLockDir = resolve(lockRoot, 'eslint-config-dist')
-const bunBin = process.platform === 'win32' ? 'bun.exe' : 'bun'
+const pnpmBin = process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm'
 
 const runCommand = (args: string[]) =>
-  spawnSync(bunBin, args, {
+  spawnSync(pnpmBin, args, {
     cwd: repoRoot,
     encoding: 'utf8',
   })
@@ -52,9 +52,9 @@ const withEslintDistLock = <T>(fn: () => T): T => {
 const runEslint = () => {
   return withEslintDistLock(() => {
     const buildResult = runCommand([
-      'run',
       '--filter',
       '@bassist/eslint-config',
+      'run',
       'build',
     ])
 
@@ -63,7 +63,7 @@ const runEslint = () => {
     }
 
     return runCommand([
-      'x',
+      'exec',
       'eslint',
       '--no-config-lookup',
       '--config',
@@ -76,9 +76,9 @@ const runEslint = () => {
 const runEslintJsonc = () => {
   return withEslintDistLock(() => {
     const buildResult = runCommand([
-      'run',
       '--filter',
       '@bassist/eslint-config',
+      'run',
       'build',
     ])
 
@@ -87,7 +87,7 @@ const runEslintJsonc = () => {
     }
 
     return runCommand([
-      'x',
+      'exec',
       'eslint',
       '--no-config-lookup',
       '--config',
@@ -99,7 +99,7 @@ const runEslintJsonc = () => {
 
 describe('@bassist/eslint-config', () => {
   test('uses ESLint v10 in the workspace', () => {
-    const result = runCommand(['x', 'eslint', '--version'])
+    const result = runCommand(['exec', 'eslint', '--version'])
 
     expect(result.status).toBe(0)
     expect(result.stdout).toMatch(/^v10\./)

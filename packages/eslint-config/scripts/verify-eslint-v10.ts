@@ -14,31 +14,31 @@ const fixtureSourcePath = resolve(
   packageDir,
   'test/fixtures/basic/src/index.ts',
 )
-const bunBin = process.platform === 'win32' ? 'bun.exe' : 'bun'
+const pnpmBin = process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm'
 
 const runCommand = (args: string[]) => {
-  const result = spawnSync(bunBin, args, {
+  const result = spawnSync(pnpmBin, args, {
     cwd: repoRoot,
     encoding: 'utf8',
   })
 
   if (result.status !== 0) {
     const details = [result.stdout, result.stderr].filter(Boolean).join('\n')
-    throw new Error(details || `Command failed: bun ${args.join(' ')}`)
+    throw new Error(details || `Command failed: pnpm ${args.join(' ')}`)
   }
 
   return result
 }
 
-const version = runCommand(['x', 'eslint', '--version']).stdout.trim()
+const version = runCommand(['exec', 'eslint', '--version']).stdout.trim()
 
 if (!/^v10\./.test(version)) {
   throw new Error(`Expected ESLint v10, received ${version}`)
 }
 
-runCommand(['run', '--filter', '@bassist/eslint-config', 'build'])
+runCommand(['--filter', '@bassist/eslint-config', 'run', 'build'])
 runCommand([
-  'x',
+  'exec',
   'eslint',
   '--no-config-lookup',
   '--config',

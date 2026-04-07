@@ -77,8 +77,8 @@ export default [...imports, ...typescript]
 > Bun 可以直接加载 `eslint.config.ts` 。如果你通过 Node.js 运行 ESLint，建议改用 `eslint.config.mjs`，或者按照 ESLint 文档完成[额外的设置](https://eslint.org/docs/latest/use/configure/configuration-files#typescript-configuration-files)。
 
 ```bash
-# Bun 优先的用法
-bun run lint
+# pnpm 工作流
+pnpm lint
 ```
 
 ## 🧩 JSONC 预设
