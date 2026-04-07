@@ -36,26 +36,28 @@
     "windicss",
     "withtypes"
   ],
-  "explorer.fileNesting.enabled": true,
-  "explorer.fileNesting.patterns": {
-    ".env": ".env.*",
-    "tsconfig.json": "tsconfig.*.json, env.d.ts",
-    "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*",
-    "package.json": "package-lock.json, pnpm*, bun.*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .oxfmt*, oxfmt*, .prettier*, prettier*, .editorconfig, postcss.config.js, tailwind.config.ts, tailwind.whitelist.js, turbo.json, commitlint.config.js"
-  },
-  "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "always",
     "source.fixAll.prettier": "always"
   },
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "eslint.useFlatConfig": true,
+  "editor.formatOnSave": true,
   "eslint.format.enable": true,
+  "eslint.useFlatConfig": true,
   "eslint.validate": [
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "json",
+    "jsonc"
   ],
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    ".env": ".env.*",
+    "package.json": "package-lock.json, pnpm*, bun.*, .yarnrc*, yarn*, .eslint*, eslint*, .oxlint*, oxlint*, .oxfmt*, oxfmt*, .prettier*, prettier*, .editorconfig, postcss.config.js, tailwind.config.ts, tailwind.whitelist.js, turbo.json, commitlint.config.js",
+    "tsconfig.json": "tsconfig.*.json, env.d.ts",
+    "vite.config.*": "jsconfig*, vitest.config.*, cypress.config.*, playwright.config.*"
+  },
   "prettier.configPath": "./.prettierrc.mjs"
 }
