@@ -81,6 +81,42 @@ export default [...imports, ...typescript]
 bun run lint
 ```
 
+## 🧩 JSONC 预设
+
+如果希望 ESLint 直接检查 JSON 系列文件，可以使用 `jsonc` 预设：
+
+```js
+// eslint.config.js
+import { jsonc } from '@bassist/eslint-config'
+
+export default [...jsonc]
+```
+
+`jsonc` 的默认行为：
+
+- 支持 `.json`、`.jsonc`、`.json5`
+- 默认递归排序对象 key（`jsonc/sort-keys`）
+- 默认忽略 `package.json`，让包清单 key 排序继续交给格式化流程处理
+
+如果你在 VS Code 里通过 ESLint 扩展做校验，并且手动设置了
+`eslint.validate`，记得把 `json` 和 `jsonc` 也加进去。
+
+如果需要，也可以在项目里覆盖默认行为：
+
+```js
+import { jsonc } from '@bassist/eslint-config'
+
+export default [
+  ...jsonc,
+  {
+    files: ['**/*.json', '**/*.jsonc', '**/*.json5'],
+    rules: {
+      'jsonc/sort-keys': 'off',
+    },
+  },
+]
+```
+
 ## ✅ 类型安全的配置
 
 为了增强类型安全性，可以使用 `defineFlatConfig`:
@@ -124,7 +160,9 @@ export default defineFlatConfig([
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "json",
+    "jsonc"
   ],
   "prettier.configPath": "./.prettierrc.js"
 }
@@ -259,6 +297,7 @@ export default defineFlatConfig([
 - [JavaScript](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/configs/javascript.ts)
 - [TypeScript](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/configs/typescript.ts)
 - [JSX](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/configs/jsx.ts)
+- [JSON / JSONC / JSON5](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/configs/jsonc.ts)
 - [Markdown](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/configs/markdown.ts)
 
 #### 框架支持

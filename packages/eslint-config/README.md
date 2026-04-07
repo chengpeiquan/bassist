@@ -81,6 +81,42 @@ Run `npm run lint` to lint your code, or `npm run lint:inspector` to visualize y
 bun run lint
 ```
 
+## 🧩 JSONC Preset
+
+Use `jsonc` when you want ESLint to lint JSON-family files:
+
+```js
+// eslint.config.js
+import { jsonc } from '@bassist/eslint-config'
+
+export default [...jsonc]
+```
+
+Default behavior of `jsonc`:
+
+- Supports `.json`, `.jsonc`, and `.json5`
+- Sorts object keys recursively by default (`jsonc/sort-keys`)
+- Ignores `package.json` by default so package-key ordering can remain owned by formatter workflows
+
+If you lint in VS Code through the ESLint extension and explicitly set
+`eslint.validate`, remember to include `json` and `jsonc` there as well.
+
+If needed, you can override the defaults in your own config layer:
+
+```js
+import { jsonc } from '@bassist/eslint-config'
+
+export default [
+  ...jsonc,
+  {
+    files: ['**/*.json', '**/*.jsonc', '**/*.json5'],
+    rules: {
+      'jsonc/sort-keys': 'off',
+    },
+  },
+]
+```
+
 ## ✅ Type-Safe Config
 
 For enhanced type safety, use `defineFlatConfig`:
@@ -125,7 +161,9 @@ Enable automatic linting and fixing in VS Code by adding the following to your w
     "javascript",
     "javascriptreact",
     "typescript",
-    "typescriptreact"
+    "typescriptreact",
+    "json",
+    "jsonc"
   ],
   "prettier.configPath": "./.prettierrc.js"
 }
@@ -274,6 +312,7 @@ These are mainly the ones I use frequently. If you need any additions, welcome P
 - [JavaScript](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/configs/javascript.ts)
 - [TypeScript](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/configs/typescript.ts)
 - [JSX](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/configs/jsx.ts)
+- [JSON / JSONC / JSON5](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/configs/jsonc.ts)
 - [Markdown](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/configs/markdown.ts)
 
 #### Frameworks
