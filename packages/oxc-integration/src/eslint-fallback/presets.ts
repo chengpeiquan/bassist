@@ -3,6 +3,7 @@ import {
   imports,
   javascript,
   jsx,
+  jsonc,
   markdown,
   next,
   node,
@@ -79,6 +80,9 @@ export const importsFallback = (): FlatESLintConfig[] =>
 export const markdownFallback = (): FlatESLintConfig[] =>
   createFallbackConfig(markdown)
 
+export const jsoncFallback = (): FlatESLintConfig[] =>
+  createFallbackConfig(jsonc)
+
 export const reactFallback = (): FlatESLintConfig[] =>
   withOxlintDedupe(createFallbackConfig([...imports, ...react]), [
     'flat/import',
@@ -134,6 +138,7 @@ export const eslintPresets = {
   imports: importsFallback,
   javascript: javascriptFallback,
   jsx: jsxFallback,
+  jsonc: jsoncFallback,
   markdown: markdownFallback,
   next: nextFallback,
   react: reactFallback,

@@ -51,6 +51,7 @@ describe('@bassist/oxc-integration', () => {
 
   test('exports fallback presets with oxlint dedupe', () => {
     const reactConfig = defineEslintConfig(eslintPresets.react())
+    const jsoncConfig = defineEslintConfig(eslintPresets.jsonc())
     const markdownConfig = defineEslintConfig(eslintPresets.markdown())
     const tailwindConfig = defineEslintConfig(
       eslintPresets.tailwindcss({
@@ -80,6 +81,10 @@ describe('@bassist/oxc-integration', () => {
     expect(
       vitestConfig.some((item) => item.name?.includes('vitest/recommended')),
     ).toBe(true)
+    expect(jsoncConfig.some((item) => item.name?.includes('jsonc'))).toBe(true)
+    expect(jsoncConfig.some((item) => item.name?.includes('prettier'))).toBe(
+      false,
+    )
     expect(
       markdownConfig.some((item) => item.language === 'markdown/commonmark'),
     ).toBe(true)
@@ -110,6 +115,7 @@ describe('@bassist/oxc-integration', () => {
     expect(readme).toContain('typescript')
     expect(readme).toContain('jsx')
     expect(readme).toContain('imports')
+    expect(readme).toContain('jsonc')
     expect(readme).toContain('markdown')
     expect(readme).toContain('react')
     expect(readme).toContain('tailwindcss')
@@ -127,6 +133,7 @@ describe('@bassist/oxc-integration', () => {
     expect(readme).toContain('typescript')
     expect(readme).toContain('jsx')
     expect(readme).toContain('imports')
+    expect(readme).toContain('jsonc')
     expect(readme).toContain('markdown')
     expect(readme).toContain('react')
     expect(readme).toContain('tailwindcss')
