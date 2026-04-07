@@ -1,6 +1,7 @@
 import { spawnSync } from 'node:child_process'
 import { mkdirSync, rmSync } from 'node:fs'
 import { dirname, resolve } from 'node:path'
+import process from 'node:process'
 import { fileURLToPath } from 'node:url'
 import { beforeAll, describe, expect, test } from 'vitest'
 
@@ -11,6 +12,10 @@ const repoRoot = resolve(testRoot, '../../..')
 const lockRoot = resolve(repoRoot, '.tmp-test-locks')
 const eslintDistLockDir = resolve(lockRoot, 'eslint-config-dist')
 const workflowTestTimeout = 15_000
+const pnpmBin = process.platform === 'win32' ? 'pnpm.cmd' : 'pnpm'
+const execBinExt = process.platform === 'win32' ? '.cmd' : ''
+const oxlintBin = resolve(repoRoot, `node_modules/.bin/oxlint${execBinExt}`)
+const eslintBin = resolve(repoRoot, `node_modules/.bin/eslint${execBinExt}`)
 
 const sleep = (ms: number) => {
   Atomics.wait(new Int32Array(new SharedArrayBuffer(4)), 0, 0, ms)
@@ -39,9 +44,9 @@ const withEslintDistLock = <T>(fn: () => T): T => {
   }
 }
 
-const runInFixture = (fixture: string, args: string[]) =>
+const runInFixture = (fixture: string, bin: string, args: string[]) =>
   withEslintDistLock(() =>
-    spawnSync('bun', args, {
+    spawnSync(bin, args, {
       cwd: resolve(fixtureRoot, fixture),
       encoding: 'utf8',
     }),
@@ -49,8 +54,8 @@ const runInFixture = (fixture: string, args: string[]) =>
 
 beforeAll(() => {
   const buildResult = spawnSync(
-    'bun',
-    ['run', '--filter', '@bassist/oxc-integration', 'build'],
+    pnpmBin,
+    ['--filter', '@bassist/oxc-integration', 'run', 'build'],
     {
       cwd: packageRoot,
       encoding: 'utf8',
@@ -66,9 +71,7 @@ describe('workflow smoke fixtures', () => {
   test(
     'base fixture runs with Oxlint',
     () => {
-      const result = runInFixture('base', [
-        'x',
-        'oxlint',
+      const result = runInFixture('base', oxlintBin, [
         '--config',
         'oxlint.config.ts',
         '.',
@@ -82,9 +85,7 @@ describe('workflow smoke fixtures', () => {
   test(
     'react fixture runs with Oxlint',
     () => {
-      const result = runInFixture('react', [
-        'x',
-        'oxlint',
+      const result = runInFixture('react', oxlintBin, [
         '--config',
         'oxlint.config.ts',
         '.',
@@ -98,16 +99,12 @@ describe('workflow smoke fixtures', () => {
   test(
     'vue fixture runs with Oxlint and ESLint fallback',
     () => {
-      const oxlintResult = runInFixture('vue', [
-        'x',
-        'oxlint',
+      const oxlintResult = runInFixture('vue', oxlintBin, [
         '--config',
         'oxlint.config.ts',
         '.',
       ])
-      const eslintResult = runInFixture('vue', [
-        'x',
-        'eslint',
+      const eslintResult = runInFixture('vue', eslintBin, [
         '.',
         '--config',
         'eslint.config.mjs',
@@ -122,9 +119,7 @@ describe('workflow smoke fixtures', () => {
   test(
     'markdown fixture runs with ESLint fallback',
     () => {
-      const eslintResult = runInFixture('markdown', [
-        'x',
-        'eslint',
+      const eslintResult = runInFixture('markdown', eslintBin, [
         '.',
         '--config',
         'eslint.config.mjs',
@@ -138,9 +133,7 @@ describe('workflow smoke fixtures', () => {
   test(
     'jsonc fixture runs with ESLint fallback and reports sort-keys',
     () => {
-      const eslintResult = runInFixture('jsonc', [
-        'x',
-        'eslint',
+      const eslintResult = runInFixture('jsonc', eslintBin, [
         '.',
         '--config',
         'eslint.config.mjs',
