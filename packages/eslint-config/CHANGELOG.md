@@ -1,69 +1,55 @@
+# [0.5.0](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.4.1...eslint-config@0.5.0) (2026-05-01)
+
+### Features
+
+- **eslint-config:** switch tailwind linting plugin ([2470a0f](https://github.com/chengpeiquan/bassist/commit/2470a0f5b564e9582eb1a7c6d561801c4d7a7d6f))
+
 ## [0.4.1](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.4.0...eslint-config@0.4.1) (2026-04-07)
 
-
 ### Features
 
-* **eslint-config:** add JSONC support with configuration ([841d9dd](https://github.com/chengpeiquan/bassist/commit/841d9ddb3ce8c8f8509e245954bb3807c43e3aa7))
+- **eslint-config:** add JSONC support with configuration ([841d9dd](https://github.com/chengpeiquan/bassist/commit/841d9ddb3ce8c8f8509e245954bb3807c43e3aa7))
+
 # [0.4.0](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.3.0...eslint-config@0.4.0) (2026-04-05)
 
-
 ### Features
 
-* **eslint-config:** update deps add ESLint v10 support ([b4759dd](https://github.com/chengpeiquan/bassist/commit/b4759dde49a0295f450bcb6b50b9a886bddf3156))
-
+- **eslint-config:** update deps add ESLint v10 support ([b4759dd](https://github.com/chengpeiquan/bassist/commit/b4759dde49a0295f450bcb6b50b9a886bddf3156))
 
 # [0.3.0](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.2.0...eslint-config@0.3.0) (2025-07-27)
 
-
 ### Features
 
-* **eslint-config:** upgrade dependencies and add pangu space formatting support for markdown ([499f888](https://github.com/chengpeiquan/bassist/commit/499f888a88f3abe8eb03c09655f36282481ec5b9))
-
-
+- **eslint-config:** upgrade dependencies and add pangu space formatting support for markdown ([499f888](https://github.com/chengpeiquan/bassist/commit/499f888a88f3abe8eb03c09655f36282481ec5b9))
 
 # [0.2.0](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.1.3...eslint-config@0.2.0) (2025-07-06)
 
-
 ### Features
 
-* **eslint-config:** add built-in Prettier rules ([0b88636](https://github.com/chengpeiquan/bassist/commit/0b8863628fd7751fb3ec810d1204f2d40a462e02))
-
-
+- **eslint-config:** add built-in Prettier rules ([0b88636](https://github.com/chengpeiquan/bassist/commit/0b8863628fd7751fb3ec810d1204f2d40a462e02))
 
 ## [0.1.3](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.1.2...eslint-config@0.1.3) (2025-05-22)
 
-
 ### Bug Fixes
 
-* **eslint-config:** update deps ([e6c47c7](https://github.com/chengpeiquan/bassist/commit/e6c47c70a6c51c757d9f958d9711f2da597f3ee4))
-
-
+- **eslint-config:** update deps ([e6c47c7](https://github.com/chengpeiquan/bassist/commit/e6c47c70a6c51c757d9f958d9711f2da597f3ee4))
 
 ## [0.1.2](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.1.1...eslint-config@0.1.2) (2025-03-09)
 
-
 ### Bug Fixes
 
-* **eslint-config:** export createGetConfigNameFactory ([2967b04](https://github.com/chengpeiquan/bassist/commit/2967b0443ea7f9c787d48d857132b5ece5142dc4))
-* **eslint-config:** no need for prettier sort import built-in, which will cause global lint errors ([419b065](https://github.com/chengpeiquan/bassist/commit/419b065dbcff242a742702aa9ef11fbc7266d7dd))
-* **eslint-config:** use eslint-plugin-import-x instead of eslint-plugin-import ([9bafd37](https://github.com/chengpeiquan/bassist/commit/9bafd371e31795bff8b393dc2afd46b3a2901918))
-
-
+- **eslint-config:** export createGetConfigNameFactory ([2967b04](https://github.com/chengpeiquan/bassist/commit/2967b0443ea7f9c787d48d857132b5ece5142dc4))
+- **eslint-config:** no need for prettier sort import built-in, which will cause global lint errors ([419b065](https://github.com/chengpeiquan/bassist/commit/419b065dbcff242a742702aa9ef11fbc7266d7dd))
+- **eslint-config:** use eslint-plugin-import-x instead of eslint-plugin-import ([9bafd37](https://github.com/chengpeiquan/bassist/commit/9bafd371e31795bff8b393dc2afd46b3a2901918))
 
 ## [0.1.1](https://github.com/chengpeiquan/bassist/compare/eslint-config@0.1.0...eslint-config@0.1.1) (2025-03-09)
 
-
 ### Bug Fixes
 
-* **eslint-config:** missing javascript config name ([a817534](https://github.com/chengpeiquan/bassist/commit/a817534cf4f5351ee21f4fdf7a6b366ce960e49f))
-
-
+- **eslint-config:** missing javascript config name ([a817534](https://github.com/chengpeiquan/bassist/commit/a817534cf4f5351ee21f4fdf7a6b366ce960e49f))
 
 # 0.1.0 (2025-03-08)
 
-
 ### Features
 
-* **eslint-config:** add flat configurations for ESLint v9 ([3f649fb](https://github.com/chengpeiquan/bassist/commit/3f649fb55b7eee40b1e8fe79a4820b9f3a5ffde0))
-
-
+- **eslint-config:** add flat configurations for ESLint v9 ([3f649fb](https://github.com/chengpeiquan/bassist/commit/3f649fb55b7eee40b1e8fe79a4820b9f3a5ffde0))

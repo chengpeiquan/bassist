@@ -17,7 +17,11 @@ async function run() {
     `--commit-path=.`,
   ]
 
-  const commands = [`cd ${pkgPath}`, changelogArgs.join(' ')]
+  const commands = [
+    `cd ${pkgPath}`,
+    changelogArgs.join(' '),
+    `pnpm exec prettier --write CHANGELOG.md`,
+  ]
   const cmd = commands.join(' && ')
   execSync(cmd, { stdio: 'inherit' })
 }
