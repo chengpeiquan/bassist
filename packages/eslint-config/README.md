@@ -249,7 +249,7 @@ interface DefineFlatConfigOptions {
    *
    * If an empty object `{}` is passed, the default settings will be used.
    *
-   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/v3.18.2
+   * @see https://github.com/schoero/eslint-plugin-better-tailwindcss
    */
   tailwindcssSettings?: TailwindcssSettings
 }
@@ -330,8 +330,8 @@ Formatting rules are enabled by default and not exported externally. Please pass
   - If the expected configuration file does not exist, the [built-in Prettier rules](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/shared/prettier-config.mjs) are used as a fallback rule.
   - When not using the above configuration files and you don't like the default rules, you can pass the complete configuration through `options.prettierRules` of [defineFlatConfig](#defineflatconfig) to be used as ESLint rules with priority
 - [Tailwind CSS](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/private-configs/tailwindcss.ts) :
-  - By default, `tailwind.config.js` is passed as the Tailwind CSS configuration file.
-  - For non-default files or when you need to change rules, you can pass them through `options.tailwindcssSettings`
+  - Uses `eslint-plugin-better-tailwindcss` so Tailwind CSS v3 and v4 projects share the same class linting path.
+  - For monorepos, custom CSS entry points, or custom class selectors, pass `options.tailwindcssSettings`.
 
 #### Others
 

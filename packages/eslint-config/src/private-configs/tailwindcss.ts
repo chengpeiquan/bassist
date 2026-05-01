@@ -1,39 +1,31 @@
-import tailwindcssPlugin from 'eslint-plugin-tailwindcss'
+import tailwindcssPlugin from 'eslint-plugin-better-tailwindcss'
+import { getDefaultSelectors } from 'eslint-plugin-better-tailwindcss/api/defaults'
+import { type Selectors } from 'eslint-plugin-better-tailwindcss/api/types'
 import { getConfigName } from '../shared/utils'
 import { type FlatESLintConfig } from '../types'
 
 export { tailwindcssPlugin }
 
-const recommendedConfigs = tailwindcssPlugin.configs[
-  'flat/recommended'
-] as FlatESLintConfig[]
+const recommendedConfig = tailwindcssPlugin.configs
+  .recommended as FlatESLintConfig
 
 export interface TailwindcssSettings {
+  attributes?: string[]
   callees?: string[]
-  config?: string
-  cssFiles?: string[]
-  cssFilesRefreshRate?: number
-  removeDuplicates?: boolean
-  skipClassAttribute?: boolean
-  whitelist?: string[]
+  cwd?: string
+  detectComponentClasses?: boolean
+  entryPoint?: string
+  messageStyle?: 'visual' | 'compact' | 'raw'
+  rootFontSize?: number
+  selectors?: Selectors
   tags?: string[]
-  classRegex?: string
+  tailwindConfig?: string
+  tsconfig?: string
+  variables?: string[]
 }
 
 export const defaultTailwindcssSettings: TailwindcssSettings = {
-  callees: ['cn', 'classNames', 'clsx'],
-
-  // `tailwind.config.ts` is no longer supported
-  // https://github.com/tailwindlabs/tailwindcss/discussions/15352
-  config: 'tailwind.config.js', // returned from `loadConfig()` utility if not provided
-
-  cssFiles: ['!**/node_modules', '!**/.*', '!**/dist'],
-  cssFilesRefreshRate: 5_000,
-  removeDuplicates: true,
-  skipClassAttribute: false,
-  whitelist: ['-webkit-box'],
-  tags: [], // can be set to e.g. ['tw'] for use in tw`bg-blue`
-  classRegex: '^class(Name)?$', // can be modified to support custom attributes. E.g. "^tw$" for `twin.macro`
+  selectors: getDefaultSelectors(),
 }
 
 const mergeSettings = (inputSettings: TailwindcssSettings) => {
@@ -53,11 +45,11 @@ export const createTailwindcssConfig = (
   const resolvedSettings = mergeSettings(inputSettings)
 
   const tailwindcss: FlatESLintConfig[] = [
-    ...recommendedConfigs,
+    recommendedConfig,
     {
       name: getConfigName('tailwindcss', 'settings'),
       settings: {
-        tailwindcss: resolvedSettings,
+        'better-tailwindcss': resolvedSettings,
       },
     },
   ]
