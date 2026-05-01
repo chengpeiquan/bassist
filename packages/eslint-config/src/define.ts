@@ -62,7 +62,7 @@ export interface DefineFlatConfigOptions {
    *
    * If an empty object `{}` is passed, the default settings will be used.
    *
-   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/v3.18.2
+   * @see https://github.com/schoero/eslint-plugin-better-tailwindcss
    */
   tailwindcssSettings?: TailwindcssSettings
 }

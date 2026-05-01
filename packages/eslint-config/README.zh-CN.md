@@ -238,7 +238,7 @@ interface DefineFlatConfigOptions {
    *
    * 如果传入空对象 `{}`，则会使用默认设置。
    *
-   * @see https://github.com/francoismassart/eslint-plugin-tailwindcss/tree/v3.18.2
+   * @see https://github.com/schoero/eslint-plugin-better-tailwindcss
    */
   tailwindcssSettings?: TailwindcssSettings
 }
@@ -315,8 +315,8 @@ export default defineFlatConfig([
   - 如果预期的配置文件不存在，则会使用 [内置的 Prettier](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/shared/prettier-config.mjs) 规则作为兜底规则。
   - 非以上配置文件并且不喜欢默认规则时，可以通过 [defineFlatConfig](#defineflatconfig) 的 `options.prettierRules` 将完整配置传递进来优先作为 ESLint 规则使用
 - [Tailwind CSS](https://github.com/chengpeiquan/bassist/blob/main/packages/eslint-config/src/private-configs/tailwindcss.ts) :
-  - 默认会将 `tailwind.config.js` 作为 Tailwind CSS 配置文件传入。
-  - 非默认文件或者需要更改规则，可通过 `options.tailwindcssSettings` 传递
+  - 使用 `eslint-plugin-better-tailwindcss`，让 Tailwind CSS v3 和 v4 项目共用同一套 class linting。
+  - Monorepo、自定义 CSS 入口或自定义 class selector，可通过 `options.tailwindcssSettings` 传递。
 
 #### 其它
 
