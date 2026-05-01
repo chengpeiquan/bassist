@@ -104,7 +104,7 @@ In practice:
 - `react`: Oxlint-first works well, but ESLint fallback is still useful in many projects
 - `vue`: keep ESLint fallback by default
 - `next`: keep ESLint fallback by default
-- `tailwindcss`: add ESLint fallback when your project uses Tailwind CSS utility classes
+- `tailwindcss`: use `oxlintPresets.tailwindcss()` for Oxc JS plugin linting, or add ESLint fallback when a project still needs ESLint-specific coverage
 - `vitest`: add ESLint fallback when you want test-specific rules beyond Oxlint
 
 ## Built-in Fallback Coverage
@@ -115,6 +115,7 @@ Current built-in ESLint fallback presets provided by `@bassist/oxc-integration`:
 - `typescript`
 - `jsx`
 - `imports`
+- `jsonc`
 - `markdown`
 - `react`
 - `tailwindcss`
@@ -189,6 +190,7 @@ Then higher-level presets extend that baseline:
 
 - `oxlintPresets.node()` adds Node runtime env
 - `oxlintPresets.react()` adds `react`, `react-perf`, `jsx-a11y`
+- `oxlintPresets.tailwindcss()` loads `eslint-plugin-better-tailwindcss` through Oxlint JS plugins
 - `oxlintPresets.vue()` adds `vue`
 - `oxlintPresets.vitest()` adds `vitest`
 
@@ -209,6 +211,22 @@ export default defineOxlintConfig(oxlintPresets.react(), {
 ```
 
 Think of the presets as the default baseline, and the extra object as the per-project extension layer.
+
+### Tailwind CSS
+
+```ts
+// oxlint.config.ts
+import { defineOxlintConfig, oxlintPresets } from '@bassist/oxc-integration'
+
+export default defineOxlintConfig(
+  oxlintPresets.react(),
+  oxlintPresets.tailwindcss({
+    entryPoint: './src/styles.css',
+  }),
+)
+```
+
+The Tailwind preset uses `eslint-plugin-better-tailwindcss` through Oxlint JS plugins, so Tailwind CSS v3 and v4 projects share the same class linting rules.
 
 ## ESLint Fallback Quick Start
 
