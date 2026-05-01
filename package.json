@@ -22,6 +22,7 @@
     "lint:inspector": "pnpm dlx @eslint/config-inspector",
     "verify:eslint-v10": "node ./packages/eslint-config/scripts/verify-eslint-v10.ts",
     "format": "oxfmt .",
+    "format:changelog": "pnpm exec prettier --write \"packages/*/CHANGELOG.md\"",
     "format:prettier": "pnpm exec prettier --write packages",
     "up": "pnpm dlx taze minor -r -f -w -i"
   },

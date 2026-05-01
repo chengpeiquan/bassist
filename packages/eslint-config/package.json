@@ -1,6 +1,6 @@
 {
   "name": "@bassist/eslint-config",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "A modern flat ESLint configuration for ESLint, crafted by @chengpeiquan .",
   "keywords": [
     "eslint",
