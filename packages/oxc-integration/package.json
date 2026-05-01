@@ -35,6 +35,7 @@
   "dependencies": {
     "@bassist/eslint-config": "workspace:*",
     "@vitest/eslint-plugin": "^1.6.14",
+    "eslint-plugin-better-tailwindcss": "^4.5.0",
     "eslint-plugin-n": "^17.24.0",
     "eslint-plugin-oxlint": "^1.58.0"
   },

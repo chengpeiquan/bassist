@@ -12,6 +12,9 @@ export const defineOxlintConfig = (...items: OxlintConfig[]): OxlintConfig =>
         plugins: [
           ...new Set([...(acc.plugins ?? []), ...(item.plugins ?? [])]),
         ],
+        jsPlugins: [
+          ...new Set([...(acc.jsPlugins ?? []), ...(item.jsPlugins ?? [])]),
+        ],
         rules: { ...(acc.rules ?? {}), ...(item.rules ?? {}) },
         categories: { ...(acc.categories ?? {}), ...(item.categories ?? {}) },
         env: { ...(acc.env ?? {}), ...(item.env ?? {}) },

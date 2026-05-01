@@ -1,5 +1,6 @@
 export { base } from '../defaults'
 export { node } from './node'
 export { react } from './react'
+export { tailwindcss } from './tailwindcss'
 export { vitest } from './vitest'
 export { vue } from './vue'

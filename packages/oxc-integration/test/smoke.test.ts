@@ -18,6 +18,9 @@ describe('@bassist/oxc-integration', () => {
     const config = defineOxlintConfig(
       oxlintPresets.base(),
       oxlintPresets.react(),
+      oxlintPresets.tailwindcss({
+        cwd: './packages/app',
+      }),
       {
         rules: {
           'no-console': 'warn',
@@ -27,8 +30,15 @@ describe('@bassist/oxc-integration', () => {
     )
 
     expect(config.plugins).toContain('react')
+    expect(config.jsPlugins).toContain('eslint-plugin-better-tailwindcss')
+    expect(config.settings?.['better-tailwindcss']).toEqual({
+      cwd: './packages/app',
+    })
     expect(config.categories?.correctness).toBe('error')
     expect(config.rules?.['no-console']).toBe('warn')
+    expect(config.rules?.['better-tailwindcss/no-unknown-classes']).toBe(
+      'error',
+    )
     expect(config.rules?.['max-lines-per-function']).toBe('off')
     expect(config.rules?.['no-inline-comments']).toBe('off')
     expect(config.rules?.['require-await']).toBe('off')
@@ -55,7 +65,7 @@ describe('@bassist/oxc-integration', () => {
     const markdownConfig = defineEslintConfig(eslintPresets.markdown())
     const tailwindConfig = defineEslintConfig(
       eslintPresets.tailwindcss({
-        config: './configs/tailwind.config.js',
+        entryPoint: './src/styles.css',
       }),
     )
     const vueConfig = defineEslintConfig(eslintPresets.vue())
@@ -92,16 +102,19 @@ describe('@bassist/oxc-integration', () => {
       false,
     )
     expect(
-      tailwindConfig.some((item) => item.name === 'tailwindcss:base'),
-    ).toBe(true)
-    expect(
-      tailwindConfig.some((item) => item.name === 'tailwindcss:rules'),
+      tailwindConfig.some(
+        (item) =>
+          item.plugins &&
+          Object.hasOwn(item.plugins, 'better-tailwindcss') &&
+          item.rules?.['better-tailwindcss/no-unknown-classes'] === 'error',
+      ),
     ).toBe(true)
     expect(
       tailwindConfig.some(
         (item) =>
           item.name === 'bassist/tailwindcss/settings' &&
-          item.settings?.tailwindcss?.config === './configs/tailwind.config.js',
+          item.settings?.['better-tailwindcss']?.entryPoint ===
+            './src/styles.css',
       ),
     ).toBe(true)
   })

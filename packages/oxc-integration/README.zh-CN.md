@@ -102,7 +102,7 @@ Oxc 的编辑器扩展会通过项目本地的 `oxlint --lsp` 工作，因此也
 - `react`：大多数情况下可以 Oxc 优先，但很多项目仍建议保留 ESLint fallback
 - `vue`：默认建议保留 ESLint fallback
 - `next`：默认建议保留 ESLint fallback
-- `tailwindcss`：如果项目使用 Tailwind CSS 原子类，建议补上 ESLint fallback
+- `tailwindcss`：优先使用 `oxlintPresets.tailwindcss()` 通过 Oxc JS plugin lint；如果项目仍需要 ESLint 专属覆盖，再补 ESLint fallback
 - `vitest`：如果你需要更完整的测试规则，建议保留 ESLint fallback
 
 ## 内建的 Fallback Coverage
@@ -113,6 +113,7 @@ Oxc 的编辑器扩展会通过项目本地的 `oxlint --lsp` 工作，因此也
 - `typescript`
 - `jsx`
 - `imports`
+- `jsonc`
 - `markdown`
 - `react`
 - `tailwindcss`
@@ -187,6 +188,7 @@ export default defineOxlintConfig(oxlintPresets.vue(), oxlintPresets.vitest())
 
 - `oxlintPresets.node()` 会补充 Node 运行时环境
 - `oxlintPresets.react()` 会补充 `react`、`react-perf`、`jsx-a11y`
+- `oxlintPresets.tailwindcss()` 会通过 Oxlint JS plugins 加载 `eslint-plugin-better-tailwindcss`
 - `oxlintPresets.vue()` 会补充 `vue`
 - `oxlintPresets.vitest()` 会补充 `vitest`
 
@@ -207,6 +209,22 @@ export default defineOxlintConfig(oxlintPresets.react(), {
 ```
 
 可以把 presets 理解成默认基线，把额外传入的对象理解成项目级扩展层。
+
+### Tailwind CSS
+
+```ts
+// oxlint.config.ts
+import { defineOxlintConfig, oxlintPresets } from '@bassist/oxc-integration'
+
+export default defineOxlintConfig(
+  oxlintPresets.react(),
+  oxlintPresets.tailwindcss({
+    entryPoint: './src/styles.css',
+  }),
+)
+```
+
+Tailwind preset 会通过 Oxlint JS plugins 使用 `eslint-plugin-better-tailwindcss`，让 Tailwind CSS v3 和 v4 项目共用同一套 class linting 规则。
 
 ## ESLint Fallback 快速开始
 
