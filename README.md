@@ -10,6 +10,10 @@ You can also use them directly.
   <img width="500" src="./assets/bassist.svg" alt="Bassist" />
 </p>
 
+## Agent Skills
+
+Agent Skills are maintained separately in [bassist-skills](https://github.com/chengpeiquan/bassist-skills).
+
 ## License
 
 MIT License © 2022 [chengpeiquan](https://github.com/chengpeiquan)
